@@ -1,0 +1,207 @@
+// ============================================================
+// GRAY SPACE — content layer (Sanity-ready).
+// This is Layer 2: the part you iterate on freely. Add / edit / reorder
+// projects here and the whole site updates — no component changes.
+// Each object maps 1:1 to a future Sanity `project` document; the module
+// blocks map to a portable-text-style array of typed blocks.
+//
+// MEDIA: use { img: "/media/foo.jpg" } for a real asset in /public/media,
+// or { grad: ["#aaa","#333"] } as a placeholder. Swap grads for imgs as
+// real work lands — nothing else needs to change.
+//
+// To publish a full case study: set `published: true` and fill `modules`.
+// Projects without modules still render a valid lighter case-study page
+// (lede + meta + overview + "full case study on request").
+// ============================================================
+
+export const projects = [
+  {
+    slug: "phillips",
+    name: "Phillips",
+    year: "2025",
+    discipline: "Product Design",
+    role: "Lead Product Designer",
+    services: ["Product Design", "UX/UI", "Design System"],
+    tags: ["Product Design", "UX/UI", "Design System"],
+    cover: { img: "/media/phillips.jpg" },
+    grad: ["#2a2d33", "#15161a"],
+    hoverImages: ["/media/phil-1.jpg", "/media/phil-2.jpg", "/media/phil-3.jpg"],
+    summary: "Auction platform · 2025",
+    published: false,
+    lede: { lead: "Phillips,", rest: "a faster, clearer path from catalogue to bid." },
+    overview: {
+      heading: "Overview",
+      body: [
+        "Phillips is a leading international auction house for 20th-century and contemporary art, design and luxury. The work focused on the digital bidding experience — making a dense, fast-moving catalogue feel calm, legible and quick to act on.",
+        "Role spanned product design, UX/UI and contributions to the design system that keeps the platform consistent across sale formats. Full case study available on request.",
+      ],
+    },
+  },
+
+  {
+    slug: "christies",
+    name: "Christie's",
+    year: "2025",
+    discipline: "Search & Discovery",
+    role: "Lead Product Designer",
+    services: ["Branding", "Product Design", "Product Strategy", "UX/UI", "Visual Design"],
+    tags: ["Product Design", "UX Strategy"],
+    cover: { grad: ["#b7a890", "#6f6353"] },
+    grad: ["#b7a890", "#6f6353"],
+    hoverImages: [],
+    summary: "Search & discovery · 2025",
+    published: true,
+    lede: { lead: "Christie's,", rest: "Transforming how collectors search & discover." },
+    detail: {
+      eyebrow: "Search & Discovery",
+      heading: "Connecting people with the objects they'll want to own.",
+      image: { grad: ["#b7a890", "#6f6353"] },
+      body: [
+        "As online bidding surged amid shifting behaviours, the brief was to rethink how collectors find work across every digital touchpoint — making search feel contextual, editorial and fast rather than transactional.",
+        "We redesigned global search with new autosuggestions, rolled out Browse All and 500 artist & category landing pages, launched a CRM to create alerts and follow artists, and shipped a specialist-facing native app for estimations and selling.",
+        "The result tied discovery back to Christie's editorial voice while measurably shortening the path from interest to bid.",
+      ],
+    },
+    modules: [
+      { type: "full", ar: "ar-wide", label: "Global search redesign", media: { grad: ["#b7a890", "#6f6353"] } },
+      {
+        type: "statement",
+        text:
+          "Included are accomplishments designed, built and shipped by understanding the problem space — connecting customers with the items most relevant to them, from a global search redesign to new browse and discovery surfaces.",
+        cta: { label: "Read more" },
+      },
+      {
+        type: "row",
+        cols: [
+          { span: "col-8", kind: "media", ar: "ar-std", label: "Browse all", media: { grad: ["#2b5a55", "#123330"] } },
+          {
+            span: "col-4",
+            kind: "detail",
+            eyebrow: "The approach",
+            copy:
+              "500 new artist & category landing pages, a CRM to create alerts and follow artists, and a specialist-facing app for estimations — each shipped against a measured problem.",
+            label: "Browse & discovery",
+            cta: true,
+          },
+        ],
+      },
+      {
+        type: "row",
+        cols: [
+          {
+            span: "col-5",
+            kind: "carousel",
+            slides: [
+              { tag: "Billboard", body: "With a broader brand toolkit, the work now lives on the shelves of the world's largest retailers without losing its identity.", media: { grad: ["#c9c3b4", "#8d8574"] } },
+              { tag: "Out of home", body: "A system designed to carry consistently from pack to poster across every surface.", media: { grad: ["#d7d2c4", "#a39b86"] } },
+              { tag: "Product", body: "The hero surfaces, shot to feel editorial rather than clinical.", media: { grad: ["#8fa58c", "#43593f"] } },
+              { tag: "Identity", body: "A flexible logo system that adapts across formats while staying unmistakably one brand.", media: { grad: ["#b7a890", "#6f6353"] } },
+            ],
+          },
+          { span: "col-7", kind: "media", ar: "ar-tall", label: "In-situ · retail", media: { grad: ["#5f8f63", "#24401f"] } },
+        ],
+      },
+      {
+        type: "row",
+        tight: true,
+        cols: [
+          { span: "col-7", kind: "media", ar: "ar-std", fill: true, label: "Focal point", media: { grad: ["#24401f", "#0f1f0c"] } },
+          {
+            span: "col-5",
+            kind: "stack",
+            items: [
+              { kind: "media", ar: "ar-wide", label: "Detail", media: { grad: ["#cfd6c3", "#aab59a"] } },
+              { kind: "detail", copy: "The same search patterns, now part of a system as adaptive as the collection it surfaces.", label: "Logo lockup", cta: true },
+            ],
+          },
+        ],
+      },
+      {
+        type: "row",
+        cols: [
+          { span: "col-6", kind: "media", ar: "ar-std", label: "CRM & alerts", media: { grad: ["#5b6b7d", "#2f3a47"] } },
+          { span: "col-6", kind: "media", ar: "ar-std", label: "Watch compare", media: { grad: ["#8a7fa6", "#4b4661"] } },
+        ],
+      },
+      {
+        type: "statement",
+        text:
+          "Transforming search and discovery across digital touchpoints — embracing a more user-centred and contextually relevant approach.",
+        cta: { label: "Full case study" },
+      },
+    ],
+    overview: {
+      heading: "Overview",
+      body: [
+        "Christie's is one of the world's leading auction houses, selling art and luxury across live and online sales to collectors in nearly every country. As the market moved online, the challenge was making a vast, specialist catalogue feel discoverable to a new generation of buyers without losing the expertise that defines the brand.",
+        "We were brought in to rethink how collectors search and discover — connecting people with the lots most relevant to them. The work spanned a global search redesign, 500 new artist and category landing pages, a CRM to follow artists and set alerts, and a specialist-facing app for estimations, each shipped against a measured problem.",
+      ],
+    },
+  },
+
+  // --- Remaining shelf: roster + grid entries. Lighter case pages for now;
+  //     promote any to a full study by adding `modules` + `published: true`. ---
+  mk("zalando", "Zalando", "2024", "Design System", ["Design System", "UX/UI"], ["#5b6b7d", "#2f3a47"], "Design system · 2024"),
+  mk("frontify", "Frontify", "2024", "Brand & Web", ["Brand", "Web"], ["#8a7fa6", "#4b4661"], "Brand & web · 2024"),
+  mk("channel-4", "Channel 4", "2023", "Product Design", ["Product Design", "Prototyping"], ["#2b5a55", "#123330"], "Product design · 2023"),
+  mk("cazoo", "Cazoo", "2023", "UX Strategy", ["UX Strategy", "Product Design"], ["#7f8a74", "#49513f"], "UX strategy · 2023"),
+  mk("lta-rally", "LTA Rally", "2022", "Campaign", ["Campaign", "Art Direction"], ["#b08767", "#6e4f38"], "Campaign · 2022"),
+  mk("just-eat", "Just Eat", "2022", "Product Design", ["Product Design", "UX/UI"], ["#8f8a55", "#514d2c"], "Product design · 2022"),
+  mk("honda", "HONDA", "2021", "Prototyping", ["Prototyping", "Motion"], ["#6a7883", "#374149"], "Prototyping · 2021"),
+  mk("bt-tv", "BT TV", "2021", "Interaction", ["Interaction", "UX/UI"], ["#4a4f86", "#262a4e"], "Interaction · 2021"),
+  mk("bookinggo", "BookingGo", "2020", "Product Design", ["Product Design", "UX Strategy"], ["#5d8079", "#30473f"], "Product design · 2020"),
+];
+
+// helper for the lighter shelf entries
+function mk(slug, name, year, discipline, tags, grad, summary) {
+  return {
+    slug,
+    name,
+    year,
+    discipline,
+    role: "Lead Product Designer",
+    services: tags,
+    tags,
+    cover: { grad },
+    grad,
+    hoverImages: [],
+    summary,
+    published: false,
+    lede: { lead: name + ",", rest: discipline + " for a measured outcome." },
+    overview: {
+      heading: "Overview",
+      body: [
+        "A selected engagement covering " +
+          discipline.toLowerCase() +
+          ". This entry is part of the working shelf; the full case study is available on request.",
+      ],
+    },
+  };
+}
+
+export const allProjects = projects;
+
+export function getProject(slug) {
+  return projects.find((p) => p.slug === slug) || null;
+}
+
+export function getPrevNext(slug) {
+  const i = projects.findIndex((p) => p.slug === slug);
+  if (i < 0) return { prev: null, next: null };
+  const prevP = projects[(i - 1 + projects.length) % projects.length];
+  const nextP = projects[(i + 1) % projects.length];
+  const toNav = (p) => ({
+    name: p.name,
+    href: "/work/" + p.slug,
+    thumb: p.cover.img ? `url(${p.cover.img})` : `linear-gradient(145deg, ${p.grad[0]}, ${p.grad[1]})`,
+  });
+  return { prev: toNav(prevP), next: toNav(nextP) };
+}
+
+// shared helper: turn a media spec into a CSS background value
+export function mediaBg(media) {
+  if (!media) return "var(--surface)";
+  if (media.img) return `center / cover no-repeat url(${media.img})`;
+  if (media.grad) return `linear-gradient(145deg, ${media.grad[0]}, ${media.grad[1]})`;
+  return "var(--surface)";
+}

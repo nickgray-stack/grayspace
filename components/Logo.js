@@ -1,0 +1,9 @@
+// NICKGRAY wordmark. `fill: currentColor` (black on light, white on dark).
+// Exported both as a raw string (for the ink-bleed nav logo, which React treats
+// as opaque) and as a JSX component (for the static footer mark).
+
+export const LOGO_SVG = `<svg class="logomark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.77 24.86" role="img" aria-label="Nick Gray"><path class="cls-1" d="M150.93,16.33v7.81h-7.81V.72h17.09c6.97,0,9.51,3.18,9.51,7.92,0,3.5-1.66,5.49-3.95,6.31l3.95,9.19h-8.36l-2.89-7.8h-.39s-7.15-.01-7.15-.01ZM150.93,11.09h7.51c1.9,0,2.92-.98,2.92-2.59s-1.02-2.53-2.92-2.53h-7.51v5.12Z"/><path class="cls-1" d="M0,.72h8.99l10.86,14.66h.07V.72h7.54v23.42h-8.63L7.61,9.35h-.07v14.79H0V.72Z"/><path class="cls-1" d="M30.91.72h7.81v23.42h-7.81V.72Z"/><path class="cls-1" d="M71.61,15.12c-.95,5.05-3.74,9.74-14.83,9.74-9.91,0-14.73-4.36-14.73-12.43S46.62,0,56.79,0c7.15,0,13.05,1.64,14.76,9.74h-8.69c-.46-1.67-1.61-4.49-6.04-4.49-4.89,0-6.49,3.31-6.49,7.18s1.44,7.18,6.49,7.18c3.51,0,5.61-1.77,6.13-4.49h8.66Z"/><path class="cls-1" d="M74.96.72h7.81v9.18L92.54.72h10.4l-10.59,9.22,11.41,14.2h-10.43l-7.25-9.35-3.31,2.76v6.59h-7.81V.72Z"/><path class="cls-1" d="M127.17,10.86h12.59v13.28h-3.64l-.95-2.43c-1.02,1.15-4.03,3.15-10.1,3.15-10.23,0-14.73-4.36-14.73-12.43,0-6.89,4.56-12.43,14.69-12.43,6.46,0,13.74,1.67,14.73,8.43h-8.82c-.49-1.8-1.9-3.38-5.58-3.38-4.79,0-6.95,3.28-6.95,7.41s2.16,7.35,6.95,7.35c3.84,0,5.84-1.44,6.59-4.1h-4.79v-4.85Z"/><path class="cls-1" d="M182.91.72h9.54l10.07,23.42h-8.36l-1.41-3.8h-10.23l-1.41,3.8h-8.36L182.91.72ZM187.66,6.63h-.07l-3.25,8.86h6.56l-3.25-8.86Z"/><path class="cls-1" d="M208.57,16.76L198.17.72h9.05l5.25,9.94,5.25-9.94h9.05l-10.4,16.04v7.38h-7.81v-7.38Z"/></svg>`;
+
+export default function Logo({ className }) {
+  return <span className={className} dangerouslySetInnerHTML={{ __html: LOGO_SVG }} />;
+}
