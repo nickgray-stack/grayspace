@@ -212,7 +212,7 @@ html.js .r.in{opacity:1; transform:none;}
 .case .modhead{max-width:52ch; margin-bottom:clamp(22px,3vw,34px); font-size:clamp(1.3rem,2.4vw,1.9rem); font-weight:500; line-height:1.28; letter-spacing:-.015em; text-wrap:balance;}
 .case .stack{display:flex; flex-direction:column; gap:8px; height:100%;}
 .case .stack .media{flex:none}
-.case .detail{background:var(--white); border-radius:var(--r-sm); padding:26px; display:flex; flex-direction:column; justify-content:space-between; gap:22px; height:100%; flex:1;}
+.case .detail{background:var(--white); border-radius:var(--r-sm); padding:26px; display:flex; flex-direction:column; justify-content:space-between; gap:22px; height:100%; flex:1; min-height:300px;}
 .case .detail p{font-size:1rem; color:var(--fg); margin:0;}
 .case .detail .eyebrow{font-size:.78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:12px;}
 .case .btn-exp{display:inline-flex; align-items:center; height:56px; border-radius:999px; border:0; background:var(--surface); color:var(--fg); cursor:pointer; overflow:hidden; font-family:inherit; transition:background .2s;}
