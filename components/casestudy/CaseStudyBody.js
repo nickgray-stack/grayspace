@@ -6,6 +6,43 @@ import Carousel from "./Carousel";
 
 const PlusIco = () => <Plus className="i" size={24} strokeWidth={1.75} aria-hidden="true" />;
 
+// aspect-ratio for fixed-ratio media: from an explicit ratio ("16:9") or a legacy ar class.
+const AR = { "ar-wide": "16/9", "ar-std": "4/3", "ar-tall": "3/4", "ar-portrait": "4/5", "ar-square": "1/1" };
+function arCss(c) {
+  if (c.ratio && c.ratio !== "free") return c.ratio.replace(":", "/");
+  return AR[c.ar] || "4/3";
+}
+
+// Hybrid media container. Real image → free-ratio (image sets its own height) or
+// fixed-ratio (crop to fill). Gradient placeholder → fixed-ratio box.
+function MediaBox({ c, fill }) {
+  const img = c.media && c.media.img;
+  const free = c.ratio === "free" || (c.media && c.media.ratio === "free");
+  const alt = (c.media && c.media.alt) || c.label || "";
+  if (img && free) {
+    return (
+      <figure className="media free">
+        <img className="mfit" src={c.media.img} alt={alt} loading="lazy" />
+        {c.label && <span className="label">{c.label}</span>}
+      </figure>
+    );
+  }
+  const style = { aspectRatio: arCss(c), ...(fill ? { height: "100%" } : null) };
+  if (img) {
+    return (
+      <div className="media" style={style}>
+        <img className="mcover" src={c.media.img} alt={alt} loading="lazy" />
+        {c.label && <span className="label">{c.label}</span>}
+      </div>
+    );
+  }
+  return (
+    <div className="media" style={{ background: mediaBg(c.media), ...style }}>
+      {c.label && <span className="label">{c.label}</span>}
+    </div>
+  );
+}
+
 // Renders the case-study module array + the shared detail overlay (desktop modal
 // / mobile bottom-sheet with drag-to-dismiss). All `+` / CTA buttons open the
 // one overlay built from `detail`. Ported from the prototype.
@@ -118,14 +155,7 @@ export default function CaseStudyBody({ modules = [], detail }) {
 
   const onOpen = (e) => openOv(e.currentTarget);
 
-  const renderMedia = (c, inStack) => (
-    <div
-      className={"media " + (c.ar || "ar-std")}
-      style={{ background: mediaBg(c.media), ...(c.fill ? { height: "100%" } : null) }}
-    >
-      {c.label && <span className="label">{c.label}</span>}
-    </div>
-  );
+  const renderMedia = (c, inStack) => <MediaBox c={c} fill={c.fill} />;
 
   const renderDetail = (c) => (
     <div className="detail">
@@ -191,9 +221,7 @@ export default function CaseStudyBody({ modules = [], detail }) {
         <section className="section wrap" key={i}>
           <div className="grid">
             <div className="col-12 r">
-              <div className={"media " + (m.ar || "ar-wide")} style={{ background: mediaBg(m.media) }}>
-                {m.label && <span className="label">{m.label}</span>}
-              </div>
+              <MediaBox c={m} />
             </div>
           </div>
         </section>
