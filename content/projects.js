@@ -69,6 +69,34 @@ export const projects = [
         ],
       },
       {
+        type: "row",
+        cols: [
+          {
+            span: "col-5",
+            kind: "device",
+            device: {
+              variant: "iphone",
+              storyUI: true,
+              user: "Phillipsauction",
+              time: "18h",
+              screen: {
+                video: "/media/phillips/story-placeholder.mp4",
+                poster: "/media/phillips/story-placeholder-poster.webp",
+              },
+            },
+          },
+          {
+            span: "col-7",
+            kind: "detail",
+            eyebrow: "Social & story",
+            copy: "Launch moments ran as native IG-story takeovers. The chrome — progress bar, header, nav — is composited live over the clip, so the same footage reflows for any device without re-exporting.",
+            label: "Story takeover",
+            cta: true,
+          },
+        ],
+      },
+      { type: "full", ratio: "16:9", label: "Motion", media: { video: "/media/phillips/story-placeholder.mp4", poster: "/media/phillips/story-placeholder-poster.webp" } },
+      {
         type: "statement",
         text:
           "The first iOS phase launched within six months. The calendar redesign nearly doubled click-to-register — from 618 to 1,100+ over 90 days — and shared tokens cut design-to-development friction across the team.",

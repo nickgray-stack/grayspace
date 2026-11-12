@@ -102,6 +102,34 @@ figure.media{margin:0;}
 .ar-wide{aspect-ratio:var(--ar-wide)} .ar-std{aspect-ratio:var(--ar-std)} .ar-tall{aspect-ratio:var(--ar-tall)} .ar-portrait{aspect-ratio:var(--ar-portrait)} .ar-square{aspect-ratio:var(--ar-square)}
 
 /* ============================================================
+   VIDEO + DEVICE FRAME — live-layered mockups
+   ============================================================ */
+.media .vmcover{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; background:var(--surface);}
+.media.free .vmfit{position:static; width:100%; height:auto; display:block; background:var(--surface);}
+
+.device{width:100%; display:flex; justify-content:center;}
+.device-frame{position:relative; width:100%; max-width:360px; aspect-ratio:1179/2556; background:linear-gradient(150deg,#3b3b3e 0%,#1a1a1c 44%,#0e0e10 100%); border-radius:14.5% / 6.6%; padding:2.4%; box-shadow:0 34px 70px -24px rgba(0,0,0,.45), 0 4px 10px rgba(0,0,0,.25), inset 0 0 0 1.5px rgba(255,255,255,.09), inset 0 0 0 6px rgba(0,0,0,.4);}
+.device-screen{position:relative; width:100%; height:100%; border-radius:12.4% / 5.6%; overflow:hidden; background:#000; isolation:isolate;}
+.device-island{position:absolute; z-index:6; top:2.6%; left:50%; transform:translateX(-50%); width:30%; max-width:112px; aspect-ratio:3.2/1; background:#000; border-radius:999px;}
+.device-content{position:absolute; inset:0; z-index:1;}
+.device-content > video,.device-content > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
+
+.dsb{position:absolute; z-index:4; top:0; left:0; right:0; height:14%; max-height:52px; display:flex; align-items:flex-start; justify-content:space-between; padding:5.5% 7% 0; color:#fff; pointer-events:none;}
+.dsb-time{font:600 clamp(12px,3.6vw,15px)/1 var(--font); letter-spacing:.01em;}
+.dsb-icons{display:flex; align-items:center; gap:5px;}
+
+.igs{position:absolute; z-index:5; top:0; left:0; right:0; padding:14% 4% 0; pointer-events:none;}
+.igs-bars{display:flex; gap:4px; margin-bottom:10px;}
+.igs-bar{position:relative; flex:1; height:2.5px; border-radius:2px; background:rgba(255,255,255,.4); overflow:hidden;}
+.igs-bar.on{background:rgba(255,255,255,.95);}
+.igs-bar i{position:absolute; inset:0; width:55%; background:#fff;}
+.igs-head{display:flex; align-items:center; gap:8px; color:#fff;}
+.igs-av{width:26px; height:26px; border-radius:999px; background:#111; color:#fff; display:flex; align-items:center; justify-content:center; font:700 13px/1 var(--font); border:1.5px solid rgba(255,255,255,.9);}
+.igs-name{font:600 13px/1 var(--font);}
+.igs-time{font:500 12px/1 var(--font); opacity:.7;}
+.igs-x{margin-left:auto; font-size:17px; opacity:.95;}
+
+/* ============================================================
    FOOTER — shared mark + email row; case-study adds .pn above
    ============================================================ */
 footer{background:var(--bg); border-top:1px solid var(--border); margin-top:clamp(40px,6vw,80px);}

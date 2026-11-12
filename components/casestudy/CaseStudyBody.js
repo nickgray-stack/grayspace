@@ -3,6 +3,8 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Plus, X } from "lucide-react";
 import { mediaBg } from "@/content/projects";
 import Carousel from "./Carousel";
+import VideoMedia from "./VideoMedia";
+import DeviceFrame from "./DeviceFrame";
 
 const PlusIco = () => <Plus className="i" size={24} strokeWidth={1.75} aria-hidden="true" />;
 
@@ -19,6 +21,16 @@ function MediaBox({ c, fill }) {
   const img = c.media && c.media.img;
   const free = c.ratio === "free" || (c.media && c.media.ratio === "free");
   const alt = (c.media && c.media.alt) || c.label || "";
+  const video = c.media && c.media.video;
+  if (video) {
+    const vstyle = { aspectRatio: arCss(c), ...(fill ? { height: "100%" } : null) };
+    return (
+      <div className="media" style={vstyle}>
+        <VideoMedia src={video} webm={c.media.webm} poster={c.media.poster} cover />
+        {c.label && <span className="label">{c.label}</span>}
+      </div>
+    );
+  }
   if (img && free) {
     return (
       <figure className="media free">
@@ -42,6 +54,34 @@ function MediaBox({ c, fill }) {
     </div>
   );
 }
+
+// Device mockup column. `device.screen` is a video ({video,poster}) or image
+// ({img}); chrome (status bar, IG-story UI) is composited live, not baked in.
+function DeviceBox({ c }) {
+  const d = c.device || {};
+  const s = d.screen || {};
+  const screen = s.video ? (
+    <VideoMedia src={s.video} webm={s.webm} poster={s.poster} cover />
+  ) : (
+    <img src={s.img} alt={s.alt || c.label || ""} loading="lazy" />
+  );
+  return (
+    <div className="devicewrap">
+      <DeviceFrame
+        variant={d.variant || "iphone"}
+        statusBar={d.statusBar !== false}
+        storyUI={!!d.storyUI}
+        user={d.user}
+        time={d.time}
+      >
+        {screen}
+      </DeviceFrame>
+    </div>
+  );
+}
+
+const renderVisual = (c, fill) =>
+  c.kind === "device" || c.device ? <DeviceBox c={c} /> : <MediaBox c={c} fill={fill} />;
 
 // Renders the case-study module array + the shared detail overlay (desktop modal
 // / mobile bottom-sheet with drag-to-dismiss). All `+` / CTA buttons open the
@@ -155,7 +195,7 @@ export default function CaseStudyBody({ modules = [], detail }) {
 
   const onOpen = (e) => openOv(e.currentTarget);
 
-  const renderMedia = (c, inStack) => <MediaBox c={c} fill={c.fill} />;
+  const renderMedia = (c, inStack) => renderVisual(c, c.fill);
 
   const renderDetail = (c) => (
     <div className="detail">
@@ -220,9 +260,7 @@ export default function CaseStudyBody({ modules = [], detail }) {
       return (
         <section className="section wrap" key={i}>
           <div className="grid">
-            <div className="col-12 r">
-              <MediaBox c={m} />
-            </div>
+            <div className="col-12 r">{renderVisual(m)}</div>
           </div>
         </section>
       );
