@@ -108,10 +108,16 @@ figure.media{margin:0;}
 .media.free .vmfit{position:static; width:100%; height:auto; display:block; background:var(--surface);}
 
 .device{width:100%; display:flex; justify-content:center;}
-.device-frame{position:relative; width:100%; max-width:360px; aspect-ratio:1179/2556; background:linear-gradient(150deg,#3b3b3e 0%,#1a1a1c 44%,#0e0e10 100%); border-radius:14.5% / 6.6%; padding:2.4%; box-shadow:0 34px 70px -24px rgba(0,0,0,.45), 0 4px 10px rgba(0,0,0,.25), inset 0 0 0 1.5px rgba(255,255,255,.09), inset 0 0 0 6px rgba(0,0,0,.4);}
+.device-frame{position:relative; width:100%; max-width:360px; aspect-ratio:1179/2556; background:linear-gradient(145deg,#4a4a4f 0%,#2a2a2d 28%,#131315 60%,#0b0b0d 100%); border-radius:15% / 6.8%; padding:2.6%; box-shadow:0 36px 74px -26px rgba(0,0,0,.5), 0 5px 12px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.18), inset 0 0 0 5px rgba(0,0,0,.5), inset 1px 1px 2px 5px rgba(255,255,255,.05);}
+.db{position:absolute; z-index:0; background:linear-gradient(180deg,#3d3d40,#141416); box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 1px 2px rgba(0,0,0,.35); border-radius:2px;}
+.db-act{left:-2px; top:16.5%; width:3px; height:3.6%;}
+.db-vup{left:-2px; top:24%; width:3px; height:6.2%;}
+.db-vdn{left:-2px; top:32%; width:3px; height:6.2%;}
+.db-pwr{right:-2px; top:23%; width:3px; height:9.6%;}
 .device-screen{position:relative; width:100%; height:100%; border-radius:12.4% / 5.6%; overflow:hidden; background:#000; isolation:isolate;}
 .device-island{position:absolute; z-index:6; top:2.6%; left:50%; transform:translateX(-50%); width:30%; max-width:112px; aspect-ratio:3.2/1; background:#000; border-radius:999px;}
 .device-content{position:absolute; inset:0; z-index:1;}
+.device-scrim{position:absolute; z-index:3; top:0; left:0; right:0; height:26%; background:linear-gradient(rgba(8,8,8,.55), rgba(8,8,8,.14) 52%, transparent); pointer-events:none;}
 .device-content > video,.device-content > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
 
 .dsb{position:absolute; z-index:4; top:0; left:0; right:0; height:14%; max-height:52px; display:flex; align-items:flex-start; justify-content:space-between; padding:5.5% 7% 0; color:#fff; pointer-events:none;}

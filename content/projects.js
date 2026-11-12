@@ -80,8 +80,9 @@ export const projects = [
               user: "Phillipsauction",
               time: "18h",
               screen: {
-                video: "/media/phillips/story-placeholder.mp4",
-                poster: "/media/phillips/story-placeholder-poster.webp",
+                video: "/media/phillips/story.mp4",
+                webm: "/media/phillips/story.webm",
+                poster: "/media/phillips/story-poster.webp",
               },
             },
           },
@@ -95,7 +96,6 @@ export const projects = [
           },
         ],
       },
-      { type: "full", ratio: "16:9", label: "Motion", media: { video: "/media/phillips/story-placeholder.mp4", poster: "/media/phillips/story-placeholder-poster.webp" } },
       {
         type: "statement",
         text:

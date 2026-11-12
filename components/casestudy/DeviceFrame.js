@@ -14,9 +14,14 @@ export default function DeviceFrame({
   return (
     <div className={"device device-" + variant}>
       <div className="device-frame">
+        <span className="db db-act" aria-hidden="true" />
+        <span className="db db-vup" aria-hidden="true" />
+        <span className="db db-vdn" aria-hidden="true" />
+        <span className="db db-pwr" aria-hidden="true" />
         <span className="device-island" aria-hidden="true" />
         <div className="device-screen">
           <div className="device-content">{children}</div>
+          {(statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
           {statusBar && <StatusBar />}
           {storyUI && <StoryChrome user={user} time={time} />}
         </div>
