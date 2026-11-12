@@ -83,6 +83,8 @@ export const projects = [
                 video: "/media/phillips/story.mp4",
                 webm: "/media/phillips/story.webm",
                 poster: "/media/phillips/story-poster.webp",
+                fit: "contain",
+                bg: "#ffffff",
               },
             },
           },

@@ -73,6 +73,8 @@ function DeviceBox({ c }) {
         storyUI={!!d.storyUI}
         user={d.user}
         time={d.time}
+        fit={s.fit}
+        screenBg={s.bg}
       >
         {screen}
       </DeviceFrame>

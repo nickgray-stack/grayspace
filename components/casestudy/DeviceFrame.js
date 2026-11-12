@@ -9,6 +9,8 @@ export default function DeviceFrame({
   storyUI = false,
   user = "Phillipsauction",
   time = "18h",
+  fit = "cover",
+  screenBg,
   children,
 }) {
   return (
@@ -19,8 +21,8 @@ export default function DeviceFrame({
         <span className="db db-vdn" aria-hidden="true" />
         <span className="db db-pwr" aria-hidden="true" />
         <span className="device-island" aria-hidden="true" />
-        <div className="device-screen">
-          <div className="device-content">{children}</div>
+        <div className="device-screen" style={screenBg ? { background: screenBg } : undefined}>
+          <div className={"device-content" + (fit === "contain" ? " fit-contain" : "")}>{children}</div>
           {(statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
           {statusBar && <StatusBar />}
           {storyUI && <StoryChrome user={user} time={time} />}
