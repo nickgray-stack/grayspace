@@ -208,11 +208,11 @@ html.js .r.in{opacity:1; transform:none;}
 .case .meta .cell .v{font-size:1.05rem; font-weight:600;}
 .case .meta .cell.keywords{max-width:clamp(220px,26vw,360px);} .case .meta .cell.keywords .v{line-height:1.45;}
 .case .overview{display:grid; grid-template-columns:clamp(220px,28%,400px) minmax(0,1fr); gap:clamp(24px,5vw,90px); align-items:start;}
-.case .overview h2{font-size:clamp(2rem,4.6vw,3.4rem); font-weight:700; letter-spacing:-.02em; line-height:1.0; margin:0;}
+.case .overview h2{font-size:clamp(2.4rem,6vw,4.5rem); font-weight:700; letter-spacing:-.025em; line-height:1.0; margin:0; position:sticky; top:96px; align-self:start;}
 .case .overview .body{max-width:64ch;}
 .case .overview .body p{font-size:clamp(1.08rem,1.4vw,1.4rem); line-height:1.5; letter-spacing:-.005em; margin:0 0 1.1em; color:var(--fg);}
 .case .overview .body p:last-child{margin-bottom:0;}
-@media (max-width:760px){ .case .overview{grid-template-columns:1fr; gap:14px;} }
+@media (max-width:760px){ .case .overview{grid-template-columns:1fr; gap:14px;} .case .overview h2{position:static;} }
 .case .section{padding-block:clamp(10px,1.4vw,18px);}
 .case .section.statement{padding-block:clamp(40px,6vw,88px);}
 .case .modhead{max-width:52ch; margin-bottom:clamp(22px,3vw,34px); font-size:clamp(1.3rem,2.4vw,1.9rem); font-weight:500; line-height:1.28; letter-spacing:-.015em; text-wrap:balance;}
