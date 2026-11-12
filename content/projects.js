@@ -70,13 +70,15 @@ export const projects = [
       },
       {
         type: "row",
+        tight: true,
         cols: [
           {
-            span: "col-5",
+            span: "col-6",
             kind: "device",
+            frame: { bg: "#000000", ar: "r45" },
             device: {
-              variant: "iphone",
               storyUI: true,
+              bottomNav: true,
               user: "Phillipsauction",
               time: "18h",
               screen: {
@@ -89,11 +91,34 @@ export const projects = [
             },
           },
           {
+            span: "col-6",
+            kind: "device",
+            frame: { bg: "#EAE9E6", ar: "r45" },
+            device: {
+              storyUI: true,
+              bottomNav: true,
+              user: "Phillipsauction",
+              time: "18h",
+              screen: {
+                video: "/media/phillips/watch.mp4",
+                webm: "/media/phillips/watch.webm",
+                poster: "/media/phillips/watch-poster.webp",
+                fit: "contain",
+                bg: "#ffffff",
+              },
+            },
+          },
+        ],
+      },
+      {
+        type: "row",
+        cols: [
+          {
             span: "col-7",
             kind: "detail",
             eyebrow: "Social & story",
-            copy: "Launch moments ran as native IG-story takeovers. The chrome — progress bar, header, nav — is composited live over the clip, so the same footage reflows for any device without re-exporting.",
-            label: "Story takeover",
+            copy: "The INTERSECT watch sale ran as native IG-story takeovers. The chrome — progress bar, header, nav — is composited live over the footage, so the same clip reflows for any device or ratio without re-exporting.",
+            label: "INTERSECT campaign",
             cta: true,
           },
         ],

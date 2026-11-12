@@ -1,40 +1,39 @@
-// Device mockup that composites LIVE layers over the screen content, so chrome
-// (status bar, IG-story UI, modals, overlay animations) is crisp HTML/CSS rather
-// than baked into the video asset. Screen content (a VideoMedia or <img>, plus
-// any overlay) is passed as children. Variants: iphone (more to come: android,
-// tablet, desktop).
+// Device mockup built on the EXACT Figma titanium bezel (exported from the design
+// system as a transparent PNG). The screen content (VideoMedia / <img>) and the
+// iOS + IG-story chrome are composited LIVE inside the real screen rectangle, so
+// the frame stays pixel-crisp at any size and chrome is never baked into a video.
+//
+// Geometry (Figma node, device 460 × 957.82): screen inset L/R 3.183% T/B 1.528%;
+// screen radius 63.45px → 14.73% / 6.83% of the screen box.
 export default function DeviceFrame({
-  variant = "iphone",
   statusBar = true,
   storyUI = false,
+  bottomNav = false,
   user = "Phillipsauction",
   time = "18h",
   fit = "cover",
   screenBg,
   children,
 }) {
+  const light = screenBg === "#ffffff" || screenBg === "#fff";
   return (
-    <div className={"device device-" + variant}>
-      <div className="device-frame">
-        <span className="db db-act" aria-hidden="true" />
-        <span className="db db-vup" aria-hidden="true" />
-        <span className="db db-vdn" aria-hidden="true" />
-        <span className="db db-pwr" aria-hidden="true" />
-        <span className="device-island" aria-hidden="true" />
-        <div className="device-screen" style={screenBg ? { background: screenBg } : undefined}>
-          <div className={"device-content" + (fit === "contain" ? " fit-contain" : "")}>{children}</div>
-          {(statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
-          {statusBar && <StatusBar />}
-          {storyUI && <StoryChrome user={user} time={time} />}
-        </div>
+    <div className="device">
+      <div className="device-screen" style={screenBg ? { background: screenBg } : undefined}>
+        <div className={"device-content fit-" + fit}>{children}</div>
+        {!light && (statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
+        {statusBar && <StatusBar dark={light} />}
+        {storyUI && <StoryChrome user={user} time={time} light={light} />}
+        {storyUI && bottomNav && <StoryFoot light={light} />}
       </div>
+      <span className="device-island" aria-hidden="true" />
+      <img className="device-bezel" src="/media/iphone-titanium.png" alt="" aria-hidden="true" />
     </div>
   );
 }
 
-function StatusBar() {
+function StatusBar({ dark }) {
   return (
-    <div className="dsb" aria-hidden="true">
+    <div className={"dsb" + (dark ? " dark" : "")} aria-hidden="true">
       <span className="dsb-time">9:41</span>
       <span className="dsb-icons">
         <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
@@ -45,9 +44,9 @@ function StatusBar() {
   );
 }
 
-function StoryChrome({ user, time }) {
+function StoryChrome({ user, time, light }) {
   return (
-    <div className="igs" aria-hidden="true">
+    <div className={"igs" + (light ? " light" : "")} aria-hidden="true">
       <div className="igs-bars">
         <span className="igs-bar"><i /></span>
         <span className="igs-bar on" />
@@ -57,8 +56,19 @@ function StoryChrome({ user, time }) {
         <span className="igs-av">P</span>
         <span className="igs-name">{user}</span>
         <span className="igs-time">{time}</span>
-        <span className="igs-x">✕</span>
+        <span className="igs-dots">⋯</span>
+        <svg className="igs-x" width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M5 5l12 12M17 5 5 17"/></svg>
       </div>
+    </div>
+  );
+}
+
+function StoryFoot({ light }) {
+  return (
+    <div className={"igf" + (light ? " light" : "")} aria-hidden="true">
+      <span className="igf-input">Send message</span>
+      <svg className="igf-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-7.5-4.6-7.5-10A4.5 4.5 0 0 1 12 8a4.5 4.5 0 0 1 7.5 3c0 5.4-7.5 10-7.5 10Z"/></svg>
+      <svg className="igf-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M21 3 3 10.5l6.5 2.5L12 20l9-17Z"/><path d="M9.5 13 21 3"/></svg>
     </div>
   );
 }

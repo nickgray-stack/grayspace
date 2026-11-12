@@ -107,34 +107,57 @@ figure.media{margin:0;}
 .media .vmcover{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; background:var(--surface);}
 .media.free .vmfit{position:static; width:100%; height:auto; display:block; background:var(--surface);}
 
-.device{width:100%; display:flex; justify-content:center;}
-.device-frame{position:relative; width:100%; max-width:360px; aspect-ratio:1179/2556; background:linear-gradient(145deg,#4a4a4f 0%,#2a2a2d 28%,#131315 60%,#0b0b0d 100%); border-radius:15% / 6.8%; padding:2.6%; box-shadow:0 36px 74px -26px rgba(0,0,0,.5), 0 5px 12px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.18), inset 0 0 0 5px rgba(0,0,0,.5), inset 1px 1px 2px 5px rgba(255,255,255,.05);}
-.db{position:absolute; z-index:0; background:linear-gradient(180deg,#3d3d40,#141416); box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 1px 2px rgba(0,0,0,.35); border-radius:2px;}
-.db-act{left:-2px; top:16.5%; width:3px; height:3.6%;}
-.db-vup{left:-2px; top:24%; width:3px; height:6.2%;}
-.db-vdn{left:-2px; top:32%; width:3px; height:6.2%;}
-.db-pwr{right:-2px; top:23%; width:3px; height:9.6%;}
-.device-screen{position:relative; width:100%; height:100%; border-radius:12.4% / 5.6%; overflow:hidden; background:#000; isolation:isolate;}
-.device-island{position:absolute; z-index:6; top:2.6%; left:50%; transform:translateX(-50%); width:30%; max-width:112px; aspect-ratio:3.2/1; background:#000; border-radius:999px;}
+/* Exact Figma titanium bezel (transparent PNG) behind a live screen + chrome.
+   Device 460×957.82 → aspect .48026. Screen inset L/R 3.183%, T/B 1.528%;
+   screen radius 63.45px → 14.73%/6.83% of the screen box. */
+.device{position:relative; width:100%; max-width:380px; margin-inline:auto; aspect-ratio:460 / 957.825;}
+.device-bezel{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:1; pointer-events:none; filter:drop-shadow(0 32px 56px rgba(0,0,0,.24)) drop-shadow(0 7px 16px rgba(0,0,0,.16));}
+.device-screen{position:absolute; z-index:2; top:1.528%; left:3.183%; right:3.183%; bottom:1.528%; border-radius:14.73% / 6.83%; overflow:hidden; background:#000; isolation:isolate;}
+.device-island{position:absolute; z-index:3; top:2.35%; left:50%; transform:translateX(-50%); width:29.3%; aspect-ratio:135 / 38; background:#040406; border-radius:999px;}
 .device-content{position:absolute; inset:0; z-index:1;}
-.device-scrim{position:absolute; z-index:3; top:0; left:0; right:0; height:26%; background:linear-gradient(rgba(8,8,8,.55), rgba(8,8,8,.14) 52%, transparent); pointer-events:none;}
 .device-content > video,.device-content > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
 .device-content.fit-contain > video,.device-content.fit-contain > img{object-fit:contain;}
+.device-content.fit-top{inset:0;}
+.device-content.fit-top > video,.device-content.fit-top > img{position:absolute; top:11%; left:50%; transform:translateX(-50%); inset:auto; width:112%; height:auto; object-fit:contain;}
+.device-scrim{position:absolute; z-index:2; top:0; left:0; right:0; height:22%; background:linear-gradient(rgba(8,8,8,.5), rgba(8,8,8,.12) 56%, transparent); pointer-events:none;}
 
-.dsb{position:absolute; z-index:4; top:0; left:0; right:0; height:14%; max-height:52px; display:flex; align-items:flex-start; justify-content:space-between; padding:5.5% 7% 0; color:#fff; pointer-events:none;}
-.dsb-time{font:600 clamp(12px,3.6vw,15px)/1 var(--font); letter-spacing:.01em;}
+.dsb{position:absolute; z-index:3; top:0; left:0; right:0; height:12.5%; max-height:56px; display:flex; align-items:flex-start; justify-content:space-between; padding:5% 8.5% 0; color:#fff; pointer-events:none;}
+.dsb-time{font:650 clamp(12px,3.4vw,16px)/1 var(--font); letter-spacing:.01em;}
 .dsb-icons{display:flex; align-items:center; gap:5px;}
+.dsb.dark, .dsb.dark .dsb-time{color:#0a0a0a;}
 
-.igs{position:absolute; z-index:5; top:0; left:0; right:0; padding:14% 4% 0; pointer-events:none;}
-.igs-bars{display:flex; gap:4px; margin-bottom:10px;}
+.igs{position:absolute; z-index:3; top:0; left:0; right:0; padding:13.5% 4.5% 0; pointer-events:none;}
+.igs-bars{display:flex; gap:4px; margin-bottom:11px;}
 .igs-bar{position:relative; flex:1; height:2.5px; border-radius:2px; background:rgba(255,255,255,.4); overflow:hidden;}
 .igs-bar.on{background:rgba(255,255,255,.95);}
 .igs-bar i{position:absolute; inset:0; width:55%; background:#fff;}
 .igs-head{display:flex; align-items:center; gap:8px; color:#fff;}
-.igs-av{width:26px; height:26px; border-radius:999px; background:#111; color:#fff; display:flex; align-items:center; justify-content:center; font:700 13px/1 var(--font); border:1.5px solid rgba(255,255,255,.9);}
-.igs-name{font:600 13px/1 var(--font);}
-.igs-time{font:500 12px/1 var(--font); opacity:.7;}
-.igs-x{margin-left:auto; font-size:17px; opacity:.95;}
+.igs-av{width:26px; height:26px; border-radius:999px; background:#111; color:#fff; display:flex; align-items:center; justify-content:center; font:700 13px/1 var(--font); border:1.5px solid rgba(255,255,255,.9); flex:none;}
+.igs-name{font:650 13px/1 var(--font);}
+.igs-time{font:500 12px/1 var(--font); opacity:.6;}
+.igs-dots{margin-left:auto; font-size:18px; line-height:1; letter-spacing:1px;}
+.igs-x{margin-left:10px; opacity:.95;}
+
+.igf{position:absolute; z-index:3; left:0; right:0; bottom:0; display:flex; align-items:center; gap:12px; padding:0 4.5% 6%; color:#fff; pointer-events:none;}
+.igf-input{flex:1; height:38px; border:1.4px solid rgba(255,255,255,.55); border-radius:999px; display:flex; align-items:center; padding:0 16px; color:rgba(255,255,255,.85); font:500 13px/1 var(--font);}
+.igf-ico{width:24px; height:24px; flex:none;}
+
+/* Light story (white screen): chrome goes dark, as in the Figma design. */
+.igs.light .igs-bar{background:rgba(0,0,0,.18);}
+.igs.light .igs-bar.on{background:rgba(0,0,0,.82);}
+.igs.light .igs-head{color:#0a0a0a;}
+.igs.light .igs-av{background:#0a0a0a; color:#fff; border-color:rgba(0,0,0,.08);}
+.igs.light .igs-time{opacity:.5;}
+.igf.light{color:#0a0a0a;}
+.igf.light .igf-input{border-color:rgba(0,0,0,.35); color:rgba(0,0,0,.6);}
+
+/* Two-column media/device frames carrying a background colour (campaign rows). */
+.vmframe{position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; border-radius:4px;}
+.vmframe.r45{aspect-ratio:4 / 5;}
+.vmframe.r34{aspect-ratio:3 / 4;}
+.vmframe .device{height:90%; width:auto; max-width:none;}
+.vmframe.bleed{align-items:flex-start;}
+.vmframe.bleed .device{height:150%; margin-top:-2%;}
 
 /* ============================================================
    FOOTER — shared mark + email row; case-study adds .pn above

@@ -66,24 +66,36 @@ function DeviceBox({ c }) {
     <img src={s.img} alt={s.alt || c.label || ""} loading="lazy" />
   );
   return (
-    <div className="devicewrap">
-      <DeviceFrame
-        variant={d.variant || "iphone"}
-        statusBar={d.statusBar !== false}
-        storyUI={!!d.storyUI}
-        user={d.user}
-        time={d.time}
-        fit={s.fit}
-        screenBg={s.bg}
-      >
-        {screen}
-      </DeviceFrame>
-    </div>
+    <DeviceFrame
+      statusBar={d.statusBar !== false}
+      storyUI={!!d.storyUI}
+      bottomNav={!!d.bottomNav}
+      user={d.user}
+      time={d.time}
+      fit={s.fit}
+      screenBg={s.bg}
+    >
+      {screen}
+    </DeviceFrame>
   );
 }
 
 const renderVisual = (c, fill) =>
   c.kind === "device" || c.device ? <DeviceBox c={c} /> : <MediaBox c={c} fill={fill} />;
+
+// Optional coloured "frame" (campaign rows): a fixed-ratio box with a background
+// colour; the device/media sits inside, and `bleed` lets the device overflow the
+// bottom edge (hides the letterbox gap of a non-matching video ratio).
+const renderFramed = (c) => {
+  if (!c.frame) return renderVisual(c, c.fill);
+  const f = c.frame;
+  const cls = "vmframe " + (f.ar || "r45") + (f.bleed ? " bleed" : "");
+  return (
+    <div className={cls} style={{ background: f.bg }}>
+      {renderVisual(c, c.fill)}
+    </div>
+  );
+};
 
 // Renders the case-study module array + the shared detail overlay (desktop modal
 // / mobile bottom-sheet with drag-to-dismiss). All `+` / CTA buttons open the
@@ -252,7 +264,7 @@ export default function CaseStudyBody({ modules = [], detail }) {
     }
     return (
       <div className={c.span + " r"} key={i}>
-        {renderMedia(c)}
+        {renderFramed(c)}
       </div>
     );
   };
