@@ -13,13 +13,14 @@ export default function DeviceFrame({
   time = "18h",
   avatar,
   fit = "cover",
+  shift,
   screenBg,
   children,
 }) {
   return (
     <div className="device">
       <div className="device-screen" style={screenBg ? { background: screenBg } : undefined}>
-        <div className={"device-content fit-" + fit}>{children}</div>
+        <div className={"device-content fit-" + fit} style={shift ? { "--vtop": shift } : undefined}>{children}</div>
         {(statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
         {storyUI && bottomNav && <span className="device-scrim-bot" aria-hidden="true" />}
         {statusBar && <StatusBar />}

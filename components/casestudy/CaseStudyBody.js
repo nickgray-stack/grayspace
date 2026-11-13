@@ -74,6 +74,7 @@ function DeviceBox({ c }) {
       time={d.time}
       avatar={d.avatar}
       fit={s.fit}
+      shift={s.shift}
       screenBg={s.bg}
     >
       {screen}
