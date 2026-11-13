@@ -16,15 +16,15 @@ export default function DeviceFrame({
   screenBg,
   children,
 }) {
-  const light = screenBg === "#ffffff" || screenBg === "#fff";
   return (
     <div className="device">
       <div className="device-screen" style={screenBg ? { background: screenBg } : undefined}>
         <div className={"device-content fit-" + fit}>{children}</div>
-        {!light && (statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
-        {statusBar && <StatusBar dark={light} />}
-        {storyUI && <StoryChrome user={user} time={time} light={light} avatar={avatar} />}
-        {storyUI && bottomNav && <StoryFoot light={light} />}
+        {(statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
+        {storyUI && bottomNav && <span className="device-scrim-bot" aria-hidden="true" />}
+        {statusBar && <StatusBar />}
+        {storyUI && <StoryChrome user={user} time={time} avatar={avatar} />}
+        {storyUI && bottomNav && <StoryFoot />}
       </div>
       <span className="device-island" aria-hidden="true" />
       <img className="device-bezel" src="/media/iphone-titanium.png" alt="" aria-hidden="true" />
@@ -32,9 +32,9 @@ export default function DeviceFrame({
   );
 }
 
-function StatusBar({ dark }) {
+function StatusBar() {
   return (
-    <div className={"dsb" + (dark ? " dark" : "")} aria-hidden="true">
+    <div className="dsb" aria-hidden="true">
       <span className="dsb-time">9:41</span>
       <span className="dsb-icons">
         <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
@@ -45,9 +45,9 @@ function StatusBar({ dark }) {
   );
 }
 
-function StoryChrome({ user, time, light, avatar }) {
+function StoryChrome({ user, time, avatar }) {
   return (
-    <div className={"igs" + (light ? " light" : "")} aria-hidden="true">
+    <div className="igs" aria-hidden="true">
       <div className="igs-bars">
         <span className="igs-bar"><i /></span>
         <span className="igs-bar on" />
@@ -64,9 +64,9 @@ function StoryChrome({ user, time, light, avatar }) {
   );
 }
 
-function StoryFoot({ light }) {
+function StoryFoot() {
   return (
-    <div className={"igf" + (light ? " light" : "")} aria-hidden="true">
+    <div className="igf" aria-hidden="true">
       <span className="igf-input">Send message</span>
       <svg className="igf-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-7.5-4.6-7.5-10A4.5 4.5 0 0 1 12 8a4.5 4.5 0 0 1 7.5 3c0 5.4-7.5 10-7.5 10Z"/></svg>
       <svg className="igf-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M21 3 3 10.5l6.5 2.5L12 20l9-17Z"/><path d="M9.5 13 21 3"/></svg>

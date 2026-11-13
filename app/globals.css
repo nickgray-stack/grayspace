@@ -117,14 +117,18 @@ figure.media{margin:0;}
 .device-content{position:absolute; inset:0; z-index:1;}
 .device-content > video,.device-content > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
 .device-content.fit-contain > video,.device-content.fit-contain > img{object-fit:contain;}
+/* fit-top: media anchored to the top edge, sized by width — fills to the top with
+   NO crop; the empty remainder falls into the device's cropped-off bottom. */
 .device-content.fit-top{inset:0;}
-.device-content.fit-top > video,.device-content.fit-top > img{position:absolute; top:11%; left:50%; transform:translateX(-50%); inset:auto; width:112%; height:auto; object-fit:contain;}
-.device-scrim{position:absolute; z-index:2; top:0; left:0; right:0; height:22%; background:linear-gradient(rgba(8,8,8,.5), rgba(8,8,8,.12) 56%, transparent); pointer-events:none;}
+.device-content.fit-top > video,.device-content.fit-top > img{position:absolute; inset:auto; top:-7%; left:0; right:0; width:100%; height:auto; object-fit:contain;}
+/* Story scrims: white chrome stays legible over any footage (dark or light),
+   matching the Figma gradient (black ~0.6 at the very top → transparent). */
+.device-scrim{position:absolute; z-index:2; top:0; left:0; right:0; height:17%; background:linear-gradient(to bottom, rgba(0,0,0,.56) 0%, rgba(0,0,0,.2) 52%, transparent 100%); pointer-events:none;}
+.device-scrim-bot{position:absolute; z-index:2; left:0; right:0; bottom:0; height:15%; background:linear-gradient(to top, rgba(0,0,0,.5) 0%, rgba(0,0,0,.12) 50%, transparent 100%); pointer-events:none;}
 
 .dsb{position:absolute; z-index:3; top:0; left:0; right:0; height:12.5%; max-height:56px; display:flex; align-items:flex-start; justify-content:space-between; padding:5% 8.5% 0; color:#fff; pointer-events:none;}
 .dsb-time{font:650 clamp(12px,3.4vw,16px)/1 var(--font); letter-spacing:.01em;}
 .dsb-icons{display:flex; align-items:center; gap:5px;}
-.dsb.dark, .dsb.dark .dsb-time{color:#0a0a0a;}
 
 .igs{position:absolute; z-index:3; top:0; left:0; right:0; padding:13.5% 4.5% 0; pointer-events:none;}
 .igs-bars{display:flex; gap:4px; margin-bottom:11px;}
@@ -141,15 +145,6 @@ figure.media{margin:0;}
 .igf{position:absolute; z-index:3; left:0; right:0; bottom:0; display:flex; align-items:center; gap:12px; padding:0 4.5% 6%; color:#fff; pointer-events:none;}
 .igf-input{flex:1; height:38px; border:1.4px solid rgba(255,255,255,.55); border-radius:999px; display:flex; align-items:center; padding:0 16px; color:rgba(255,255,255,.85); font:500 13px/1 var(--font);}
 .igf-ico{width:24px; height:24px; flex:none;}
-
-/* Light story (white screen): chrome goes dark, as in the Figma design. */
-.igs.light .igs-bar{background:rgba(0,0,0,.18);}
-.igs.light .igs-bar.on{background:rgba(0,0,0,.82);}
-.igs.light .igs-head{color:#0a0a0a;}
-.igs.light .igs-av{background:#0a0a0a; color:#fff; border-color:rgba(0,0,0,.08);}
-.igs.light .igs-time{opacity:.5;}
-.igf.light{color:#0a0a0a;}
-.igf.light .igf-input{border-color:rgba(0,0,0,.35); color:rgba(0,0,0,.6);}
 
 /* Coloured campaign frames: a standard media ratio (4:5) + a bg colour.
    m-bleed → device seated near the top, cropped by the bottom edge (matches Figma).
