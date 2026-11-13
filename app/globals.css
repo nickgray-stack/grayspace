@@ -132,9 +132,9 @@ figure.media{margin:0;}
 
 .igs{position:absolute; z-index:3; top:0; left:0; right:0; padding:13.5% 4.5% 0; pointer-events:none;}
 .igs-bars{display:flex; gap:4px; margin-bottom:11px;}
-.igs-bar{position:relative; flex:1; height:2.5px; border-radius:2px; background:rgba(255,255,255,.4); overflow:hidden;}
-.igs-bar.on{background:rgba(255,255,255,.95);}
-.igs-bar i{position:absolute; inset:0; width:55%; background:#fff;}
+.igs-bar{position:relative; flex:1; height:2.5px; border-radius:2px; background:rgba(255,255,255,.34); overflow:hidden;}
+.igs-fill{position:absolute; top:0; left:0; bottom:0; width:0; background:#fff; border-radius:2px; animation:igsfill 6s linear infinite;}
+@keyframes igsfill{from{width:0} to{width:100%}}
 .igs-head{display:flex; align-items:center; gap:8px; color:#fff;}
 .igs-av{width:26px; height:26px; border-radius:999px; background:#111; color:#fff; display:flex; align-items:center; justify-content:center; font:700 13px/1 var(--font); border:1.5px solid rgba(255,255,255,.9); flex:none;}
 .igs-name{font:650 13px/1 var(--font);}

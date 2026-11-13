@@ -11,6 +11,11 @@ export default function VideoMedia({ src, webm, poster, ratio, cover = true, cla
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
+    // Force-mute via the DOM property — the React `muted` attribute alone is
+    // unreliable and lets a clip that carries an audio track play sound.
+    v.muted = true;
+    v.defaultMuted = true;
+    v.volume = 0;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {

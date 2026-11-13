@@ -1,3 +1,6 @@
+"use client";
+import { useEffect, useRef } from "react";
+
 // Device mockup built on the EXACT Figma titanium bezel (exported from the design
 // system as a transparent PNG). The screen content (VideoMedia / <img>) and the
 // iOS + IG-story chrome are composited LIVE inside the real screen rectangle, so
@@ -17,9 +20,38 @@ export default function DeviceFrame({
   screenBg,
   children,
 }) {
+  const screenRef = useRef(null);
+
+  // Drive the active (first) story progress bar off the real video playback, so it
+  // fills white across each loop. Falls back to the CSS keyframe for image stories.
+  useEffect(() => {
+    if (!storyUI) return;
+    const root = screenRef.current;
+    if (!root) return;
+    const video = root.querySelector("video");
+    const fill = root.querySelector(".igs-fill");
+    if (!video || !fill) return;
+    fill.style.animation = "none";
+    const update = () => {
+      const d = video.duration;
+      if (d && isFinite(d) && d > 0) {
+        fill.style.width = Math.min(100, (video.currentTime / d) * 100) + "%";
+      }
+    };
+    video.addEventListener("timeupdate", update);
+    video.addEventListener("seeking", update);
+    video.addEventListener("loadedmetadata", update);
+    update();
+    return () => {
+      video.removeEventListener("timeupdate", update);
+      video.removeEventListener("seeking", update);
+      video.removeEventListener("loadedmetadata", update);
+    };
+  }, [storyUI]);
+
   return (
     <div className="device">
-      <div className="device-screen" style={screenBg ? { background: screenBg } : undefined}>
+      <div className="device-screen" ref={screenRef} style={screenBg ? { background: screenBg } : undefined}>
         <div className={"device-content fit-" + fit} style={shift ? { "--vtop": shift } : undefined}>{children}</div>
         {(statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
         {storyUI && bottomNav && <span className="device-scrim-bot" aria-hidden="true" />}
@@ -50,8 +82,8 @@ function StoryChrome({ user, time, avatar }) {
   return (
     <div className="igs" aria-hidden="true">
       <div className="igs-bars">
-        <span className="igs-bar"><i /></span>
-        <span className="igs-bar on" />
+        <span className="igs-bar on"><i className="igs-fill" /></span>
+        <span className="igs-bar" />
         <span className="igs-bar" />
       </div>
       <div className="igs-head">
