@@ -75,6 +75,7 @@ function DeviceBox({ c }) {
       avatar={d.avatar}
       fit={s.fit}
       shift={s.shift}
+      vwidth={s.vwidth}
       screenBg={s.bg}
     >
       {screen}

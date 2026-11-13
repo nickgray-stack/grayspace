@@ -17,10 +17,14 @@ export default function DeviceFrame({
   avatar,
   fit = "cover",
   shift,
+  vwidth,
   screenBg,
   children,
 }) {
   const screenRef = useRef(null);
+  const contentStyle = {};
+  if (shift) contentStyle["--vtop"] = shift;
+  if (vwidth) contentStyle["--vwidth"] = vwidth;
 
   // Drive the active (first) story progress bar off the real video playback, so it
   // fills white across each loop. Falls back to the CSS keyframe for image stories.
@@ -52,7 +56,7 @@ export default function DeviceFrame({
   return (
     <div className="device">
       <div className="device-screen" ref={screenRef} style={screenBg ? { background: screenBg } : undefined}>
-        <div className={"device-content fit-" + fit} style={shift ? { "--vtop": shift } : undefined}>{children}</div>
+        <div className={"device-content fit-" + fit} style={Object.keys(contentStyle).length ? contentStyle : undefined}>{children}</div>
         {(statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
         {storyUI && bottomNav && <span className="device-scrim-bot" aria-hidden="true" />}
         {statusBar && <StatusBar />}
