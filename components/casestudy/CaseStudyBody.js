@@ -72,6 +72,7 @@ function DeviceBox({ c }) {
       bottomNav={!!d.bottomNav}
       user={d.user}
       time={d.time}
+      avatar={d.avatar}
       fit={s.fit}
       screenBg={s.bg}
     >
@@ -83,16 +84,33 @@ function DeviceBox({ c }) {
 const renderVisual = (c, fill) =>
   c.kind === "device" || c.device ? <DeviceBox c={c} /> : <MediaBox c={c} fill={fill} />;
 
-// Optional coloured "frame" (campaign rows): a fixed-ratio box with a background
-// colour; the device/media sits inside, and `bleed` lets the device overflow the
-// bottom edge (hides the letterbox gap of a non-matching video ratio).
+// Coloured "frame" for campaign rows: a fixed-ratio panel (a standard media ratio,
+// e.g. 4:5) with a background colour. `mode: "bleed"` seats a device near the top
+// and lets it overflow the bottom edge (cropped device, matching the Figma design);
+// `mode: "inset"` (default) centres a media asset (video/image) on the colour ground.
 const renderFramed = (c) => {
   if (!c.frame) return renderVisual(c, c.fill);
   const f = c.frame;
-  const cls = "vmframe " + (f.ar || "r45") + (f.bleed ? " bleed" : "");
+  const mode = f.mode || "inset";
+  const cls = "vmframe " + (f.ar || "ar-portrait") + " m-" + mode;
+  let inner;
+  if (c.kind === "device" || c.device) {
+    inner = <DeviceBox c={c} />;
+  } else {
+    const m = c.media || {};
+    inner = (
+      <div className="vframe-media" style={{ aspectRatio: arCss(c) }}>
+        {m.video ? (
+          <VideoMedia src={m.video} webm={m.webm} poster={m.poster} cover />
+        ) : (
+          <img src={m.img} alt={m.alt || c.label || ""} loading="lazy" />
+        )}
+      </div>
+    );
+  }
   return (
     <div className={cls} style={{ background: f.bg }}>
-      {renderVisual(c, c.fill)}
+      {inner}
     </div>
   );
 };

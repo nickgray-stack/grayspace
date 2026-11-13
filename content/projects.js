@@ -70,17 +70,17 @@ export const projects = [
       },
       {
         type: "row",
-        tight: true,
         cols: [
           {
             span: "col-6",
             kind: "device",
-            frame: { bg: "#000000", ar: "r45" },
+            frame: { bg: "#000000", ar: "ar-portrait", mode: "bleed" },
             device: {
               storyUI: true,
-              bottomNav: true,
+              bottomNav: false,
               user: "Phillipsauction",
               time: "18h",
+              avatar: "/media/phillips/ig-avatar.png",
               screen: {
                 video: "/media/phillips/story.mp4",
                 webm: "/media/phillips/story.webm",
@@ -92,20 +92,14 @@ export const projects = [
           },
           {
             span: "col-6",
-            kind: "device",
-            frame: { bg: "#EAE9E6", ar: "r45" },
-            device: {
-              storyUI: true,
-              bottomNav: true,
-              user: "Phillipsauction",
-              time: "18h",
-              screen: {
-                video: "/media/phillips/watch.mp4",
-                webm: "/media/phillips/watch.webm",
-                poster: "/media/phillips/watch-poster.webp",
-                fit: "contain",
-                bg: "#ffffff",
-              },
+            kind: "media",
+            frame: { bg: "#EAE9E6", ar: "ar-portrait", mode: "inset" },
+            ratio: "16:9",
+            media: {
+              video: "/media/phillips/watch.mp4",
+              webm: "/media/phillips/watch.webm",
+              poster: "/media/phillips/watch-poster.webp",
+              alt: "Phillips INTERSECT — specialist interview from the watch sale film",
             },
           },
         ],

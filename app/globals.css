@@ -151,13 +151,17 @@ figure.media{margin:0;}
 .igf.light{color:#0a0a0a;}
 .igf.light .igf-input{border-color:rgba(0,0,0,.35); color:rgba(0,0,0,.6);}
 
-/* Two-column media/device frames carrying a background colour (campaign rows). */
-.vmframe{position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; border-radius:4px;}
-.vmframe.r45{aspect-ratio:4 / 5;}
-.vmframe.r34{aspect-ratio:3 / 4;}
-.vmframe .device{height:90%; width:auto; max-width:none;}
-.vmframe.bleed{align-items:flex-start;}
-.vmframe.bleed .device{height:150%; margin-top:-2%;}
+/* Coloured campaign frames: a standard media ratio (4:5) + a bg colour.
+   m-bleed → device seated near the top, cropped by the bottom edge (matches Figma).
+   m-inset → media asset (video/image) centred on the colour ground. */
+.vmframe{position:relative; overflow:hidden; border-radius:4px;}
+.vmframe.ar-portrait{aspect-ratio:var(--ar-portrait);}
+.vmframe.ar-tall{aspect-ratio:var(--ar-tall);}
+.vmframe.ar-square{aspect-ratio:var(--ar-square);}
+.vmframe.m-bleed .device{position:absolute; top:12.5%; left:50%; transform:translateX(-50%); width:63%; height:auto; max-width:none; margin:0;}
+.vmframe.m-inset .vframe-media{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:82%; overflow:hidden; border-radius:3px; background:var(--surface);}
+.vmframe.m-inset .vframe-media > video,.vmframe.m-inset .vframe-media > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
+.igs-av-img{padding:0; border:0; background:transparent; object-fit:cover;}
 
 /* ============================================================
    FOOTER — shared mark + email row; case-study adds .pn above

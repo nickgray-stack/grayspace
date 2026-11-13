@@ -11,6 +11,7 @@ export default function DeviceFrame({
   bottomNav = false,
   user = "Phillipsauction",
   time = "18h",
+  avatar,
   fit = "cover",
   screenBg,
   children,
@@ -22,7 +23,7 @@ export default function DeviceFrame({
         <div className={"device-content fit-" + fit}>{children}</div>
         {!light && (statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
         {statusBar && <StatusBar dark={light} />}
-        {storyUI && <StoryChrome user={user} time={time} light={light} />}
+        {storyUI && <StoryChrome user={user} time={time} light={light} avatar={avatar} />}
         {storyUI && bottomNav && <StoryFoot light={light} />}
       </div>
       <span className="device-island" aria-hidden="true" />
@@ -44,7 +45,7 @@ function StatusBar({ dark }) {
   );
 }
 
-function StoryChrome({ user, time, light }) {
+function StoryChrome({ user, time, light, avatar }) {
   return (
     <div className={"igs" + (light ? " light" : "")} aria-hidden="true">
       <div className="igs-bars">
@@ -53,7 +54,7 @@ function StoryChrome({ user, time, light }) {
         <span className="igs-bar" />
       </div>
       <div className="igs-head">
-        <span className="igs-av">P</span>
+        {avatar ? <img className="igs-av igs-av-img" src={avatar} alt="" /> : <span className="igs-av">P</span>}
         <span className="igs-name">{user}</span>
         <span className="igs-time">{time}</span>
         <span className="igs-dots">⋯</span>
