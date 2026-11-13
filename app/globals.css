@@ -123,7 +123,7 @@ figure.media{margin:0;}
 .device-content.fit-top > video,.device-content.fit-top > img{position:absolute; inset:auto; top:var(--vtop, -7%); left:0; right:0; width:100%; height:auto; object-fit:contain;}
 /* Story scrims: white chrome stays legible over ANY footage incl. bright metal —
    near-black at the status-bar/notch, fading out by ~16%. */
-.device-scrim{position:absolute; z-index:2; top:0; left:0; right:0; height:16%; background:linear-gradient(to bottom, rgba(0,0,0,.82) 0%, rgba(0,0,0,.3) 44%, transparent 100%); pointer-events:none;}
+.device-scrim{position:absolute; z-index:2; top:0; left:0; right:0; height:17%; background:linear-gradient(to bottom, rgba(0,0,0,.96) 0%, rgba(0,0,0,.78) 20%, rgba(0,0,0,.34) 52%, transparent 100%); pointer-events:none;}
 .device-scrim-bot{position:absolute; z-index:2; left:0; right:0; bottom:0; height:15%; background:linear-gradient(to top, rgba(0,0,0,.5) 0%, rgba(0,0,0,.12) 50%, transparent 100%); pointer-events:none;}
 
 .dsb{position:absolute; z-index:3; top:0; left:0; right:0; height:12.5%; max-height:56px; display:flex; align-items:flex-start; justify-content:space-between; padding:5% 8.5% 0; color:#fff; pointer-events:none;}
