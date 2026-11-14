@@ -367,3 +367,12 @@ html.js .r.in{opacity:1; transform:none;}
 .contact .field input:focus,.contact .field textarea:focus{outline:none; border-color:var(--fg);}
 .contact .cbtn.submit{align-self:flex-start; margin-top:6px;}
 .contact .cnote{margin-top:clamp(30px,5vw,54px); font-size:.9rem; color:var(--muted);}
+
+/* ---- Asset slots (media still to be made) — see GapBox in CaseStudyBody ---- */
+.case .media.gap{background:transparent; border:1px dashed var(--muted); display:flex; align-items:flex-end;}
+.case .media.gap .gap-in{padding:clamp(16px,2vw,28px); max-width:62ch;}
+.case .gap-k{display:block; font-family:var(--mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;}
+.case .gap-t{margin:0; font-size:clamp(.9rem,1.05vw,1.05rem); line-height:1.4; color:var(--fg);}
+.case .cslide.gap{background:var(--surface); display:flex; align-items:center; padding:clamp(20px,3vw,40px);}
+.case .cslide.gap .tag{color:var(--fg); background:var(--bg);}
+.case .copygap{border:1px dashed var(--muted); padding:clamp(16px,2vw,28px);}

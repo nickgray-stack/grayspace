@@ -1,0 +1,41 @@
+{
+  "_readme": "Source → web media map. Sources stay untouched on Nick's machine; run scripts/build-media.py to (re)generate public/media. Change a source file, re-run, done. `w` = max output width (px).",
+  "roots": {
+    "phillips": "/Users/nickgray/Documents/01 Clients & Projects/Phillips/CASE STUDY/Final Assets",
+    "christies": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/Christie's/FOLIO ASSETS"
+  },
+  "assets": [
+    {"root": "phillips", "src": "Registering-05.png", "out": "phillips/registering.webp", "w": 2400},
+    {"root": "phillips", "src": "Bidding & Favourites-06.png", "out": "phillips/bidding-favourites.webp", "w": 2400},
+    {"root": "phillips", "src": "Bidding and registering-07.png", "out": "phillips/onboarding.webp", "w": 2400},
+    {"root": "phillips", "src": "Live Sale-Notifications-10.png", "out": "phillips/notifications-live.webp", "w": 2400},
+    {"root": "phillips", "src": "Live Sale-Notifications-11.png", "out": "phillips/notifications-social.webp", "w": 2400},
+    {"root": "phillips", "src": "Brand assets-12.png", "out": "phillips/brand-assets.webp", "w": 2400},
+    {"root": "phillips", "src": "RW Sale & Home page-03.png", "out": "phillips/sale-home.webp", "w": 2400},
+    {"root": "phillips", "src": "Thumbnail-00-V3.png", "out": "phillips/thumb-v3.webp", "w": 2400},
+
+    {"root": "christies", "src": "Hero Image.png", "out": "christies/hero.webp", "w": 2400},
+    {"root": "christies", "src": "Autosuggest/Mockup/01.png", "out": "christies/autosuggest.webp", "w": 2400},
+    {"root": "christies", "src": "Autosuggest/Mockup/02.png", "out": "christies/autosuggest-watch.webp", "w": 2400},
+    {"root": "christies", "src": "GSRP/Mockup/01.png", "out": "christies/search-results.webp", "w": 2400},
+    {"root": "christies", "src": "GSRP/Mockup/GalleryView/02.png", "out": "christies/search-gallery.webp", "w": 2400},
+    {"root": "christies", "src": "Browse All/Mockup/01.png", "out": "christies/browse-all.webp", "w": 2400},
+    {"root": "christies", "src": "Artist pagel/Mockup/01.png", "out": "christies/artist-page.webp", "w": 2400},
+    {"root": "christies", "src": "FeatureArtist/Mockup/01.png", "out": "christies/featured-artist.webp", "w": 2400},
+    {"root": "christies", "src": "Create alerts/Mockup/01.png", "out": "christies/alerts-desktop.webp", "w": 2400},
+    {"root": "christies", "src": "CreateAlerts/Mockup/02.png", "out": "christies/alerts-mobile.webp", "w": 2400},
+    {"root": "christies", "src": "FindMyWatch/Mockup/01.png", "out": "christies/watch-find.webp", "w": 2400},
+    {"root": "christies", "src": "FindMyWatch/Mockup/02.png", "out": "christies/watch-find-mobile.webp", "w": 2400},
+    {"root": "christies", "src": "WatchMenu/Mockup/01.png", "out": "christies/watch-menu.webp", "w": 2400},
+    {"root": "christies", "src": "Watch/Mockup/01.png", "out": "christies/watch-hero.webp", "w": 2400},
+    {"root": "christies", "src": "WatchMobile/Mockup/01.png", "out": "christies/watch-mobile.webp", "w": 2400},
+    {"root": "christies", "src": "BrandAssets/WatchMockup/02.png", "out": "christies/brand-assets.webp", "w": 2400},
+    {"root": "christies", "src": "Advisor/Mockup/02.png", "out": "christies/advisor-screens.webp", "w": 2400},
+    {"root": "christies", "src": "Advisor/Mockup/03.png", "out": "christies/advisor-hero.webp", "w": 2400},
+    {"root": "christies", "src": "Mobile tiles/My Christie's Hub.png", "out": "christies/m-advisor-departments.webp", "w": 750},
+    {"root": "christies", "src": "Mobile tiles/Search_Hub_Search_Default_06.png", "out": "christies/m-follow.webp", "w": 750},
+    {"root": "christies", "src": "Mobile tiles/Lot Switcher.png", "out": "christies/m-lot-switcher.webp", "w": 750},
+    {"root": "christies", "src": "Mobile tiles/Gallery.png", "out": "christies/m-superzoom.webp", "w": 750},
+    {"root": "christies", "src": "Advisor/Advisor––Home dashboard.png", "out": "christies/m-advisor.webp", "w": 750}
+  ]
+}

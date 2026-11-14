@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const p = getProject(slug);
   if (!p) return {};
-  const description = `${p.name} — ${p.lede.rest} ${p.role}, ${p.year}.`;
+  const description = `${p.name} — ${p.lede.rest}` + (p.year ? ` ${p.role}, ${p.year}.` : "");
   const url = `/work/${p.slug}`;
   return {
     title: p.name,
@@ -41,7 +41,7 @@ export default async function CaseStudyPage({ params }) {
     headline: p.lede.rest,
     creator: { "@type": "Person", name: "Nicholas Gray" },
     about: p.services,
-    dateCreated: p.year,
+    ...(p.year ? { dateCreated: p.year } : null),
     url: `https://grayspc.com/work/${p.slug}`,
   };
 
@@ -61,11 +61,11 @@ export default async function CaseStudyPage({ params }) {
             </div>
             <div className="cell">
               <div className="l">Year</div>
-              <div className="v">{p.year}</div>
+              <div className="v">{p.period || p.year || "—"}</div>
             </div>
             <div className="cell">
               <div className="l">Role</div>
-              <div className="v">{p.role}</div>
+              <div className="v">{p.role}{p.agency ? " · " + p.agency : ""}</div>
             </div>
             <div className="cell keywords">
               <div className="l">Services</div>
@@ -75,7 +75,14 @@ export default async function CaseStudyPage({ params }) {
         </section>
 
         {p.modules && p.modules.length ? (
-          <CaseStudyBody modules={p.modules} detail={p.detail} />
+          <>
+            <CaseStudyBody modules={p.modules} detail={p.detail} />
+            {!p.published && (
+              <section className="section statement wrap">
+                <p className="modhead">Full case study available on request.</p>
+              </section>
+            )}
+          </>
         ) : (
           <section className="section statement wrap">
             <p className="modhead">Full case study available on request.</p>

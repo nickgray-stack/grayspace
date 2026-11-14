@@ -17,7 +17,26 @@ function arCss(c) {
 
 // Hybrid media container. Real image → free-ratio (image sets its own height) or
 // fixed-ratio (crop to fill). Gradient placeholder → fixed-ratio box.
+// Asset slot: a visible placeholder for media that doesn't exist yet, carrying
+// the design call-out (what to make + why). Set NEXT_PUBLIC_SHOW_GAPS=0 to
+// render slots as quiet blank surfaces (e.g. for a client-facing preview).
+const SHOW_GAPS = process.env.NEXT_PUBLIC_SHOW_GAPS !== "0";
+function GapBox({ c, fill }) {
+  const ratio = c.ratio && c.ratio !== "free" ? c.ratio : "16:9";
+  const style = { aspectRatio: ratio.replace(":", "/"), ...(fill ? { height: "100%" } : null) };
+  if (!SHOW_GAPS) return <div className="media" style={style} />;
+  return (
+    <div className="media gap" style={style}>
+      <div className="gap-in">
+        <span className="gap-k">Asset slot · {ratio}{c.label ? " · " + c.label : ""}</span>
+        <p className="gap-t">{c.media.todo}</p>
+      </div>
+    </div>
+  );
+}
+
 function MediaBox({ c, fill }) {
+  if (c.media && c.media.todo) return <GapBox c={c} fill={fill} />;
   const img = c.media && c.media.img;
   const free = c.ratio === "free" || (c.media && c.media.ratio === "free");
   const alt = (c.media && c.media.alt) || c.label || "";
@@ -295,6 +314,17 @@ export default function CaseStudyBody({ modules = [], detail }) {
         <section className="section wrap" key={i}>
           <div className="grid">
             <div className="col-12 r">{renderVisual(m)}</div>
+          </div>
+        </section>
+      );
+    }
+    if (m.type === "statement" && m.todo) {
+      if (!SHOW_GAPS) return null;
+      return (
+        <section className="section wrap" key={i}>
+          <div className="copygap r">
+            <span className="gap-k">Copy slot · outcome</span>
+            <p className="gap-t">{m.text}</p>
           </div>
         </section>
       );

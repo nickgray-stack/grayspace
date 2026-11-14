@@ -87,3 +87,11 @@ One concern per file in `components/`:
 
 Honoured globally (`SmoothScroll` skips Lenis; CSS shows reveals immediately and kills
 transitions). Test with your OS "reduce motion" setting.
+
+## Content migration (Nov 2026)
+
+- **One file per project**: `content/projects/<slug>.js`; order lives in `content/projects.js`. `hidden: true` keeps a project out of the site.
+- **Builders**: `content/projects/_kit.js` (`full`, `statement`, `row`, `media`, `gap`, `text`, `carousel`, `phone`, `framed`, `copyGap`).
+- **Asset slots**: `media: { todo: "…" }` (or `gap()` / `gapSlide()` / `copyGap()`) renders a dashed placeholder with the design call-out. `NEXT_PUBLIC_SHOW_GAPS=0` hides them.
+- **Media pipeline**: `scripts/media-manifest.json` maps source file → `public/media/...webp`. Re-run `python3 scripts/build-media.py` after changing any source (`--only christies/` to limit, `--root name=/path` to override a folder). Sources are never modified.
+- **Covers**: `public/media/covers/<slug>.webp`, exported from Figma node 1384:1532 at 1920×1080.

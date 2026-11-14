@@ -30,6 +30,13 @@ export default function Carousel({ slides }) {
       d.className = "cslide";
       d.style.background = mediaBg(s.media);
       d.innerHTML = '<span class="tag"></span>';
+      if (s.media && s.media.todo) {
+        d.classList.add("gap");
+        const t = document.createElement("p");
+        t.className = "gap-t";
+        t.textContent = "Asset slot · 4:5 — " + s.media.todo;
+        d.appendChild(t);
+      }
       d.querySelector(".tag").textContent = s.tag;
       return d;
     };

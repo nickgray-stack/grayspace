@@ -7,7 +7,9 @@ import { mediaBg } from "@/content/projects";
 // them with an "N / total" counter (V1 hover-slideshow). Otherwise a single
 // cover layer. Content-gated: add hoverImages[] in the data to light it up.
 export default function WorkCard({ project }) {
-  const frames = project.hoverImages && project.hoverImages.length ? project.hoverImages : null;
+  // Cover first (what the grid shows at rest), then the hover frames.
+  const hover = project.hoverImages || [];
+  const frames = hover.length ? (project.cover && project.cover.img ? [project.cover.img, ...hover] : hover) : null;
   const [idx, setIdx] = useState(0);
   const iv = useRef(null);
 

@@ -39,7 +39,7 @@ export default function Home() {
         </div>
         <div className="scap">
           <span className="t">{cur.name}</span>
-          <span className="m">{cur.discipline} · {cur.year}</span>
+          <span className="m">{cur.discipline}{cur.year ? " · " + cur.year : ""}</span>
         </div>
       </section>
 
