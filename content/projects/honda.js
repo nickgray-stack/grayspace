@@ -1,4 +1,6 @@
-import { fullGap, statement, row, gap, text } from "./_kit";
+import { fullMedia, statement, row, media, text } from "./_kit";
+
+const M = "/media/honda/";
 
 const honda = {
   slug: "honda",
@@ -8,34 +10,43 @@ const honda = {
   role: "Product Designer",
   services: ["Product Design", "UX/UI", "Design System"],
   tags: ["Product Design", "Web", "Design System"],
-  cover: { grad: ["#6a7883", "#374149"] },
+  cover: { img: "/media/covers/honda.webp" },
   grad: ["#6a7883", "#374149"],
-  hoverImages: [],
-  summary: "Website redesign · 2018",
+  hoverImages: [M + "s-01.webp", M + "s-03.webp", M + "s-05.webp"],
+  summary: "Website · 2018",
   published: true,
-  lede: { lead: "Honda,", rest: "rethinking the website from the modules up." },
+  lede: { lead: "Honda,", rest: "reinventing the website around the purchase journey." },
   detail: {
-    eyebrow: "Approach",
-    heading: "Audit, focus, test, govern.",
+    eyebrow: "Kick-off",
+    heading: "Audit, workshop, focus.",
     body: [
-      "We began with an audit of the existing site and a kickoff workshop to agree where a redesign would matter most. That narrowed the work to three page types: Home, Product and Offers.",
-      "Prototypes for desktop and mobile were tested with customers, and what held up became a governed set of modules with a shared visual language — so the site could keep growing without drifting.",
+      "We compared platform analytics, available research and competitor analysis to audit the site’s weakest points, then prepared high-level designs and games for a kick-off workshop with stakeholders.",
+      "The workshop clarified what the business needed from the final designs and modules, the differences between car and motorbike customers, and which information best guides people towards dealerships and test drives.",
     ],
   },
   modules: [
-    fullGap("Home", "Home page hero mockup, 16:9. Also needs a home-page cover for the roster (none in Figma yet)."),
-    statement("A rethink of Honda's website, focused on the pages that carry the most weight — Home, Product and Offers — and on a module system the team could govern.", "The approach"),
-    row(
-      gap(8, "16:9", "Product page", "Product page, desktop."),
-      text(4, "Focus", "An audit and kickoff workshop narrowed the scope to three page types, prototyped and tested on desktop and mobile.", "Audit & workshop", true)
+    fullMedia("free", M + "s-01.webp", "Platform", "The Honda website across devices"),
+    statement(
+      "Reinvent the Honda website by understanding customer needs and the role the site plays along the purchase journey — delivering more relevant content to people faster, with a more consistent experience and design language across the platform.",
+      "Kick-off"
     ),
-    row(gap(6, "4:5", "Mobile", "Mobile prototype in a device frame."), gap(6, "4:5", "Offers", "Offers page inset on a colour ground.")),
-    row(gap(12, "16:9", "Module governance", "Design call-out: a module library overview — each module with its rules — would show the systems thinking that outlasts the launch.")),
+    row(
+      text(4, "Focus", "From the workshop we focused on three areas — Home, Product and Offers — reducing drop-off with better navigation and a more joined-up experience that guides people towards booking test drives and visiting dealerships.", "Home, Product, Offers", true),
+      media(8, "16:10", M + "s-02.webp", "Wireframes", "Wireframes for key pages")
+    ),
+    row(
+      media(6, "16:10", M + "s-03.webp", "Motorbikes", "Motorbike pages"),
+      media(6, "16:10", M + "s-04.webp", "Cars", "Car pages")
+    ),
+    row(
+      media(8, "16:10", M + "s-05.webp", "Product", "Choose from six models"),
+      text(4, "Testing", "Clickable prototypes were tested with participants on desktop and mobile, in the context of the whole customer journey. What we learned defined governance for page structure, how each module should be used across markets and departments, and the assets each one needs.", "Prototypes")
+    ),
+    row(
+      media(6, "3:4", M + "s-06.webp", "Home page", "Full home page", "top"),
+      text(6, "Visual language", "We revisited the design and UI language across the site, updating colour, type and interaction styles alongside the new modules for a more coherent, contemporary feel.", "Design language")
+    ),
   ],
-  overview: {
-    heading: "Overview",
-    body: ["A redesign of the Honda website, from audit and workshop through tested prototypes to a governed module system and visual language."],
-  },
 };
 
 export default honda;

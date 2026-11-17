@@ -1,4 +1,6 @@
-import { fullGap, statement, row, gap, text } from "./_kit";
+import { fullMedia, statement, row, media, text } from "./_kit";
+
+const M = "/media/fiat-500/";
 
 const fiat = {
   slug: "fiat-500",
@@ -8,36 +10,37 @@ const fiat = {
   role: "UX/UI Designer",
   services: ["UX/UI", "Mobile Web"],
   tags: ["UX/UI", "Mobile Web"],
-  cover: { grad: ["#a35a52", "#5c2a25"] },
+  cover: { img: "/media/covers/fiat-500.webp" },
   grad: ["#a35a52", "#5c2a25"],
-  hoverImages: [],
+  hoverImages: [M + "s-03.webp", M + "s-04.webp", M + "s-05.webp"],
   summary: "Mobile web · 2016",
   published: true,
-  lede: { lead: "Fiat 500,", rest: "choosing, customising and booking on mobile." },
+  lede: { lead: "Fiat 500,", rest: "turning desire into test drives on mobile." },
   detail: {
-    eyebrow: "Journey",
-    heading: "From inspiration to the keys.",
+    eyebrow: "Research",
+    heading: "Where mobile matters in the journey.",
     body: [
-      "The mobile site for the 500 family was planned against the stages a buyer moves through: inspiration and evaluation, confirmation, re-confirmation, and positive usage.",
-      "Three experiences carried it: Choose your 500, a short flow to book a test drive, and My 500, where a customer builds the car they want.",
+      "We analysed a quantitative study across markets to understand customer behaviour and needs. It showed where mobile web matters in the purchase journey — inspiration and evaluation, confirmation, re-confirmation and positive usage — and what experience could guide customers towards the dealer.",
     ],
   },
   modules: [
-    fullGap("Choose your 500", "Hero: mobile screens with the 500 range, 16:9."),
-    statement("A mobile web experience for the Fiat 500 family, taking people from first interest to a booked test drive and a car configured their way.", "The journey"),
-    row(
-      gap(6, "4:5", "Customise · My 500", "Design call-out: the configurator in a device frame — ideally a short video of colours changing; it is the most playful moment in the project."),
-      gap(6, "4:5", "Book a test drive", "Test-drive flow inset on a colour ground.")
+    fullMedia("16:10", M + "s-00.webp", "Fiat 500", "Fiat 500 mobile web"),
+    statement(
+      "Define and develop a mobile web experience for the Fiat 500 family — optimising the purchase journey on mobile to drive awareness of and desire for the 500 models, converting interest into real leads and test drives, with a strong brand experience throughout.",
+      "Research"
     ),
     row(
-      text(4, "Planning", "Each screen was mapped to a stage of the buying journey, from inspiration to ownership.", "Journey stages", true),
-      gap(8, "16:9", "Journey stages", "Journey diagram, 16:9.")
+      text(4, "Workshops", "From the research we ran workshops with the client on functionality, interactions and journeys, alongside Fiat’s new CRM strategy. I created a user flow, then sketched high-fidelity wireframes, cross-checking features and journeys against personas from the research.", "User flow", true),
+      media(8, "16:10", M + "s-02.webp", "User flow", "User flow and wireframes")
     ),
+    row(
+      media(6, "4:5", M + "s-01.webp", "Long scroll", "Mobile page", "top"),
+      media(6, "4:5", M + "s-05.webp", "My 500", "Customise your 500")
+    ),
+    fullMedia("16:10", M + "s-03.webp", "Choose your 500", "Choose your 500"),
+    fullMedia("16:10", M + "s-04.webp", "Book a test drive", "Book a test drive flow"),
+    fullMedia("16:10", M + "s-05.webp", "Customise · My 500", "Customise car – My 500"),
   ],
-  overview: {
-    heading: "Overview",
-    body: ["Mobile web for the Fiat 500 family, for Fiat Group. As UX/UI designer I worked on Choose your 500, the test-drive booking flow and the My 500 customiser."],
-  },
 };
 
 export default fiat;

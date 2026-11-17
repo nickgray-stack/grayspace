@@ -1,4 +1,7 @@
-import { copyGap, full, statement, row, gap, text, carousel, gapSlide, img } from "./_kit";
+import { fullMedia, statement, row, media, text, phone } from "./_kit";
+
+const M = "/media/cazoo/";
+const ORANGE = "#E8533E";
 
 const cazoo = {
   slug: "cazoo",
@@ -6,50 +9,61 @@ const cazoo = {
   year: "2019",
   discipline: "Product Design",
   role: "Product Designer",
-  services: ["Product Design", "Service Design", "UX/UI"],
+  services: ["Design", "Service Design", "UI", "UX"],
   tags: ["Product Design", "Service Design", "UX/UI"],
   cover: { img: "/media/covers/cazoo.webp" },
   grad: ["#7f8a74", "#49513f"],
-  hoverImages: [],
+  hoverImages: [M + "s-00.webp", M + "s-08.webp", M + "s-10.webp"],
   summary: "Used-car marketplace · 2019",
   published: true,
-  lede: { lead: "Cazoo,", rest: "buying a car entirely online." },
+  lede: { lead: "Cazoo,", rest: "making buying a used car simpler." },
   detail: {
-    eyebrow: "The journey",
+    eyebrow: "Discovery",
     heading: "Browse, details, purchase, delivery.",
     body: [
-      "Cazoo launched to sell used cars entirely online and deliver them within 48 hours. With no forecourt and no salesperson, the product had to do all the reassuring.",
-      "We mapped the journey across four stages — Browse, Details, Purchase & Order, and Delivery — and designed against the doubts that surface at each one.",
-      "Four principles held the work together: build trust at every step, signpost what happens next, keep a clear hierarchy of information, and let navigation flex around how people actually shop for a car.",
+      "We started by understanding customer needs and motivations, gathering insights that became hypotheses to test and validate as discovery continued.",
+      "Service journey mapping set out what mattered when designing the core pages of the site: Browse, Details, Purchase & Order, and Delivery.",
     ],
   },
   modules: [
-    full(img("/media/covers/cazoo.webp", "Cazoo"), { label: "Cazoo" }),
-    statement("Founded in late 2018, Cazoo set out to make buying a used car as simple as any other online purchase, delivered in 48 hours. We designed the purchase journey and adapted the new brand for digital.", "The journey"),
-    row(
-      gap(8, "16:9", "Journey map", "Design call-out: a clean journey map across Browse → Details → Purchase & Order → Delivery. This is a service design project, so the map is the hero artefact."),
-      text(4, "The challenge", "A car is a considered purchase. Without a test drive, every screen had to answer the question a salesperson would.", "Challenge", true)
+    fullMedia("4:3", M + "s-00.webp", "Search", "Cazoo search results with filters"),
+    statement(
+      "Cazoo is a used-car marketplace, founded in late 2018, that sells cars entirely online with home delivery in 48 hours. I joined to help define the purchase journey, and to translate brand guidelines designed for print into a digital space.",
+      "Discovery"
     ),
     row(
-      carousel(5, [
-        gapSlide("Trust", "Reassurance at every step.", "Mobile screen showing trust cues (inspection, guarantee)."),
-        gapSlide("Signposting", "Always clear what happens next.", "Mobile screen — order progress."),
-        gapSlide("Hierarchy", "The right detail at the right time.", "Mobile screen — car details."),
-        gapSlide("Navigation", "Flexible routes through the range.", "Mobile screen — browse and filter."),
-      ]),
-      gap(7, "3:4", "Car details", "Car details page, tall crop.")
+      text(4, "Discovery", "Customer needs and motivations became hypotheses we tested as we went. Service journey mapping shaped the core pages: Browse, Details, Purchase & Order, and Delivery.", "Journey mapping", true),
+      media(8, "free", M + "s-08.webp", "Car details", "Car detail page variants")
     ),
-    row(gap(6, "16:9", "Browse", "Browse results, desktop."), gap(6, "16:9", "Purchase & order", "Checkout flow, desktop or 3-up mobile.")),
-    row(gap(12, "16:9", "Delivery", "Delivery scheduling and handover — the moment the promise is kept.")),
-    copyGap("launch milestone or early traction figure."),
+    row(
+      media(6, "3:4", M + "s-01.webp", "Home", "Home page", "top"),
+      media(6, "3:4", M + "s-03.webp", "Details", "Car details page", "top")
+    ),
+    statement(
+      "Values from research became our design principles as we developed the UI language and design system. Trust came first: clear signposting, a relatable hierarchy of details and flexible navigation, so people could quickly learn where the information they cared about lived."
+    ),
+    row(
+      media(6, "3:4", M + "s-02.webp", "Browse", "Search results page", "top"),
+      media(6, "3:4", M + "s-06.webp", "Delivery", "Delivery scheduling", "top")
+    ),
+    row(
+      media(6, "1:1", M + "s-05.webp", "Purchase & order", "Purchase and order", "top"),
+      media(6, "1:1", M + "s-07.webp", "Similar cars", "Popular brands and similar cars", "top")
+    ),
+    row(
+      phone(6, M + "m-results.webp", ORANGE),
+      media(6, "4:5", M + "inspection.webp", "Photography", "Vehicle inspection photography")
+    ),
+    row(
+      media(6, "free", M + "s-09.webp", "Interior view", "360 interior view"),
+      media(6, "free", M + "s-10.webp", "Mobile", "Cazoo on mobile")
+    ),
+    row(
+      text(4, "Print to digital", "The brand was designed for print. We translated it for screens: orange for the logo and calls to action, indigo for tags and secondary buttons, celadon for panels and icons, with Archia for type.", "Brand"),
+      media(8, "free", M + "s-11.webp", "Colour", "Digital colour system")
+    ),
+    fullMedia("free", M + "s-12.webp", "Type & icons", "Typography and iconography"),
   ],
-  overview: {
-    heading: "Overview",
-    body: [
-      "Cazoo is an online used-car marketplace founded in late 2018, promising delivery to your door within 48 hours.",
-      "As product designer I worked on the end-to-end purchase journey and on adapting the brand for digital, guided by principles of trust, signposting, hierarchy and flexible navigation.",
-    ],
-  },
 };
 
 export default cazoo;

@@ -5,56 +5,64 @@
 Client: BT TV · Year: 2017 · Role: Lead Product Designer
 Services: Product Design, TV, UX
 
-## 1. Full-width image — Set-top box
-
-_[Asset slot — Hero: the TV interface in a living-room context or clean TV frame, 16:9.]_
+## 1. Full-width image — BT TV
 
 ## 2. Statement
 
-How could BT TV get more people thinking about the service when choosing what to watch? We redesigned the experience across set-top box, web and apps to answer that.
+“How could BT TV get more people thinking about the service when it came to choosing what to watch?” We set out to answer this by reimagining BT’s TV and video on demand service — redesigning the set-top box player, responsive websites and native apps for a more fluid, consistent experience across platforms.
 
-Button: The question
+Button: Process
 
 ## 3. Row
 
-_Image: Player_
+**Research**
 
-_[Asset slot — Set-top box player UI.]_
+Analysing the platform, business requirements and competitors, alongside user research and focus groups, surfaced the pain points to fix. We mapped the end-to-end experience into a framework for better content discovery across multiscreen viewing.
 
-**Process**
+Label: Framework
 
-Research, design sprints and a prioritisation exercise shaped a first release, with a second phase planned behind it.
-
-Label: Research & sprints
+_Image: Multiscreen_
 
 ## 4. Row
 
-**Carousel**
+_Image: Wireframes_
 
-- **TV** — The ten-foot experience.
-- **Web** — Responsive web.
-- **Mobile** — Native apps.
-
-_Image: One service, many screens_
-
-_[Asset slot — Design call-out: a multi-device family shot is the signature image for this project — it shows the same design language holding from TV to phone.]_
+_Image: Specification_
 
 ## 5. Row
 
-_Image: Phase two_
+_Image: Live channels_
 
-_[Asset slot — Downloads, purchases and casting — Chromecast, Fire TV, Apple TV, Smart TVs.]_
+_Image: Playback_
+
+## 6. Statement
+
+We prioritised features by user preference and by how the experience should differ on each platform — from content discovery and playback to linear viewing, including the TV guide and recording linear programmes on the go.
+
+## 7. Row
+
+_Image: TV guide_
+
+_Image: Programme page_
+
+## 8. Full-width image — Set-top box
+
+## 9. Row
+
+**Phase two**
+
+A second phase added downloads and online rental and purchase on every platform, and extended BT TV to Chromecast, Amazon Fire, Apple TV and Smart TVs.
+
+Label: New platforms
+
+_Image: Apps_
 
 ## Read-more panel
 
-_The question_
+_Process_
 
-**How could BT TV get more people thinking about the service when choosing what to watch?**
+**Design, prototype, test, repeat.**
 
-That question framed the work across the set-top box player, responsive web and native apps. Research set the direction, design sprints tested it quickly, and a prioritisation exercise decided what shipped first.
+Over several months we ran cycles of designing, prototyping and user testing across platforms and devices, collaborating with the wider team and an external agency.
 
-A second phase extended the service to downloads and purchases, and to more screens — Chromecast, Fire TV, Apple TV and Smart TVs.
-
-## Overview
-
-BT TV is BT's television service. As lead product designer I worked across the set-top box player, responsive web and native apps, from research and sprints through to a second phase covering downloads, purchases and more devices.
+We reviewed designs with stakeholders, worked closely with engineers as features were built, and iterated after every sprint based on the results of user testing.

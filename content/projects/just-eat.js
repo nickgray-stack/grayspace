@@ -1,4 +1,6 @@
-import { full, statement, row, gap, text, carousel, gapSlide, img } from "./_kit";
+import { fullMedia, statement, row, media, text, phone } from "./_kit";
+
+const M = "/media/just-eat/";
 
 const justEat = {
   slug: "just-eat",
@@ -6,48 +8,53 @@ const justEat = {
   year: "2019",
   discipline: "Product Design",
   role: "Product Designer",
-  services: ["Product Design", "Research", "UX/UI"],
-  tags: ["Product Design", "Research", "UX/UI"],
+  services: ["Product Design", "Product Strategy", "UX/UI"],
+  tags: ["Product Design", "Product Strategy", "UX/UI"],
   cover: { img: "/media/covers/just-eat.webp" },
   grad: ["#8f8a55", "#514d2c"],
-  hoverImages: [],
+  hoverImages: [M + "s-01.webp", M + "s-03.webp", M + "s-07.webp"],
   summary: "Product vision · 2019",
   published: true,
-  lede: { lead: "Just Eat,", rest: "a new product experience from search to doorstep." },
+  lede: { lead: "Just Eat,", rest: "reimagining the app for the future." },
   detail: {
-    eyebrow: "Product vision",
-    heading: "From finding food to coming back for more.",
+    eyebrow: "Approach",
+    heading: "A holistic look at the consumer app.",
     body: [
-      "The brief was a new product experience and a refreshed design direction for Just Eat. Research and workshops with the team set the priorities before any screens were drawn.",
-      "The work followed the order: search and discovery, restaurant menus brought to life with stories, delivery, and an account and loyalty area built around a points and tier scheme.",
+      "We brought together app data, customer insight into how people behaved, and the drivers that would add the most value. From there we ran workshops to conceptualise, iterating for weeks on a new direction that took a holistic look at the consumer app experience.",
     ],
   },
   modules: [
-    full(img("/media/covers/just-eat.webp", "Just Eat"), { label: "Just Eat" }),
-    statement("A new product experience and design direction for Just Eat, covering the whole order — discovering food, choosing from a menu, tracking delivery, and being rewarded for coming back.", "The vision"),
-    row(
-      text(4, "Research", "Research and workshops with the Just Eat team framed the opportunity and set the order of work.", "Research & workshops", true),
-      gap(8, "16:9", "Search & discovery", "Search and discovery screens, 3-up mobile on brand colour.")
+    fullMedia("16:9", M + "s-00.webp", "Just Eat", "Just Eat"),
+    statement(
+      "A new product experience and refreshed design direction that captures the ebullient personality of the brand and reimagines it for the future. I joined the team to support strategy and define new initiatives, creating a new user experience and UI for the app.",
+      "Approach"
     ),
     row(
-      carousel(5, [
-        gapSlide("Search", "Find something to eat, fast.", "Mobile screen — search."),
-        gapSlide("Menu", "Restaurant menus with stories.", "Mobile screen — menu and stories."),
-        gapSlide("Delivery", "Know where your order is.", "Mobile screen — delivery tracking."),
-        gapSlide("Loyalty", "Points and tiers that reward regulars.", "Mobile screen — loyalty."),
-      ]),
-      gap(7, "3:4", "Restaurant menu", "Design call-out: the journey has four clear beats — a carousel walks through them in order, next to one tall hero of the menu page.")
+      text(4, "Approach", "App data, customer insight and the drivers of value fed weeks of workshops and iteration on a new direction for the whole consumer app.", "Workshops", true),
+      media(8, "16:9", M + "s-01.webp", "New direction", "Just Eat app home")
     ),
-    row(gap(12, "16:9", "Prototype", "The prototype in motion (currently a GIF — re-export as video).")),
-    row(gap(6, "16:9", "Delivery", "Delivery tracking."), gap(6, "16:9", "Account & loyalty", "Points and tier scheme.")),
+    row(
+      media(8, "16:9", M + "s-02.webp", "Search", "Search and discovery"),
+      text(4, "Discovery", "The app serves trusted recommendations and supports the different ways people search for food — taking them to food quickly with dish-level recommendations, and popular cuisines nearby as quick links.", "Search & discovery")
+    ),
+    row(
+      media(6, "16:9", M + "s-03.webp", "Dishes", "Dish-level recommendations"),
+      media(6, "16:9", M + "s-04.webp", "Restaurant stories", "Restaurant stories on menu pages")
+    ),
+    row(
+      text(6, "Menus", "Menu pages include restaurant stories, helping partners build a connection with customers while building confidence and trust with relevant tips and reviews.", "Restaurant stories"),
+      phone(6, M + "returning.mp4", "#F36D00")
+    ),
+    fullMedia("16:9", M + "s-05.webp", "Delivery", "Delivery tracking"),
+    row(
+      media(6, "16:9", M + "s-06.webp", "Account", "Account and rewards"),
+      media(6, "16:9", M + "s-07.webp", "Loyalty", "Loyalty tiers")
+    ),
+    statement(
+      "A simple, easy-to-understand loyalty scheme that makes customers feel special and encourages them to return: earn points, get rewarded, and unlock higher-value rewards and VIP perks at higher tiers."
+    ),
+    fullMedia("16:9", M + "s-08.webp", "Components", "UI components"),
   ],
-  overview: {
-    heading: "Overview",
-    body: [
-      "Just Eat is one of the world's largest food delivery marketplaces. This project set out a new product experience and a refreshed design direction.",
-      "As product designer I worked from research and workshops through search and discovery, restaurant menus and stories, delivery, and account and loyalty.",
-    ],
-  },
 };
 
 export default justEat;

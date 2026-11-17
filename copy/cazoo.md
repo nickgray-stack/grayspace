@@ -1,77 +1,80 @@
 # Cazoo
 
-**Cazoo,** buying a car entirely online.
+**Cazoo,** making buying a used car simpler.
 
 Client: Cazoo · Year: 2019 · Role: Product Designer
-Services: Product Design, Service Design, UX/UI
+Services: Design, Service Design, UI, UX
 
-## 1. Full-width image — Cazoo
+## 1. Full-width image — Search
 
 ## 2. Statement
 
-Founded in late 2018, Cazoo set out to make buying a used car as simple as any other online purchase, delivered in 48 hours. We designed the purchase journey and adapted the new brand for digital.
+Cazoo is a used-car marketplace, founded in late 2018, that sells cars entirely online with home delivery in 48 hours. I joined to help define the purchase journey, and to translate brand guidelines designed for print into a digital space.
 
-Button: The journey
+Button: Discovery
 
 ## 3. Row
 
-_Image: Journey map_
+**Discovery**
 
-_[Asset slot — Design call-out: a clean journey map across Browse → Details → Purchase & Order → Delivery. This is a service design project, so the map is the hero artefact.]_
+Customer needs and motivations became hypotheses we tested as we went. Service journey mapping shaped the core pages: Browse, Details, Purchase & Order, and Delivery.
 
-**The challenge**
-
-A car is a considered purchase. Without a test drive, every screen had to answer the question a salesperson would.
-
-Label: Challenge
-
-## 4. Row
-
-**Carousel**
-
-- **Trust** — Reassurance at every step.
-- **Signposting** — Always clear what happens next.
-- **Hierarchy** — The right detail at the right time.
-- **Navigation** — Flexible routes through the range.
+Label: Journey mapping
 
 _Image: Car details_
 
-_[Asset slot — Car details page, tall crop.]_
+## 4. Row
 
-## 5. Row
+_Image: Home_
 
-_Image: Browse_
+_Image: Details_
 
-_[Asset slot — Browse results, desktop.]_
+## 5. Statement
 
-_Image: Purchase & order_
-
-_[Asset slot — Checkout flow, desktop or 3-up mobile.]_
+Values from research became our design principles as we developed the UI language and design system. Trust came first: clear signposting, a relatable hierarchy of details and flexible navigation, so people could quickly learn where the information they cared about lived.
 
 ## 6. Row
 
+_Image: Browse_
+
 _Image: Delivery_
 
-_[Asset slot — Delivery scheduling and handover — the moment the promise is kept.]_
+## 7. Row
 
-## 7. Statement (copy slot)
+_Image: Purchase & order_
 
-launch milestone or early traction figure.
+_Image: Similar cars_
+
+## 8. Row
+
+_Image: device_
+
+_Image: Photography_
+
+## 9. Row
+
+_Image: Interior view_
+
+_Image: Mobile_
+
+## 10. Row
+
+**Print to digital**
+
+The brand was designed for print. We translated it for screens: orange for the logo and calls to action, indigo for tags and secondary buttons, celadon for panels and icons, with Archia for type.
+
+Label: Brand
+
+_Image: Colour_
+
+## 11. Full-width image — Type & icons
 
 ## Read-more panel
 
-_The journey_
+_Discovery_
 
 **Browse, details, purchase, delivery.**
 
-Cazoo launched to sell used cars entirely online and deliver them within 48 hours. With no forecourt and no salesperson, the product had to do all the reassuring.
+We started by understanding customer needs and motivations, gathering insights that became hypotheses to test and validate as discovery continued.
 
-We mapped the journey across four stages — Browse, Details, Purchase & Order, and Delivery — and designed against the doubts that surface at each one.
-
-Four principles held the work together: build trust at every step, signpost what happens next, keep a clear hierarchy of information, and let navigation flex around how people actually shop for a car.
-
-## Overview
-
-Cazoo is an online used-car marketplace founded in late 2018, promising delivery to your door within 48 hours.
-
-As product designer I worked on the end-to-end purchase journey and on adapting the brand for digital, guided by principles of trust, signposting, hierarchy and flexible navigation.
+Service journey mapping set out what mattered when designing the core pages of the site: Browse, Details, Purchase & Order, and Delivery.

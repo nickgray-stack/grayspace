@@ -63,7 +63,7 @@ function MediaBox({ c, fill }) {
   if (img) {
     return (
       <div className="media" style={style}>
-        <img className="mcover" src={c.media.img} alt={alt} loading="lazy" />
+        <img className="mcover" src={c.media.img} alt={alt} loading="lazy" style={c.media.pos ? { objectPosition: c.media.pos } : undefined} />
         {c.label && <span className="label">{c.label}</span>}
       </div>
     );

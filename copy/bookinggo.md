@@ -7,44 +7,26 @@ Services: Product Design, Service Design, UX/UI
 
 ## 1. Full-width image — Rideways
 
-_[Asset slot — Hero: customer and driver apps side by side, 16:9.]_
-
 ## 2. Statement
 
-Rideways is a pre-booked airport taxi service. We designed it from both sides of the ride — the traveller landing in an unfamiliar place, and the driver waiting to meet them.
-
-Button: Two perspectives
+A BookingGo and Rideways joint venture to create a leading pre-booked taxi service for airport transfers — improving the service by understanding both perspectives, and making the experience between driver and customer more seamless.
 
 ## 3. Row
 
-_Image: Customer_
+_Image: Customer app_
 
-_[Asset slot — Customer app in a device frame (bleed).]_
-
-_Image: Driver_
-
-_[Asset slot — Design call-out: pair the driver app in a second device on a contrasting ground — the two-sided story told in one row.]_
+_Image: Customer app_
 
 ## 4. Row
 
-**Service**
+_Image: device_
 
-Pick-up is the moment that matters. Both apps were designed around it.
+_Image: device_
 
-Label: Meeting point
+## 5. Statement
 
-_Image: Journey_
+Two perspectives, one moment: the customer finding their driver at arrivals, and the driver confirming the trip.
 
-_[Asset slot — Service blueprint or key moments, 16:9.]_
+## 6. Full-width image — Flows
 
-## Read-more panel
-
-_Rideways_
-
-**Two users, one journey.**
-
-Rideways is BookingGo's pre-booked airport transfer service. A transfer only works when two people meet at the right place and time, so the product was designed from both perspectives: the customer arriving, and the driver collecting.
-
-## Overview
-
-BookingGo is the ground transport arm of Booking.com. As product designer I worked on Rideways, its pre-booked airport transfer service, across the customer and driver experiences.
+## 7. Full-width image — Workshop

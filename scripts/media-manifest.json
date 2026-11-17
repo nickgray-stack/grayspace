@@ -3,7 +3,9 @@
  "roots": {
   "phillips": "/Users/nickgray/Documents/01 Clients & Projects/Phillips/CASE STUDY/Final Assets",
   "christies": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/Christie's/FOLIO ASSETS",
-  "channel4": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/Channel 4"
+  "channel4": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/Channel 4",
+  "site": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/_from-grayspc",
+  "work": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK"
  },
  "assets": [
   {
@@ -288,6 +290,701 @@
     "w": 700
    },
    "_note": "Principle prototype capture: phone screen only, timeline UI cropped off"
+  },
+  {
+   "root": "site",
+   "src": "zalando/00.png",
+   "out": "zalando/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/01.png",
+   "out": "zalando/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/02.png",
+   "out": "zalando/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/03.png",
+   "out": "zalando/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/04.png",
+   "out": "zalando/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/05.png",
+   "out": "zalando/s-05.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/06.png",
+   "out": "zalando/s-06.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/07.png",
+   "out": "zalando/s-07.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/08.png",
+   "out": "zalando/s-08.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/09.png",
+   "out": "zalando/s-09.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "zalando/10.png",
+   "out": "zalando/s-10.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/00.png",
+   "out": "frontify/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/01.png",
+   "out": "frontify/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/02.png",
+   "out": "frontify/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/03.png",
+   "out": "frontify/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/04.png",
+   "out": "frontify/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/05.png",
+   "out": "frontify/s-05.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/06.png",
+   "out": "frontify/s-06.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/07.png",
+   "out": "frontify/s-07.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/08.png",
+   "out": "frontify/s-08.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/09.png",
+   "out": "frontify/s-09.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/10.png",
+   "out": "frontify/s-10.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/11.png",
+   "out": "frontify/s-11.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "frontify/12.png",
+   "out": "frontify/s-12.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/00.png",
+   "out": "cazoo/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/01.png",
+   "out": "cazoo/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/02.png",
+   "out": "cazoo/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/03.png",
+   "out": "cazoo/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/04.png",
+   "out": "cazoo/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/05.png",
+   "out": "cazoo/s-05.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/06.png",
+   "out": "cazoo/s-06.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/07.png",
+   "out": "cazoo/s-07.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/08.png",
+   "out": "cazoo/s-08.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/09.png",
+   "out": "cazoo/s-09.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/10.png",
+   "out": "cazoo/s-10.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/11.png",
+   "out": "cazoo/s-11.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "cazoo/12.png",
+   "out": "cazoo/s-12.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "lta-rally/00.png",
+   "out": "lta-rally/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "lta-rally/01.png",
+   "out": "lta-rally/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "lta-rally/02.png",
+   "out": "lta-rally/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "lta-rally/03.png",
+   "out": "lta-rally/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "lta-rally/04.png",
+   "out": "lta-rally/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "lta-rally/05.png",
+   "out": "lta-rally/s-05.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "lta-rally/06.png",
+   "out": "lta-rally/s-06.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "lta-rally/07.png",
+   "out": "lta-rally/s-07.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "lta-rally/08.png",
+   "out": "lta-rally/s-08.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "just-eat/00.png",
+   "out": "just-eat/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "just-eat/01.png",
+   "out": "just-eat/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "just-eat/02.png",
+   "out": "just-eat/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "just-eat/03.png",
+   "out": "just-eat/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "just-eat/04.png",
+   "out": "just-eat/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "just-eat/05.png",
+   "out": "just-eat/s-05.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "just-eat/06.png",
+   "out": "just-eat/s-06.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "just-eat/07.png",
+   "out": "just-eat/s-07.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "just-eat/08.png",
+   "out": "just-eat/s-08.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "honda/00.png",
+   "out": "honda/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "honda/01.png",
+   "out": "honda/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "honda/02.png",
+   "out": "honda/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "honda/03.png",
+   "out": "honda/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "honda/04.png",
+   "out": "honda/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "honda/05.png",
+   "out": "honda/s-05.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "honda/06.png",
+   "out": "honda/s-06.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/00.png",
+   "out": "bt-tv/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/01.png",
+   "out": "bt-tv/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/02.png",
+   "out": "bt-tv/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/03.png",
+   "out": "bt-tv/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/04.png",
+   "out": "bt-tv/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/05.png",
+   "out": "bt-tv/s-05.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/06.png",
+   "out": "bt-tv/s-06.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/07.png",
+   "out": "bt-tv/s-07.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/08.png",
+   "out": "bt-tv/s-08.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/09.png",
+   "out": "bt-tv/s-09.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bookinggo/00.png",
+   "out": "bookinggo/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bookinggo/01.png",
+   "out": "bookinggo/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bookinggo/02.png",
+   "out": "bookinggo/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bookinggo/03.png",
+   "out": "bookinggo/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "bookinggo/04.png",
+   "out": "bookinggo/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/00.png",
+   "out": "hargreaves-lansdown/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/01.png",
+   "out": "hargreaves-lansdown/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/02.png",
+   "out": "hargreaves-lansdown/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/03.png",
+   "out": "hargreaves-lansdown/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/04.png",
+   "out": "hargreaves-lansdown/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/05.png",
+   "out": "hargreaves-lansdown/s-05.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/06.png",
+   "out": "hargreaves-lansdown/s-06.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/07.png",
+   "out": "hargreaves-lansdown/s-07.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/08.png",
+   "out": "hargreaves-lansdown/s-08.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/09.png",
+   "out": "hargreaves-lansdown/s-09.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "fiat-500/00.png",
+   "out": "fiat-500/s-00.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "fiat-500/01.png",
+   "out": "fiat-500/s-01.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "fiat-500/02.png",
+   "out": "fiat-500/s-02.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "fiat-500/03.png",
+   "out": "fiat-500/s-03.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "fiat-500/04.png",
+   "out": "fiat-500/s-04.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "fiat-500/05.png",
+   "out": "fiat-500/s-05.webp",
+   "w": 2000
+  },
+  {
+   "root": "site",
+   "src": "honda/00.png",
+   "out": "covers/honda.webp",
+   "w": 1920,
+   "ar": "16:9"
+  },
+  {
+   "root": "site",
+   "src": "bt-tv/00.png",
+   "out": "covers/bt-tv.webp",
+   "w": 1920,
+   "ar": "16:9"
+  },
+  {
+   "root": "site",
+   "src": "bookinggo/00.png",
+   "out": "covers/bookinggo.webp",
+   "w": 1920,
+   "ar": "16:9"
+  },
+  {
+   "root": "site",
+   "src": "hargreaves-lansdown/00.png",
+   "out": "covers/hargreaves-lansdown.webp",
+   "w": 1920,
+   "ar": "16:9"
+  },
+  {
+   "root": "site",
+   "src": "fiat-500/00.png",
+   "out": "covers/fiat-500.webp",
+   "w": 1920,
+   "ar": "16:9"
+  },
+  {
+   "root": "work",
+   "src": "Zalando/Design/Export/Gifs/Process_2.1.gif",
+   "out": "zalando/process.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     50,
+     2400,
+     1350
+    ],
+    "w": 1600
+   }
+  },
+  {
+   "root": "work",
+   "src": "Zalando/Design/Export/Gifs/flows_02.gif",
+   "out": "zalando/journeys.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     2048,
+     1152
+    ],
+    "w": 1600
+   }
+  },
+  {
+   "root": "work",
+   "src": "Just Eat/Returning.gif",
+   "out": "just-eat/returning.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     750,
+     1334
+    ],
+    "w": 750
+   }
+  },
+  {
+   "root": "work",
+   "src": "LTA/lta_motion-test_01-3.gif",
+   "out": "lta-rally/motion.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     750,
+     1332
+    ],
+    "w": 750
+   }
+  },
+  {
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Workshop/02.png",
+   "out": "frontify/workshop.webp",
+   "w": 2400
+  },
+  {
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/Folio Assets/2x/Product_Demo_Mobile.jpg",
+   "out": "frontify/m-demo.webp",
+   "w": 750
+  },
+  {
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/Folio Assets/2x/layout 2@2x.png",
+   "out": "frontify/brand-builders.webp",
+   "w": 2400
+  },
+  {
+   "root": "work",
+   "src": "CAZOO/FOLIO ASSETS/NEW/C_Mobile.png",
+   "out": "cazoo/m-results.webp",
+   "w": 640
+  },
+  {
+   "root": "work",
+   "src": "CAZOO/FOLIO ASSETS/NEW/C_Thumb.png",
+   "out": "cazoo/inspection.webp",
+   "w": 1000
+  },
+  {
+   "root": "work",
+   "src": "Old work/RIDE WAYS/Pick-up RoadMap/On Time Copy 4.png",
+   "out": "bookinggo/m-meeting.webp",
+   "w": 750
+  },
+  {
+   "root": "work",
+   "src": "Old work/RIDE WAYS/Driver App UX/Pending Trip.png",
+   "out": "bookinggo/m-driver.webp",
+   "w": 750
   }
  ]
 }

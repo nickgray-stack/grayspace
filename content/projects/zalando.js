@@ -1,4 +1,6 @@
-import { copyGap, full, statement, row, gap, text, carousel, gapSlide, img } from "./_kit";
+import { fullMedia, statement, row, media, text } from "./_kit";
+
+const M = "/media/zalando/";
 
 const zalando = {
   slug: "zalando",
@@ -10,50 +12,50 @@ const zalando = {
   tags: ["Product Design", "Product Strategy", "UX/UI"],
   cover: { img: "/media/covers/zalando.webp" },
   grad: ["#5b6b7d", "#2f3a47"],
-  hoverImages: [],
+  hoverImages: [M + "s-01.webp", M + "s-06.webp", M + "s-08.webp"],
   summary: "Zalando Plus · 2021",
   published: true,
-  lede: { lead: "Zalando,", rest: "giving Plus members the first look." },
+  lede: { lead: "Zalando,", rest: "giving Plus members first access to sales." },
   detail: {
-    eyebrow: "Early Access",
-    heading: "Shop it first.",
+    eyebrow: "Team & role",
+    heading: "Leading the Pre-sale product design.",
     body: [
-      "Early Access gives Zalando Plus members a head start on newly discounted items before they open to everyone. The benefit only works if members notice it, understand it, and trust that the window is real.",
-      "Research focused on two questions: where first-time discounted items should sit within the outlet, and whether members understood the pre-sale information they were shown. The answers shaped both placement and language.",
-      "The benefit was then carried by a communication strategy designed per cohort — banners, newsletters and push — so each group heard about Early Access in the place and tone most likely to land.",
+      "I led the product design solution, working alongside a product manager and a technical product lead, and collaborating with another Plus designer at key stages on wider Plus design decisions and UX principles.",
+      "My role covered collaboration on the wider product strategy, designing the UI and UX, validation and testing, specifying flows and designs for implementation, and a solution design document reviewed with senior board members.",
     ],
   },
   modules: [
-    full(img("/media/covers/zalando.webp", "Zalando Plus Early Access"), { label: "Early Access" }),
-    statement("Early Access lets Zalando Plus members shop newly discounted items before anyone else. We designed the benefit end to end — where it lives, how it's explained, and how members hear about it.", "The brief"),
-    row(
-      gap(8, "16:9", "Outlet placement", "Hero mockup of the outlet with Early Access items in place (desktop or 3-up mobile)."),
-      text(4, "The challenge", "A membership benefit is only worth what members understand of it. Early Access had to be visible at the right moment and clear about what ‘first’ meant.", "Challenge", true)
+    fullMedia("5:3", M + "s-01.webp", "Plus Pre-sale", "Plus Pre-sale on the Zalando app"),
+    statement(
+      "Zalando launched Plus’ first non-convenience benefit, Early Access — “Shop it first” — giving members first access to the hottest releases. Plus Pre-sale set out to complement those VIP benefits: exclusive early access to sales, with more products, more sizes and a less stressful way to shop them.",
+      "Team & role"
     ),
     row(
-      text(5, "Research", "Two goals: find the right place in the outlet for first-time discounted items, and test whether pre-sale information was understood.", "Research goals"),
-      carousel(7, [
-        gapSlide("Placement", "Where first-time discounted items sit within the outlet.", "Mobile screen — outlet placement variant."),
-        gapSlide("Pre-sale", "How the pre-sale window and price are explained.", "Mobile screen — pre-sale information."),
-        gapSlide("Member state", "What a Plus member sees versus everyone else.", "Mobile screen — member vs non-member comparison."),
-      ])
+      text(4, "The challenge", "When sales went live, everyone had the same stressful rush to find the products and sizes they wanted before they sold out. In interviews and surveys, many members said they didn’t feel treated any differently from standard customers. The challenge was to meet the demand for an exclusive experience — and turn a perception of no rewards into new reasons to be a member.", "Challenge", true),
+      media(8, "5:3", M + "s-02.webp", "Catalogue", "Pre-sale filters and catalogue on mobile")
     ),
     row(
-      gap(12, "16:9", "Communication strategy", "Design call-out: the cohort strategy is the differentiator here. One wide graphic laying out banner / newsletter / push per cohort — a simple matrix — would show strategic range, not just screens.")
+      media(7, "16:9", M + "process.mp4", "Understanding the customer", "Research synthesis: understanding the customer"),
+      text(5, "Research", "Two earlier tests had validated the proposition. This round expanded our insight into acquiring eligible customers, with two goals: validate placing first-time discounted items in the outlet, and check how clearly Pre-sale information read across the core journey.", "Research goals")
+    ),
+    fullMedia("free", M + "s-05.webp", "Plus principles", "Plus UX principles mapped across the journey"),
+    statement(
+      "Testing showed pain points in how eligible customers read Pre-sale at the catalogue stage, and in the price they expected to pay. We reworked the UX copy and page heading to explain more simply how members unlock the best price."
     ),
     row(
-      gap(6, "4:5", "Push", "Push notification in a device frame (DeviceFrame, bleed)."),
-      gap(6, "4:5", "Newsletter", "Newsletter design inset on a colour ground — pairs with the device as a campaign row.")
+      media(6, "5:3", M + "s-06.webp", "Product page", "Pre-sale on the product page"),
+      media(6, "5:3", M + "s-10.webp", "Member view", "The Plus member view")
     ),
-    copyGap("launch result or adoption figure for Early Access."),
+    fullMedia("free", M + "s-07.webp", "Desktop", "Pre-sale on the desktop product page"),
+    fullMedia("16:9", M + "journeys.mp4", "Journeys", "Organic journeys into Pre-sale"),
+    row(
+      media(6, "5:3", M + "s-08.webp", "Checkout", "Pre-sale checkout"),
+      media(6, "5:3", M + "s-09.webp", "Communication", "Banners, newsletter and push across the journey")
+    ),
+    statement(
+      "For both customer cohorts we built a communication strategy across onsite banners, newsletters and push — enhancing the experience for existing Plus members, while growing curiosity among eligible customers. I worked closely with a new UX copywriter to tighten the tone and simplify how we explained the value at key moments."
+    ),
   ],
-  overview: {
-    heading: "Overview",
-    body: [
-      "Zalando Plus is the membership programme of Europe's largest online fashion platform. Early Access — ‘Shop it first’ — rewards members with a head start on newly discounted items.",
-      "As senior product designer I worked across the challenge definition, research, the outlet experience and the communication strategy that introduced the benefit to each member cohort.",
-    ],
-  },
 };
 
 export default zalando;

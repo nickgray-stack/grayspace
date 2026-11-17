@@ -14,6 +14,9 @@
 const S = (n) => (typeof n === "number" ? "col-" + n : n);
 
 export const img = (src, alt = "") => ({ img: src, alt });
+// a source ending in .mp4 becomes a looping video (expects -poster.webp and .webm beside it)
+export const vid = (src, alt = "") => ({ video: src, webm: src.replace(/\.mp4$/, ".webm"), poster: src.replace(/\.mp4$/, "-poster.webp"), alt });
+const auto = (src, alt) => (/\.mp4$/.test(src) ? vid(src, alt) : img(src, alt));
 export const todo = (text) => ({ todo: text });
 
 export const full = (m, o = {}) => ({ type: "full", ratio: "16:9", media: m, ...o });
@@ -29,7 +32,9 @@ export const copyGap = (text) => ({ type: "statement", todo: true, text });
 export const row = (...cols) => ({ type: "row", cols });
 export const tight = (...cols) => ({ type: "row", tight: true, cols });
 
-export const media = (span, ratio, src, label, alt) => ({ span: S(span), kind: "media", ratio, label, media: img(src, alt || label) });
+// pos: CSS object-position for the crop, e.g. "top" to show the top of a long page
+export const media = (span, ratio, src, label, alt, pos) => ({ span: S(span), kind: "media", ratio, label, media: { ...auto(src, alt || label), ...(pos ? { pos } : null) } });
+export const fullMedia = (ratio, src, label, alt, pos) => ({ type: "full", ratio, label, media: { ...auto(src, alt || label), ...(pos ? { pos } : null) } });
 export const gap = (span, ratio, label, text) => ({ span: S(span), kind: "media", ratio, label, media: todo(text) });
 export const text = (span, eyebrow, copy, label, cta = false) => ({ span: S(span), kind: "detail", eyebrow, copy, label, cta });
 export const carousel = (span, slides) => ({ span: S(span), kind: "carousel", slides });
@@ -41,7 +46,7 @@ export const phone = (span, src, bg = "#EAE9E6", o = {}) => ({
   span: S(span),
   kind: "device",
   frame: { bg, ar: "ar-portrait", mode: "bleed" },
-  device: { statusBar: false, screen: { img: src, fit: "top", shift: "0%", bg: "#ffffff", ...o } },
+  device: { statusBar: false, screen: { ...(/\.mp4$/.test(src) ? vid(src) : { img: src }), fit: "top", shift: "0%", bg: "#ffffff", ...o } },
 });
 export const framed = (span, src, bg = "#EAE9E6", ratio = "16:9", alt = "") => ({
   span: S(span),

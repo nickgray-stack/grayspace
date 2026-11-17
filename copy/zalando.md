@@ -1,78 +1,70 @@
 # Zalando
 
-**Zalando,** giving Plus members the first look.
+**Zalando,** giving Plus members first access to sales.
 
 Client: Zalando · Year: 2021 · Role: Senior Product Designer
 Services: Design, Product Strategy, UX/UI
 
-## 1. Full-width image — Early Access
+## 1. Full-width image — Plus Pre-sale
 
 ## 2. Statement
 
-Early Access lets Zalando Plus members shop newly discounted items before anyone else. We designed the benefit end to end — where it lives, how it's explained, and how members hear about it.
+Zalando launched Plus’ first non-convenience benefit, Early Access — “Shop it first” — giving members first access to the hottest releases. Plus Pre-sale set out to complement those VIP benefits: exclusive early access to sales, with more products, more sizes and a less stressful way to shop them.
 
-Button: The brief
+Button: Team & role
 
 ## 3. Row
 
-_Image: Outlet placement_
-
-_[Asset slot — Hero mockup of the outlet with Early Access items in place (desktop or 3-up mobile).]_
-
 **The challenge**
 
-A membership benefit is only worth what members understand of it. Early Access had to be visible at the right moment and clear about what ‘first’ meant.
+When sales went live, everyone had the same stressful rush to find the products and sizes they wanted before they sold out. In interviews and surveys, many members said they didn’t feel treated any differently from standard customers. The challenge was to meet the demand for an exclusive experience — and turn a perception of no rewards into new reasons to be a member.
 
 Label: Challenge
 
+_Image: Catalogue_
+
 ## 4. Row
+
+_Image: Understanding the customer_
 
 **Research**
 
-Two goals: find the right place in the outlet for first-time discounted items, and test whether pre-sale information was understood.
+Two earlier tests had validated the proposition. This round expanded our insight into acquiring eligible customers, with two goals: validate placing first-time discounted items in the outlet, and check how clearly Pre-sale information read across the core journey.
 
 Label: Research goals
 
-**Carousel**
+## 5. Full-width image — Plus principles
 
-- **Placement** — Where first-time discounted items sit within the outlet.
-- **Pre-sale** — How the pre-sale window and price are explained.
-- **Member state** — What a Plus member sees versus everyone else.
+## 6. Statement
 
-## 5. Row
+Testing showed pain points in how eligible customers read Pre-sale at the catalogue stage, and in the price they expected to pay. We reworked the UX copy and page heading to explain more simply how members unlock the best price.
 
-_Image: Communication strategy_
+## 7. Row
 
-_[Asset slot — Design call-out: the cohort strategy is the differentiator here. One wide graphic laying out banner / newsletter / push per cohort — a simple matrix — would show strategic range, not just screens.]_
+_Image: Product page_
 
-## 6. Row
+_Image: Member view_
 
-_Image: Push_
+## 8. Full-width image — Desktop
 
-_[Asset slot — Push notification in a device frame (DeviceFrame, bleed).]_
+## 9. Full-width image — Journeys
 
-_Image: Newsletter_
+## 10. Row
 
-_[Asset slot — Newsletter design inset on a colour ground — pairs with the device as a campaign row.]_
+_Image: Checkout_
 
-## 7. Statement (copy slot)
+_Image: Communication_
 
-launch result or adoption figure for Early Access.
+## 11. Statement
+
+For both customer cohorts we built a communication strategy across onsite banners, newsletters and push — enhancing the experience for existing Plus members, while growing curiosity among eligible customers. I worked closely with a new UX copywriter to tighten the tone and simplify how we explained the value at key moments.
 
 ## Read-more panel
 
-_Early Access_
+_Team & role_
 
-**Shop it first.**
+**Leading the Pre-sale product design.**
 
-Early Access gives Zalando Plus members a head start on newly discounted items before they open to everyone. The benefit only works if members notice it, understand it, and trust that the window is real.
+I led the product design solution, working alongside a product manager and a technical product lead, and collaborating with another Plus designer at key stages on wider Plus design decisions and UX principles.
 
-Research focused on two questions: where first-time discounted items should sit within the outlet, and whether members understood the pre-sale information they were shown. The answers shaped both placement and language.
-
-The benefit was then carried by a communication strategy designed per cohort — banners, newsletters and push — so each group heard about Early Access in the place and tone most likely to land.
-
-## Overview
-
-Zalando Plus is the membership programme of Europe's largest online fashion platform. Early Access — ‘Shop it first’ — rewards members with a head start on newly discounted items.
-
-As senior product designer I worked across the challenge definition, research, the outlet experience and the communication strategy that introduced the benefit to each member cohort.
+My role covered collaboration on the wider product strategy, designing the UI and UX, validation and testing, specifying flows and designs for implementation, and a solution design document reviewed with senior board members.

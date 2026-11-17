@@ -1,4 +1,7 @@
-import { full, statement, row, gap, text, img } from "./_kit";
+import { fullMedia, statement, row, media, text, phone } from "./_kit";
+
+const M = "/media/lta-rally/";
+const TEAL = "#2BC4AE";
 
 const ltaRally = {
   slug: "lta-rally",
@@ -6,44 +9,48 @@ const ltaRally = {
   year: "2019",
   discipline: "Brand & Product",
   role: "Product Designer",
-  services: ["Branding", "Product Design", "Motion"],
+  services: ["Branding", "Design", "Product Design"],
   tags: ["Branding", "Product Design", "Motion"],
   cover: { img: "/media/covers/lta-rally.webp" },
   grad: ["#b08767", "#6e4f38"],
-  hoverImages: [],
+  hoverImages: [M + "s-01.webp", M + "s-02.webp", M + "s-08.webp"],
   summary: "Brand & product · 2019",
   published: true,
-  lede: { lead: "LTA Rally,", rest: "getting Britain back on court." },
+  lede: { lead: "LTA Rally,", rest: "bringing lapsed players back to tennis." },
   detail: {
     eyebrow: "Identity",
-    heading: "A logo drawn from the court.",
+    heading: "A logo that follows the court.",
     body: [
-      "Rally is the LTA's service for finding and booking a court, with tips to help lapsed players pick up a racket again. It needed an identity that felt lighter and more inviting than a governing body.",
-      "The wordmark takes its cue from the game. Its italic angle follows the vanishing point of a court seen from the baseline, and a taller x-height keeps it legible at app-icon size.",
-      "Motion extends the same geometry: polygons set at the LTA's master angles, moving on long, shallow easing so the brand feels like a rally rather than a smash.",
+      "The angle of the italics follows the vanishing point from the logo mark, and a typeface with a taller x-height makes the logo bigger overall and better at small sizes.",
+      "In motion, polygons transform to match the LTA master angles, with long, shallow animation curves easing everything to a comfortable stop. Text appears from cuts that match the logo angles, while rotating and scaling graphics create a zooming focus effect.",
     ],
   },
   modules: [
-    full(img("/media/covers/lta-rally.webp", "LTA Rally"), { label: "Rally" }),
-    statement("Rally helps people find a court, book it and get playing. We created the identity and product for the LTA's push to bring lapsed players back to tennis.", "The identity"),
-    row(
-      gap(7, "4:3", "Logo construction", "Design call-out: the construction story (italic angle = court vanishing point) is a gift. One diagram showing the court perspective lines overlaid on the wordmark would explain the idea in a glance."),
-      text(5, "Logo", "The italic angle follows the vanishing point of a court. A taller x-height keeps the mark clear when it's small.", "Wordmark", true)
+    fullMedia("16:9", M + "s-00.webp", "Rally", "LTA Rally identity"),
+    statement(
+      "With the LTA, we set out to encourage lapsed players back into the game, move tennis away from its elitist image and increase brand engagement. Coinciding with a rebrand and new products, I joined to design the identity for Rally — a website to book courts and get tips and news about the game.",
+      "Identity"
     ),
-    row(gap(12, "16:9", "Motion", "The motion piece as a looping video (currently a GIF on the old site — re-export as MP4/WebM for quality and weight).")),
     row(
-      gap(6, "4:5", "Court booking", "Booking flow in a device frame (DeviceFrame, bleed) on a Rally brand colour."),
-      gap(6, "4:5", "Tips", "Tips content inset on a colour ground, or a second device.")
+      media(6, "16:9", M + "s-01.webp", "Tennis opened up", "Rally home on mobile"),
+      media(6, "16:9", M + "s-02.webp", "Court booking", "Court search and booking")
     ),
-    row(gap(12, "16:9", "Brand in use", "Identity applied — app icon, social, courtside.")),
+    row(
+      text(4, "Logo", "The italic angle follows the vanishing point from the logo mark, and a taller x-height makes the logo bigger overall and better at small sizes.", "Identity", true),
+      media(8, "4:3", M + "s-07.webp", "Logo construction", "Rally logo construction")
+    ),
+    fullMedia("16:9", M + "s-08.webp", "Lockups", "Rally lockups"),
+    row(
+      phone(6, M + "motion.mp4", TEAL),
+      text(6, "Motion", "Polygons transform to match the LTA master angles, with long, shallow curves easing everything to a comfortable stop. Text appears from cuts that match the logo angles, and rotating, scaling graphics give a zooming focus effect.", "Motion")
+    ),
+    fullMedia("free", M + "s-04.webp", "Booking", "Rally booking screens"),
+    row(
+      media(6, "16:9", M + "s-03.webp", "Booking flow", "Booking confirmation flow"),
+      media(6, "16:9", M + "s-05.webp", "Palette & type", "Colour palette and typography")
+    ),
+    fullMedia("16:9", M + "s-06.webp", "Iconography", "Rally iconography"),
   ],
-  overview: {
-    heading: "Overview",
-    body: [
-      "The Lawn Tennis Association is the governing body for tennis in Britain. Rally is its consumer service for booking courts and getting back into the game.",
-      "As product designer I worked across the Rally identity, its motion language and the booking product.",
-    ],
-  },
 };
 
 export default ltaRally;

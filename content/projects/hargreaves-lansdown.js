@@ -1,4 +1,6 @@
-import { fullGap, statement, row, gap, text, carousel, gapSlide } from "./_kit";
+import { fullMedia, statement, row, media, text } from "./_kit";
+
+const M = "/media/hargreaves-lansdown/";
 
 const hl = {
   slug: "hargreaves-lansdown",
@@ -8,42 +10,42 @@ const hl = {
   role: "Lead Product Designer",
   services: ["Product Design", "UX/UI"],
   tags: ["Product Design", "Mobile", "UX/UI"],
-  cover: { grad: ["#3d4f6b", "#1c2738"] },
+  cover: { img: "/media/covers/hargreaves-lansdown.webp" },
   grad: ["#3d4f6b", "#1c2738"],
-  hoverImages: [],
+  hoverImages: [M + "s-07.webp", M + "s-08.webp", M + "s-09.webp"],
   summary: "Investing app · 2016",
   published: true,
-  lede: { lead: "Hargreaves Lansdown,", rest: "investing made clear on mobile." },
+  lede: { lead: "Hargreaves Lansdown,", rest: "demystifying investing on mobile." },
   detail: {
-    eyebrow: "Principles",
-    heading: "Simplify, relevance, guidance, security.",
+    eyebrow: "Discovery",
+    heading: "Weighting what matters.",
     body: [
-      "Discovery began with the people using the app. Personas were weighted against one another so that design decisions could be traced back to who they served most.",
-      "Four principles came out of it — Simplify, Relevance, Guidance and Security — and were applied across the account overview, the trading flow, and news and watchlists.",
+      "Discovery set out to understand the competing forces around customers’ expectations, needs and pain points, and the new market landscape.",
+      "After interviewing stakeholders, employees and existing customers, we built a spreadsheet of key patterns, insights and technology opportunities mapped against each persona, using a weighting score to prioritise features and use cases.",
     ],
   },
   modules: [
-    fullGap("Account overview", "Hero: 3-up mobile screens on a deep brand ground, 16:9."),
-    statement("A redesign of the Hargreaves Lansdown mobile app, built on four principles: simplify, stay relevant, guide, and keep it secure.", "The principles"),
-    row(
-      carousel(5, [
-        gapSlide("Simplify", "Less on screen, more understood.", "Mobile screen — account overview."),
-        gapSlide("Relevance", "What matters to this investor, first.", "Mobile screen — personalised view."),
-        gapSlide("Guidance", "Help at the point of decision.", "Mobile screen — trading flow."),
-        gapSlide("Security", "Confidence without friction.", "Mobile screen — login / confirmation."),
-      ]),
-      gap(7, "3:4", "Principles in practice", "Design call-out: four principles, four slides — the carousel maps one screen to each, so the principles are shown rather than listed.")
+    fullMedia("16:10", M + "s-00.webp", "Mobile app", "Hargreaves Lansdown mobile app"),
+    statement(
+      "Create a leading mobile experience that supports Hargreaves Lansdown’s trusted reputation — understanding how the way people manage their money has changed, and demystifying trading for HL customers with a flexible system for investing.",
+      "Discovery"
     ),
     row(
-      gap(8, "16:9", "Trading flow", "Trading flow, step by step."),
-      text(4, "Discovery", "Weighted personas kept decisions tied to the investors they affected most.", "Personas", true)
+      text(4, "Discovery", "Interviews with stakeholders, employees and customers fed a spreadsheet of patterns, insights and opportunities mapped against each persona, with a weighting score to prioritise features and use cases.", "Personas", true),
+      media(8, "16:10", M + "s-03.webp", "Weighting", "Persona weighting spreadsheet")
     ),
-    row(gap(6, "16:9", "News", "Account news."), gap(6, "16:9", "Watchlist", "Watchlist.")),
+    fullMedia("free", M + "s-02.webp", "Research", "Research wall"),
+    statement("Web and app analysis, and learning the trading process and its nuances, defined four principles for the new experience: Simplify, Relevance, Guidance and Security."),
+    row(
+      media(6, "16:10", M + "s-01.webp", "Fact sheets", "Fund and share fact sheets"),
+      text(6, "Fact sheets", "Alongside the global experience — login, account, trading, navigation, news and search — I focused on fact sheet pages for funds and shares, reviewing every piece of data to set a hierarchy based on relevance to the customer, with visual representations for insight.", "Data hierarchy")
+    ),
+    fullMedia("16:10", M + "s-04.webp", "Flows", "Trading flow logic"),
+    fullMedia("free", M + "s-06.webp", "Cell structure", "Cell structure"),
+    fullMedia("16:10", M + "s-07.webp", "Account overview", "Account overview"),
+    fullMedia("16:10", M + "s-08.webp", "Trading flow", "Trading flow"),
+    fullMedia("16:10", M + "s-09.webp", "Account · news · watchlist", "Account, news and watchlist"),
   ],
-  overview: {
-    heading: "Overview",
-    body: ["Hargreaves Lansdown is the UK's largest investment platform for private investors. As lead product designer I worked on its mobile app, from discovery and personas through account overview, trading, news and watchlists."],
-  },
 };
 
 export default hl;

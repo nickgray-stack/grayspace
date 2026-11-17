@@ -1,65 +1,60 @@
 # Hargreaves Lansdown
 
-**Hargreaves Lansdown,** investing made clear on mobile.
+**Hargreaves Lansdown,** demystifying investing on mobile.
 
 Client: Hargreaves Lansdown · Year: 2016 · Role: Lead Product Designer
 Services: Product Design, UX/UI
 
-## 1. Full-width image — Account overview
-
-_[Asset slot — Hero: 3-up mobile screens on a deep brand ground, 16:9.]_
+## 1. Full-width image — Mobile app
 
 ## 2. Statement
 
-A redesign of the Hargreaves Lansdown mobile app, built on four principles: simplify, stay relevant, guide, and keep it secure.
+Create a leading mobile experience that supports Hargreaves Lansdown’s trusted reputation — understanding how the way people manage their money has changed, and demystifying trading for HL customers with a flexible system for investing.
 
-Button: The principles
+Button: Discovery
 
 ## 3. Row
 
-**Carousel**
-
-- **Simplify** — Less on screen, more understood.
-- **Relevance** — What matters to this investor, first.
-- **Guidance** — Help at the point of decision.
-- **Security** — Confidence without friction.
-
-_Image: Principles in practice_
-
-_[Asset slot — Design call-out: four principles, four slides — the carousel maps one screen to each, so the principles are shown rather than listed.]_
-
-## 4. Row
-
-_Image: Trading flow_
-
-_[Asset slot — Trading flow, step by step.]_
-
 **Discovery**
 
-Weighted personas kept decisions tied to the investors they affected most.
+Interviews with stakeholders, employees and customers fed a spreadsheet of patterns, insights and opportunities mapped against each persona, with a weighting score to prioritise features and use cases.
 
 Label: Personas
 
-## 5. Row
+_Image: Weighting_
 
-_Image: News_
+## 4. Full-width image — Research
 
-_[Asset slot — Account news.]_
+## 5. Statement
 
-_Image: Watchlist_
+Web and app analysis, and learning the trading process and its nuances, defined four principles for the new experience: Simplify, Relevance, Guidance and Security.
 
-_[Asset slot — Watchlist.]_
+## 6. Row
+
+_Image: Fact sheets_
+
+**Fact sheets**
+
+Alongside the global experience — login, account, trading, navigation, news and search — I focused on fact sheet pages for funds and shares, reviewing every piece of data to set a hierarchy based on relevance to the customer, with visual representations for insight.
+
+Label: Data hierarchy
+
+## 7. Full-width image — Flows
+
+## 8. Full-width image — Cell structure
+
+## 9. Full-width image — Account overview
+
+## 10. Full-width image — Trading flow
+
+## 11. Full-width image — Account · news · watchlist
 
 ## Read-more panel
 
-_Principles_
+_Discovery_
 
-**Simplify, relevance, guidance, security.**
+**Weighting what matters.**
 
-Discovery began with the people using the app. Personas were weighted against one another so that design decisions could be traced back to who they served most.
+Discovery set out to understand the competing forces around customers’ expectations, needs and pain points, and the new market landscape.
 
-Four principles came out of it — Simplify, Relevance, Guidance and Security — and were applied across the account overview, the trading flow, and news and watchlists.
-
-## Overview
-
-Hargreaves Lansdown is the UK's largest investment platform for private investors. As lead product designer I worked on its mobile app, from discovery and personas through account overview, trading, news and watchlists.
+After interviewing stakeholders, employees and existing customers, we built a spreadsheet of key patterns, insights and technology opportunities mapped against each persona, using a weighting score to prioritise features and use cases.

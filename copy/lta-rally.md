@@ -1,66 +1,62 @@
 # LTA Rally
 
-**LTA Rally,** getting Britain back on court.
+**LTA Rally,** bringing lapsed players back to tennis.
 
 Client: LTA Rally · Year: 2019 · Role: Product Designer
-Services: Branding, Product Design, Motion
+Services: Branding, Design, Product Design
 
 ## 1. Full-width image — Rally
 
 ## 2. Statement
 
-Rally helps people find a court, book it and get playing. We created the identity and product for the LTA's push to bring lapsed players back to tennis.
+With the LTA, we set out to encourage lapsed players back into the game, move tennis away from its elitist image and increase brand engagement. Coinciding with a rebrand and new products, I joined to design the identity for Rally — a website to book courts and get tips and news about the game.
 
-Button: The identity
+Button: Identity
 
 ## 3. Row
 
-_Image: Logo construction_
-
-_[Asset slot — Design call-out: the construction story (italic angle = court vanishing point) is a gift. One diagram showing the court perspective lines overlaid on the wordmark would explain the idea in a glance.]_
-
-**Logo**
-
-The italic angle follows the vanishing point of a court. A taller x-height keeps the mark clear when it's small.
-
-Label: Wordmark
-
-## 4. Row
-
-_Image: Motion_
-
-_[Asset slot — The motion piece as a looping video (currently a GIF on the old site — re-export as MP4/WebM for quality and weight).]_
-
-## 5. Row
+_Image: Tennis opened up_
 
 _Image: Court booking_
 
-_[Asset slot — Booking flow in a device frame (DeviceFrame, bleed) on a Rally brand colour.]_
+## 4. Row
 
-_Image: Tips_
+**Logo**
 
-_[Asset slot — Tips content inset on a colour ground, or a second device.]_
+The italic angle follows the vanishing point from the logo mark, and a taller x-height makes the logo bigger overall and better at small sizes.
+
+Label: Identity
+
+_Image: Logo construction_
+
+## 5. Full-width image — Lockups
 
 ## 6. Row
 
-_Image: Brand in use_
+_Image: device_
 
-_[Asset slot — Identity applied — app icon, social, courtside.]_
+**Motion**
+
+Polygons transform to match the LTA master angles, with long, shallow curves easing everything to a comfortable stop. Text appears from cuts that match the logo angles, and rotating, scaling graphics give a zooming focus effect.
+
+Label: Motion
+
+## 7. Full-width image — Booking
+
+## 8. Row
+
+_Image: Booking flow_
+
+_Image: Palette & type_
+
+## 9. Full-width image — Iconography
 
 ## Read-more panel
 
 _Identity_
 
-**A logo drawn from the court.**
+**A logo that follows the court.**
 
-Rally is the LTA's service for finding and booking a court, with tips to help lapsed players pick up a racket again. It needed an identity that felt lighter and more inviting than a governing body.
+The angle of the italics follows the vanishing point from the logo mark, and a typeface with a taller x-height makes the logo bigger overall and better at small sizes.
 
-The wordmark takes its cue from the game. Its italic angle follows the vanishing point of a court seen from the baseline, and a taller x-height keeps it legible at app-icon size.
-
-Motion extends the same geometry: polygons set at the LTA's master angles, moving on long, shallow easing so the brand feels like a rally rather than a smash.
-
-## Overview
-
-The Lawn Tennis Association is the governing body for tennis in Britain. Rally is its consumer service for booking courts and getting back into the game.
-
-As product designer I worked across the Rally identity, its motion language and the booking product.
+In motion, polygons transform to match the LTA master angles, with long, shallow animation curves easing everything to a comfortable stop. Text appears from cuts that match the logo angles, while rotating and scaling graphics create a zooming focus effect.
