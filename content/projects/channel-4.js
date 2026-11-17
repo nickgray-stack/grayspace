@@ -1,4 +1,4 @@
-import { slideshow, statement, row, media, text, carousel, slide } from "./_kit";
+import { slideshow, stats, statement, row, media, text, carousel, slide } from "./_kit";
 
 const M = "/media/channel-4/";
 const YELLOW = "#FFE902"; // Channel 4 identity yellow (sampled from the brand boards)
@@ -39,6 +39,14 @@ const channel4 = {
       ],
       { accents: [YELLOW, TEAL], label: "Channel 4 — All 4+ highlights" }
     ),
+    stats(
+      [
+        { value: "2.2 → 4.4", label: "App store rating" },
+        { value: "99.4%", label: "Crash free" },
+        { value: "10M+", label: "App downloads" },
+      ],
+      "Part of the wider product and rebrand effort that turned All 4 around."
+    ),
     statement(
       "Novoda brought me in to help Channel 4 ramp up a new product experience for All 4 — taking its recent brand work into the product to drive engagement. I led UX across iOS, Android, tablet, web and tvOS, with a strong focus on sign-ups to All 4+: ad-free viewing and early access to new series.",
       "The challenge"
@@ -57,6 +65,7 @@ const channel4 = {
       {
         span: "col-6",
         kind: "device",
+        label: "Landing page prototype",
         frame: { bg: YELLOW, ar: "ar-portrait", mode: "bleed" },
         device: {
           statusBar: false,
@@ -65,7 +74,7 @@ const channel4 = {
       }
     ),
     statement(
-      "In testing, a padlock read as a barrier. The Plus mark, drawn from the Channel 4 identity, read as something extra — “I like the 4+ better than the lock… it’s unfriendly to see a lock there.”"
+      "In testing, a padlock read as a barrier. The Plus mark, drawn from the Channel 4 identity, read as something extra. As one participant put it: “I like the 4+ better than the lock… unfriendly to see a lock there.”"
     ),
     row(
       text(4, "The Plus mark", "The full All 4+ lockup leads on heroes, brand hubs and promos. The Plus on its own marks an action, on tiles and buttons. On TV the Plus shows first and All 4+ is revealed on focus, so browsing stays light.", "Brand into product"),
@@ -73,7 +82,7 @@ const channel4 = {
     ),
     { type: "full", ratio: "free", label: "Playback · watch more", media: { img: M + "watch-more.webp", alt: "Next-episode countdown and watch more in playback" } },
     statement(
-      "One clear signal for premium across five platforms, and sign-up prompts placed where they add value — the hero, the brand hub, the end of an episode — rather than everywhere."
+      "One clear signal for premium across five platforms, and sign-up prompts placed where they add value — the hero, the brand hub, the end of an episode. Since the updates, Channel 4 has seen increased engagement and sign-ups to All 4+."
     ),
   ],
 };

@@ -61,7 +61,7 @@ export default async function CaseStudyPage({ params }) {
             </div>
             <div className="cell">
               <div className="l">Year</div>
-              <div className="v">{p.period || p.year || "—"}</div>
+              <div className="v">{p.year || "—"}</div>
             </div>
             <div className="cell">
               <div className="l">Role</div>

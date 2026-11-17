@@ -6,8 +6,7 @@ const GROUND = "#EFECE6"; // warm paper ground for device / inset frames
 const christies = {
   slug: "christies",
   name: "Christie's",
-  year: "2024",
-  period: "2022–2024",
+  year: "2022",
   discipline: "Search & Discovery",
   role: "Lead Designer",
   services: ["Art Direction", "Interaction Design", "Product Design", "Product Strategy", "UX/UI"],
@@ -15,7 +14,7 @@ const christies = {
   cover: { img: "/media/covers/christies.webp" },
   grad: ["#b7a890", "#6f6353"],
   hoverImages: [M + "autosuggest.webp", M + "search-results.webp", M + "artist-page.webp"],
-  summary: "Search & discovery · 2022–2024",
+  summary: "Search & discovery · 2022",
   published: true,
   lede: { lead: "Christie's,", rest: "transforming how collectors search and discover." },
   detail: {

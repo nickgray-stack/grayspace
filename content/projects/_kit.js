@@ -21,6 +21,8 @@ export const fullGap = (label, text, ratio = "16:9") => ({ type: "full", ratio, 
 // Hero slideshow (wide). slides: [{ img, alt, label, panAr?, hold? }] — panAr = image
 // width/height when the image is wider than the frame and should travel across.
 export const slideshow = (slides, o = {}) => ({ type: "slideshow", ratio: "16:9", slides, ...o });
+// Headline numbers: stats([{ value, label }], "optional intro line")
+export const stats = (items, intro) => ({ type: "stats", items, ...(intro ? { intro } : null) });
 export const statement = (text, cta) => ({ type: "statement", text, ...(cta ? { cta: { label: cta } } : null) });
 // COPY SLOT — a statement still to be written (hidden when gaps are off)
 export const copyGap = (text) => ({ type: "statement", todo: true, text });

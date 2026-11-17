@@ -321,6 +321,21 @@ export default function CaseStudyBody({ modules = [], detail }) {
         </section>
       );
     }
+    if (m.type === "stats") {
+      return (
+        <section className="section stats wrap" key={i}>
+          {m.intro && <p className="stats-intro r">{m.intro}</p>}
+          <dl className="stats-row">
+            {m.items.map((it, j) => (
+              <div className="stat r" key={j}>
+                <dt>{it.label}</dt>
+                <dd>{it.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      );
+    }
     if (m.type === "full") {
       return (
         <section className="section wrap" key={i}>

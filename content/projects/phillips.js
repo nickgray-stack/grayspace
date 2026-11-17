@@ -1,8 +1,7 @@
 const phillips = {
   slug: "phillips",
   name: "Phillips",
-  year: "2026",
-  period: "2024–2026",
+  year: "2024",
   discipline: "Product Design",
   role: "Lead Designer",
   services: ["Branding", "Product Design", "Product Strategy", "UX/UI", "Visual Design"],
