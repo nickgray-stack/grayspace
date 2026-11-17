@@ -1,4 +1,4 @@
-import { fullMedia, statement, row, media, text } from "./_kit";
+import { fullMedia, statement, row, media, text, phone } from "./_kit";
 
 const M = "/media/fiat-500/";
 
@@ -36,6 +36,10 @@ const fiat = {
     row(
       media(6, "4:5", M + "s-01.webp", "Long scroll", "Mobile page", "top"),
       media(6, "4:5", M + "s-05.webp", "My 500", "Customise your 500")
+    ),
+    row(
+      phone(6, M + "accordion.mp4", "#99C9C8", { screenBg: "#ffffff" }),
+      text(6, "Choose your 500", "One scroll to compare the whole 500 family. Each model expands in place, so people can explore the range without leaving the page.", "Interaction")
     ),
     fullMedia("16:10", M + "s-03.webp", "Choose your 500", "Choose your 500"),
     fullMedia("16:10", M + "s-04.webp", "Book a test drive", "Book a test drive flow"),

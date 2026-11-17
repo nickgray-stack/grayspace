@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Plus, X } from "lucide-react";
 import { mediaBg } from "@/content/projects";
+import { srcSet, sizesFor } from "@/content/mediaSizes";
 import Carousel from "./Carousel";
 import VideoMedia from "./VideoMedia";
 import DeviceFrame from "./DeviceFrame";
@@ -54,7 +55,7 @@ function MediaBox({ c, fill }) {
   if (img && free) {
     return (
       <figure className="media free">
-        <img className="mfit" src={c.media.img} alt={alt} loading="lazy" />
+        <img className="mfit" src={c.media.img} srcSet={srcSet(c.media.img)} sizes={sizesFor(c.span)} alt={alt} loading="lazy" decoding="async" />
         {c.label && <span className="label">{c.label}</span>}
       </figure>
     );
@@ -63,7 +64,7 @@ function MediaBox({ c, fill }) {
   if (img) {
     return (
       <div className="media" style={style}>
-        <img className="mcover" src={c.media.img} alt={alt} loading="lazy" style={c.media.pos ? { objectPosition: c.media.pos } : undefined} />
+        <img className="mcover" src={c.media.img} srcSet={srcSet(c.media.img)} sizes={sizesFor(c.span)} alt={alt} loading="lazy" decoding="async" style={c.media.pos ? { objectPosition: c.media.pos } : undefined} />
         {c.label && <span className="label">{c.label}</span>}
       </div>
     );
@@ -87,7 +88,7 @@ function DeviceBox({ c }) {
   );
   return (
     <DeviceFrame
-      statusBar={d.statusBar !== false}
+      statusBar={d.statusBar === undefined ? true : d.statusBar}
       storyUI={!!d.storyUI}
       bottomNav={!!d.bottomNav}
       user={d.user}
@@ -125,7 +126,7 @@ const renderFramed = (c) => {
         {m.video ? (
           <VideoMedia src={m.video} webm={m.webm} poster={m.poster} cover />
         ) : (
-          <img src={m.img} alt={m.alt || c.label || ""} loading="lazy" />
+          <img src={m.img} srcSet={srcSet(m.img)} sizes="(max-width: 1024px) 80vw, 40vw" alt={m.alt || c.label || ""} loading="lazy" />
         )}
       </div>
     );

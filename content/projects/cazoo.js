@@ -51,7 +51,7 @@ const cazoo = {
       media(6, "1:1", M + "s-07.webp", "Similar cars", "Popular brands and similar cars", "top")
     ),
     row(
-      phone(6, M + "m-results.webp", ORANGE),
+      phone(6, M + "m-results.webp", ORANGE, { screenBg: "#ffffff" }),
       media(6, "4:5", M + "inspection.webp", "Photography", "Vehicle inspection photography")
     ),
     row(

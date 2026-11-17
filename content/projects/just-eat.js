@@ -43,7 +43,7 @@ const justEat = {
     ),
     row(
       text(6, "Menus", "Menu pages include restaurant stories, helping partners build a connection with customers while building confidence and trust with relevant tips and reviews.", "Restaurant stories"),
-      phone(6, M + "returning.mp4", "#F36D00")
+      phone(6, M + "returning.mp4", "#FA0029")
     ),
     fullMedia("16:9", M + "s-05.webp", "Delivery", "Delivery tracking"),
     row(

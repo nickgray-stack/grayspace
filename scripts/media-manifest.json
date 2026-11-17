@@ -12,187 +12,218 @@
    "root": "phillips",
    "src": "Registering-05.png",
    "out": "phillips/registering.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "phillips",
    "src": "Bidding & Favourites-06.png",
    "out": "phillips/bidding-favourites.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "phillips",
    "src": "Bidding and registering-07.png",
    "out": "phillips/onboarding.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "phillips",
    "src": "Live Sale-Notifications-10.png",
    "out": "phillips/notifications-live.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "phillips",
    "src": "Live Sale-Notifications-11.png",
    "out": "phillips/notifications-social.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "phillips",
    "src": "Brand assets-12.png",
    "out": "phillips/brand-assets.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "phillips",
    "src": "RW Sale & Home page-03.png",
    "out": "phillips/sale-home.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "phillips",
    "src": "Thumbnail-00-V3.png",
    "out": "phillips/thumb-v3.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Hero Image.png",
    "out": "christies/hero.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Autosuggest/Mockup/01.png",
    "out": "christies/autosuggest.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Autosuggest/Mockup/02.png",
    "out": "christies/autosuggest-watch.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "GSRP/Mockup/01.png",
    "out": "christies/search-results.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "GSRP/Mockup/GalleryView/02.png",
    "out": "christies/search-gallery.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Browse All/Mockup/01.png",
    "out": "christies/browse-all.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Artist pagel/Mockup/01.png",
    "out": "christies/artist-page.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "FeatureArtist/Mockup/01.png",
    "out": "christies/featured-artist.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Create alerts/Mockup/01.png",
    "out": "christies/alerts-desktop.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "CreateAlerts/Mockup/02.png",
    "out": "christies/alerts-mobile.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "FindMyWatch/Mockup/01.png",
    "out": "christies/watch-find.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "FindMyWatch/Mockup/02.png",
    "out": "christies/watch-find-mobile.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "WatchMenu/Mockup/01.png",
    "out": "christies/watch-menu.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Watch/Mockup/01.png",
    "out": "christies/watch-hero.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "WatchMobile/Mockup/01.png",
    "out": "christies/watch-mobile.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "BrandAssets/WatchMockup/02.png",
    "out": "christies/brand-assets.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Advisor/Mockup/02.png",
    "out": "christies/advisor-screens.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Advisor/Mockup/03.png",
    "out": "christies/advisor-hero.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Mobile tiles/My Christie's Hub.png",
    "out": "christies/m-advisor-departments.webp",
-   "w": 750
+   "w": 750,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Mobile tiles/Search_Hub_Search_Default_06.png",
    "out": "christies/m-follow.webp",
-   "w": 750
+   "w": 750,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Mobile tiles/Lot Switcher.png",
    "out": "christies/m-lot-switcher.webp",
-   "w": 750
+   "w": 750,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Mobile tiles/Gallery.png",
    "out": "christies/m-superzoom.webp",
-   "w": 750
+   "w": 750,
+   "q": 88
   },
   {
    "root": "christies",
    "src": "Advisor/Advisor––Home dashboard.png",
    "out": "christies/m-advisor.webp",
-   "w": 750
+   "w": 750,
+   "q": 88
   },
   {
    "root": "channel4",
@@ -205,7 +236,8 @@
     426,
     9595,
     3412
-   ]
+   ],
+   "q": 88
   },
   {
    "root": "channel4",
@@ -213,7 +245,8 @@
    "out": "channel-4/hero-web.webp",
    "w": 2400,
    "ar": "16:9",
-   "focus": 0.55
+   "focus": 0.55,
+   "q": 88
   },
   {
    "root": "channel4",
@@ -223,19 +256,22 @@
    ],
    "out": "channel-4/hero-mobile.webp",
    "w": 2400,
-   "_note": "two 1920x2160 phone frames side by side = exact 16:9"
+   "_note": "two 1920x2160 phone frames side by side = exact 16:9",
+   "q": 88
   },
   {
    "root": "channel4",
    "src": "FOLIO ASSETS/assets-tvOS-01.png",
    "out": "channel-4/hero-tvos.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "channel4",
    "src": "FOLIO ASSETS/assets-playback-01.png",
    "out": "channel-4/hero-playback.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "channel4",
@@ -243,37 +279,43 @@
    "out": "channel-4/subscribe.webp",
    "w": 2400,
    "ar": "16:9",
-   "focus": 0.4
+   "focus": 0.4,
+   "q": 88
   },
   {
    "root": "channel4",
    "src": "FOLIO ASSETS/assets-playback-02.png",
    "out": "channel-4/watch-more.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "channel4",
    "src": "FOLIO ASSETS/Asset-02.png",
    "out": "channel-4/m-home.webp",
-   "w": 1200
+   "w": 1200,
+   "q": 88
   },
   {
    "root": "channel4",
    "src": "FOLIO ASSETS/Asset.png",
    "out": "channel-4/m-brand-hub.webp",
-   "w": 1200
+   "w": 1200,
+   "q": 88
   },
   {
    "root": "channel4",
    "src": "FOLIO ASSETS/Carousel 01.png",
    "out": "channel-4/m-hub.webp",
-   "w": 1200
+   "w": 1200,
+   "q": 88
   },
   {
    "root": "channel4",
    "src": "FOLIO ASSETS/Carousel 02.png",
    "out": "channel-4/m-film.webp",
-   "w": 1200
+   "w": 1200,
+   "q": 88
   },
   {
    "root": "channel4",
@@ -283,571 +325,689 @@
    "video": {
     "crop": [
      304,
-     48,
+     84,
      350,
-     560
+     524
     ],
     "w": 700
    },
    "_note": "Principle prototype capture: phone screen only, timeline UI cropped off"
   },
   {
-   "root": "site",
-   "src": "zalando/00.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/Cover_00.png",
    "out": "zalando/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/01.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/Catalogue_01.png",
    "out": "zalando/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/02.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/Catalogue_02.png",
    "out": "zalando/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/03.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/Flow 1_ Organic Journey Categories.png",
    "out": "zalando/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/04.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/PROCESS.png",
    "out": "zalando/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/05.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/Plus Principles.png",
    "out": "zalando/s-05.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/06.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/PDP_03.png",
    "out": "zalando/s-06.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/07.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/Desktop.PDP_04.png",
    "out": "zalando/s-07.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/08.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/Checkout.png",
    "out": "zalando/s-08.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/09.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/Tiles.png",
    "out": "zalando/s-09.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "zalando/10.png",
+   "root": "work",
+   "src": "Zalando/Design/Export/MemberView.png",
    "out": "zalando/s-10.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/00.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Hero/01.png",
    "out": "frontify/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/01.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Home/01.png",
    "out": "frontify/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/02.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Home/02.png",
    "out": "frontify/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/03.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/HomeNav/01.png",
    "out": "frontify/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/04.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Home/03.png",
    "out": "frontify/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/05.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Home/04.png",
    "out": "frontify/s-05.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/06.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Home/05.png",
    "out": "frontify/s-06.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/07.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Demo/06.png",
    "out": "frontify/s-07.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/08.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Product_Demo_Desktop.png",
    "out": "frontify/s-08.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/09.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Demo/01.png",
    "out": "frontify/s-09.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/10.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Demo/04.png",
    "out": "frontify/s-10.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/11.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Demo/02.png",
    "out": "frontify/s-11.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "frontify/12.png",
+   "root": "work",
+   "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/BrandAssets/02.png",
    "out": "frontify/s-12.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/00.png",
    "out": "cazoo/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/01.png",
    "out": "cazoo/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
-   "root": "site",
-   "src": "cazoo/02.png",
+   "root": "work",
+   "src": "CAZOO/FOLIO ASSETS/NEW/C_Search_01.png",
    "out": "cazoo/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "_note": "hi-res original matched to the live-site image",
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/03.png",
    "out": "cazoo/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/04.png",
    "out": "cazoo/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/05.png",
    "out": "cazoo/s-05.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/06.png",
    "out": "cazoo/s-06.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/07.png",
    "out": "cazoo/s-07.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/08.png",
    "out": "cazoo/s-08.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/09.png",
    "out": "cazoo/s-09.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/10.png",
    "out": "cazoo/s-10.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/11.png",
    "out": "cazoo/s-11.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "cazoo/12.png",
    "out": "cazoo/s-12.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "lta-rally/00.png",
    "out": "lta-rally/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "lta-rally/01.png",
    "out": "lta-rally/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "lta-rally/02.png",
    "out": "lta-rally/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "lta-rally/03.png",
    "out": "lta-rally/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "lta-rally/04.png",
    "out": "lta-rally/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "lta-rally/05.png",
    "out": "lta-rally/s-05.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "lta-rally/06.png",
    "out": "lta-rally/s-06.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "lta-rally/07.png",
    "out": "lta-rally/s-07.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "lta-rally/08.png",
    "out": "lta-rally/s-08.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "just-eat/00.png",
    "out": "just-eat/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "just-eat/01.png",
    "out": "just-eat/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "just-eat/02.png",
    "out": "just-eat/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "just-eat/03.png",
    "out": "just-eat/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "just-eat/04.png",
    "out": "just-eat/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "just-eat/05.png",
    "out": "just-eat/s-05.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "just-eat/06.png",
    "out": "just-eat/s-06.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "just-eat/07.png",
    "out": "just-eat/s-07.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "just-eat/08.png",
    "out": "just-eat/s-08.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "honda/00.png",
    "out": "honda/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "honda/01.png",
    "out": "honda/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "honda/02.png",
    "out": "honda/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "honda/03.png",
    "out": "honda/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "honda/04.png",
    "out": "honda/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "honda/05.png",
    "out": "honda/s-05.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "honda/06.png",
    "out": "honda/s-06.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/00.png",
    "out": "bt-tv/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/01.png",
    "out": "bt-tv/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/02.png",
    "out": "bt-tv/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/03.png",
    "out": "bt-tv/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/04.png",
    "out": "bt-tv/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/05.png",
    "out": "bt-tv/s-05.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/06.png",
    "out": "bt-tv/s-06.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/07.png",
    "out": "bt-tv/s-07.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/08.png",
    "out": "bt-tv/s-08.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bt-tv/09.png",
    "out": "bt-tv/s-09.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bookinggo/00.png",
    "out": "bookinggo/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bookinggo/01.png",
    "out": "bookinggo/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bookinggo/02.png",
    "out": "bookinggo/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bookinggo/03.png",
    "out": "bookinggo/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "bookinggo/04.png",
    "out": "bookinggo/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/00.png",
    "out": "hargreaves-lansdown/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/01.png",
    "out": "hargreaves-lansdown/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/02.png",
    "out": "hargreaves-lansdown/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/03.png",
    "out": "hargreaves-lansdown/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/04.png",
    "out": "hargreaves-lansdown/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/05.png",
    "out": "hargreaves-lansdown/s-05.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/06.png",
    "out": "hargreaves-lansdown/s-06.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/07.png",
    "out": "hargreaves-lansdown/s-07.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/08.png",
    "out": "hargreaves-lansdown/s-08.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "hargreaves-lansdown/09.png",
    "out": "hargreaves-lansdown/s-09.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "fiat-500/00.png",
    "out": "fiat-500/s-00.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "fiat-500/01.png",
    "out": "fiat-500/s-01.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "fiat-500/02.png",
    "out": "fiat-500/s-02.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "fiat-500/03.png",
    "out": "fiat-500/s-03.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "fiat-500/04.png",
    "out": "fiat-500/s-04.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
    "src": "fiat-500/05.png",
    "out": "fiat-500/s-05.webp",
-   "w": 2000
+   "w": 2000,
+   "q": 88
   },
   {
    "root": "site",
@@ -948,43 +1108,66 @@
    "root": "work",
    "src": "FRONTIFY_DS/Design/V2 Folio Mockup/Mockup/Workshop/02.png",
    "out": "frontify/workshop.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "work",
    "src": "FRONTIFY_DS/Design/Folio Assets/2x/Product_Demo_Mobile.jpg",
    "out": "frontify/m-demo.webp",
-   "w": 750
+   "w": 750,
+   "q": 88
   },
   {
    "root": "work",
    "src": "FRONTIFY_DS/Design/Folio Assets/2x/layout 2@2x.png",
    "out": "frontify/brand-builders.webp",
-   "w": 2400
+   "w": 2400,
+   "q": 88
   },
   {
    "root": "work",
    "src": "CAZOO/FOLIO ASSETS/NEW/C_Mobile.png",
    "out": "cazoo/m-results.webp",
-   "w": 640
+   "w": 640,
+   "q": 88
   },
   {
    "root": "work",
    "src": "CAZOO/FOLIO ASSETS/NEW/C_Thumb.png",
    "out": "cazoo/inspection.webp",
-   "w": 1000
+   "w": 1000,
+   "q": 88
   },
   {
    "root": "work",
    "src": "Old work/RIDE WAYS/Pick-up RoadMap/On Time Copy 4.png",
    "out": "bookinggo/m-meeting.webp",
-   "w": 750
+   "w": 750,
+   "q": 88
   },
   {
    "root": "work",
    "src": "Old work/RIDE WAYS/Driver App UX/Pending Trip.png",
    "out": "bookinggo/m-driver.webp",
-   "w": 750
+   "w": 750,
+   "q": 88
+  },
+  {
+   "root": "work",
+   "src": "Old work/Fiat_Interactions/nick_500_accordian.mp4",
+   "out": "fiat-500/accordion.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     82,
+     750,
+     1252
+    ],
+    "w": 750
+   },
+   "_note": "Safari chrome cropped off the 2015 screen recording"
   }
  ]
 }

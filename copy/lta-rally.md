@@ -21,13 +21,13 @@ _Image: Court booking_
 
 ## 4. Row
 
+_Image: Logo construction_
+
 **Logo**
 
 The italic angle follows the vanishing point from the logo mark, and a taller x-height makes the logo bigger overall and better at small sizes.
 
 Label: Identity
-
-_Image: Logo construction_
 
 ## 5. Full-width image — Lockups
 

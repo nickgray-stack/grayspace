@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Pause, Play } from "lucide-react";
+import { srcSet } from "@/content/mediaSizes";
 
 // Hero slideshow for the wide (16:9) media slot.
 //
@@ -167,6 +168,8 @@ export default function Slideshow({ slides = [], ratio = "16:9", accents = ["#FF
           <img
             className={"ss-img" + (s.panAr ? " pan" : "")}
             src={s.img}
+            srcSet={s.panAr ? undefined : srcSet(s.img)}
+            sizes="100vw"
             alt={s.alt || s.label || ""}
             loading={i < 2 ? "eager" : "lazy"}
             decoding="async"

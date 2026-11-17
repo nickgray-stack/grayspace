@@ -62,7 +62,7 @@ const frontify = {
       media(6, "16:9", M + "s-11.webp", "Demo", "Work more easily with everyone")
     ),
     row(
-      phone(6, M + "m-demo.webp", PAPER),
+      phone(6, M + "m-demo.webp", PAPER, { baked: true }),
       framed(6, M + "brand-builders.webp", PAPER, "16:9", "Welcome brand builders")
     ),
     statement(

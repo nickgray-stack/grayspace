@@ -26,8 +26,8 @@ const bookinggo = {
       media(6, "16:10", M + "s-02.webp", "Customer app", "Rideways booking and pick-up")
     ),
     row(
-      phone(6, M + "m-meeting.webp", "#1E4FA0"),
-      phone(6, M + "m-driver.webp", "#E6E6E6")
+      phone(6, M + "m-meeting.webp", "#1E4FA0", { baked: true }),
+      phone(6, M + "m-driver.webp", "#E6E6E6", { baked: true })
     ),
     statement("Two perspectives, one moment: the customer finding their driver at arrivals, and the driver confirming the trip."),
     fullMedia("16:10", M + "s-03.webp", "Flows", "User flows"),

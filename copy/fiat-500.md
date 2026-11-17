@@ -29,11 +29,21 @@ _Image: Long scroll_
 
 _Image: My 500_
 
-## 5. Full-width image — Choose your 500
+## 5. Row
 
-## 6. Full-width image — Book a test drive
+_Image: device_
 
-## 7. Full-width image — Customise · My 500
+**Choose your 500**
+
+One scroll to compare the whole 500 family. Each model expands in place, so people can explore the range without leaving the page.
+
+Label: Interaction
+
+## 6. Full-width image — Choose your 500
+
+## 7. Full-width image — Book a test drive
+
+## 8. Full-width image — Customise · My 500
 
 ## Read-more panel
 

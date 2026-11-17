@@ -36,8 +36,8 @@ const ltaRally = {
       media(6, "16:9", M + "s-02.webp", "Court booking", "Court search and booking")
     ),
     row(
-      text(4, "Logo", "The italic angle follows the vanishing point from the logo mark, and a taller x-height makes the logo bigger overall and better at small sizes.", "Identity", true),
-      media(8, "4:3", M + "s-07.webp", "Logo construction", "Rally logo construction")
+      media(6, "4:5", M + "s-07.webp", "Logo construction", "Rally logo construction"),
+      text(6, "Logo", "The italic angle follows the vanishing point from the logo mark, and a taller x-height makes the logo bigger overall and better at small sizes.", "Identity", true)
     ),
     fullMedia("16:9", M + "s-08.webp", "Lockups", "Rally lockups"),
     row(

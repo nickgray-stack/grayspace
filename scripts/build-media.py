@@ -22,7 +22,8 @@ man = json.load(open(os.path.join(here, "media-manifest.json")))
 ap = argparse.ArgumentParser()
 ap.add_argument("--root", action="append", default=[])
 ap.add_argument("--only", default="")
-ap.add_argument("--quality", type=int, default=82)
+ap.add_argument("--quality", type=int, default=86)
+ap.add_argument("--max", type=int, default=3200, help="cap for the largest image width")
 a = ap.parse_args()
 roots = dict(man["roots"])
 for r in a.root:
@@ -47,6 +48,8 @@ def crop_ar(im, ar, focus=0.5):
     return im.crop((0, y, w, y + nh))
 
 
+sizes_path = os.path.join(out_base, "_sizes.json")
+sizes = json.load(open(sizes_path)) if os.path.exists(sizes_path) else {}
 missing = 0
 for it in man["assets"]:
     if a.only and not it["out"].startswith(a.only):
@@ -86,8 +89,20 @@ for it in man["assets"]:
         im = im.crop(tuple(it["box"]))
     if it.get("ar"):
         im = crop_ar(im, it["ar"], it.get("focus", 0.5))
-    if im.width > it["w"]:
-        im = im.resize((it["w"], round(im.height * it["w"] / im.width)), Image.LANCZOS)
-    im.save(dst, "WEBP", quality=a.quality, method=6)
-    print(f"{it['out']:44s} {im.width}x{im.height} {os.path.getsize(dst)//1024}KB")
+    cap = it.get("w") if it["out"].startswith(("covers/",)) or it.get("w", 0) < 1200 else max(it.get("w", 0), a.max)
+    if im.width > cap:
+        im = im.resize((cap, round(im.height * cap / im.width)), Image.LANCZOS)
+    q = it.get("q", a.quality)
+    im.save(dst, "WEBP", quality=q, method=6)
+    # responsive variants: name-1200.webp / name-2000.webp when the master is wider
+    widths = []
+    for vw in (1200, 2000):
+        if im.width > vw * 1.15:
+            v = im.resize((vw, round(im.height * vw / im.width)), Image.LANCZOS)
+            v.save(dst[:-5] + f"-{vw}.webp", "WEBP", quality=q, method=6)
+            widths.append(vw)
+    widths.append(im.width)
+    sizes["/media/" + it["out"]] = widths
+    print(f"{it['out']:44s} {im.width}x{im.height} {os.path.getsize(dst)//1024}KB {widths}")
+json.dump(sizes, open(sizes_path, "w"), indent=0, sort_keys=True)
 sys.exit(1 if missing else 0)

@@ -6,6 +6,9 @@ import { useEffect, useRef } from "react";
 // iOS + IG-story chrome are composited LIVE inside the real screen rectangle, so
 // the frame stays pixel-crisp at any size and chrome is never baked into a video.
 //
+// fit: "cover" | "contain" | "top" | "inset" (app screen placed below the status
+// bar, scaled to width and centred in the space above the home indicator).
+//
 // Geometry (Figma node, device 460 × 957.82): screen inset L/R 3.183% T/B 1.528%;
 // screen radius 63.45px → 14.73% / 6.83% of the screen box.
 export default function DeviceFrame({
@@ -57,9 +60,9 @@ export default function DeviceFrame({
     <div className="device">
       <div className="device-screen" ref={screenRef} style={screenBg ? { background: screenBg } : undefined}>
         <div className={"device-content fit-" + fit} style={Object.keys(contentStyle).length ? contentStyle : undefined}>{children}</div>
-        {(statusBar || storyUI) && <span className="device-scrim" aria-hidden="true" />}
+        {(statusBar === true || storyUI) && <span className="device-scrim" aria-hidden="true" />}
         {storyUI && bottomNav && <span className="device-scrim-bot" aria-hidden="true" />}
-        {statusBar && <StatusBar />}
+        {statusBar && <StatusBar solid={statusBar === "solid"} />}
         {storyUI && <StoryChrome user={user} time={time} avatar={avatar} />}
         {storyUI && bottomNav && <StoryFoot />}
       </div>
@@ -69,14 +72,17 @@ export default function DeviceFrame({
   );
 }
 
-function StatusBar() {
+// Sized in container-query units (cqw) so it scales with the device and sits
+// either side of the dynamic island at true iOS proportions. `solid` = black
+// band (for app screens placed below it); otherwise transparent over a scrim.
+function StatusBar({ solid }) {
   return (
-    <div className="dsb" aria-hidden="true">
+    <div className={"dsb" + (solid ? " dsb-solid" : "")} aria-hidden="true">
       <span className="dsb-time">9:41</span>
       <span className="dsb-icons">
-        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor"><path d="M8 11.5 1 4.6a9.9 9.9 0 0 1 14 0L8 11.5Z" opacity=".35"/><path d="M8 11.5 4.1 7.6a5.5 5.5 0 0 1 7.8 0L8 11.5Z"/></svg>
-        <svg width="26" height="13" viewBox="0 0 26 13" fill="none"><rect x="1" y="1" width="21" height="11" rx="3" stroke="currentColor" strokeWidth="1.2" opacity=".5"/><rect x="2.5" y="2.5" width="16" height="8" rx="1.6" fill="currentColor"/><rect x="23.4" y="4" width="1.6" height="5" rx=".8" fill="currentColor" opacity=".5"/></svg>
+        <svg viewBox="0 0 18 12" className="dsb-sig" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+        <svg viewBox="0 0 16 12" className="dsb-wifi" fill="currentColor"><path d="M8 11.5 1 4.6a9.9 9.9 0 0 1 14 0L8 11.5Z" opacity=".35"/><path d="M8 11.5 4.1 7.6a5.5 5.5 0 0 1 7.8 0L8 11.5Z"/></svg>
+        <svg viewBox="0 0 26 13" className="dsb-bat" fill="none"><rect x="1" y="1" width="21" height="11" rx="3" stroke="currentColor" strokeWidth="1.2" opacity=".5"/><rect x="2.5" y="2.5" width="16" height="8" rx="1.6" fill="currentColor"/><rect x="23.4" y="4" width="1.6" height="5" rx=".8" fill="currentColor" opacity=".5"/></svg>
       </span>
     </div>
   );

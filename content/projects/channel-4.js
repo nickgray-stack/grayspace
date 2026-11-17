@@ -66,10 +66,10 @@ const channel4 = {
         span: "col-6",
         kind: "device",
         label: "Landing page prototype",
-        frame: { bg: YELLOW, ar: "ar-portrait", mode: "bleed" },
+        frame: { bg: YELLOW, ar: "ar-portrait", mode: "whole" },
         device: {
-          statusBar: false,
-          screen: { video: M + "paywall.mp4", webm: M + "paywall.webm", poster: M + "paywall-poster.webp", fit: "top", shift: "0%", bg: "#111111" },
+          statusBar: "solid",
+          screen: { video: M + "paywall.mp4", webm: M + "paywall.webm", poster: M + "paywall-poster.webp", fit: "inset", bg: "#111111" },
         },
       }
     ),

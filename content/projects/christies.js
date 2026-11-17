@@ -48,7 +48,7 @@ const christies = {
       media(6, "16:9", M + "featured-artist.webp", "Featured artist", "Christie's featured artist module")
     ),
     row(
-      phone(6, M + "m-follow.webp", "#1C1C1C"),
+      phone(6, M + "m-follow.webp", "#1C1C1C", { baked: true }),
       framed(6, M + "alerts-mobile.webp", "#1C1C1C", "16:9", "Creating an alert on mobile")
     ),
     tight(
@@ -78,7 +78,7 @@ const christies = {
     ),
     full(img(M + "advisor-hero.webp", "Christie's Art Advisor"), { label: "Art Advisor" }),
     row(
-      phone(6, M + "m-advisor.webp", "#1C1C1C"),
+      phone(6, M + "m-advisor.webp", "#1C1C1C", { baked: true }),
       framed(6, M + "advisor-screens.webp", "#1C1C1C", "16:9", "Art Advisor screens")
     ),
     row(

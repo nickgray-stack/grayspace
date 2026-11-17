@@ -42,12 +42,22 @@ export const slide = (tag, body, src, o = {}) => ({ tag, body, media: { img: src
 export const gapSlide = (tag, body, text) => ({ tag, body, media: todo(text) });
 export const stack = (span, ...items) => ({ span: S(span), kind: "stack", items });
 
-export const phone = (span, src, bg = "#EAE9E6", o = {}) => ({
-  span: S(span),
-  kind: "device",
-  frame: { bg, ar: "ar-portrait", mode: "bleed" },
-  device: { statusBar: false, screen: { ...(/\.mp4$/.test(src) ? vid(src) : { img: src }), fit: "top", shift: "0%", bg: "#ffffff", ...o } },
-});
+// phone(span, src, bg, { baked, mode, screenBg })
+//  default: app screen/video placed below a solid status bar (fit "inset") and the
+//           whole device shown in the 4:5 panel (mode "whole") — nothing cropped.
+//  baked:   the screen already contains its own status bar → no added bar, anchored
+//           to the top, device cropped by the panel edge (mode "bleed").
+export const phone = (span, src, bg = "#EAE9E6", o = {}) => {
+  const media = /\.mp4$/.test(src) ? vid(src) : { img: src };
+  return {
+    span: S(span),
+    kind: "device",
+    frame: { bg, ar: "ar-portrait", mode: o.mode || (o.baked ? "bleed" : "whole") },
+    device: o.baked
+      ? { statusBar: false, screen: { ...media, fit: "top", shift: "0%", bg: o.screenBg || "#ffffff" } }
+      : { statusBar: "solid", screen: { ...media, fit: "inset", bg: o.screenBg || "#000000" } },
+  };
+};
 export const framed = (span, src, bg = "#EAE9E6", ratio = "16:9", alt = "") => ({
   span: S(span),
   kind: "media",
