@@ -5,6 +5,7 @@ import { mediaBg } from "@/content/projects";
 import Carousel from "./Carousel";
 import VideoMedia from "./VideoMedia";
 import DeviceFrame from "./DeviceFrame";
+import Slideshow from "./Slideshow";
 
 const PlusIco = () => <Plus className="i" size={24} strokeWidth={1.75} aria-hidden="true" />;
 
@@ -309,6 +310,17 @@ export default function CaseStudyBody({ modules = [], detail }) {
   };
 
   const renderModule = (m, i) => {
+    if (m.type === "slideshow") {
+      return (
+        <section className="section wrap" key={i}>
+          <div className="grid">
+            <div className="col-12 r">
+              <Slideshow slides={m.slides} ratio={m.ratio} accents={m.accents} hold={m.hold} label={m.label} />
+            </div>
+          </div>
+        </section>
+      );
+    }
     if (m.type === "full") {
       return (
         <section className="section wrap" key={i}>

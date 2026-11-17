@@ -376,3 +376,24 @@ html.js .r.in{opacity:1; transform:none;}
 .case .cslide.gap{background:var(--surface); display:flex; align-items:center; padding:clamp(20px,3vw,40px);}
 .case .cslide.gap .tag{color:var(--fg); background:var(--bg);}
 .case .copygap{border:1px dashed var(--muted); padding:clamp(16px,2vw,28px);}
+
+/* ---- Hero slideshow (components/casestudy/Slideshow.js) ---- */
+.ss{background:#111;}
+.ss-slide{position:absolute; inset:0; overflow:hidden; visibility:hidden; will-change:transform, clip-path;}
+.ss-slide.first{visibility:visible; z-index:2;}
+.ss-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; will-change:transform;}
+.ss-img.pan{right:auto; width:auto; height:100%; max-width:none; object-fit:cover;}
+.ss-wipe{position:absolute; inset:0; z-index:2; pointer-events:none; clip-path:polygon(122% 0%,122% 0%,122% 100%,100% 100%);}
+.ss-ui{position:absolute; left:16px; right:16px; bottom:16px; z-index:6; display:flex; align-items:flex-end; justify-content:space-between; gap:12px; pointer-events:none;}
+.ss-ui .label{position:static;}
+.ss-label{animation:ssLabel .6s cubic-bezier(.16,1,.3,1) both .35s;}
+@keyframes ssLabel{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+.ss-ctrl{display:flex; align-items:center; gap:4px; pointer-events:auto; background:rgba(20,20,18,.32); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:6px; padding:0 4px 0 10px; height:32px;}
+.ss-bars{display:flex; gap:6px;}
+.ss-bar{appearance:none; border:0; background:none; padding:0; width:26px; height:32px; cursor:pointer; position:relative; display:flex; align-items:center;}
+.ss-bar::before{content:""; position:absolute; left:0; right:0; top:50%; height:2px; margin-top:-1px; background:rgba(255,255,255,.35); border-radius:2px;}
+.ss-bar i{position:absolute; left:0; right:0; top:50%; height:2px; margin-top:-1px; background:#fff; border-radius:2px; transform:scaleX(0); transform-origin:left center;}
+.ss-bar:focus-visible{outline:2px solid #fff; outline-offset:2px;}
+.ss-pp{appearance:none; border:0; background:none; color:#fff; width:32px; height:32px; display:grid; place-items:center; cursor:pointer; border-radius:4px;}
+.ss-pp:focus-visible{outline:2px solid #fff; outline-offset:-2px;}
+@media (max-width:560px){ .ss-ui{left:10px; right:10px; bottom:10px;} .ss-bar{width:16px;} .ss-label{display:none;} }

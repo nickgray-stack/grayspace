@@ -1,41 +1,293 @@
 {
-  "_readme": "Source → web media map. Sources stay untouched on Nick's machine; run scripts/build-media.py to (re)generate public/media. Change a source file, re-run, done. `w` = max output width (px).",
-  "roots": {
-    "phillips": "/Users/nickgray/Documents/01 Clients & Projects/Phillips/CASE STUDY/Final Assets",
-    "christies": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/Christie's/FOLIO ASSETS"
+ "_readme": "Source → web media map. Sources stay untouched on Nick's machine; run scripts/build-media.py to (re)generate public/media. Change a source file, re-run, done. `w` = max output width (px).",
+ "roots": {
+  "phillips": "/Users/nickgray/Documents/01 Clients & Projects/Phillips/CASE STUDY/Final Assets",
+  "christies": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/Christie's/FOLIO ASSETS",
+  "channel4": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/Channel 4"
+ },
+ "assets": [
+  {
+   "root": "phillips",
+   "src": "Registering-05.png",
+   "out": "phillips/registering.webp",
+   "w": 2400
   },
-  "assets": [
-    {"root": "phillips", "src": "Registering-05.png", "out": "phillips/registering.webp", "w": 2400},
-    {"root": "phillips", "src": "Bidding & Favourites-06.png", "out": "phillips/bidding-favourites.webp", "w": 2400},
-    {"root": "phillips", "src": "Bidding and registering-07.png", "out": "phillips/onboarding.webp", "w": 2400},
-    {"root": "phillips", "src": "Live Sale-Notifications-10.png", "out": "phillips/notifications-live.webp", "w": 2400},
-    {"root": "phillips", "src": "Live Sale-Notifications-11.png", "out": "phillips/notifications-social.webp", "w": 2400},
-    {"root": "phillips", "src": "Brand assets-12.png", "out": "phillips/brand-assets.webp", "w": 2400},
-    {"root": "phillips", "src": "RW Sale & Home page-03.png", "out": "phillips/sale-home.webp", "w": 2400},
-    {"root": "phillips", "src": "Thumbnail-00-V3.png", "out": "phillips/thumb-v3.webp", "w": 2400},
-
-    {"root": "christies", "src": "Hero Image.png", "out": "christies/hero.webp", "w": 2400},
-    {"root": "christies", "src": "Autosuggest/Mockup/01.png", "out": "christies/autosuggest.webp", "w": 2400},
-    {"root": "christies", "src": "Autosuggest/Mockup/02.png", "out": "christies/autosuggest-watch.webp", "w": 2400},
-    {"root": "christies", "src": "GSRP/Mockup/01.png", "out": "christies/search-results.webp", "w": 2400},
-    {"root": "christies", "src": "GSRP/Mockup/GalleryView/02.png", "out": "christies/search-gallery.webp", "w": 2400},
-    {"root": "christies", "src": "Browse All/Mockup/01.png", "out": "christies/browse-all.webp", "w": 2400},
-    {"root": "christies", "src": "Artist pagel/Mockup/01.png", "out": "christies/artist-page.webp", "w": 2400},
-    {"root": "christies", "src": "FeatureArtist/Mockup/01.png", "out": "christies/featured-artist.webp", "w": 2400},
-    {"root": "christies", "src": "Create alerts/Mockup/01.png", "out": "christies/alerts-desktop.webp", "w": 2400},
-    {"root": "christies", "src": "CreateAlerts/Mockup/02.png", "out": "christies/alerts-mobile.webp", "w": 2400},
-    {"root": "christies", "src": "FindMyWatch/Mockup/01.png", "out": "christies/watch-find.webp", "w": 2400},
-    {"root": "christies", "src": "FindMyWatch/Mockup/02.png", "out": "christies/watch-find-mobile.webp", "w": 2400},
-    {"root": "christies", "src": "WatchMenu/Mockup/01.png", "out": "christies/watch-menu.webp", "w": 2400},
-    {"root": "christies", "src": "Watch/Mockup/01.png", "out": "christies/watch-hero.webp", "w": 2400},
-    {"root": "christies", "src": "WatchMobile/Mockup/01.png", "out": "christies/watch-mobile.webp", "w": 2400},
-    {"root": "christies", "src": "BrandAssets/WatchMockup/02.png", "out": "christies/brand-assets.webp", "w": 2400},
-    {"root": "christies", "src": "Advisor/Mockup/02.png", "out": "christies/advisor-screens.webp", "w": 2400},
-    {"root": "christies", "src": "Advisor/Mockup/03.png", "out": "christies/advisor-hero.webp", "w": 2400},
-    {"root": "christies", "src": "Mobile tiles/My Christie's Hub.png", "out": "christies/m-advisor-departments.webp", "w": 750},
-    {"root": "christies", "src": "Mobile tiles/Search_Hub_Search_Default_06.png", "out": "christies/m-follow.webp", "w": 750},
-    {"root": "christies", "src": "Mobile tiles/Lot Switcher.png", "out": "christies/m-lot-switcher.webp", "w": 750},
-    {"root": "christies", "src": "Mobile tiles/Gallery.png", "out": "christies/m-superzoom.webp", "w": 750},
-    {"root": "christies", "src": "Advisor/Advisor––Home dashboard.png", "out": "christies/m-advisor.webp", "w": 750}
-  ]
+  {
+   "root": "phillips",
+   "src": "Bidding & Favourites-06.png",
+   "out": "phillips/bidding-favourites.webp",
+   "w": 2400
+  },
+  {
+   "root": "phillips",
+   "src": "Bidding and registering-07.png",
+   "out": "phillips/onboarding.webp",
+   "w": 2400
+  },
+  {
+   "root": "phillips",
+   "src": "Live Sale-Notifications-10.png",
+   "out": "phillips/notifications-live.webp",
+   "w": 2400
+  },
+  {
+   "root": "phillips",
+   "src": "Live Sale-Notifications-11.png",
+   "out": "phillips/notifications-social.webp",
+   "w": 2400
+  },
+  {
+   "root": "phillips",
+   "src": "Brand assets-12.png",
+   "out": "phillips/brand-assets.webp",
+   "w": 2400
+  },
+  {
+   "root": "phillips",
+   "src": "RW Sale & Home page-03.png",
+   "out": "phillips/sale-home.webp",
+   "w": 2400
+  },
+  {
+   "root": "phillips",
+   "src": "Thumbnail-00-V3.png",
+   "out": "phillips/thumb-v3.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Hero Image.png",
+   "out": "christies/hero.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Autosuggest/Mockup/01.png",
+   "out": "christies/autosuggest.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Autosuggest/Mockup/02.png",
+   "out": "christies/autosuggest-watch.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "GSRP/Mockup/01.png",
+   "out": "christies/search-results.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "GSRP/Mockup/GalleryView/02.png",
+   "out": "christies/search-gallery.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Browse All/Mockup/01.png",
+   "out": "christies/browse-all.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Artist pagel/Mockup/01.png",
+   "out": "christies/artist-page.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "FeatureArtist/Mockup/01.png",
+   "out": "christies/featured-artist.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Create alerts/Mockup/01.png",
+   "out": "christies/alerts-desktop.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "CreateAlerts/Mockup/02.png",
+   "out": "christies/alerts-mobile.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "FindMyWatch/Mockup/01.png",
+   "out": "christies/watch-find.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "FindMyWatch/Mockup/02.png",
+   "out": "christies/watch-find-mobile.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "WatchMenu/Mockup/01.png",
+   "out": "christies/watch-menu.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Watch/Mockup/01.png",
+   "out": "christies/watch-hero.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "WatchMobile/Mockup/01.png",
+   "out": "christies/watch-mobile.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "BrandAssets/WatchMockup/02.png",
+   "out": "christies/brand-assets.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Advisor/Mockup/02.png",
+   "out": "christies/advisor-screens.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Advisor/Mockup/03.png",
+   "out": "christies/advisor-hero.webp",
+   "w": 2400
+  },
+  {
+   "root": "christies",
+   "src": "Mobile tiles/My Christie's Hub.png",
+   "out": "christies/m-advisor-departments.webp",
+   "w": 750
+  },
+  {
+   "root": "christies",
+   "src": "Mobile tiles/Search_Hub_Search_Default_06.png",
+   "out": "christies/m-follow.webp",
+   "w": 750
+  },
+  {
+   "root": "christies",
+   "src": "Mobile tiles/Lot Switcher.png",
+   "out": "christies/m-lot-switcher.webp",
+   "w": 750
+  },
+  {
+   "root": "christies",
+   "src": "Mobile tiles/Gallery.png",
+   "out": "christies/m-superzoom.webp",
+   "w": 750
+  },
+  {
+   "root": "christies",
+   "src": "Advisor/Advisor––Home dashboard.png",
+   "out": "christies/m-advisor.webp",
+   "w": 750
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/all4-identity-06.png",
+   "out": "channel-4/hero-brand.webp",
+   "w": 4000,
+   "_note": "wide brand strip; the hero pans across it",
+   "box": [
+    0,
+    426,
+    9595,
+    3412
+   ]
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/assets-desktop-01.png",
+   "out": "channel-4/hero-web.webp",
+   "w": 2400,
+   "ar": "16:9",
+   "focus": 0.35
+  },
+  {
+   "root": "channel4",
+   "hstack": [
+    "FOLIO ASSETS/Asset-02.png",
+    "FOLIO ASSETS/Asset.png"
+   ],
+   "out": "channel-4/hero-mobile.webp",
+   "w": 2400,
+   "_note": "two 1920x2160 phone frames side by side = exact 16:9"
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/assets-tvOS-01.png",
+   "out": "channel-4/hero-tvos.webp",
+   "w": 2400
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/assets-playback-01.png",
+   "out": "channel-4/hero-playback.webp",
+   "w": 2400
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/assets-subscribe-02.png",
+   "out": "channel-4/subscribe.webp",
+   "w": 2400,
+   "ar": "16:9",
+   "focus": 0.4
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/assets-playback-02.png",
+   "out": "channel-4/watch-more.webp",
+   "w": 2400
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/Asset-02.png",
+   "out": "channel-4/m-home.webp",
+   "w": 1200
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/Asset.png",
+   "out": "channel-4/m-brand-hub.webp",
+   "w": 1200
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/Carousel 01.png",
+   "out": "channel-4/m-hub.webp",
+   "w": 1200
+  },
+  {
+   "root": "channel4",
+   "src": "FOLIO ASSETS/Carousel 02.png",
+   "out": "channel-4/m-film.webp",
+   "w": 1200
+  },
+  {
+   "root": "channel4",
+   "src": "20210824232743344.mp4",
+   "out": "channel-4/paywall.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     304,
+     48,
+     350,
+     560
+    ],
+    "w": 700
+   },
+   "_note": "Principle prototype capture: phone screen only, timeline UI cropped off"
+  }
+ ]
 }
