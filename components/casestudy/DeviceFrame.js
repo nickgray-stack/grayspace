@@ -2,7 +2,8 @@
 import { useEffect, useRef } from "react";
 
 // Device mockup built on the EXACT Figma titanium bezel (exported from the design
-// system as a transparent PNG). The screen content (VideoMedia / <img>) and the
+// system as a transparent PNG at 3x — 1402 × 2874, natural titanium; source:
+// WORK WORK/Devices/iphone-titanium-V2.png, Figma "Home iOS" with screen-here hidden). The screen content (VideoMedia / <img>) and the
 // iOS + IG-story chrome are composited LIVE inside the real screen rectangle, so
 // the frame stays pixel-crisp at any size and chrome is never baked into a video.
 //
