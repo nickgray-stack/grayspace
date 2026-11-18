@@ -56,7 +56,7 @@ for it in man["assets"]:
         continue
     dst = os.path.join(out_base, it["out"])
     os.makedirs(os.path.dirname(dst), exist_ok=True)
-    srcs = it.get("hstack") or [it["src"]]
+    srcs = it.get("hstack") or it.get("concat") or [it["src"]]
     paths = [os.path.join(roots[it["root"]], s) for s in srcs]
     gone = [p for p in paths if not os.path.exists(p)]
     if gone:
@@ -67,7 +67,14 @@ for it in man["assets"]:
         v = it["video"]; x, y, w, h = v["crop"]; ow = v.get("w", w)
         vf = f"crop={w}:{h}:{x}:{y},scale={ow}:-2:flags=lanczos,unsharp=5:5:0.6"
         base = dst.rsplit(".", 1)[0]
-        run = lambda *c: subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", paths[0], *c], check=True)
+        if it.get("concat"):
+            # join clips: crop/scale each to the same frame, then concat
+            ins = sum([["-i", q] for q in paths], [])
+            parts = "".join(f"[{i}:v]scale={ow}:-2:flags=lanczos,setsar=1,fps=30[v{i}];" for i in range(len(paths)))
+            fc = parts + "".join(f"[v{i}]" for i in range(len(paths))) + f"concat=n={len(paths)}:v=1:a=0,unsharp=5:5:0.4[o]"
+            run = lambda *c: subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", fc, "-map", "[o]", *[x for x in c if x not in ("-vf", vf)]], check=True)
+        else:
+            run = lambda *c: subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", paths[0], *c], check=True)
         run("-vf", vf, "-an", "-c:v", "libx264", "-preset", "slow", "-crf", "20", "-pix_fmt", "yuv420p", "-movflags", "+faststart", base + ".mp4")
         run("-vf", vf, "-an", "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "34", "-row-mt", "1", base + ".webm")
         run("-ss", "0.5", "-vf", vf, "-frames:v", "1", "-q:v", "3", base + "-poster.jpg")

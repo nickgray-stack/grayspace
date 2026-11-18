@@ -7,6 +7,8 @@ import Carousel from "./Carousel";
 import VideoMedia from "./VideoMedia";
 import DeviceFrame from "./DeviceFrame";
 import Slideshow from "./Slideshow";
+import { Targets, Shifts, Persona, JourneyCard, Pull, Bars, Sentence, Lists, Loop, System, Ladder, Table, rich } from "./Story";
+import { vidFor } from "./stageHelpers";
 
 const PlusIco = () => <Plus className="i" size={24} strokeWidth={1.75} aria-hidden="true" />;
 
@@ -37,7 +39,28 @@ function GapBox({ c, fill }) {
   );
 }
 
+// Placeholder for an asset still to export: soft gradient + the expected file name.
+function PhBox({ c, fill }) {
+  const ratio = c.ratio && c.ratio !== "free" ? c.ratio : "16:9";
+  const style = { aspectRatio: ratio.replace(":", "/"), ...(fill ? { height: "100%" } : null) };
+  return (
+    <div className="media ph" style={style}>
+      <div className="ph-in"><span className="ph-file">{c.media.ph}</span>{c.media.note && <span className="ph-note">{c.media.note}</span>}</div>
+    </div>
+  );
+}
+
+// Caption below a visual (used for asset tags like "B · Prescription follow-through")
+const withCaption = (c, el) =>
+  c.caption ? (
+    <figure className="cap-fig">
+      {el}
+      <figcaption className="cap">{c.caption}</figcaption>
+    </figure>
+  ) : el;
+
 function MediaBox({ c, fill }) {
+  if (c.media && c.media.ph) return <PhBox c={c} fill={fill} />;
   if (c.media && c.media.todo) return <GapBox c={c} fill={fill} />;
   const img = c.media && c.media.img;
   const free = c.ratio === "free" || (c.media && c.media.ratio === "free");
@@ -105,7 +128,7 @@ function DeviceBox({ c }) {
 }
 
 const renderVisual = (c, fill) =>
-  c.kind === "device" || c.device ? <DeviceBox c={c} /> : <MediaBox c={c} fill={fill} />;
+  withCaption(c, c.kind === "device" || c.device ? <DeviceBox c={c} /> : <MediaBox c={c} fill={fill} />);
 
 // Coloured "frame" for campaign rows: a fixed-ratio panel (a standard media ratio,
 // e.g. 4:5) with a background colour. `mode: "bleed"` seats a device near the top
@@ -113,6 +136,9 @@ const renderVisual = (c, fill) =>
 // `mode: "inset"` (default) centres a media asset (video/image) on the colour ground.
 const renderFramed = (c) => {
   if (!c.frame) return renderVisual(c, c.fill);
+  return withCaption(c, renderFramedInner(c));
+};
+const renderFramedInner = (c) => {
   const f = c.frame;
   const mode = f.mode || "inset";
   const cls = "vmframe " + (f.ar || "ar-portrait") + " m-" + mode;
@@ -141,22 +167,38 @@ const renderFramed = (c) => {
 // Renders the case-study module array + the shared detail overlay (desktop modal
 // / mobile bottom-sheet with drag-to-dismiss). All `+` / CTA buttons open the
 // one overlay built from `detail`. Ported from the prototype.
-export default function CaseStudyBody({ modules = [], detail }) {
+// Several phones playing side by side on one colour panel (groups recordings into one story beat)
+function Stage({ m }) {
+  const ratio = (m.ratio || "16:9").replace(":", "/");
+  return withCaption(m, (
+    <div className="stage" style={{ background: m.bg, aspectRatio: ratio, "--n": m.phones.length }}>
+      {m.phones.map((src, i) => (
+        <div className="stage-dev" key={i}>
+          <DeviceBox c={{ device: { statusBar: false, screen: { ...vidFor(src), fit: "top", shift: "0%", bg: m.screenBg || "#ffffff" } } }} />
+        </div>
+      ))}
+    </div>
+  ));
+}
+
+export default function CaseStudyBody({ modules = [], detail, details, accent }) {
   const [mounted, setMounted] = useState(false);
   const [on, setOn] = useState(false);
+  const [dkey, setDkey] = useState(null);
   const panelRef = useRef(null);
   const barRef = useRef(null);
   const lastFocus = useRef(null);
 
   const openOv = useCallback(
-    (trigger) => {
-      if (!detail) return;
+    (trigger, key) => {
+      if (!detail && !details) return;
+      setDkey(key || null);
       lastFocus.current = trigger || null;
       setMounted(true);
       document.body.style.overflow = "hidden";
       requestAnimationFrame(() => setOn(true));
     },
-    [detail]
+    [detail, details]
   );
   const closeOv = useCallback(() => {
     setOn(false);
@@ -248,7 +290,9 @@ export default function CaseStudyBody({ modules = [], detail }) {
     };
   }, [mounted, closeOv]);
 
-  const onOpen = (e) => openOv(e.currentTarget);
+  const onOpen = (e) => openOv(e.currentTarget, e.currentTarget.dataset.detail);
+  const hasDetail = (key) => (key && details ? !!details[key] : !!detail);
+  const cur = (dkey && details && details[dkey]) || detail || (details && Object.values(details)[0]);
 
   const renderMedia = (c, inStack) => renderVisual(c, c.fill);
 
@@ -260,8 +304,8 @@ export default function CaseStudyBody({ modules = [], detail }) {
       </div>
       <div className="cardfoot">
         <span className="blabel">{c.label}</span>
-        {c.cta && detail && (
-          <button className="iconbtn" type="button" onClick={onOpen} aria-label="Read more">
+        {c.cta && hasDetail(c.detail) && (
+          <button className="iconbtn" type="button" onClick={onOpen} data-detail={c.detail || ""} aria-label="Read more">
             <PlusIco />
           </button>
         )}
@@ -296,6 +340,13 @@ export default function CaseStudyBody({ modules = [], detail }) {
         </div>
       );
     }
+    if (c.kind === "journey") {
+      return (
+        <div className={c.span + " r"} key={i}>
+          <JourneyCard c={c} />
+        </div>
+      );
+    }
     if (c.kind === "detail") {
       return (
         <div className={c.span + " r"} key={i}>
@@ -311,6 +362,32 @@ export default function CaseStudyBody({ modules = [], detail }) {
   };
 
   const renderModule = (m, i) => {
+    const story = { targets: Targets, shifts: Shifts, persona: Persona, pull: Pull, bars: Bars, sentence: Sentence, lists: Lists, loop: Loop, system: System, ladder: Ladder, table: Table }[m.type];
+    if (story) { const C = story; return <C m={m} key={i} />; }
+    if (m.type === "stage") {
+      return (
+        <section className="section wrap" key={i}>
+          <div className="grid"><div className="col-12 r"><Stage m={m} /></div></div>
+        </section>
+      );
+    }
+    if (m.type === "prose") {
+      return (
+        <section className="section overview wrap" key={i}>
+          <h2 className="r">{m.heading}</h2>
+          <div className="body r">
+            {m.body.map((t, j) => <p key={j}>{rich(t)}</p>)}
+            {m.cta && hasDetail(m.cta.detail) && (
+              <div className="ctarow">
+                <button className="btn-exp" type="button" onClick={onOpen} data-detail={m.cta.detail || ""} aria-label={m.cta.label}>
+                  <span className="lbl">{m.cta.label}</span><span className="ico"><PlusIco /></span>
+                </button>
+              </div>
+            )}
+          </div>
+        </section>
+      );
+    }
     if (m.type === "slideshow") {
       return (
         <section className="section wrap" key={i}>
@@ -359,11 +436,13 @@ export default function CaseStudyBody({ modules = [], detail }) {
     }
     if (m.type === "statement") {
       return (
-        <section className="section statement wrap" key={i}>
-          <p className="modhead r">{m.text}</p>
-          {m.cta && detail && (
+        <section className={"section statement wrap" + (m.phase ? " has-phase" : "")} key={i}>
+          {m.phase && <p className="st-phase r">{m.phase}</p>}
+          {m.kicker && <p className="st-kick r">{m.kicker}</p>}
+          <p className="modhead r">{rich(m.text)}</p>
+          {m.cta && hasDetail(m.cta.detail) && (
             <div className="ctarow r">
-              <button className="btn-exp" type="button" onClick={onOpen} aria-label={m.cta.label}>
+              <button className="btn-exp" type="button" onClick={onOpen} data-detail={m.cta.detail || ""} aria-label={m.cta.label}>
                 <span className="lbl">{m.cta.label}</span>
                 <span className="ico">
                   <PlusIco />
@@ -385,10 +464,10 @@ export default function CaseStudyBody({ modules = [], detail }) {
   };
 
   return (
-    <>
+    <div className="cs" style={accent ? { "--cs-accent": accent } : undefined}>
       {modules.map(renderModule)}
 
-      {detail && (
+      {cur && (
         <div
           className={"scrim" + (on ? " on" : "")}
           hidden={!mounted}
@@ -406,19 +485,19 @@ export default function CaseStudyBody({ modules = [], detail }) {
                 <X className="i" size={24} strokeWidth={1.75} aria-hidden="true" />
               </button>
             </div>
-            <div className="eyebrow">{detail.eyebrow}</div>
-            <h2>{detail.heading}</h2>
-            {detail.image && (
-              <div className="img" role="img" aria-label="Project image" style={{ background: mediaBg(detail.image) }} />
+            <div className="eyebrow">{cur.eyebrow}</div>
+            <h2>{cur.heading}</h2>
+            {cur.image && (
+              <div className="img" role="img" aria-label="Project image" style={{ background: mediaBg(cur.image) }} />
             )}
-            {detail.body.map((p, i) => (
-              <p key={i} className={i === detail.body.length - 1 ? "last" : undefined}>
-                {p}
+            {cur.body.map((p, i) => (
+              <p key={i} className={i === cur.body.length - 1 ? "last" : undefined}>
+                {rich(p)}
               </p>
             ))}
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

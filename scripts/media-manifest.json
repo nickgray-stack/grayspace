@@ -1172,38 +1172,6 @@
   },
   {
    "root": "docproto",
-   "src": "Vision/01-triage-to-booking.mp4",
-   "out": "doctolib/triage.mp4",
-   "w": 0,
-   "video": {
-    "crop": [
-     0,
-     0,
-     784,
-     1700
-    ],
-    "w": 780
-   },
-   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
-  },
-  {
-   "root": "docproto",
-   "src": "Vision/02triage-to-booking.mp4",
-   "out": "doctolib/booking.mp4",
-   "w": 0,
-   "video": {
-    "crop": [
-     0,
-     0,
-     784,
-     1700
-    ],
-    "w": 780
-   },
-   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
-  },
-  {
-   "root": "docproto",
    "src": "Vision/04-post-consultation.mp4",
    "out": "doctolib/post-consultation.mp4",
    "w": 0,
@@ -1297,6 +1265,115 @@
     "w": 780
    },
    "_note": "Kap recording of the Figma prototype (390x844 @2x)"
+  },
+  {
+   "root": "docproto",
+   "src": "Vision/03-prepare-consultation.mp4",
+   "out": "doctolib/lea-2-before.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     784,
+     1700
+    ],
+    "w": 780
+   }
+  },
+  {
+   "root": "docproto",
+   "src": "Home-shape/01-home-complete profile.mp4",
+   "out": "doctolib/home-complete.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1690
+    ],
+    "w": 780
+   }
+  },
+  {
+   "root": "docproto",
+   "src": "Home-shape/03-home-multiple.mp4",
+   "out": "doctolib/home-multiple.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1690
+    ],
+    "w": 780
+   }
+  },
+  {
+   "root": "docproto",
+   "src": "AIHA-shape/04-AI-motion-appointment.mp4",
+   "out": "doctolib/ai-appointment.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1688
+    ],
+    "w": 780
+   }
+  },
+  {
+   "root": "docproto",
+   "src": "AIHA-shape/05-AI-motion-article.mp4",
+   "out": "doctolib/ai-article.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1688
+    ],
+    "w": 780
+   }
+  },
+  {
+   "root": "docproto",
+   "src": "Care plan-shape/04-care plan-complete.mp4",
+   "out": "doctolib/care-complete.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1704
+    ],
+    "w": 780
+   }
+  },
+  {
+   "root": "docproto",
+   "concat": [
+    "Vision/01-triage-to-booking.mp4",
+    "Vision/02triage-to-booking.mp4"
+   ],
+   "out": "doctolib/lea-1-triage-booking.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     784,
+     1700
+    ],
+    "w": 780
+   },
+   "_note": "two recordings joined into one journey"
   }
  ]
 }

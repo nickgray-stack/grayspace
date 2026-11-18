@@ -58,7 +58,7 @@ export default async function CaseStudyPage({ params }) {
           <div className="meta">
             <div className="cell">
               <div className="l">Client</div>
-              <div className="v">{p.name}</div>
+              <div className="v">{p.client || p.name}</div>
             </div>
             <div className="cell">
               <div className="l">Year</div>
@@ -77,7 +77,7 @@ export default async function CaseStudyPage({ params }) {
 
         {p.modules && p.modules.length ? (
           <>
-            <CaseStudyBody modules={p.modules} detail={p.detail} />
+            <CaseStudyBody modules={p.modules} detail={p.detail} details={p.details} accent={p.accent} />
             {!p.published && (
               <section className="section statement wrap">
                 <p className="modhead">Full case study available on request.</p>

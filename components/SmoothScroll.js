@@ -18,7 +18,8 @@ export default function SmoothScroll() {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) {
+          // also reveal anything already scrolled past (fast jumps can skip a short row)
+          if (e.isIntersecting || e.boundingClientRect.bottom < 0) {
             e.target.classList.add("in");
             io.unobserve(e.target);
           }
