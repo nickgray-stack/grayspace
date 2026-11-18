@@ -5,7 +5,8 @@
   "christies": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/Christie's/FOLIO ASSETS",
   "channel4": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/Channel 4",
   "site": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/_from-grayspc",
-  "work": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK"
+  "work": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK",
+  "docproto": "/Users/nickgray/Library/CloudStorage/Dropbox/WORK WORK/UsTwo-Doctolib/Portfolio Assets/Prototype Video"
  },
  "assets": [
   {
@@ -1168,6 +1169,134 @@
     "w": 750
    },
    "_note": "Safari chrome cropped off the 2015 screen recording"
+  },
+  {
+   "root": "docproto",
+   "src": "Vision/01-triage-to-booking.mp4",
+   "out": "doctolib/triage.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     784,
+     1700
+    ],
+    "w": 780
+   },
+   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
+  },
+  {
+   "root": "docproto",
+   "src": "Vision/02triage-to-booking.mp4",
+   "out": "doctolib/booking.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     784,
+     1700
+    ],
+    "w": 780
+   },
+   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
+  },
+  {
+   "root": "docproto",
+   "src": "Vision/04-post-consultation.mp4",
+   "out": "doctolib/post-consultation.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     784,
+     1704
+    ],
+    "w": 780
+   },
+   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
+  },
+  {
+   "root": "docproto",
+   "src": "Care plan-shape/01-care plan-prescription.mp4",
+   "out": "doctolib/prescription.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1706
+    ],
+    "w": 780
+   },
+   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
+  },
+  {
+   "root": "docproto",
+   "src": "Care plan-shape/02-care plan-medicine-schedule.mp4",
+   "out": "doctolib/medicine-schedule.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1704
+    ],
+    "w": 780
+   },
+   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
+  },
+  {
+   "root": "docproto",
+   "src": "Care plan-shape/03-care plan-check in.mp4",
+   "out": "doctolib/check-in.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1704
+    ],
+    "w": 780
+   },
+   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
+  },
+  {
+   "root": "docproto",
+   "src": "AIHA-shape/06-AI-motion-response.mp4",
+   "out": "doctolib/ai-response.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1688
+    ],
+    "w": 780
+   },
+   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
+  },
+  {
+   "root": "docproto",
+   "src": "Home-shape/02-home-switch profile.mp4",
+   "out": "doctolib/switch-profile.mp4",
+   "w": 0,
+   "video": {
+    "crop": [
+     0,
+     0,
+     780,
+     1688
+    ],
+    "w": 780
+   },
+   "_note": "Kap recording of the Figma prototype (390x844 @2x)"
   }
  ]
 }

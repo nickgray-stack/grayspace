@@ -29,16 +29,18 @@ import doctolib from "./projects/doctolib";
 
 const all = [phillips, christies, doctolib, zalando, frontify, channel4, cazoo, ltaRally, justEat, honda, btTv, bookinggo, hl, fiat];
 
+// Listed projects (home, roster, prev/next, sitemap). Hidden projects are left
+// out of every list but still build at /work/<slug> (noindex) for private review.
 export const projects = all.filter((p) => !p.hidden);
-export const allProjects = projects;
+export const allProjects = all;
 
 export function getProject(slug) {
-  return projects.find((p) => p.slug === slug) || null;
+  return all.find((p) => p.slug === slug) || null;
 }
 
 export function getPrevNext(slug) {
   const i = projects.findIndex((p) => p.slug === slug);
-  if (i < 0) return { prev: null, next: null };
+  if (i < 0) return { prev: projects.length ? { name: projects[0].name, href: "/work/" + projects[0].slug, thumb: projects[0].cover.img ? `url(${projects[0].cover.img})` : "none" } : null, next: null };
   const prevP = projects[(i - 1 + projects.length) % projects.length];
   const nextP = projects[(i + 1) % projects.length];
   const toNav = (p) => ({

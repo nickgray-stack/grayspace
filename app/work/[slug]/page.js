@@ -3,10 +3,10 @@ import Chrome from "@/components/Chrome";
 import Footer from "@/components/Footer";
 import CaseStudyBody from "@/components/casestudy/CaseStudyBody";
 import JsonLd from "@/components/JsonLd";
-import { getProject, getPrevNext, projects } from "@/content/projects";
+import { getProject, getPrevNext, allProjects } from "@/content/projects";
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return allProjects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }) {
@@ -19,6 +19,7 @@ export async function generateMetadata({ params }) {
     title: p.name,
     description,
     alternates: { canonical: url },
+    ...(p.hidden ? { robots: { index: false, follow: false } } : null),
     openGraph: {
       title: `${p.name} — Gray Space`,
       description,
