@@ -133,8 +133,14 @@ const doctolib = {
   },
 
   modules: [
-    // Hero — showreel (prototype, system, brand). Placeholder until the MP4 is exported.
-    fullPh("16:9", "showreel.mp4", "asset-00 Showreel — AI motion, prototype, system, brand"),
+    // Hero — showreel built in code (scenes 1–2 so far; more as assets arrive)
+    {
+      type: "showreel",
+      colors: { bg: "#F8F3EE", quad: "#BCDFC8" },
+      guide: "Gathering guidance…",
+      mark: { video: M + "reel/mark.mp4", webm: M + "reel/mark.webm", poster: M + "reel/mark-poster.webp" },
+      tiles: [M + "reel/tile-responding.webp", M + "reel/tile-listening.webp", M + "reel/tile-thinking.webp"],
+    },
 
     // 1 · Problem
     say("Millions of people book on Doctolib, then leave. The brief: turn a booking app into a *health companion* people come back to.", "The brief", "brief"),

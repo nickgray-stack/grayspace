@@ -9,6 +9,7 @@ import DeviceFrame from "./DeviceFrame";
 import Slideshow from "./Slideshow";
 import { Targets, Shifts, Persona, JourneyCard, Pull, Bars, Sentence, Lists, Loop, System, Ladder, Table, rich } from "./Story";
 import InfoCards from "./InfoCards";
+import Showreel from "./Showreel";
 import { vidFor } from "./stageHelpers";
 
 const PlusIco = () => <Plus className="i" size={24} strokeWidth={1.75} aria-hidden="true" />;
@@ -419,6 +420,13 @@ export default function CaseStudyBody({ modules = [], detail, details, accent })
               </div>
             ))}
           </dl>
+        </section>
+      );
+    }
+    if (m.type === "showreel") {
+      return (
+        <section className="section wrap" key={i}>
+          <div className="grid"><div className="col-12 r now">{withCaption(m, <Showreel m={m} />)}</div></div>
         </section>
       );
     }
