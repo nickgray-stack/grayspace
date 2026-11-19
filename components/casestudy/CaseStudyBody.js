@@ -297,10 +297,10 @@ export default function CaseStudyBody({ modules = [], detail, details, accent })
   const renderMedia = (c, inStack) => renderVisual(c, c.fill);
 
   const renderDetail = (c) => (
-    <div className="detail">
+    <div className={"detail" + (c.solo ? " solo" : "")}>
       <div>
         {c.eyebrow && <div className="eyebrow">{c.eyebrow}</div>}
-        <p>{c.copy}</p>
+        <p>{rich(c.copy)}</p>
       </div>
       <div className="cardfoot">
         <span className="blabel">{c.label}</span>
@@ -490,11 +490,28 @@ export default function CaseStudyBody({ modules = [], detail, details, accent })
             {cur.image && (
               <div className="img" role="img" aria-label="Project image" style={{ background: mediaBg(cur.image) }} />
             )}
-            {cur.body.map((p, i) => (
-              <p key={i} className={i === cur.body.length - 1 ? "last" : undefined}>
-                {rich(p)}
-              </p>
-            ))}
+            {cur.media && (
+              <div className="ov-media">{cur.media.ph ? <PhBox c={{ ratio: cur.media.ratio || "16:9", media: cur.media }} /> : <MediaBox c={{ ratio: cur.media.ratio || "16:9", media: cur.media }} />}</div>
+            )}
+            {cur.figures && (
+              <dl className="ov-figs">
+                {cur.figures.map((f, i) => (
+                  <div key={i}><dd>{f.value}</dd><dt>{f.label}</dt></div>
+                ))}
+              </dl>
+            )}
+            {(cur.body || []).map((p, i) =>
+              typeof p === "string" ? (
+                <p key={i} className={i === cur.body.length - 1 ? "last" : undefined}>{rich(p)}</p>
+              ) : (
+                <div className="ov-sec" key={i}>
+                  {p.k && <span className="ov-k">{p.k}</span>}
+                  <h3>{p.title}</h3>
+                  {p.copy && <p>{rich(p.copy)}</p>}
+                  {p.items && <ul>{p.items.map((it, j) => <li key={j}>{rich(it)}</li>)}</ul>}
+                </div>
+              )
+            )}
           </div>
         </div>
       )}

@@ -183,21 +183,24 @@ export function Sentence({ m }) {
       <p className="st-qsent">
         {m.parts.map((p, i) =>
           typeof p === "string" ? <span key={i}>{p}</span> : (
-            <mark key={i} className={"st-mark" + (hover === p.n ? " on" : "")} style={{ "--c": m.colors[p.n - 1], "--d": p.n * 220 + "ms" }} onMouseEnter={() => setHover(p.n)} onMouseLeave={() => setHover(null)}>
+            <mark key={i} className={"st-mark" + (hover === p.n ? " on" : "")} style={{ "--d": 200 + p.n * 380 + "ms" }} onMouseEnter={() => setHover(p.n)} onMouseLeave={() => setHover(null)}>
               {p.text}<sup>{p.n}</sup>
             </mark>
           )
         )}
       </p>
-      <div className="st-notes">
-        {m.notes.map((n, i) => (
-          <div key={i} className={"st-note" + (hover === i + 1 ? " on" : "")} style={{ "--c": m.colors[i], "--d": 900 + i * 120 + "ms" }} onMouseEnter={() => setHover(i + 1)} onMouseLeave={() => setHover(null)}>
-            <span className="st-nn">{i + 1}</span>
-            <h4>{n.title}</h4>
-            <p>{n.copy}</p>
-          </div>
-        ))}
-      </div>
+      {m.notes && (
+        <div className="st-notes">
+          {m.notes.map((n, i) => (
+            <div key={i} className={"st-note" + (hover === i + 1 ? " on" : "")} style={{ "--d": 900 + i * 120 + "ms" }} onMouseEnter={() => setHover(i + 1)} onMouseLeave={() => setHover(null)}>
+              <span className="st-nn">{i + 1}</span>
+              <h4>{n.title}</h4>
+              <p>{n.copy}</p>
+            </div>
+          ))}
+        </div>
+      )}
+      {m.foot && <p className="st-fine">{m.foot}</p>}
     </section>
   );
 }

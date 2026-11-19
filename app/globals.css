@@ -637,3 +637,30 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .case .st-pair .st-line{min-width:0; width:100%;}
 .case .st-pair .st-old{justify-self:start;}
 @media (max-width:900px){ .case .st-pair{grid-template-columns:auto 40px auto; justify-content:start;} }
+
+/* ---- Doctolib V2 ---------------------------------------------------------------- */
+/* Quality-action sentence in the site's own palette: the sentence sits muted and each
+   defining phrase fills to full ink in turn, with a thin accent rule drawn under it. */
+.case .st-qsent{color:var(--muted);}
+.case .st-mark{background:linear-gradient(var(--cs-accent),var(--cs-accent)) no-repeat 0 96% / 0% 3px; color:var(--muted); padding:0; transition:background-size 1s cubic-bezier(.19,1,.22,1) var(--d,0ms), color .6s ease var(--d,0ms);}
+.case .in .st-mark{background-size:100% 3px; color:var(--fg);}
+.case .st-mark.on{background-size:100% 3px; color:var(--cs-accent);}
+.case .st-mark sup{color:var(--cs-accent);}
+.case .st-note{border-top-color:var(--fg);}
+.case .st-note .st-nn{color:var(--cs-accent);}
+
+/* Overlay: optional visual, big figures and titled sub-sections */
+.case .panel .ov-media{margin:22px 0 26px;}
+.case .panel .ov-media .media{border-radius:6px;}
+.case .panel .ov-figs{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 24px; margin:6px 0 30px;}
+.case .panel .ov-figs dd{margin:0; font-size:clamp(2.6rem,4.4vw,3.6rem); font-weight:650; letter-spacing:-.04em; line-height:1; color:var(--cs-accent);}
+.case .panel .ov-figs dt{margin-top:8px; font-size:.92rem; color:var(--muted);}
+.case .panel .ov-sec{border-top:1px solid var(--border); padding-top:16px; margin-top:18px;}
+.case .panel .ov-sec h3{margin:0 0 6px; font-size:1.12rem; letter-spacing:-.015em;}
+.case .panel .ov-sec p{margin:0;}
+.case .panel .ov-sec ul{margin:8px 0 0; padding-left:1.1em;}
+.case .panel .ov-sec li{margin:4px 0;}
+.case .panel .ov-k{display:inline-block; font-family:var(--mono); font-size:.78rem; color:var(--cs-accent); margin-bottom:6px;}
+
+/* Info panel that sits on its own under a pair of visuals (Mouthwash pattern) */
+.case .detail.solo{min-height:0; height:auto;}
