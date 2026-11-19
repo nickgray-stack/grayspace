@@ -107,6 +107,8 @@ function S34({ R }) {
         <img src={A("s3/phone-ai.webp")} alt="" style={box(657.2, 159.8, 509)} />
         <div style={box(93.75, 159.8, 509)}>
           <img src={A("s3/phone-home-empty.webp")} alt="" style={{ width: "100%", display: "block" }} />
+          {/* the Doctolib script writes itself in as the phone lands */}
+          <img className="s3-logo" src={A("s3/home-logo.svg")} alt="" style={box(23.25 + 179, 23.25 + 78, 105)} />
           {/* Home content, loaded in on top of the empty screen (phone-local coordinates + 23.25 shadow pad) */}
           <img className="s3-load" src={A("s3/home-heading.svg")} alt="" style={box(23.25 + 28.5, 23.25 + 157, 406)} />
           <img className="s3-load" src={A("s3/home-search.svg")} alt="" style={box(23.25 + 20, 23.25 + 264, 425)} />
@@ -203,6 +205,7 @@ export default function Showreel({ m }) {
     gsap.set(q(".s3-load"), { autoAlpha: 0, y: u(14) });
     gsap.set(q(".s3-card"), { autoAlpha: 0, scale: 0.96, transformOrigin: "50% 0%" });
     gsap.set(q(".s3-chip"), { autoAlpha: 0, x: u(18) });
+    gsap.set(q(".s3-logo"), { clipPath: "inset(0% 100% 0% 0%)" });
     gsap.set(q(".s4-live"), { y: u(1100) });
     gsap.set(q(".s4-net"), { clipPath: "circle(0% at 50% 50%)" });
     gsap.set(q(".s4-title"), { clipPath: "inset(0% 50% 0% 50%)", y: u(8) });
@@ -217,6 +220,7 @@ export default function Showreel({ m }) {
       .to(q(".s3-table"), { y: 0, duration: 1.15, ease: ease("settle") }, T3 + 0.65)
       .to(q(".s3-chips .s3-row"), { autoAlpha: 1, y: 0, duration: 0.7, ease: ease("card"), stagger: 0.09 }, T3 + 1.05)
       .to(q(".s3-table .s3-row"), { autoAlpha: 1, y: 0, duration: 0.7, ease: ease("card"), stagger: 0.07 }, T3 + 1.2)
+      .to(q(".s3-logo"), { clipPath: "inset(0% 0% 0% 0%)", duration: 1.1, ease: ease("move") }, T3 + 0.95)
       // Home loads in: heading, search, then the card opens and its prompts push in
       .to(q(".s3-load"), { autoAlpha: 1, y: 0, duration: 0.7, ease: ease("settle"), stagger: 0.12 }, T3 + 1.25)
       .to(q(".s3-card"), { autoAlpha: 1, scale: 1, duration: 0.8, ease: ease("settle") }, T3 + 1.55)
