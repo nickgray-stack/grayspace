@@ -695,3 +695,14 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .sr:hover .sr-ctl,.sr-ctl:focus-visible{opacity:1;}
 @media (hover:none){.sr-ctl{opacity:.9;}}
 .sr-ctl svg{width:18px; height:18px;}
+
+/* showreel scenes 3–4 */
+.sr .s3-left,.sr .s3-right,.sr .s4-live{position:absolute;}
+.sr .s3-left{inset:0; z-index:1;}
+.sr .s3-right{z-index:1; overflow:hidden;}
+.sr .s4-live{z-index:1; border-radius:.6cqw; overflow:hidden;}
+.sr .s3-frame{position:absolute; border-radius:.45cqw; overflow:hidden;}
+.sr .s3-frame img,.sr .s3-right img,.sr .s3-post,.sr .s3-row,.sr .s3-card,.sr .s3-cell,.sr .s3-tcell,.sr .s3-right > div{position:absolute; display:block; height:auto;}
+.sr .s3-cell{background:#000;}
+.sr .s3-cell::after{content:""; position:absolute; inset:0; background:var(--c); border:.036cqw solid #000; border-radius:.23cqw;}
+.sr .s3-tcell{background:#BCDFC8; border:.035cqw solid #000; border-radius:.24cqw; box-sizing:border-box;}

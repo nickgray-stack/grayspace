@@ -36,6 +36,94 @@ function Sparkle() {
   );
 }
 
+
+// ---- scenes 3–4 layout (Figma frame coordinates) ----------------------------------
+const box = (x, y, w, h) => ({ left: u(x), top: u(y), width: u(w), ...(h ? { height: u(h) } : null) });
+const SPMID = ["radiology", "cardiology", "dermatology", "nutrition", "general-practice", "physiotherapy"];
+const RIGHT = ["pediatrics", "orthopedics", "ent", "gastro", "orthopedics-2", "endocrinology"];
+const SPW = { radiology: 115, cardiology: 127, dermatology: 151, nutrition: 101, "general-practice": 195, physiotherapy: 166, pediatrics: 115, orthopedics: 149, ent: 48, gastro: 78, "orthopedics-2": 149, endocrinology: 169 };
+const DRS = [
+  { c: "#E4FFEE", w: 204 },
+  { c: "#FFD89E", w: 201 },
+  { c: "#E8F3FF", w: 200 },
+  { c: "#FFECE0", w: 202 },
+];
+const DRY = [683, 753.74, 824.48, 895.46];
+
+function S34({ R }) {
+  const A = (f) => R + f;
+  return (
+    <>
+      <div className="s3-left">
+        {/* top-left: two social posts on sand */}
+        <div className="s3-frame s3-posts" style={{ ...box(0, 6, 983, 553), background: "#E7D7C8" }}>
+          <div className="s3-post" style={box(197, 99, 271)}>
+            <img src={A("s3/post-bg.svg")} alt="" style={box(0, 0, 271)} />
+            <img className="s3-bump" src={A("s3/post-l-top.svg")} alt="" style={box(0, 33, 271)} />
+            <img className="s3-bump" src={A("s3/post-l-bottom.svg")} alt="" style={box(0, 283, 271)} />
+            <img className="s3-ptitle" src={A("s3/post-l-title.svg")} alt="" style={box(57, 130, 158)} />
+          </div>
+          <div className="s3-post" style={box(516, 99, 271)}>
+            <img src={A("s3/post-bg.svg")} alt="" style={box(0, 0, 271)} />
+            <img className="s3-bump" src={A("s3/post-r-top.svg")} alt="" style={box(0, 33, 271)} />
+            <img className="s3-bump" src={A("s3/post-r-bottom.svg")} alt="" style={box(0, 184, 271)} />
+            <img className="s3-ptitle" src={A("s3/post-r-title.svg")} alt="" style={box(82, 94, 106)} />
+            <img className="s3-ptitle" src={A("s3/post-r-title2.svg")} alt="" style={box(63, 251, 146)} />
+          </div>
+        </div>
+        {/* bottom-left: practitioner chips */}
+        <div className="s3-frame s3-chips" style={{ ...box(0, 565, 509, 509), background: "#F5F3F0" }}>
+          {DRS.map((d, i) => (
+            <div key={i} className="s3-row" style={box(102, DRY[i] - 565, 304.6, 60.2)}>
+              <span className="s3-cell" style={{ ...box(0, 0, 57.65, 60.2), "--c": d.c }} />
+              <span className="s3-cell" style={{ ...box(57.65, 0, 246.9, 60.2), "--c": d.c }} />
+              <img src={A(`s3/avatar-${i}.webp`)} alt="" style={box(11, 11.7, 36)} />
+              <img src={A(`s3/dr-${i}.svg`)} alt="" style={box(78, 20, d.w)} />
+            </div>
+          ))}
+        </div>
+        {/* bottom-middle: specialty table on mint */}
+        <div className="s3-frame s3-table" style={{ ...box(516, 566, 467, 508), background: "#BCDFC8" }}>
+          {SPMID.map((n, i) => (
+            <div key={i} className="s3-row" style={box(-183, 85.75 + 58.03 * i, 712.4, 58.03)}>
+              <span className="s3-tcell" style={box(0, 0, 268.2, 58.03)} />
+              <span className="s3-tcell" style={box(268.2, 0, 245.2, 58.03)} />
+              <span className="s3-tcell" style={box(513.4, 0, 199, 58.03)} />
+              <img src={A(`s3/sp-${n}.svg`)} alt="" style={box(287.8, 19.3, SPW[n])} />
+              <img src={A(`s3/sp-${RIGHT[i]}.svg`)} alt="" style={box(533.4, 19.3, SPW[RIGHT[i]])} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* scene 4: Live Well, network lines opening from the centre */}
+      <div className="s3-frame s4-live" style={{ ...box(16, 60, 969, 969), background: "#F4F2EE" }}>
+        <img className="s4-net" src={A("s4/network.svg")} alt="" style={box(0, 0, 969)} />
+        <img className="s4-title" src={A("s4/live-well.svg")} alt="Live Well." style={box(329, 454, 312)} />
+      </div>
+
+      {/* right: phones on white */}
+      <div className="s3-right" style={{ ...box(1000, 0, 920, 1080), background: "#FFFFFF" }}>
+        <img src={A("s3/phone-ai.webp")} alt="" style={box(657.2, 159.8, 509)} />
+        <div style={box(93.75, 159.8, 509)}>
+          <img src={A("s3/phone-home-empty.webp")} alt="" style={{ width: "100%", display: "block" }} />
+          {/* Home content, loaded in on top of the empty screen (phone-local coordinates + 23.25 shadow pad) */}
+          <img className="s3-load" src={A("s3/home-heading.svg")} alt="" style={box(23.25 + 28.5, 23.25 + 157, 406)} />
+          <img className="s3-load" src={A("s3/home-search.svg")} alt="" style={box(23.25 + 20, 23.25 + 264, 425)} />
+          <div className="s3-card" style={box(23.25 + 28.5, 23.25 + 386.7, 406, 399)}>
+            <img src={A("s3/home-card.svg")} alt="" style={box(0, 0, 406)} />
+            <img src={A("s3/home-card-head.webp")} alt="" style={box(0, 11.3, 406)} />
+            <img className="s3-chip" src={A("s3/home-chip-0.svg")} alt="" style={box(68.5, 96.3, 295)} />
+            <img className="s3-chip" src={A("s3/home-chip-1.svg")} alt="" style={box(68.5, 162.3, 295)} />
+            <img className="s3-chip" src={A("s3/home-chip-2.svg")} alt="" style={box(68.5, 229.3, 295)} />
+            <img className="s3-chip" src={A("s3/home-ask.svg")} alt="" style={box(77.5, 327.3, 161)} />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
 export default function Showreel({ m }) {
   const root = useRef(null);
   const tlRef = useRef(null);
@@ -76,16 +164,6 @@ export default function Showreel({ m }) {
     const tl = gsap.timeline({ paused: true, onComplete: () => setDone(true) });
     tlRef.current = tl;
 
-    if (reduce) {
-      // final calm frame, no motion
-      Object.assign(cell, { l: -400, t: -400, r: W + 400, b: H + 400 });
-      place();
-      gsap.set(q(".sr-mark, .sr-tile"), { autoAlpha: 1, y: 0, scale: 1 });
-      gsap.set(q(".sr-guide"), { autoAlpha: 0 });
-      setDone(true);
-      return;
-    }
-
     gsap.set(q(".sr-mark"), { autoAlpha: 0, scale: 0.86 });
     gsap.set(q(".sr-tile"), { autoAlpha: 0, y: u(60) });
     gsap.set(q(".sr-guide"), { autoAlpha: 0 });
@@ -107,8 +185,59 @@ export default function Showreel({ m }) {
     tl.call(() => mark && mark.play().catch(() => {}), [], 4.6)
       .to(q(".sr-mark"), { autoAlpha: 1, scale: 1, duration: 1.2, ease: ease("settle") }, 4.7)
       .to(q(".sr-tile"), { autoAlpha: 1, y: 0, duration: 0.8, ease: ease("card"), stagger: 0.12 }, 5.5)
-      // hold on the intelligence layer (scenes 3+ follow when assets arrive)
-      .to({}, { duration: 3.2 });
+      ;
+
+    // ---- Scene 3 · Assets and screens ------------------------------------------
+    // the intelligence layer leaves; brand frames drop in from the top and rise from
+    // the bottom with their contents settling inside; the phone panel slides in from
+    // the right and Home "loads" its content (open, push, settle).
+    const T3 = 8.6;
+    gsap.set(q(".s3-posts"), { y: u(-620) });
+    gsap.set(q(".s3-chips"), { y: u(560) });
+    gsap.set(q(".s3-table"), { y: u(560) });
+    gsap.set(q(".s3-right"), { x: u(940) });
+    gsap.set(q(".s3-post"), { y: u(-70) });
+    gsap.set(q(".s3-bump"), { y: u(22) });
+    gsap.set(q(".s3-ptitle"), { autoAlpha: 0, y: u(10) });
+    gsap.set(q(".s3-row"), { autoAlpha: 0, y: u(26) });
+    gsap.set(q(".s3-load"), { autoAlpha: 0, y: u(14) });
+    gsap.set(q(".s3-card"), { autoAlpha: 0, scale: 0.96, transformOrigin: "50% 0%" });
+    gsap.set(q(".s3-chip"), { autoAlpha: 0, x: u(18) });
+    gsap.set(q(".s4-live"), { y: u(1100) });
+    gsap.set(q(".s4-net"), { clipPath: "circle(0% at 50% 50%)" });
+    gsap.set(q(".s4-title"), { clipPath: "inset(0% 50% 0% 50%)", y: u(8) });
+
+    tl.to(q(".sr-mark, .sr-tile"), { autoAlpha: 0, y: u(-30), duration: 0.5, ease: ease("exit"), stagger: 0.04 }, T3)
+      .to(q(".s3-right"), { x: 0, duration: 1.25, ease: ease("move") }, T3 + 0.15)
+      .to(q(".s3-posts"), { y: 0, duration: 1.15, ease: ease("settle") }, T3 + 0.35)
+      .to(q(".s3-post"), { y: 0, duration: 0.9, ease: ease("card"), stagger: 0.12 }, T3 + 0.85)
+      .to(q(".s3-bump"), { y: 0, duration: 0.8, ease: ease("card"), stagger: 0.1 }, T3 + 1.2)
+      .to(q(".s3-ptitle"), { autoAlpha: 1, y: 0, duration: 0.7, ease: ease("settle"), stagger: 0.08 }, T3 + 1.4)
+      .to(q(".s3-chips"), { y: 0, duration: 1.15, ease: ease("settle") }, T3 + 0.5)
+      .to(q(".s3-table"), { y: 0, duration: 1.15, ease: ease("settle") }, T3 + 0.65)
+      .to(q(".s3-chips .s3-row"), { autoAlpha: 1, y: 0, duration: 0.7, ease: ease("card"), stagger: 0.09 }, T3 + 1.05)
+      .to(q(".s3-table .s3-row"), { autoAlpha: 1, y: 0, duration: 0.7, ease: ease("card"), stagger: 0.07 }, T3 + 1.2)
+      // Home loads in: heading, search, then the card opens and its prompts push in
+      .to(q(".s3-load"), { autoAlpha: 1, y: 0, duration: 0.7, ease: ease("settle"), stagger: 0.12 }, T3 + 1.25)
+      .to(q(".s3-card"), { autoAlpha: 1, scale: 1, duration: 0.8, ease: ease("settle") }, T3 + 1.55)
+      .to(q(".s3-chip"), { autoAlpha: 1, x: 0, duration: 0.7, ease: ease("settle"), stagger: 0.1 }, T3 + 1.85);
+
+    // ---- Scene 4 · Asset swap -------------------------------------------------------
+    // the next frame pushes the brand assets up and out; the network lines open from
+    // the centre and "Live Well." peels open around it
+    const T4 = T3 + 5.6;
+    tl.to(q(".s3-left"), { y: u(-1100), duration: 1.25, ease: ease("move") }, T4)
+      .to(q(".s4-live"), { y: 0, duration: 1.25, ease: ease("move") }, T4)
+      .to(q(".s4-net"), { clipPath: "circle(75% at 50% 50%)", duration: 1.9, ease: ease("settle") }, T4 + 0.7)
+      .to(q(".s4-title"), { clipPath: "inset(0% 0% 0% 0%)", y: 0, duration: 1.2, ease: ease("settle") }, T4 + 1.0)
+      .to({}, { duration: 3.0 });
+
+    if (reduce) {
+      // reduced motion: rest on the final composed frame, no movement
+      tl.progress(1).pause();
+      setDone(true);
+      return;
+    }
 
     // play when visible, pause when off screen or in a background tab
     let inView = false;
@@ -163,6 +292,9 @@ export default function Showreel({ m }) {
         {(m.tiles || []).map((t, i) => (
           <img key={i} className="sr-tile" src={t} alt="" style={{ left: u(612 + i * 240.5), top: u(766), width: u(214) }} />
         ))}
+
+        {/* scenes 3–4: brand frames on the left, phones on the right */}
+        <S34 R={m.reel} />
 
         {/* scene 1: quadrants + window */}
         {[0, 1, 2, 3].map((i) => (

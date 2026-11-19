@@ -1,0 +1,15 @@
+<svg width="271" height="177" viewBox="0 0 271 177" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<use xlink:href="#stroke0_91066_64268" fill="url(#paint0_linear_91066_64268)"/>
+<use xlink:href="#stroke0_91066_64268" fill="#2C86EC"/>
+<mask id="stroke1_91066_64268" fill="white">
+<use xlink:href="#stroke0_91066_64268"/>
+</mask>
+<path d="M140.854 176.467L19.2899 154.315C8.45632 152.34 0.566507 142.928 0.514585 131.916L0.00095446 22.9846C-0.0588173 10.3081 10.2009 0 22.8775 0H247.837C260.472 0 270.714 10.2423 270.714 22.8768V134.146C270.714 145.112 262.932 154.536 252.164 156.61L149.282 176.425C146.499 176.961 143.642 176.975 140.854 176.467Z" stroke-width="5.9717" stroke-miterlimit="10" stroke="white" mask="url(#stroke1_91066_64268)"/>
+<defs>
+<linearGradient id="paint0_linear_91066_64268" x1="338.725" y1="426.934" x2="163.489" y2="71.815" gradientUnits="userSpaceOnUse">
+<stop stop-color="#186ECF"/>
+<stop offset="1" stop-color="#A8CAF1"/>
+</linearGradient>
+<path id="stroke0_91066_64268" d="M252.164 156.61C262.932 154.536 270.714 145.112 270.714 134.146V22.8768C270.714 10.2423 260.472 0 247.837 0H22.8775C10.2009 0 -0.0588173 10.3081 0.000954457 22.9846L0.514585 131.916C0.566507 142.928 8.45632 152.34 19.2899 154.315L140.854 176.467C143.642 176.975 146.499 176.961 149.282 176.425L252.164 156.61Z"/>
+</defs>
+</svg>
