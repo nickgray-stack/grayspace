@@ -28,6 +28,9 @@ const stage = (bg, files, caption) => ({ type: "stage", bg, ratio: "16:9", scree
 const carousel = (span, ratio, files, caption) => ({ span: "col-" + span, kind: "carousel", ratio, slides: files.map((f) => ({ media: { img: M + f } })), ...(caption ? { caption } : null) });
 // info card on its own under a lockup, with white space beside it
 const panel = (span, eyebrow, copy, label, detail) => ({ span: "col-" + span, kind: "detail", solo: true, eyebrow, copy, label, cta: !!detail, detail });
+// lockup: visuals and their info card in one tightly packed grid (cards wrap onto
+// the next line of the same grid, 8px apart, Mouthwash-style)
+const lockup = (...cols) => ({ type: "row", tight: true, cols });
 // large statement + button that opens an overlay (the overlay carries the eyebrow)
 const say = (text, label, detail) => ({ type: "statement", text, ...(label ? { cta: { label, detail } } : null) });
 
@@ -98,7 +101,6 @@ const doctolib = {
     brand: {
       eyebrow: "Brand",
       heading: "From product vision to brand platform.",
-      media: { img: M + "brand-01.webp", ratio: "16:9", alt: "Brand: More healthy years in every lifespan" },
       body: [
         "Doctolib is entering a new era, in how people manage their health and how professionals give care. The brand needed convictions broad enough to guide both: simple, honest and flexible.",
         "A flexible system inspired by scientific and medical language, that turns the complex into clarity. The same language runs from a poster to a care plan.",
@@ -148,11 +150,11 @@ const doctolib = {
 
     // 3 · The vision wins, then becomes Home
     say("Tested against two alternatives with patients and doctors in three markets, *the vision won every time*.", "The test", "test"),
-    row(
+    lockup(
       pic(8, "16:9", "hero-screens.webp", "Home, appointment and today's activities screens"),
-      carousel(4, "8:9", ["home-state-01.webp", "home-state-02.webp", "home-hero-card.webp"])
+      carousel(4, "8:9", ["home-state-01.webp", "home-state-02.webp", "home-hero-card.webp"]),
+      panel(6, "Home", "Home leads with what matters today. Appointments surface two days before, so the next action is always clear, and one profile switch lets a parent act for a child.", "Home · led by me")
     ),
-    row(panel(6, "Home", "Home leads with what matters today. Appointments surface two days before, so the next action is always clear, and one profile switch lets a parent act for a child.", "Home · led by me")),
 
     // 4 · The success metric, made real
     {
@@ -170,7 +172,7 @@ const doctolib = {
         ".",
       ],
     },
-    row(
+    lockup(
       {
         span: "col-6",
         kind: "infocards",
@@ -186,23 +188,24 @@ const doctolib = {
         ],
         caption: "Prepared · Attend (A) · Understand (C) · Pick up the prescription (B)",
       },
-      app(6, "home-complete.mp4", LBLUE, "Home · the next action in the hero")
+      app(6, "home-complete.mp4", LBLUE, "Home · the next action in the hero"),
+      panel(6, "Info cards", "Each card turns a quality action into one tap, and gives us a way to *measure it*. V1 started with appointments and health reminders, then grew to cover care plans.", "Success metric", "quality")
     ),
-    row(panel(6, "Info cards", "Each card turns a quality action into one tap, and gives us a way to *measure it*. V1 started with appointments and health reminders, then grew to cover care plans.", "Success metric", "quality")),
 
-    // 5 · Care plan: closing the loop with the practitioner
-    row(
-      pic(8, "16:9", "live-activity.webp", "Lock screen live activity: Louis' final dose, record or snooze"),
-      app(4, "check-in.mp4", WHITE, "Care plan · day 2 check-in")
+    // 5 · Care plan: brand image beside the care plan screens, then the live activity
+    lockup(
+      pic(6, "8:9", "brand-01.webp", "Brand: More healthy years in every lifespan, Live Well"),
+      carousel(6, "8:9", ["careplan-01.webp", "careplan-02.webp", "careplan-03.webp"]),
+      panel(4, "Care plan", "The care plan turns a consultation into steps Léa can act on: a summary in plain language, a medicine schedule, and nudges at the right time. Live activities ask for one small update, a dose recorded, and each answer goes back to the doctor, so Doctolib *learns what works*.", "Care plan"),
+      pic(8, "16:9", "live-activity.webp", "Lock screen live activity: Louis' final dose, record or snooze")
     ),
-    row(panel(6, "Care plan", "Live activities and check-ins ask for one small update at the right moment: a dose recorded, how Louis is doing. Each answer goes back to the doctor, so care improves and Doctolib *learns what works*.", "Care plan")),
 
     // 6 · AI assistant
-    row(
+    lockup(
       app(6, "ai-response.mp4", WHITE, "AI assistant · calm answers"),
-      app(6, "ai-appointment.mp4", SOFT, "AI assistant · knows your appointments")
+      app(6, "ai-appointment.mp4", SOFT, "AI assistant · knows your appointments"),
+      panel(6, "AI assistant", "Calm answers with clear escalation: full width, no bubble, bold never marks a claim or a number, and urgent cases escalate plainly instead of keeping people chatting.", "AI assistant")
     ),
-    row(panel(6, "AI assistant", "Calm answers with clear escalation: full width, no bubble, bold never marks a claim or a number, and urgent cases escalate plainly instead of keeping people chatting.", "AI assistant")),
 
     // 7 · Brand
     full("brand-cover.webp", "Doctolib brand: Live Well"),

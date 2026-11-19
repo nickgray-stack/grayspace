@@ -1429,7 +1429,7 @@
       "root": "docimg",
       "src": "asset-01-brand.png",
       "out": "doctolib/brand-01.webp",
-      "w": 3200,
+      "w": 1920,
       "q": 88
     },
     {
@@ -1486,6 +1486,27 @@
       "src": "Info cards/Core/HeroInfoCard-3.png",
       "out": "doctolib/cards/card-4.webp",
       "w": 1110,
+      "q": 88
+    },
+    {
+      "root": "docimg",
+      "src": "Care plan carousel/carousel asset-01-care plan.png",
+      "out": "doctolib/careplan-01.webp",
+      "w": 1920,
+      "q": 88
+    },
+    {
+      "root": "docimg",
+      "src": "Care plan carousel/carousel asset-02-care plan.png",
+      "out": "doctolib/careplan-02.webp",
+      "w": 1920,
+      "q": 88
+    },
+    {
+      "root": "docimg",
+      "src": "Care plan carousel/carousel asset-03-care plan.png",
+      "out": "doctolib/careplan-03.webp",
+      "w": 1920,
       "q": 88
     }
   ]

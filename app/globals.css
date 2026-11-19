@@ -675,3 +675,5 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .case .icards.in .ic-lines{opacity:1; transform:none;}
 .case .icards.in .ic-card{opacity:1; transform:none;}
 @media (prefers-reduced-motion: reduce){ .case .icards .ic-lines,.case .icards .ic-card{opacity:1; transform:none; transition:none;} }
+/* lockups: packed inside, a clear breath between one lockup and the next */
+.case .section:has(> .grid.tight){padding-block:clamp(18px,2.6vw,40px);}
