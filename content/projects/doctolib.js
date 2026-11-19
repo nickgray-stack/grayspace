@@ -4,24 +4,32 @@
 //   on Home) → Care plan + AI → Brand → System. Overview closes.
 // Copy comes from Nick's handoff (WORK WORK/_copy-review/Doctolib), trimmed.
 // Assets not yet exported show as gradient placeholders named with the expected file.
-import { row, phone } from "./_kit";
+import { row, phone, stats } from "./_kit";
 
 const M = "/media/doctolib/";
-const BLUE = "#0D76F0";
-const WARM = "#F4F2EC";
+const NAVY = "#0B2A4E"; // brand navy (buttons, headings) — emphasis colour
 
 // helpers --------------------------------------------------------------------------
+const SOFT = "#F5F3F0"; // brand soft tone
+const LBLUE = "#D8EAFF"; // brand light blue
+const WHITE = "#FFFFFF";
 const PH = (file, note, ratio = "16:9") => ({ ph: "doctolib/" + file, note, ratio });
-const ph = (span, ratio, file, note, caption) => ({ span: "col-" + span, kind: "media", ratio, media: PH(file, note, ratio), ...(caption ? { caption } : null) });
 const fullPh = (ratio, file, note, caption) => ({ type: "full", ratio, media: PH(file, note, ratio), ...(caption ? { caption } : null) });
-// prototype recording, whole phone on a colour panel (screens carry their own status bar)
-const app = (span, file, bg, caption) => ({ ...phone(span, M + file, bg, { baked: true, mode: "whole", screenBg: WARM }), ...(caption ? { caption } : null) });
-// three phones side by side on one full-width panel
-const stage = (bg, files, caption) => ({ type: "stage", bg, ratio: "16:9", screenBg: WARM, phones: files.map((f) => M + f), ...(caption ? { caption } : null) });
-// info panel on its own under the visuals, with white space beside it
-const panel = (eyebrow, copy, label, detail) => ({ span: "col-6", kind: "detail", solo: true, eyebrow, copy, label, cta: !!detail, detail });
-// large statement + button that opens an overlay
-const say = (kicker, text, label, detail) => ({ type: "statement", kicker, text, ...(label ? { cta: { label, detail } } : null) });
+const full = (file, alt, caption) => ({ type: "full", ratio: "16:9", media: { img: M + file, alt }, ...(caption ? { caption } : null) });
+const pic = (span, ratio, file, alt, caption) => ({ span: "col-" + span, kind: "media", ratio, media: { img: M + file, alt }, ...(caption ? { caption } : null) });
+// prototype recording, whole phone on a brand-colour panel (screens carry their own status bar)
+const app = (span, file, bg, caption, ar = "ar-89") => {
+  const p = phone(span, M + file, bg, { baked: true, mode: "whole", screenBg: SOFT });
+  return { ...p, frame: { ...p.frame, ar }, ...(caption ? { caption } : null) };
+};
+// three recordings side by side on one full-width panel
+const stage = (bg, files, caption) => ({ type: "stage", bg, ratio: "16:9", screenBg: SOFT, phones: files.map((f) => M + f), ...(caption ? { caption } : null) });
+// image carousel (designed panels that belong together)
+const carousel = (span, ratio, files, caption) => ({ span: "col-" + span, kind: "carousel", ratio, slides: files.map((f) => ({ media: { img: M + f } })), ...(caption ? { caption } : null) });
+// info card on its own under a lockup, with white space beside it
+const panel = (span, eyebrow, copy, label, detail) => ({ span: "col-" + span, kind: "detail", solo: true, eyebrow, copy, label, cta: !!detail, detail });
+// large statement + button that opens an overlay (the overlay carries the eyebrow)
+const say = (text, label, detail) => ({ type: "statement", text, ...(label ? { cta: { label, detail } } : null) });
 
 const doctolib = {
   slug: "doctolib",
@@ -32,7 +40,7 @@ const doctolib = {
   role: "Lead Product Designer",
   services: ["Vision", "Product Design", "UX/UI", "Visual Identity", "Design System"],
   tags: ["Product Vision", "AI", "Design System"],
-  accent: BLUE,
+  accent: NAVY,
   cover: { img: "/media/covers/doctolib.webp" },
   grad: ["#0D76F0", "#0a4fa0"],
   hoverImages: [],
@@ -90,7 +98,7 @@ const doctolib = {
     brand: {
       eyebrow: "Brand",
       heading: "From product vision to brand platform.",
-      media: PH("brand-dataviz.jpg", "Intricate, clear data visualisation", "4:3"),
+      media: { img: M + "brand-01.webp", ratio: "16:9", alt: "Brand: More healthy years in every lifespan" },
       body: [
         "Doctolib is entering a new era, in how people manage their health and how professionals give care. The brand needed convictions broad enough to guide both: simple, honest and flexible.",
         "A flexible system inspired by scientific and medical language, that turns the complex into clarity. The same language runs from a poster to a care plan.",
@@ -123,30 +131,30 @@ const doctolib = {
   },
 
   modules: [
-    // Hero — becomes the showreel (prototype, system, brand)
-    stage(BLUE, ["ai-appointment.mp4", "switch-profile.mp4", "care-complete.mp4"], "Showreel to come · prototype, design system, brand"),
+    // Hero — showreel (prototype, system, brand). Placeholder until the MP4 is exported.
+    fullPh("16:9", "showreel.mp4", "asset-00 Showreel — AI motion, prototype, system, brand"),
 
     // 1 · Problem
-    say("The problem", "Millions of people use Doctolib to book an appointment, then leave. The brief: turn a booking app into a *health companion* people return to.", "The brief", "brief"),
-    {
-      type: "targets",
-      items: [
-        { eyebrow: "AI adoption", from: "2%", to: "20%", sub: "AI assistant weekly users, as a share of app weekly users" },
-        { eyebrow: "Return use", from: "8%", to: "20%", sub: "AI assistant week one retention" },
-        { eyebrow: "Beyond booking", from: "3%", to: "5%", sub: "People using it for more than booking, two or more days a week" },
-      ],
-      note: "Targets for the end of 2026, not results.",
-    },
+    say("Millions of people book on Doctolib, then leave. The brief: turn a booking app into a *health companion* people come back to.", "The brief", "brief"),
+    stats([
+      { value: "2→20%", label: "AI assistant weekly users, as a share of app weekly users" },
+      { value: "8→20%", label: "AI assistant week one retention" },
+      { value: "3→5%", label: "People using it beyond booking, two or more days a week" },
+    ], "Targets for the end of 2026, not results."),
 
-    // 2 · Vision, through Léa
-    say("A vision in three weeks", "We spent a week in Paris inside Doctolib's business, then turned it into a vision prototype for the CEO, told through one parent: *Léa*.", "Meet Léa", "lea"),
-    stage(BLUE, ["lea-1-triage-booking.mp4", "lea-2-before.mp4", "post-consultation.mp4"], "Triage to booking · Arrive prepared · Understand what's next"),
+    // 2 · Vision in three weeks, told through Léa
+    say("In three weeks we went from a week in Paris to a vision prototype for the CEO, told through one parent: *Léa*.", "Meet Léa", "lea"),
+    stage(SOFT, ["lea-1-triage-booking.mp4", "lea-2-before.mp4", "post-consultation.mp4"], "Vision · Triage to booking · Arrive prepared · Understand what's next"),
 
-    // 3 · Direction tested across markets
-    fullPh("16:9", "vision-direction.jpg", "The chosen direction — key screens composed together"),
-    say("Tested in three markets", "We stretched the vision three ways and tested it with patients and doctors in France, Italy and Germany. *The original won everywhere*, and went on to become the brand.", "The test", "test"),
+    // 3 · The vision wins, then becomes Home
+    say("Tested against two alternatives with patients and doctors in three markets, *the vision won every time*.", "The test", "test"),
+    row(
+      pic(8, "16:9", "hero-screens.webp", "Home, appointment and today's activities screens"),
+      carousel(4, "8:9", ["home-state-01.webp", "home-state-02.webp", "home-hero-card.webp"])
+    ),
+    row(panel(6, "Home", "Home leads with what matters today. Appointments surface two days before, so the next action is always clear, and one profile switch lets a parent act for a child.", "Home · led by me")),
 
-    // 4 · The success metric, made real on Home
+    // 4 · The success metric, made real
     {
       type: "sentence",
       eyebrow: "Success, measured as a quality action",
@@ -163,26 +171,47 @@ const doctolib = {
       ],
     },
     row(
-      app(6, "home-complete.mp4", WARM, "Home · what matters today, ranked by relevance"),
-      ph(6, "4:5", "info-cards.png", "Info card variants — to animate in one by one", "Questionnaire · Prepared  ·  Appointment today · A  ·  Summary · C  ·  Prescription picked up · B")
+      {
+        span: "col-6",
+        kind: "infocards",
+        bg: SOFT,
+        lines: M + "cards/lines.webp",
+        frame: [960, 1080],
+        order: [0, 2, 1, 3],
+        cards: [
+          { src: M + "cards/card-1.webp", x: 72, y: 63, w: 342, alt: "Appointment tomorrow, with a health questionnaire to complete" },
+          { src: M + "cards/card-2.webp", x: 72, y: 492, w: 342, alt: "Appointment today, with directions" },
+          { src: M + "cards/card-3.webp", x: 462, y: 162, w: 342, alt: "Post-consultation summary" },
+          { src: M + "cards/card-4.webp", x: 462, y: 551, w: 342, alt: "Prescription pick-up check" },
+        ],
+        caption: "Prepared · Attend (A) · Understand (C) · Pick up the prescription (B)",
+      },
+      app(6, "home-complete.mp4", LBLUE, "Home · the next action in the hero")
     ),
-    row(panel("Info cards", "Each card turns a quality action into one tap, and gives us a way to *measure it*. Home leads with what matters today, and one profile switch lets a parent act for a child. V1 started with appointments and health reminders, then grew to cover care plans.", "Home · led by me", "quality")),
+    row(panel(6, "Info cards", "Each card turns a quality action into one tap, and gives us a way to *measure it*. V1 started with appointments and health reminders, then grew to cover care plans.", "Success metric", "quality")),
 
-    // 5 · Journeys: care plan and the AI assistant
-    stage(BLUE, ["prescription.mp4", "medicine-schedule.mp4", "check-in.mp4"], "B · Prescription follow-through · Care plan"),
+    // 5 · Care plan: closing the loop with the practitioner
     row(
-      app(6, "ai-response.mp4", WARM, "AI assistant · calm answers"),
-      app(6, "ai-article.mp4", BLUE, "AI assistant · grounded in trusted content")
+      pic(8, "16:9", "live-activity.webp", "Lock screen live activity: Louis' final dose, record or snooze"),
+      app(4, "check-in.mp4", WHITE, "Care plan · day 2 check-in")
     ),
-    row(panel("Care plan and AI assistant", "The care plan is where quality actions live: every step a practitioner sets becomes something to tick off, nudged at the right time. The assistant answers calmly and escalates urgent cases plainly, instead of keeping people chatting.", "Journeys")),
+    row(panel(6, "Care plan", "Live activities and check-ins ask for one small update at the right moment: a dose recorded, how Louis is doing. Each answer goes back to the doctor, so care improves and Doctolib *learns what works*.", "Care plan")),
 
-    // 6 · Brand
-    fullPh("16:9", "brand-layout.jpg", "Brand hero — the flexible layout system"),
-    say("A brand platform designed to grow", "The visual identity I created for the vision held up when it scaled into a full brand: *simple, honest and flexible*, from a poster to a care plan.", "The brand", "brand"),
+    // 6 · AI assistant
+    row(
+      app(6, "ai-response.mp4", WHITE, "AI assistant · calm answers"),
+      app(6, "ai-appointment.mp4", SOFT, "AI assistant · knows your appointments")
+    ),
+    row(panel(6, "AI assistant", "Calm answers with clear escalation: full width, no bubble, bold never marks a claim or a number, and urgent cases escalate plainly instead of keeping people chatting.", "AI assistant")),
 
-    // 7 · System
-    fullPh("16:9", "ds-components.jpg", "The component library"),
-    say("A system that scales", "We built a new design system aligned to the brand and translated it into code the client could migrate to. My part was the rules behind *61 components*.", "How the system worked", "system"),
+    // 7 · Brand
+    full("brand-cover.webp", "Doctolib brand: Live Well"),
+    say("The visual identity I created for the vision held up when it scaled into a full brand: *simple, honest and flexible*.", "The brand", "brand"),
+    full("brand-02.webp", "Brand applications: app onboarding, Live Well, data visualisation, campaign"),
+
+    // 8 · System
+    full("ds-components.webp", "Components from the Doctolib design system"),
+    say("A new design system aligned to the brand, translated into code the client could migrate to. My part was the rules behind *61 components*.", "How the system worked", "system"),
 
     // Overview
     {

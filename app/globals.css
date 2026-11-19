@@ -664,3 +664,14 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 
 /* Info panel that sits on its own under a pair of visuals (Mouthwash pattern) */
 .case .detail.solo{min-height:0; height:auto;}
+
+/* Doctolib V3 */
+.vmframe.ar-89,.ar-89{aspect-ratio:8/9;}
+.case .cslide .cvid{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+/* info-card cluster: lines ease in, cards rise and settle with a soft overshoot */
+.case .icards{position:relative; overflow:hidden; border-radius:var(--r-lg);}
+.case .icards .ic-lines{position:absolute; left:0; top:0; height:auto; opacity:0; transform:scale(1.03); transform-origin:50% 0; transition:opacity 1.2s ease, transform 1.6s cubic-bezier(.19,1,.22,1);}
+.case .icards .ic-card{position:absolute; height:auto; opacity:0; transform:translateY(16%); transition:opacity .5s ease var(--d), transform 1.1s cubic-bezier(.3,1.32,.5,1) var(--d); will-change:transform;}
+.case .icards.in .ic-lines{opacity:1; transform:none;}
+.case .icards.in .ic-card{opacity:1; transform:none;}
+@media (prefers-reduced-motion: reduce){ .case .icards .ic-lines,.case .icards .ic-card{opacity:1; transform:none; transition:none;} }

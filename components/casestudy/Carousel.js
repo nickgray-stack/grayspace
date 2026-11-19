@@ -6,7 +6,7 @@ import { mediaBg } from "@/content/projects";
 // Autoplay carousel (5s) with animated progress fill, infinite loop, chevrons,
 // glass pager, pause on hover/focus, arrow-key nav, reduced-motion safe.
 // Ported from the prototype's custom carousel (embla is the intended lib later).
-export default function Carousel({ slides }) {
+export default function Carousel({ slides, ratio }) {
   const carRef = useRef(null);
   const trackRef = useRef(null);
   const pagerRef = useRef(null);
@@ -37,7 +37,18 @@ export default function Carousel({ slides }) {
         t.textContent = "Asset slot · 4:5 — " + s.media.todo;
         d.appendChild(t);
       }
-      d.querySelector(".tag").textContent = s.tag;
+      d.querySelector(".tag").textContent = s.tag || "";
+      if (s.media && s.media.video) {
+        // prototype recording as a slide: muted, looping, plays inline
+        const v = document.createElement("video");
+        v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = !reduce;
+        v.setAttribute("muted", ""); v.setAttribute("playsinline", "");
+        if (s.media.poster) v.poster = s.media.poster;
+        if (s.media.webm) { const w = document.createElement("source"); w.src = s.media.webm; w.type = "video/webm"; v.appendChild(w); }
+        const m = document.createElement("source"); m.src = s.media.video; m.type = "video/mp4"; v.appendChild(m);
+        v.className = "cvid";
+        d.appendChild(v);
+      }
       return d;
     };
     track.innerHTML = "";
@@ -186,6 +197,7 @@ export default function Carousel({ slides }) {
     <div className="carousel">
       <div
         className="cmedia"
+        style={ratio ? { aspectRatio: ratio.replace(":", "/") } : undefined}
         ref={carRef}
         tabIndex={0}
         aria-roledescription="carousel"
@@ -200,7 +212,7 @@ export default function Carousel({ slides }) {
         </button>
         <div className="pager" ref={pagerRef}></div>
       </div>
-      <div className="ccap">
+      <div className="ccap" hidden={!slides.some((x) => x.tag || x.body)}>
         <div className="t" ref={tagRef}></div>
         <div className="b" ref={bodyRef}></div>
       </div>

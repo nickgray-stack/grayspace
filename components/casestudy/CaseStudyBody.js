@@ -8,6 +8,7 @@ import VideoMedia from "./VideoMedia";
 import DeviceFrame from "./DeviceFrame";
 import Slideshow from "./Slideshow";
 import { Targets, Shifts, Persona, JourneyCard, Pull, Bars, Sentence, Lists, Loop, System, Ladder, Table, rich } from "./Story";
+import InfoCards from "./InfoCards";
 import { vidFor } from "./stageHelpers";
 
 const PlusIco = () => <Plus className="i" size={24} strokeWidth={1.75} aria-hidden="true" />;
@@ -317,7 +318,14 @@ export default function CaseStudyBody({ modules = [], detail, details, accent })
     if (c.kind === "carousel") {
       return (
         <div className={c.span + " r"} key={i}>
-          <Carousel slides={c.slides} />
+          {withCaption(c, <Carousel slides={c.slides} ratio={c.ratio} />)}
+        </div>
+      );
+    }
+    if (c.kind === "infocards") {
+      return (
+        <div className={c.span + " r"} key={i}>
+          {withCaption(c, <InfoCards m={c} />)}
         </div>
       );
     }
