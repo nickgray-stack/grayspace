@@ -103,8 +103,8 @@ function S34({ R }) {
       </div>
 
       {/* scene 5: the light-blue panel opens across the frame; clarity line + arches */}
-      <div className="s5-wipe" style={{ ...box(1000, 0, 920, 1080), background: "#D8EAFF" }} />
       <div className="s5">
+        <div className="s5-wipe" style={{ ...box(1000, 0, 920, 1080), background: "#D8EAFF" }} />
         <img className="s5-d" src={A("s5/d-mark.svg")} alt="" style={box(665, 69, 29)} />
         <img className="s5-title" src={A("s5/title.svg")} alt="We bring clarity to the complexities of healthcare" style={box(666, 142, 453)} />
         <div className="s5-arches" style={box(659, 364, 603, 716)}>
@@ -114,6 +114,44 @@ function S34({ R }) {
             <img key={i} className="s5-arch" src={A(`s5/arch-${i}.svg`)} alt="" style={box(0, y, 603)} />
           ))}
         </div>
+      </div>
+
+      {/* scene 6: photography steps in from the left, Live Well on yellow */}
+      <div className="s6">
+        <div className="s6-left">
+          <div className="s6-panel" style={box(8, 10, 1114, 1061)} />
+          <img className="s6-title" src={A("s6/title.svg")} alt="Helping healthier lives" style={box(52, 58, 241)} />
+          {[
+            [8, 310.5, 514.9, 762.4],
+            [522.9, 600, 319.3, 472.8],
+            [842, 782, 280.3, 290.8],
+          ].map(([x, y, w, h], i) => (
+            <div key={i} className="s6-ph" style={box(x, y, w, h)}>
+              <img src={A(`s6/photo-${i + 1}.webp`)} alt="" />
+            </div>
+          ))}
+        </div>
+        <div className="s6-cell" style={box(1133, 540, 775, 698)}>
+          <img src={A("s6/circle.webp")} alt="" style={box(0, 259, 776)} />
+          <div className="s6-tab">
+            <span className="s6-bezel" style={box(193.3, 104.8, 388.8, 583.2)} />
+            <img src={A("s6/screen-back.svg")} alt="" style={box(213, 125.5, 349)} />
+            <img src={A("s6/screen-body.svg")} alt="" style={box(213, 161, 349)} />
+            <img src={A("s6/screen-head.svg")} alt="" style={box(213, 126, 349)} />
+            <img src={A("s6/d.svg")} alt="" style={box(223.9, 134.1, 15.2)} />
+            <img src={A("s6/tagline.svg")} alt="" style={box(418.7, 140, 131)} />
+            <img className="s6-in" src={A("s6/live-well.svg")} alt="Live Well" style={box(277.5, 233, 235)} />
+            <img className="s6-in" src={A("s6/illustration.webp")} alt="" style={box(288.3, 281.3, 213.6)} />
+          </div>
+        </div>
+      </div>
+
+      {/* end: back to the calm ground — the mark moves, then the script writes itself */}
+      <div className="sr-end">
+        <div className="sr-end-mark" style={box(785, 213, 350, 350)}>
+          <video muted loop playsInline preload="auto" src={A("mark.mp4")} />
+        </div>
+        <img className="sr-end-logo" src={A("s3/home-logo.svg")} alt="Doctolib" style={box(800, 612, 320)} />
       </div>
 
       {/* right: phones on soft blue */}
@@ -194,21 +232,21 @@ export default function Showreel({ m }) {
       .to(q(".sr-guide"), { autoAlpha: 1, duration: 0.4, ease: "none" }, 1.7)
       .fromTo(q(".sr-guide-t"), { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.9, ease: ease("settle") }, 1.8)
       // hold, then the quadrants part outwards to reveal the light ground
-      .to(q(".sr-guide"), { autoAlpha: 0, duration: 0.45, ease: ease("exit") }, 4.0)
-      .to(sparks, { autoAlpha: 0, duration: 0.35, ease: ease("exit") }, 4.1)
-      .to(cell, { l: -40, t: -40, r: W + 40, b: H + 40, duration: 1.3, ease: ease("move"), onUpdate: place }, 4.1);
+      .to(q(".sr-guide"), { autoAlpha: 0, duration: 0.45, ease: ease("exit") }, 3.2)
+      .to(sparks, { autoAlpha: 0, duration: 0.35, ease: ease("exit") }, 3.3)
+      .to(cell, { l: -40, t: -40, r: W + 40, b: H + 40, duration: 1.3, ease: ease("move"), onUpdate: place }, 3.3);
 
     // ---- Scene 2 · Intelligence layer ----------------------------------------
-    tl.call(() => mark && mark.play().catch(() => {}), [], 4.6)
-      .to(q(".sr-mark"), { autoAlpha: 1, scale: 1, duration: 1.2, ease: ease("settle") }, 4.7)
-      .to(q(".sr-tile"), { autoAlpha: 1, y: 0, duration: 0.8, ease: ease("card"), stagger: 0.12 }, 5.5)
+    tl.call(() => mark && mark.play().catch(() => {}), [], 3.8)
+      .to(q(".sr-mark"), { autoAlpha: 1, scale: 1, duration: 1.2, ease: ease("settle") }, 3.9)
+      .to(q(".sr-tile"), { autoAlpha: 1, y: 0, duration: 0.8, ease: ease("card"), stagger: 0.12 }, 4.6)
       ;
 
     // ---- Scene 3 · Assets and screens ------------------------------------------
     // the intelligence layer leaves; brand frames drop in from the top and rise from
     // the bottom with their contents settling inside; the phone panel slides in from
     // the right and Home "loads" its content (open, push, settle).
-    const T3 = 8.6;
+    const T3 = 7.0;
     gsap.set(q(".s3-posts"), { y: u(-620) });
     gsap.set(q(".s3-chips"), { y: u(560) });
     gsap.set(q(".s3-table"), { y: u(560) });
@@ -244,7 +282,7 @@ export default function Showreel({ m }) {
     // ---- Scene 4 · Asset swap -------------------------------------------------------
     // the next frame pushes the brand assets up and out; the network lines open from
     // the centre and "Live Well." peels open around it
-    const T4 = T3 + 5.6;
+    const T4 = T3 + 4.4;
     tl.to(q(".s3-left"), { y: u(-1100), duration: 1.25, ease: ease("move") }, T4)
       .to(q(".s4-live"), { y: 0, duration: 1.25, ease: ease("move") }, T4)
       .to(q(".s4-net"), { clipPath: "circle(75% at 50% 50%)", duration: 1.9, ease: ease("settle") }, T4 + 0.7)
@@ -254,7 +292,7 @@ export default function Showreel({ m }) {
     // PUSH: the phones sink out of their blue panel. OPEN: the panel's edge sweeps left
     // across the frame, pushing Live Well off to the left, so blue becomes the stage.
     // SETTLE: the D mark and the line rise in, then the arches fall into place one by one.
-    const T5 = T4 + 4.4;
+    const T5 = T4 + 3.3;
     gsap.set(q(".s5-d, .s5-title"), { autoAlpha: 0, y: u(24) });
     gsap.set(q(".s5-title"), { clipPath: "inset(0% 0% 100% 0%)" });
     gsap.set(q(".s5-frame"), { y: u(760) });
@@ -267,8 +305,47 @@ export default function Showreel({ m }) {
       .to(q(".s5-title"), { autoAlpha: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)", duration: 1.1, ease: ease("settle") }, T5 + 1.4)
       .to(q(".s5-frame"), { y: 0, duration: 1.2, ease: ease("settle") }, T5 + 1.55)
       // lowest arch lands first; each one above settles behind it, so the stack builds upward
-      .to(q(".s5-arch"), { y: 0, autoAlpha: 1, duration: 0.9, ease: ease("card"), stagger: { each: 0.2, from: "end" } }, T5 + 2.05)
-      .to({}, { duration: 3.0 });
+      .to(q(".s5-arch"), { y: 0, autoAlpha: 1, duration: 0.9, ease: ease("card"), stagger: { each: 0.2, from: "end" } }, T5 + 2.05);
+
+    // ---- Scene 6 · Grid and photography ---------------------------------------------
+    // PUSH: the blue clarity scene shrinks into the top-right cell while photography
+    // pushes in from the left and the yellow cell rises beneath it. SETTLE: each photo
+    // opens upward and eases down in scale, building the steps; the tablet settles.
+    const T6 = T5 + 4.0;
+    const cellClip = (t, r, b, l, rad) => `inset(${u(t)} ${u(r)} ${u(b)} ${u(l)} round ${u(rad)})`;
+    gsap.set(q(".s5"), { clipPath: cellClip(0, 0, 0, 0, 0) });
+    gsap.set(q(".s6-left"), { x: u(-1150) });
+    gsap.set(q(".s6-cell"), { y: u(600) });
+    gsap.set(q(".s6-title"), { clipPath: "inset(0% 0% 100% 0%)", y: u(20) });
+    gsap.set(q(".s6-ph"), { clipPath: "inset(100% 0% 0% 0%)" });
+    gsap.set(q(".s6-ph img"), { scale: 1.18 });
+    gsap.set(q(".s6-tab"), { y: u(130) });
+    gsap.set(q(".s6-in"), { autoAlpha: 0, y: u(14) });
+    gsap.set(q(".sr-end-mark"), { autoAlpha: 0, scale: 0.9 });
+    gsap.set(q(".sr-end-logo"), { clipPath: "inset(0% 100% 0% 0%)" });
+    tl.to(q(".s5-d, .s5-title"), { autoAlpha: 0, y: u(-20), duration: 0.4, ease: ease("exit") }, T6)
+      .to(q(".s5"), { clipPath: cellClip(10, 12, 548, 1133, 8), duration: 1.2, ease: ease("move") }, T6)
+      .to(q(".s5-arches"), { x: u(672.4), y: u(-270.2), scale: 0.627, transformOrigin: "0% 0%", duration: 1.2, ease: ease("move") }, T6)
+      .to(q(".s6-left"), { x: 0, duration: 1.2, ease: ease("move") }, T6)
+      .to(q(".s6-cell"), { y: 0, duration: 1.1, ease: ease("settle") }, T6 + 0.3)
+      .to(q(".s6-ph"), { clipPath: "inset(0% 0% 0% 0%)", duration: 1.0, ease: ease("settle"), stagger: 0.15 }, T6 + 0.55)
+      .to(q(".s6-ph img"), { scale: 1, duration: 1.4, ease: ease("settle"), stagger: 0.15 }, T6 + 0.55)
+      .to(q(".s6-title"), { clipPath: "inset(0% 0% 0% 0%)", y: 0, duration: 1.0, ease: ease("settle") }, T6 + 0.8)
+      .to(q(".s6-tab"), { y: 0, duration: 1.0, ease: ease("settle") }, T6 + 0.7)
+      .to(q(".s6-in"), { autoAlpha: 1, y: 0, duration: 0.7, ease: ease("settle"), stagger: 0.12 }, T6 + 1.15);
+
+    // ---- End · Back to the calm ground ------------------------------------------------
+    // OPEN: the three cells part outwards (the opening, in reverse). The mark returns and
+    // plays a different passage of its animation; then the script writes itself in.
+    const T7 = T6 + 3.6;
+    const endMark = el.querySelector(".sr-end-mark video");
+    tl.to(q(".s6-left"), { x: u(-1160), duration: 1.1, ease: ease("move") }, T7)
+      .to(q(".s5"), { x: u(820), duration: 1.1, ease: ease("move") }, T7)
+      .to(q(".s6-cell"), { x: u(820), duration: 1.1, ease: ease("move") }, T7 + 0.06)
+      .call(() => { if (endMark) { try { endMark.currentTime = 12; } catch (e) {} endMark.play().catch(() => {}); } }, [], T7 + 0.4)
+      .to(q(".sr-end-mark"), { autoAlpha: 1, scale: 1, duration: 1.0, ease: ease("settle") }, T7 + 0.55)
+      .to(q(".sr-end-logo"), { clipPath: "inset(0% 0% 0% 0%)", duration: 1.6, ease: ease("move") }, T7 + 2.3)
+      .to({}, { duration: 1.6 });
 
     if (reduce) {
       // reduced motion: rest on the final composed frame, no movement

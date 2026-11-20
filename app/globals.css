@@ -708,10 +708,23 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .sr .s3-tcell{background:#BCDFC8; border:.035cqw solid #000; border-radius:.24cqw; box-sizing:border-box;}
 
 /* showreel scene 5 */
-.sr .s5-wipe{position:absolute; z-index:2;}
+.sr .s5-wipe{position:absolute;}
 .sr .s5{position:absolute; inset:0; z-index:3; pointer-events:none;}
 .sr .s5 img,.sr .s5-arches{position:absolute; display:block; height:auto;}
 .sr .s5-arches{overflow:hidden;}
 .sr .s3-right{z-index:4;}
 .sr .s3-phone{position:absolute;}
 .sr .s3-aimark{position:absolute; mix-blend-mode:multiply; object-fit:cover;}
+
+/* showreel scene 6 + end */
+.sr .s6,.sr .sr-end{position:absolute; inset:0; pointer-events:none;}
+.sr .s6{z-index:4;}
+.sr .sr-end{z-index:0;}
+.sr .s6-left,.sr .s6-tab{position:absolute; inset:0;}
+.sr .s6 img,.sr .s6-panel,.sr .s6-ph,.sr .s6-cell,.sr .s6-bezel,.sr .sr-end img,.sr .sr-end-mark{position:absolute; display:block; height:auto;}
+.sr .s6-panel{background:#fff; border:.07cqw solid #00264C; border-radius:.69cqw; box-shadow:0 0 0 .07cqw #00264C; height:auto;}
+.sr .s6-ph{overflow:hidden;}
+.sr .s6-ph img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform-origin:50% 100%;}
+.sr .s6-cell{overflow:hidden; background:#FFC36A url(/media/doctolib/reel/s6/bg.webp) center/cover; border-radius:.42cqw;}
+.sr .s6-bezel{background:#00264C; border-radius:1.2cqw;}
+.sr .sr-end-mark video{width:100%; height:100%; object-fit:cover; display:block; mask-image:radial-gradient(circle,#000 42%,transparent 66%); -webkit-mask-image:radial-gradient(circle,#000 42%,transparent 66%);}
