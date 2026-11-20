@@ -706,3 +706,12 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .sr .s3-cell{background:#000;}
 .sr .s3-cell::after{content:""; position:absolute; inset:0; background:var(--c); border:.036cqw solid #000; border-radius:.23cqw;}
 .sr .s3-tcell{background:#BCDFC8; border:.035cqw solid #000; border-radius:.24cqw; box-sizing:border-box;}
+
+/* showreel scene 5 */
+.sr .s5-wipe{position:absolute; z-index:2;}
+.sr .s5{position:absolute; inset:0; z-index:3; pointer-events:none;}
+.sr .s5 img,.sr .s5-arches{position:absolute; display:block; height:auto;}
+.sr .s5-arches{overflow:hidden;}
+.sr .s3-right{z-index:4;}
+.sr .s3-phone{position:absolute;}
+.sr .s3-aimark{position:absolute; mix-blend-mode:multiply; object-fit:cover;}

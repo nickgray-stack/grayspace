@@ -102,10 +102,24 @@ function S34({ R }) {
         <img className="s4-title" src={A("s4/live-well.svg")} alt="Live Well." style={box(329, 454, 312)} />
       </div>
 
-      {/* right: phones on white */}
-      <div className="s3-right" style={{ ...box(1000, 0, 920, 1080), background: "#FFFFFF" }}>
-        <img src={A("s3/phone-ai.webp")} alt="" style={box(657.2, 159.8, 509)} />
-        <div style={box(93.75, 159.8, 509)}>
+      {/* scene 5: the light-blue panel opens across the frame; clarity line + arches */}
+      <div className="s5-wipe" style={{ ...box(1000, 0, 920, 1080), background: "#D8EAFF" }} />
+      <div className="s5">
+        <img className="s5-d" src={A("s5/d-mark.svg")} alt="" style={box(665, 69, 29)} />
+        <img className="s5-title" src={A("s5/title.svg")} alt="We bring clarity to the complexities of healthcare" style={box(666, 142, 453)} />
+        <div className="s5-arches" style={box(659, 364, 603, 716)}>
+          <img className="s5-frame" src={A("s5/bar.svg")} alt="" style={box(0.6, 0, 602.2)} />
+          <img className="s5-frame" src={A("s5/frame.svg")} alt="" style={box(0.15, 0, 603)} />
+          {[0.94, 106.97, 213.24, 328.52].map((y, i) => (
+            <img key={i} className="s5-arch" src={A(`s5/arch-${i}.svg`)} alt="" style={box(0, y, 603)} />
+          ))}
+        </div>
+      </div>
+
+      {/* right: phones on soft blue */}
+      <div className="s3-right" style={{ ...box(1000, 0, 920, 1080), background: "#D8EAFF" }}>
+        <img className="s3-phone" src={A("s3/phone-ai.webp")} alt="" style={box(657.2, 159.8, 509)} />
+        <div className="s3-phone" style={box(93.75, 159.8, 509)}>
           <img src={A("s3/phone-home-empty.webp")} alt="" style={{ width: "100%", display: "block" }} />
           {/* the Doctolib script writes itself in as the phone lands */}
           <img className="s3-logo" src={A("s3/home-logo.svg")} alt="" style={box(23.25 + 179, 23.25 + 78, 105)} />
@@ -114,7 +128,8 @@ function S34({ R }) {
           <img className="s3-load" src={A("s3/home-search.svg")} alt="" style={box(23.25 + 20, 23.25 + 264, 425)} />
           <div className="s3-card" style={box(23.25 + 28.5, 23.25 + 386.7, 406, 399)}>
             <img src={A("s3/home-card.svg")} alt="" style={box(0, 0, 406)} />
-            <img src={A("s3/home-card-head.webp")} alt="" style={box(0, 11.3, 406)} />
+            <video className="s3-aimark" src={A("mark-sm.mp4")} muted loop playsInline autoPlay preload="auto" style={box(42 - 25.6, 57.3 - 25.6, 51.2, 51.2)} />
+            <img src={A("s3/card-heading.svg")} alt="" style={box(77.5, 28.3, 297)} />
             <img className="s3-chip" src={A("s3/home-chip-0.svg")} alt="" style={box(68.5, 96.3, 295)} />
             <img className="s3-chip" src={A("s3/home-chip-1.svg")} alt="" style={box(68.5, 162.3, 295)} />
             <img className="s3-chip" src={A("s3/home-chip-2.svg")} alt="" style={box(68.5, 229.3, 295)} />
@@ -233,7 +248,26 @@ export default function Showreel({ m }) {
     tl.to(q(".s3-left"), { y: u(-1100), duration: 1.25, ease: ease("move") }, T4)
       .to(q(".s4-live"), { y: 0, duration: 1.25, ease: ease("move") }, T4)
       .to(q(".s4-net"), { clipPath: "circle(75% at 50% 50%)", duration: 1.9, ease: ease("settle") }, T4 + 0.7)
-      .to(q(".s4-title"), { clipPath: "inset(0% 0% 0% 0%)", y: 0, duration: 1.2, ease: ease("settle") }, T4 + 1.0)
+      .to(q(".s4-title"), { clipPath: "inset(0% 0% 0% 0%)", y: 0, duration: 1.2, ease: ease("settle") }, T4 + 1.0);
+
+    // ---- Scene 4 → 5 · Push, open, settle ------------------------------------------
+    // PUSH: the phones sink out of their blue panel. OPEN: the panel's edge sweeps left
+    // across the frame, pushing Live Well off to the left, so blue becomes the stage.
+    // SETTLE: the D mark and the line rise in, then the arches fall into place one by one.
+    const T5 = T4 + 4.4;
+    gsap.set(q(".s5-d, .s5-title"), { autoAlpha: 0, y: u(24) });
+    gsap.set(q(".s5-title"), { clipPath: "inset(0% 0% 100% 0%)" });
+    gsap.set(q(".s5-frame"), { y: u(760) });
+    gsap.set(q(".s5-arch"), { y: u(-140), autoAlpha: 0 });
+    tl.to(q(".s3-phone"), { y: u(1150), duration: 0.9, ease: ease("exit"), stagger: 0.08 }, T5)
+      .set(q(".s3-right"), { autoAlpha: 0 }, T5 + 0.95) // same blue as the wipe beneath: invisible hand-off
+      .to(q(".s5-wipe"), { left: "0cqw", width: "100cqw", duration: 1.25, ease: ease("move") }, T5 + 0.35)
+      .to(q(".s4-live"), { x: u(-1000), duration: 1.25, ease: ease("move") }, T5 + 0.35)
+      .to(q(".s5-d"), { autoAlpha: 1, y: 0, duration: 0.8, ease: ease("settle") }, T5 + 1.3)
+      .to(q(".s5-title"), { autoAlpha: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)", duration: 1.1, ease: ease("settle") }, T5 + 1.4)
+      .to(q(".s5-frame"), { y: 0, duration: 1.2, ease: ease("settle") }, T5 + 1.55)
+      // lowest arch lands first; each one above settles behind it, so the stack builds upward
+      .to(q(".s5-arch"), { y: 0, autoAlpha: 1, duration: 0.9, ease: ease("card"), stagger: { each: 0.2, from: "end" } }, T5 + 2.05)
       .to({}, { duration: 3.0 });
 
     if (reduce) {
