@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
+import MedArc, { medArcTimeline } from "./MedArc";
+import ScriptWrite, { writeTimeline } from "./ScriptWrite";
 
 // Doctolib showreel hero — built in code so scenes can be retimed or swapped.
 // Everything is laid out on the Figma 1920 × 1080 frame and sized in container
@@ -50,7 +52,7 @@ const DRS = [
 ];
 const DRY = [683, 753.74, 824.48, 895.46];
 
-function S34({ R }) {
+function S34({ R, tr, end }) {
   const A = (f) => R + f;
   return (
     <>
@@ -146,13 +148,33 @@ function S34({ R }) {
         </div>
       </div>
 
-      {/* end: back to the calm ground — the mark moves, then the script writes itself */}
-      <div className="sr-end">
-        <div className="sr-end-mark" style={box(785, 213, 350, 350)}>
-          <video muted loop playsInline preload="auto" src={A("mark.mp4")} />
+      {/* top-right cell, version 2: the medication-plan arc pushes up over the arches */}
+      {tr === "medication" && (
+        <div className="s6-medcell" style={box(1133, 10, 775, 522)}>
+          <div className="s6-med">
+            <MedArc m={{ base: R + "med/", value: 21 }} />
+          </div>
         </div>
-        <img className="sr-end-logo" src={A("s3/home-logo.svg")} alt="Doctolib" style={box(800, 612, 320)} />
-      </div>
+      )}
+
+      {/* end, version 1: mark above, script wipes in beneath */}
+      {end === "wipe" && (
+        <div className="sr-end">
+          <div className="sr-end-mark" style={box(785, 213, 350, 350)}>
+            <video muted loop playsInline preload="auto" src={A("mark.mp4")} />
+          </div>
+          <img className="sr-end-logo" src={A("s3/home-logo.svg")} alt="Doctolib" style={box(800, 612, 320)} />
+        </div>
+      )}
+      {/* end, version 2: the mark performs in the centre, leaves, and the script is hand-written */}
+      {end === "write" && (
+        <div className="sr-end">
+          <div className="sr-end-mark" style={box(960 - 230, 540 - 230, 460, 460)}>
+            <video muted loop playsInline preload="auto" src={A("mark.mp4")} />
+          </div>
+          <ScriptWrite className="sr-end-write" src={A("s3/home-logo.svg")} style={box(960 - 170, 540 - 42, 340)} />
+        </div>
+      )}
 
       {/* right: phones on soft blue */}
       <div className="s3-right" style={{ ...box(1000, 0, 920, 1080), background: "#D8EAFF" }}>
@@ -179,7 +201,20 @@ function S34({ R }) {
   );
 }
 
+// Versions are switchable from the content file (m.topRight, m.ending) or, for quick
+// side-by-side comparison, from the URL: ?tr=arches|medication&end=wipe|write
 export default function Showreel({ m }) {
+  const [v, setV] = useState({ tr: m.topRight || "arches", end: m.ending || "wipe" });
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    const tr = p.get("tr");
+    const end = p.get("end");
+    if (tr || end) setV((o) => ({ tr: tr || o.tr, end: end || o.end }));
+  }, []);
+  return <ShowreelInner key={v.tr + v.end} m={m} tr={v.tr} end={v.end} />;
+}
+
+function ShowreelInner({ m, tr, end }) {
   const root = useRef(null);
   const tlRef = useRef(null);
   const [done, setDone] = useState(false);
@@ -293,6 +328,8 @@ export default function Showreel({ m }) {
     // across the frame, pushing Live Well off to the left, so blue becomes the stage.
     // SETTLE: the D mark and the line rise in, then the arches fall into place one by one.
     const T5 = T4 + 3.3;
+    gsap.set(q(".s5"), { autoAlpha: 0 });
+    tl.set(q(".s5"), { autoAlpha: 1 }, T5 + 0.3); // revealed beneath the matching blue phone panel
     gsap.set(q(".s5-d, .s5-title"), { autoAlpha: 0, y: u(24) });
     gsap.set(q(".s5-title"), { clipPath: "inset(0% 0% 100% 0%)" });
     gsap.set(q(".s5-frame"), { y: u(760) });
@@ -334,19 +371,40 @@ export default function Showreel({ m }) {
       .to(q(".s6-tab"), { y: 0, duration: 1.0, ease: ease("settle") }, T6 + 0.7)
       .to(q(".s6-in"), { autoAlpha: 1, y: 0, duration: 0.7, ease: ease("settle"), stagger: 0.12 }, T6 + 1.15);
 
+    if (tr === "medication") {
+      // the medication arc pushes up into the top-right cell, the arches leave above it
+      const medRoot = el.querySelector(".s6-med .ma");
+      gsap.set(q(".s6-med"), { yPercent: 102 });
+      tl.to(q(".s6-med"), { yPercent: 0, duration: 1.0, ease: ease("move") }, T6 + 1.25)
+        .to(q(".s5-arches"), { y: u(-270.2 - 560), duration: 1.0, ease: ease("move") }, T6 + 1.25);
+      if (medRoot) tl.add(medArcTimeline(medRoot, { value: 21 }), T6 + 1.85);
+    }
+
     // ---- End · Back to the calm ground ------------------------------------------------
     // OPEN: the three cells part outwards (the opening, in reverse). The mark returns and
     // plays a different passage of its animation; then the script writes itself in.
-    const T7 = T6 + 3.6;
+    const T7 = T6 + (tr === "medication" ? 5.0 : 3.6);
     const endMark = el.querySelector(".sr-end-mark video");
     tl.to(q(".s6-left"), { x: u(-1160), duration: 1.1, ease: ease("move") }, T7)
-      .to(q(".s5"), { x: u(820), duration: 1.1, ease: ease("move") }, T7)
+      .to(q(".s5, .s6-medcell"), { x: u(820), duration: 1.1, ease: ease("move") }, T7)
       .to(q(".s6-cell"), { x: u(820), duration: 1.1, ease: ease("move") }, T7 + 0.06)
-      .call(() => { if (endMark) { try { endMark.currentTime = 12; } catch (e) {} endMark.play().catch(() => {}); } }, [], T7 + 0.4)
-      .to(q(".sr-end-mark"), { autoAlpha: 1, scale: 1, duration: 1.0, ease: ease("settle") }, T7 + 0.55)
-      .to(q(".sr-end-logo"), { clipPath: "inset(0% 0% 0% 0%)", duration: 1.6, ease: ease("move") }, T7 + 2.3)
-      .to({}, { duration: 1.6 });
+      .call(() => { if (endMark) { try { endMark.currentTime = 12; } catch (e) {} endMark.play().catch(() => {}); } }, [], T7 + 0.4);
+    if (end === "write") {
+      // the mark performs for a moment in the centre, gathers itself and leaves;
+      // then the script is written in its place, stroke by stroke
+      const sw = el.querySelector(".sr-end-write");
+      gsap.set(q(".sr-end-mark"), { autoAlpha: 0, scale: 0.88 });
+      tl.to(q(".sr-end-mark"), { autoAlpha: 1, scale: 1, duration: 1.0, ease: ease("settle") }, T7 + 0.5)
+        .to(q(".sr-end-mark"), { autoAlpha: 0, scale: 0.55, duration: 0.7, ease: ease("exit") }, T7 + 2.7);
+      if (sw) tl.add(writeTimeline(sw, { duration: 2.0 }), T7 + 3.15);
+      tl.to({}, { duration: 1.4 });
+    } else {
+      tl.to(q(".sr-end-mark"), { autoAlpha: 1, scale: 1, duration: 1.0, ease: ease("settle") }, T7 + 0.55)
+        .to(q(".sr-end-logo"), { clipPath: "inset(0% 0% 0% 0%)", duration: 1.6, ease: ease("move") }, T7 + 2.3)
+        .to({}, { duration: 1.6 });
+    }
 
+    el.classList.add("ready");
     if (reduce) {
       // reduced motion: rest on the final composed frame, no movement
       tl.progress(1).pause();
@@ -369,7 +427,7 @@ export default function Showreel({ m }) {
       document.removeEventListener("visibilitychange", onVis);
       tl.kill();
     };
-  }, []);
+  }, [tr, end]);
 
   const toggle = () => {
     const tl = tlRef.current;
@@ -409,7 +467,7 @@ export default function Showreel({ m }) {
         ))}
 
         {/* scenes 3–4: brand frames on the left, phones on the right */}
-        <S34 R={m.reel} />
+        <S34 R={m.reel} tr={tr} end={end} />
 
         {/* scene 1: quadrants + window */}
         {[0, 1, 2, 3].map((i) => (

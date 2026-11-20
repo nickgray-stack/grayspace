@@ -728,3 +728,15 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .sr .s6-cell{overflow:hidden; background:#FFC36A url(/media/doctolib/reel/s6/bg.webp) center/cover; border-radius:.42cqw;}
 .sr .s6-bezel{background:#00264C; border-radius:1.2cqw;}
 .sr .sr-end-mark video{width:100%; height:100%; object-fit:cover; display:block; mask-image:radial-gradient(circle,#000 42%,transparent 66%); -webkit-mask-image:radial-gradient(circle,#000 42%,transparent 66%);}
+
+/* medication-plan arc (reusable) */
+.ma{position:relative; aspect-ratio:775/522; container-type:inline-size; overflow:hidden;}
+.ma > img,.ma-lab img,.ma-svg{position:absolute; display:block; height:auto;}
+.ma-svg{inset:0; width:100%; height:100%;}
+.ma-lab{position:absolute; inset:0;}
+/* showreel v2 pieces */
+.sr:not(.ready) .sr-stage > :not(.sr-quad):not(.sr-spark):not(.sr-guide){visibility:hidden;}
+.sr .s6-medcell{position:absolute; overflow:hidden; border-radius:.42cqw; z-index:5;}
+.sr .s6-med{position:absolute; inset:0;}
+.sr .s6-med .ma{width:100%;}
+.sr svg.sr-end-write{position:absolute; height:auto; aspect-ratio:105/26; display:block;}

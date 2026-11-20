@@ -139,6 +139,9 @@ const doctolib = {
       colors: { bg: "#F8F3EE", quad: "#BCDFC8" },
       guide: "Gathering guidance…",
       reel: M + "reel/",
+      // versions — previous ones stay available: topRight "arches", ending "wipe"
+      topRight: "medication",
+      ending: "write",
       mark: { video: M + "reel/mark.mp4", webm: M + "reel/mark.webm", poster: M + "reel/mark-poster.webp" },
       tiles: [M + "reel/tile-responding.webp", M + "reel/tile-listening.webp", M + "reel/tile-thinking.webp"],
     },
