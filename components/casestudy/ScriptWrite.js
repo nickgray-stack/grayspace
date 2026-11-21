@@ -9,24 +9,29 @@ import S from "./doctolibScript.json";
 //
 // <ScriptWrite src="/…/logo.svg" auto />  — plays itself when scrolled into view
 // writeTimeline(svgEl, { duration })     — returns a GSAP timeline to nest elsewhere
-export function writeTimeline(svg, { duration = 2.2, lift = 0.07 } = {}) {
+export function writeTimeline(svg, { duration = 2.0 } = {}) {
+  // Each letter has a hand-authored centre line (its ductus), so the pen follows the
+  // letter the way it is written. Ink flows at one constant speed, letter after letter,
+  // left to right; a single ease over the whole word gives the hand its rhythm
+  // (a considered start, an even pace, a soft finish).
   const paths = svg ? Array.from(svg.querySelectorAll(".sw-pen")) : [];
-  const total = S.strokes.reduce((t, s) => t + Math.max(s.len, 3), 0);
-  const pen = (duration - lift * (paths.length - 1)) / total; // seconds per unit of ink
-  const tl = gsap.timeline();
   const full = svg ? svg.querySelector(".sw-full") : null;
-  // strokes stay invisible until the pen reaches them (round caps would otherwise dot the start)
+  const ink = gsap.timeline({ paused: true });
   gsap.set(paths, { strokeDashoffset: 1, opacity: 0 });
   if (full) gsap.set(full, { opacity: 0 });
+  let t = 0;
   paths.forEach((p, i) => {
-    const len = Math.max(S.strokes[i].len, 3);
-    const at = i ? `>${lift}` : 0;
-    tl.set(p, { opacity: 1 }, at);
-    // a gentle ease in/out per stroke reads as a hand, not a plotter
-    tl.to(p, { strokeDashoffset: 0, duration: len * pen, ease: "sine.inOut" }, "<");
+    const s = S.strokes[i];
+    const prev = S.strokes[i - 1];
+    // a pen lift between letters (except joined cursive) is a hair of time, not a pause
+    if (i && prev.g !== s.g) t += 0.6;
+    ink.set(p, { opacity: 1 }, t).to(p, { strokeDashoffset: 0, duration: s.len, ease: "none" }, t);
+    t += s.len;
   });
-  // seal any hairline the pen missed at joins
-  if (full) tl.to(full, { opacity: 1, duration: 0.35, ease: "none" }, ">-0.1");
+  const tl = gsap.timeline();
+  tl.to(ink, { progress: 1, duration, ease: "power1.inOut" });
+  // seal hairlines at the joins once the word is complete
+  if (full) tl.to(full, { opacity: 1, duration: 0.25, ease: "none" }, ">-0.12");
   return tl;
 }
 
@@ -48,7 +53,7 @@ export default function ScriptWrite({ src, className, style, auto = false, durat
       <defs>
         <mask id={`sw${id}`} maskUnits="userSpaceOnUse" x="-4" y="-4" width={S.w + 8} height={S.h + 8}>
           {S.strokes.map((s, i) => (
-            <path key={i} className="sw-pen" d={s.d} pathLength="1" fill="none" stroke="#fff" strokeWidth={S.pen} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="1 1" strokeDashoffset="1" opacity="0" />
+            <path key={i} className="sw-pen" d={s.d} pathLength="1" fill="none" stroke="#fff" strokeWidth={S.pen} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="1 2" strokeDashoffset="1" opacity="0" />
           ))}
         </mask>
       </defs>

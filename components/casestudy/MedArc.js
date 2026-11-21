@@ -42,18 +42,47 @@ export function medArcTimeline(root, m = {}) {
   gsap.set(q(".ma-av, .ma-lab"), { autoAlpha: 0, y: u(10) });
   gsap.set(q(".ma-val"), { autoAlpha: 0, y: u(18), clipPath: "inset(100% 0% 0% 0%)" });
   gsap.set(q(".ma-glow"), { autoAlpha: 0, y: u(40) });
+  const num = root.querySelector(".ma-num");
+  const counting = !!num;
+  if (counting) gsap.set(q(".ma-prog"), { strokeDashoffset: 1 });
   tl.to(q(".ma-ring"), { strokeDashoffset: 0, duration: 1.4, ease: MOVE, stagger: 0.15 }, 0)
     .to(q(".ma-glow"), { autoAlpha: 1, y: 0, duration: 1.4, ease: SETTLE }, 0.2)
     .to(q(".ma-av"), { autoAlpha: 1, y: 0, duration: 0.7, ease: SETTLE }, 0.45)
     .to(q(".ma-lab"), { autoAlpha: 1, y: 0, duration: 0.7, ease: SETTLE }, 0.6)
-    .to(q(".ma-prog"), { strokeDashoffset: 0, duration: 1.6, ease: SETTLE }, 0.7)
     .to(q(".ma-val"), { autoAlpha: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)", duration: 0.9, ease: SETTLE }, 0.75);
-  const num = root.querySelector(".ma-num");
-  if (num && m.digits) {
+  if (counting) {
+    // the figure counts up and the arc grows in lock-step with it
+    const prog = q(".ma-prog");
     const o = { v: 0 };
-    tl.to(o, { v: value, duration: 1.6, ease: SETTLE, onUpdate: () => (num.dataset.v = Math.round(o.v)), snap: { v: 1 } }, 0.7);
+    const draw = () => {
+      const n = Math.round(o.v);
+      setFigure(num, n);
+      gsap.set(prog, { strokeDashoffset: 1 - o.v / value });
+    };
+    setFigure(num, 0);
+    tl.to(o, { v: value, duration: 2.0, ease: "power2.out", onUpdate: draw }, 0.8);
+  } else {
+    tl.to(q(".ma-prog"), { strokeDashoffset: 0, duration: 1.6, ease: SETTLE }, 0.7);
   }
   return tl;
+}
+
+// Figure built from the brand's own digit artwork (no web font needed): two digit
+// slots and a percent sign, bottom-aligned, centred on the design's "21%".
+const DW = { 0: 56, 1: 29, 2: 49, 3: 49, 4: 57, 5: 51, 6: 53, 7: 51, 8: 53, 9: 53 };
+const DROP = { 0: 0.7, 3: 0.7, 6: 0.7, 8: 0.6, 9: 0.7 }; // optical overshoot of round figures
+function setFigure(el, n) {
+  const digits = String(n).split("");
+  const slots = el.querySelectorAll(".ma-d");
+  const base = el.dataset.base;
+  slots.forEach((img, i) => {
+    const ch = digits[i];
+    if (ch === undefined) { img.style.display = "none"; return; }
+    img.style.display = "block";
+    if (img.dataset.ch !== ch) { img.dataset.ch = ch; img.src = base + "d" + ch + ".svg"; }
+    img.style.width = u(DW[ch]);
+    img.style.transform = `translateY(${u(DROP[ch] || 0)})`;
+  });
 }
 
 export default function MedArc({ m = {}, auto = false, className = "", style }) {
@@ -99,7 +128,15 @@ export default function MedArc({ m = {}, auto = false, className = "", style }) 
         <img src={base + "tri.svg"} alt="" style={box(327, 329, 10.7)} />
         <img src={base + "label.svg"} alt="Medication Plan" style={box(348, 328, 105)} />
       </div>
-      <img className="ma-val" src={base + "value-21.svg"} alt={value + "%"} style={box(315, 378, 162)} />
+      {m.count === false ? (
+        <img className="ma-val" src={base + "value-21.svg"} alt={value + "%"} style={box(315, 378, 162)} />
+      ) : (
+        <div className="ma-val ma-num" data-base={base} role="img" aria-label={value + "%"} style={{ left: u(0), top: u(378), width: u(W), height: u(73.5) }}>
+          <img className="ma-d" alt="" />
+          <img className="ma-d" alt="" />
+          <img className="ma-pct" src={base + "pct.svg"} alt="" style={{ width: u(76.5) }} />
+        </div>
+      )}
     </div>
   );
 }

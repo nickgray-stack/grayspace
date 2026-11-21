@@ -684,10 +684,11 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .sr-quad{position:absolute; background:var(--sr-quad); border:1px solid var(--sr-line); border-radius:.5cqw; box-sizing:border-box; z-index:3;}
 .sr-spark{position:absolute; width:1.56cqw; height:1.875cqw; transform:translate(-50%,-50%); color:#121212; z-index:4; display:block;}
 .sr-spark svg{width:100%; height:100%; display:block;}
-.sr-guide{position:absolute; z-index:2; display:flex; align-items:center; justify-content:center; gap:1.1cqw; color:#121212; font-size:1.3cqw; letter-spacing:-.01em;}
-.sr-guide-mark{width:2.6cqw; aspect-ratio:1; background:url(/media/doctolib/reel/mark-poster.webp) center/cover; border-radius:50%; mask-image:radial-gradient(circle,#000 55%,transparent 72%); -webkit-mask-image:radial-gradient(circle,#000 55%,transparent 72%); opacity:.75;}
-.sr-guide-t{background:linear-gradient(90deg,#121212 0%,#121212 40%,#9aa3b8 50%,#121212 60%,#121212 100%) 0 0/250% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:sr-shimmer 2.4s linear infinite;}
-@keyframes sr-shimmer{from{background-position:100% 0} to{background-position:-150% 0}}
+.sr-guide{position:absolute; z-index:2; background:var(--sr-bg); border-radius:.5cqw;}
+.sr-guide > *{position:absolute; display:block; height:auto;}
+.sr-guide-mark{aspect-ratio:1; object-fit:cover; mix-blend-mode:multiply;}
+.sr-guide-t{-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 42%,rgba(0,0,0,.32) 50%,#000 58%,#000 100%); mask-image:linear-gradient(90deg,#000 0%,#000 42%,rgba(0,0,0,.32) 50%,#000 58%,#000 100%); -webkit-mask-size:260% 100%; mask-size:260% 100%; animation:sr-shimmer 2.2s cubic-bezier(.45,0,.55,1) infinite;}
+@keyframes sr-shimmer{from{-webkit-mask-position:100% 0; mask-position:100% 0} to{-webkit-mask-position:0% 0; mask-position:0% 0}}
 .sr-mark{position:absolute; aspect-ratio:1; z-index:1;}
 .sr-mark video{width:100%; height:100%; object-fit:cover; display:block; mask-image:radial-gradient(circle,#000 42%,transparent 66%); -webkit-mask-image:radial-gradient(circle,#000 42%,transparent 66%);}
 .sr-tile{position:absolute; height:auto; z-index:1;}
@@ -740,3 +741,17 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .sr .s6-med{position:absolute; inset:0;}
 .sr .s6-med .ma{width:100%;}
 .sr svg.sr-end-write{position:absolute; height:auto; aspect-ratio:105/26; display:block;}
+.ma-num{position:absolute; display:flex; align-items:flex-end; justify-content:center; gap:4cqw; gap:calc(4.4 / 775 * 100cqw); padding-left:calc(17 / 775 * 100cqw);}
+.ma-num img{display:block; height:auto;}
+
+/* scene 2 state tiles */
+.sr-tile{position:absolute; z-index:1;}
+.sr-tile > img{position:absolute; display:block; height:auto;}
+.sr-tile-bg{inset:0; width:100%; height:100%;}
+.sr-i-thinking{animation:sr-spin 7s linear infinite;}
+.sr-i-responding{animation:sr-pulse 2.4s ease-in-out infinite;}
+.sr-i-listening{animation:sr-breathe 3.2s ease-in-out infinite;}
+@keyframes sr-spin{to{rotate:360deg}}
+@keyframes sr-pulse{50%{scale:1.06}}
+@keyframes sr-breathe{50%{scale:.93; opacity:.85}}
+@media (prefers-reduced-motion: reduce){.sr-tile-i,.sr-guide-t{animation:none;}}

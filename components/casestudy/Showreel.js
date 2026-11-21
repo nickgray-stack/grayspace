@@ -253,6 +253,7 @@ function ShowreelInner({ m, tr, end }) {
 
     const tl = gsap.timeline({ paused: true, onComplete: () => setDone(true) });
     tlRef.current = tl;
+    window.__showreel = tl; // scrub in the console: __showreel.pause().seek(20, false)
 
     gsap.set(q(".sr-mark"), { autoAlpha: 0, scale: 0.86 });
     gsap.set(q(".sr-tile"), { autoAlpha: 0, y: u(60) });
@@ -272,9 +273,11 @@ function ShowreelInner({ m, tr, end }) {
       .to(cell, { l: -40, t: -40, r: W + 40, b: H + 40, duration: 1.3, ease: ease("move"), onUpdate: place }, 3.3);
 
     // ---- Scene 2 · Intelligence layer ----------------------------------------
-    tl.call(() => mark && mark.play().catch(() => {}), [], 3.8)
+    tl.call(() => { if (mark) { try { mark.currentTime = 2.0; } catch (e) {} mark.play().catch(() => {}); } }, [], 3.8)
       .to(q(".sr-mark"), { autoAlpha: 1, scale: 1, duration: 1.2, ease: ease("settle") }, 3.9)
       .to(q(".sr-tile"), { autoAlpha: 1, y: 0, duration: 0.8, ease: ease("card"), stagger: 0.12 }, 4.6)
+      .fromTo(q(".sr-tile-i"), { autoAlpha: 0, scale: 0.72 }, { autoAlpha: 1, scale: 1, duration: 0.9, ease: ease("settle"), stagger: 0.12 }, 4.85)
+      .fromTo(q(".sr-tile-l"), { clipPath: "inset(0% 100% 0% 0%)", y: u(6) }, { clipPath: "inset(0% 0% 0% 0%)", y: 0, duration: 0.8, ease: ease("settle"), stagger: 0.12 }, 5.05)
       ;
 
     // ---- Scene 3 · Assets and screens ------------------------------------------
@@ -388,7 +391,7 @@ function ShowreelInner({ m, tr, end }) {
     tl.to(q(".s6-left"), { x: u(-1160), duration: 1.1, ease: ease("move") }, T7)
       .to(q(".s5, .s6-medcell"), { x: u(820), duration: 1.1, ease: ease("move") }, T7)
       .to(q(".s6-cell"), { x: u(820), duration: 1.1, ease: ease("move") }, T7 + 0.06)
-      .call(() => { if (endMark) { try { endMark.currentTime = 12; } catch (e) {} endMark.play().catch(() => {}); } }, [], T7 + 0.4);
+      .call(() => { if (endMark) { try { endMark.currentTime = 8.0; } catch (e) {} endMark.play().catch(() => {}); } }, [], T7 + 0.4);
     if (end === "write") {
       // the mark performs for a moment in the centre, gathers itself and leaves;
       // then the script is written in its place, stroke by stroke
@@ -437,7 +440,7 @@ function ShowreelInner({ m, tr, end }) {
       setDone(false);
       setPlaying(true);
       delete el.dataset.userPaused;
-      tl.restart();
+      tl.restart(false, false); // render callbacks on the jump back so the grid closes again
       return;
     }
     if (tl.isActive()) {
@@ -462,8 +465,17 @@ function ShowreelInner({ m, tr, end }) {
             <source src={m.mark.video} type="video/mp4" />
           </video>
         </div>
-        {(m.tiles || []).map((t, i) => (
-          <img key={i} className="sr-tile" src={t} alt="" style={{ left: u(612 + i * 240.5), top: u(766), width: u(214) }} />
+        {/* state tiles: card, live icon, label */}
+        {[
+          ["responding", 21, 5, 174, 71],
+          ["listening", 22, 15, 171, 80],
+          ["thinking", 27, 13, 165, 81],
+        ].map(([k, ix, iy, iw, lx], i) => (
+          <div key={k} className="sr-tile" style={{ left: u(612 + i * 240.5), top: u(766), width: u(214), height: u(220.7) }}>
+            <img className="sr-tile-bg" src={m.reel + "s2/tile-bg.webp"} alt="" />
+            <img className={"sr-tile-i sr-i-" + k} src={m.reel + `s2/i-${k}.svg`} alt="" style={{ left: u(ix), top: u(iy), width: u(iw) }} />
+            <img className="sr-tile-l" src={m.reel + `s2/l-${k}.svg`} alt={k[0].toUpperCase() + k.slice(1)} style={{ left: u(lx), top: u(186.5), width: u({ responding: 74.2, listening: 55.5, thinking: 54 }[k]) }} />
+          </div>
         ))}
 
         {/* scenes 3–4: brand frames on the left, phones on the right */}
@@ -479,8 +491,8 @@ function ShowreelInner({ m, tr, end }) {
           </span>
         ))}
         <div className="sr-guide" style={{ left: u(CELL.l), top: u(CELL.t), width: u(CELL.r - CELL.l), height: u(CELL.b - CELL.t) }}>
-          <span className="sr-guide-mark" />
-          <span className="sr-guide-t">{m.guide || "Gathering guidance…"}</span>
+          <video className="sr-guide-mark" src={m.reel + "mark-sm.mp4"} muted loop playsInline autoPlay preload="auto" style={{ left: u(834 - CELL.l - 32), top: u(539 - CELL.t - 32), width: u(64) }} />
+          <img className="sr-guide-t" src={m.reel + "s2/guide.svg"} alt={m.guide || "Gathering guidance…"} style={{ left: u(893 - CELL.l), top: u(526 - CELL.t), width: u(257) }} />
         </div>
       </div>
       <button className="sr-ctl" type="button" onClick={toggle} aria-label={done ? "Replay showreel" : playing ? "Pause showreel" : "Play showreel"}>
