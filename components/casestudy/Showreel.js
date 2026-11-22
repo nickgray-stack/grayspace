@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import MedArc, { medArcTimeline } from "./MedArc";
 import ScriptWrite, { writeTimeline } from "./ScriptWrite";
+import ScriptWriteFigma, { writeTimelineFigma } from "./ScriptWriteFigma";
 
 // Doctolib showreel hero — built in code so scenes can be retimed or swapped.
 // Everything is laid out on the Figma 1920 × 1080 frame and sized in container
@@ -52,7 +53,7 @@ const DRS = [
 ];
 const DRY = [683, 753.74, 824.48, 895.46];
 
-function S34({ R, tr, end }) {
+function S34({ R, tr, end, script }) {
   const A = (f) => R + f;
   return (
     <>
@@ -172,7 +173,11 @@ function S34({ R, tr, end }) {
           <div className="sr-end-mark" style={box(960 - 230, 540 - 230, 460, 460)}>
             <video muted loop playsInline preload="auto" src={A("mark.mp4")} />
           </div>
-          <ScriptWrite className="sr-end-write" src={A("s3/home-logo.svg")} style={box(960 - 170, 540 - 42, 340)} />
+          {script === "figma" ? (
+            <ScriptWriteFigma className="sr-end-write sr-end-write-f" src={A("script/logo.svg")} style={box(960 - 180, 540 - 48, 360)} />
+          ) : (
+            <ScriptWrite className="sr-end-write" src={A("s3/home-logo.svg")} style={box(960 - 170, 540 - 42, 340)} />
+          )}
         </div>
       )}
 
@@ -202,19 +207,20 @@ function S34({ R, tr, end }) {
 }
 
 // Versions are switchable from the content file (m.topRight, m.ending) or, for quick
-// side-by-side comparison, from the URL: ?tr=arches|medication&end=wipe|write
+// side-by-side comparison, from the URL: ?tr=arches|medication&end=wipe|write&script=figma|traced
 export default function Showreel({ m }) {
-  const [v, setV] = useState({ tr: m.topRight || "arches", end: m.ending || "wipe" });
+  const [v, setV] = useState({ tr: m.topRight || "arches", end: m.ending || "wipe", script: m.script || "figma" });
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
     const tr = p.get("tr");
     const end = p.get("end");
-    if (tr || end) setV((o) => ({ tr: tr || o.tr, end: end || o.end }));
+    const script = p.get("script");
+    if (tr || end || script) setV((o) => ({ tr: tr || o.tr, end: end || o.end, script: script || o.script }));
   }, []);
-  return <ShowreelInner key={v.tr + v.end} m={m} tr={v.tr} end={v.end} />;
+  return <ShowreelInner key={v.tr + v.end + v.script} m={m} tr={v.tr} end={v.end} script={v.script} />;
 }
 
-function ShowreelInner({ m, tr, end }) {
+function ShowreelInner({ m, tr, end, script }) {
   const root = useRef(null);
   const tlRef = useRef(null);
   const [done, setDone] = useState(false);
@@ -399,7 +405,7 @@ function ShowreelInner({ m, tr, end }) {
       gsap.set(q(".sr-end-mark"), { autoAlpha: 0, scale: 0.88 });
       tl.to(q(".sr-end-mark"), { autoAlpha: 1, scale: 1, duration: 1.0, ease: ease("settle") }, T7 + 0.5)
         .to(q(".sr-end-mark"), { autoAlpha: 0, scale: 0.55, duration: 0.7, ease: ease("exit") }, T7 + 2.7);
-      if (sw) tl.add(writeTimeline(sw, { duration: 2.0 }), T7 + 3.15);
+      if (sw) tl.add(script === "figma" ? writeTimelineFigma(sw, { speed: 0.8 }) : writeTimeline(sw, { duration: 2.0 }), T7 + (script === "figma" ? 3.3 : 3.15));
       tl.to({}, { duration: 1.4 });
     } else {
       tl.to(q(".sr-end-mark"), { autoAlpha: 1, scale: 1, duration: 1.0, ease: ease("settle") }, T7 + 0.55)
@@ -430,7 +436,7 @@ function ShowreelInner({ m, tr, end }) {
       document.removeEventListener("visibilitychange", onVis);
       tl.kill();
     };
-  }, [tr, end]);
+  }, [tr, end, script]);
 
   const toggle = () => {
     const tl = tlRef.current;
@@ -479,7 +485,7 @@ function ShowreelInner({ m, tr, end }) {
         ))}
 
         {/* scenes 3–4: brand frames on the left, phones on the right */}
-        <S34 R={m.reel} tr={tr} end={end} />
+        <S34 R={m.reel} tr={tr} end={end} script={script} />
 
         {/* scene 1: quadrants + window */}
         {[0, 1, 2, 3].map((i) => (

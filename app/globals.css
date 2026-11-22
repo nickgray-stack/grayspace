@@ -755,3 +755,4 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 @keyframes sr-pulse{50%{scale:1.06}}
 @keyframes sr-breathe{50%{scale:.93; opacity:.85}}
 @media (prefers-reduced-motion: reduce){.sr-tile-i,.sr-guide-t{animation:none;}}
+.sr svg.sr-end-write-f{aspect-ratio:236/63;}
