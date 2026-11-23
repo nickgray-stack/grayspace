@@ -163,14 +163,6 @@ const doctolib = {
     // 3 · The test
     say("Tested against two alternatives with patients and professionals in three markets, the vision came first in every group, and went on to become the brand.", "The test", "test"),
 
-    // 4 · The metric that changed the work — joined to its question, definition muted
-    say(
-      "Eight stakeholder interviews narrowed nine journeys to three. Then we asked a harder question: what should a health companion actually make people do?",
-      "The success metric",
-      "quality",
-      "Our answer became the success metric: consultations that end with a care plan action the patient completes in a clinically appropriate window."
-    ),
-
     // 5 · Home, where the metric shows up first
     lockup(
       {
@@ -182,6 +174,14 @@ const doctolib = {
         ],
       },
       pic(8, "1800:1497", "hero-screens-tall.webp", "Home, Hugo's appointment and today's activities screens")
+    ),
+
+    // 4 · The metric that changed the work — between Home and the info cards that make it measurable
+    say(
+      "Eight stakeholder interviews narrowed nine journeys to three. Then we asked a harder question: what should a health companion actually make people do?",
+      "The success metric",
+      "quality",
+      "Our answer became the success metric: consultations that end with a care plan action the patient completes in a clinically appropriate window."
     ),
 
     lockup(

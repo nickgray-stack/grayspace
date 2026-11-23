@@ -1,43 +1,28 @@
 // Small explanatory diagrams for overlays, drawn in code so they stay crisp and
 // match the page type. Each is keyed by name from a detail's `diagram` field.
 
-// The quality action: the definition with its four parts highlighted, and a short
-// note under each part saying why it's there (from the Shape metric board).
-const QA_PARTS = [
-  { n: 1, c: "#F5E6B8", t: "The share of consultations that end with", note: "Only consultations where a practitioner set a next step." },
-  { t: " an " },
-  { n: 2, c: "#EFD3B4", t: "assigned care plan action", note: "Strips out no-shows and no actions; focuses on what the practitioner asked for." },
-  { t: ", where the " },
-  { n: 3, c: "#C5CBF0", t: "patient completes that action", note: "Every action needs a way to record it, even a tick." },
-  { t: " within a " },
-  { n: 4, c: "#C3DECF", t: "clinically appropriate window", note: "The open question: a fluid window, or a first action within three days?" },
-  { t: "." },
+// The quality action as a narrowing funnel: each step of the definition filters the
+// consultations we count, ending in the quality action itself. Colours keep the four
+// highlights from the Shape metric board; a short note says why each step is there.
+const QA_STEPS = [
+  { c: "#F5E6B8", t: "Consultations that end with", note: "Only consultations where a practitioner set a next step." },
+  { c: "#EFD3B4", t: "an assigned care plan action", note: "Strips out no-shows and no actions. Focuses on what the practitioner asked for." },
+  { c: "#C5CBF0", t: "where the patient completes it", note: "Every action needs a way to record it, even a tick." },
+  { c: "#C3DECF", t: "within a clinically appropriate window", note: "The open question: a fluid window, or a first action within three days?" },
 ];
 
 export function QualityDiagram() {
-  const notes = QA_PARTS.filter((p) => p.n);
   return (
     <div className="dg-qa">
-      <p className="dg-qa-s">
-        {QA_PARTS.map((p, i) =>
-          p.n ? (
-            <mark key={i} style={{ background: p.c }}>
-              {p.t}
-              <sup>{p.n}</sup>
-            </mark>
-          ) : (
-            <span key={i}>{p.t}</span>
-          )
-        )}
-      </p>
-      <ol className="dg-qa-n">
-        {notes.map((p) => (
-          <li key={p.n}>
-            <span className="dg-qa-k" style={{ background: p.c }}>{p.n}</span>
-            <span>{p.note}</span>
+      <ol className="dg-qa-f">
+        {QA_STEPS.map((s, i) => (
+          <li key={i} style={{ "--c": s.c, "--w": 100 - i * 13 + "%" }}>
+            <div className="dg-qa-bar"><span className="dg-qa-k">{i + 1}</span>{s.t}</div>
+            <p className="dg-qa-note">{s.note}</p>
           </li>
         ))}
       </ol>
+      <p className="dg-qa-out"><span>=</span> a quality action, counted as a share of consultations</p>
     </div>
   );
 }
