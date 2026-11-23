@@ -170,11 +170,11 @@ function S34({ R, tr, end, script }) {
       {/* end, version 2: the mark performs in the centre, leaves, and the script is hand-written */}
       {end === "write" && (
         <div className="sr-end">
-          <div className="sr-end-mark" style={box(960 - 230, 540 - 230, 460, 460)}>
+          <div className="sr-end-mark" style={box(755.4, 336.1, 408.3, 408.3)}>
             <video muted loop playsInline preload="auto" src={A("mark.mp4")} />
           </div>
           {script === "figma" ? (
-            <ScriptWriteFigma className="sr-end-write sr-end-write-f" src={A("script/logo.svg")} style={box(960 - 180, 540 - 48, 360)} />
+            <ScriptWriteFigma className="sr-end-write sr-end-write-f" src={A("script/logo.svg")} style={box(888.2, 956.5, 143.7)} />
           ) : (
             <ScriptWrite className="sr-end-write" src={A("s3/home-logo.svg")} style={box(960 - 170, 540 - 42, 340)} />
           )}
@@ -183,7 +183,11 @@ function S34({ R, tr, end, script }) {
 
       {/* right: phones on soft blue */}
       <div className="s3-right" style={{ ...box(1000, 0, 920, 1080), background: "#D8EAFF" }}>
-        <img className="s3-phone" src={A("s3/phone-ai.webp")} alt="" style={box(657.2, 159.8, 509)} />
+        <div className="s3-phone" style={box(657.2, 159.8, 509, 1047.5)}>
+          <img src={A("s3/phone-ai.webp")} alt="" style={{ width: "100%", display: "block" }} />
+          <span className="s3-aipatch" style={box(65.5 - 17, 306.5 - 17, 34, 34)} />
+          <video className="s3-aimark" src={A("mark-sm.mp4")} muted loop playsInline autoPlay preload="auto" onLoadedMetadata={(e) => { try { e.currentTarget.currentTime = 21; } catch (err) {} }} style={box(65.5 - 24, 306.5 - 24, 48, 48)} />
+        </div>
         <div className="s3-phone" style={box(93.75, 159.8, 509)}>
           <img src={A("s3/phone-home-empty.webp")} alt="" style={{ width: "100%", display: "block" }} />
           {/* the Doctolib script writes itself in as the phone lands */}
@@ -274,23 +278,23 @@ function ShowreelInner({ m, tr, end, script }) {
       .to(q(".sr-guide"), { autoAlpha: 1, duration: 0.4, ease: "none" }, 1.7)
       .fromTo(q(".sr-guide-t"), { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.9, ease: ease("settle") }, 1.8)
       // hold, then the quadrants part outwards to reveal the light ground
-      .to(q(".sr-guide"), { autoAlpha: 0, duration: 0.45, ease: ease("exit") }, 3.2)
-      .to(sparks, { autoAlpha: 0, duration: 0.35, ease: ease("exit") }, 3.3)
-      .to(cell, { l: -40, t: -40, r: W + 40, b: H + 40, duration: 1.3, ease: ease("move"), onUpdate: place }, 3.3);
+      .to(q(".sr-guide"), { autoAlpha: 0, duration: 0.45, ease: ease("exit") }, 2.9)
+      .to(sparks, { autoAlpha: 0, duration: 0.35, ease: ease("exit") }, 3.0)
+      .to(cell, { l: -40, t: -40, r: W + 40, b: H + 40, duration: 1.3, ease: ease("move"), onUpdate: place }, 3.0);
 
     // ---- Scene 2 · Intelligence layer ----------------------------------------
-    tl.call(() => { if (mark) { try { mark.currentTime = 2.0; } catch (e) {} mark.play().catch(() => {}); } }, [], 3.8)
-      .to(q(".sr-mark"), { autoAlpha: 1, scale: 1, duration: 1.2, ease: ease("settle") }, 3.9)
-      .to(q(".sr-tile"), { autoAlpha: 1, y: 0, duration: 0.8, ease: ease("card"), stagger: 0.12 }, 4.6)
-      .fromTo(q(".sr-tile-i"), { autoAlpha: 0, scale: 0.72 }, { autoAlpha: 1, scale: 1, duration: 0.9, ease: ease("settle"), stagger: 0.12 }, 4.85)
-      .fromTo(q(".sr-tile-l"), { clipPath: "inset(0% 100% 0% 0%)", y: u(6) }, { clipPath: "inset(0% 0% 0% 0%)", y: 0, duration: 0.8, ease: ease("settle"), stagger: 0.12 }, 5.05)
+    tl.call(() => { if (mark) { try { mark.currentTime = 2.0; } catch (e) {} mark.play().catch(() => {}); } }, [], 3.5)
+      .to(q(".sr-mark"), { autoAlpha: 1, scale: 1, duration: 1.2, ease: ease("settle") }, 3.6)
+      .to(q(".sr-tile"), { autoAlpha: 1, y: 0, duration: 0.8, ease: ease("card"), stagger: 0.12 }, 4.3)
+      .fromTo(q(".sr-tile-i"), { autoAlpha: 0, scale: 0.72 }, { autoAlpha: 1, scale: 1, duration: 0.9, ease: ease("settle"), stagger: 0.12 }, 4.55)
+      .fromTo(q(".sr-tile-l"), { clipPath: "inset(0% 100% 0% 0%)", y: u(6) }, { clipPath: "inset(0% 0% 0% 0%)", y: 0, duration: 0.8, ease: ease("settle"), stagger: 0.12 }, 4.75)
       ;
 
     // ---- Scene 3 · Assets and screens ------------------------------------------
     // the intelligence layer leaves; brand frames drop in from the top and rise from
     // the bottom with their contents settling inside; the phone panel slides in from
     // the right and Home "loads" its content (open, push, settle).
-    const T3 = 7.0;
+    const T3 = 6.7;
     gsap.set(q(".s3-posts"), { y: u(-620) });
     gsap.set(q(".s3-chips"), { y: u(560) });
     gsap.set(q(".s3-table"), { y: u(560) });
@@ -326,7 +330,7 @@ function ShowreelInner({ m, tr, end, script }) {
     // ---- Scene 4 · Asset swap -------------------------------------------------------
     // the next frame pushes the brand assets up and out; the network lines open from
     // the centre and "Live Well." peels open around it
-    const T4 = T3 + 4.4;
+    const T4 = T3 + 3.9;
     tl.to(q(".s3-left"), { y: u(-1100), duration: 1.25, ease: ease("move") }, T4)
       .to(q(".s4-live"), { y: 0, duration: 1.25, ease: ease("move") }, T4)
       .to(q(".s4-net"), { clipPath: "circle(75% at 50% 50%)", duration: 1.9, ease: ease("settle") }, T4 + 0.7)
@@ -336,7 +340,7 @@ function ShowreelInner({ m, tr, end, script }) {
     // PUSH: the phones sink out of their blue panel. OPEN: the panel's edge sweeps left
     // across the frame, pushing Live Well off to the left, so blue becomes the stage.
     // SETTLE: the D mark and the line rise in, then the arches fall into place one by one.
-    const T5 = T4 + 3.3;
+    const T5 = T4 + 2.7;
     gsap.set(q(".s5"), { autoAlpha: 0 });
     tl.set(q(".s5"), { autoAlpha: 1 }, T5 + 0.3); // revealed beneath the matching blue phone panel
     gsap.set(q(".s5-d, .s5-title"), { autoAlpha: 0, y: u(24) });
@@ -384,15 +388,15 @@ function ShowreelInner({ m, tr, end, script }) {
       // the medication arc pushes up into the top-right cell, the arches leave above it
       const medRoot = el.querySelector(".s6-med .ma");
       gsap.set(q(".s6-med"), { yPercent: 102 });
-      tl.to(q(".s6-med"), { yPercent: 0, duration: 1.0, ease: ease("move") }, T6 + 1.25)
-        .to(q(".s5-arches"), { y: u(-270.2 - 560), duration: 1.0, ease: ease("move") }, T6 + 1.25);
-      if (medRoot) tl.add(medArcTimeline(medRoot, { value: 21 }), T6 + 1.85);
+      tl.to(q(".s6-med"), { yPercent: 0, duration: 1.0, ease: ease("move") }, T6 + 0.85)
+        .to(q(".s5-arches"), { y: u(-270.2 - 560), duration: 1.0, ease: ease("move") }, T6 + 0.85);
+      if (medRoot) tl.add(medArcTimeline(medRoot, { value: 21 }), T6 + 1.45);
     }
 
     // ---- End · Back to the calm ground ------------------------------------------------
     // OPEN: the three cells part outwards (the opening, in reverse). The mark returns and
     // plays a different passage of its animation; then the script writes itself in.
-    const T7 = T6 + (tr === "medication" ? 5.0 : 3.6);
+    const T7 = T6 + (tr === "medication" ? 4.4 : 3.6);
     const endMark = el.querySelector(".sr-end-mark video");
     tl.to(q(".s6-left"), { x: u(-1160), duration: 1.1, ease: ease("move") }, T7)
       .to(q(".s5, .s6-medcell"), { x: u(820), duration: 1.1, ease: ease("move") }, T7)
@@ -402,11 +406,12 @@ function ShowreelInner({ m, tr, end, script }) {
       // the mark performs for a moment in the centre, gathers itself and leaves;
       // then the script is written in its place, stroke by stroke
       const sw = el.querySelector(".sr-end-write");
+      // the mark settles centre stage and keeps performing; the small logotype is
+      // written beneath it right at the end, then the frame holds
       gsap.set(q(".sr-end-mark"), { autoAlpha: 0, scale: 0.88 });
-      tl.to(q(".sr-end-mark"), { autoAlpha: 1, scale: 1, duration: 1.0, ease: ease("settle") }, T7 + 0.5)
-        .to(q(".sr-end-mark"), { autoAlpha: 0, scale: 0.55, duration: 0.7, ease: ease("exit") }, T7 + 2.7);
-      if (sw) tl.add(script === "figma" ? writeTimelineFigma(sw, { speed: 0.8 }) : writeTimeline(sw, { duration: 2.0 }), T7 + (script === "figma" ? 3.3 : 3.15));
-      tl.to({}, { duration: 1.4 });
+      tl.to(q(".sr-end-mark"), { autoAlpha: 1, scale: 1, duration: 1.0, ease: ease("settle") }, T7 + 0.45);
+      if (sw) tl.add(script === "figma" ? writeTimelineFigma(sw, { speed: 0.8 }) : writeTimeline(sw, { duration: 2.0 }), T7 + 3.4);
+      tl.to({}, { duration: 1.0 });
     } else {
       tl.to(q(".sr-end-mark"), { autoAlpha: 1, scale: 1, duration: 1.0, ease: ease("settle") }, T7 + 0.55)
         .to(q(".sr-end-logo"), { clipPath: "inset(0% 0% 0% 0%)", duration: 1.6, ease: ease("move") }, T7 + 2.3)
@@ -471,16 +476,19 @@ function ShowreelInner({ m, tr, end, script }) {
             <source src={m.mark.video} type="video/mp4" />
           </video>
         </div>
-        {/* state tiles: card, live icon, label */}
+        {/* state tiles: card, the mark looping its own state from the brand video, label */}
         {[
-          ["responding", 21, 5, 174, 71],
-          ["listening", 22, 15, 171, 80],
-          ["thinking", 27, 13, 165, 81],
-        ].map(([k, ix, iy, iw, lx], i) => (
-          <div key={k} className="sr-tile" style={{ left: u(612 + i * 240.5), top: u(766), width: u(214), height: u(220.7) }}>
+          ["responding", 103],
+          ["listening", 77],
+          ["thinking", 75],
+        ].map(([k, lw], i) => (
+          <div key={k} className="sr-tile" style={{ left: u(567 + i * 270), top: u(722), width: u(246), height: u(254) }}>
             <img className="sr-tile-bg" src={m.reel + "s2/tile-bg.webp"} alt="" />
-            <img className={"sr-tile-i sr-i-" + k} src={m.reel + `s2/i-${k}.svg`} alt="" style={{ left: u(ix), top: u(iy), width: u(iw) }} />
-            <img className="sr-tile-l" src={m.reel + `s2/l-${k}.svg`} alt={k[0].toUpperCase() + k.slice(1)} style={{ left: u(lx), top: u(186.5), width: u({ responding: 74.2, listening: 55.5, thinking: 54 }[k]) }} />
+            <video className="sr-tile-i" muted loop playsInline autoPlay preload="auto" poster={undefined} style={{ left: u(37), top: u(14), width: u(172) }}>
+              <source src={m.reel + `s2/state-${k}.webm`} type="video/webm" />
+              <source src={m.reel + `s2/state-${k}.mp4`} type="video/mp4" />
+            </video>
+            <img className="sr-tile-l" src={m.reel + `s2/l-${k}.svg`} alt={k[0].toUpperCase() + k.slice(1)} style={{ left: u((246 - lw) / 2), top: u(210), width: u(lw) }} />
           </div>
         ))}
 

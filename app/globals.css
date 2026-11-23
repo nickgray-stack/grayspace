@@ -756,3 +756,7 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 @keyframes sr-breathe{50%{scale:.93; opacity:.85}}
 @media (prefers-reduced-motion: reduce){.sr-tile-i,.sr-guide-t{animation:none;}}
 .sr svg.sr-end-write-f{aspect-ratio:236/63;}
+
+/* live state loops in the tiles; live mark on the AI phone */
+.sr-tile > video.sr-tile-i{position:absolute; display:block; aspect-ratio:1; object-fit:cover; -webkit-mask-image:radial-gradient(circle,#000 52%,transparent 70%); mask-image:radial-gradient(circle,#000 52%,transparent 70%);}
+.sr .s3-aipatch{position:absolute; display:block; border-radius:50%; background:rgb(249,245,240);}
