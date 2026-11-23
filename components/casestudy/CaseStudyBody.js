@@ -410,16 +410,17 @@ export default function CaseStudyBody({ modules = [], detail, details, accent })
     }
     if (m.type === "stats") {
       return (
-        <section className="section stats wrap" key={i}>
+        <section className={"section stats wrap" + (m.compact ? " compact" : "")} key={i}>
           {m.intro && <p className="stats-intro r">{m.intro}</p>}
           <dl className="stats-row">
             {m.items.map((it, j) => (
               <div className="stat r" key={j}>
-                <dt>{it.label}</dt>
+                <dt>{it.name && <b>{it.name}.</b>} {it.label}</dt>
                 <dd>{it.value}</dd>
               </div>
             ))}
           </dl>
+          {m.note && <p className="stats-note r">{m.note}</p>}
         </section>
       );
     }
@@ -455,7 +456,7 @@ export default function CaseStudyBody({ modules = [], detail, details, accent })
         <section className={"section statement wrap" + (m.phase ? " has-phase" : "")} key={i}>
           {m.phase && <p className="st-phase r">{m.phase}</p>}
           {m.kicker && <p className="st-kick r">{m.kicker}</p>}
-          <p className="modhead r">{rich(m.text)}</p>
+          <p className="modhead r">{rich(m.text)}{m.muted && <> <span className="mh-muted">{rich(m.muted)}</span></>}</p>
           {m.cta && hasDetail(m.cta.detail) && (
             <div className="ctarow r">
               <button className="btn-exp" type="button" onClick={onOpen} data-detail={m.cta.detail || ""} aria-label={m.cta.label}>

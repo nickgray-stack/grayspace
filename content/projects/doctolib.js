@@ -32,7 +32,7 @@ const panel = (span, eyebrow, copy, label, detail) => ({ span: "col-" + span, ki
 // the next line of the same grid, 8px apart, Mouthwash-style)
 const lockup = (...cols) => ({ type: "row", tight: true, cols });
 // large statement + button that opens an overlay (the overlay carries the eyebrow)
-const say = (text, label, detail) => ({ type: "statement", text, ...(label ? { cta: { label, detail } } : null) });
+const say = (text, label, detail, muted) => ({ type: "statement", text, ...(muted ? { muted } : null), ...(label ? { cta: { label, detail } } : null) });
 
 const doctolib = {
   slug: "doctolib",
@@ -58,24 +58,27 @@ const doctolib = {
       heading: "Five objectives, three numbers to move.",
       body: [
         { title: "What the business needed", items: ["Create value", "Drive AI assistant adoption", "Build a data moat", "Leverage the connection with practitioners", "Elevate the brand"] },
-        "The KPIs grounded our thinking. They're targets for the end of 2026, not results.",
+        { title: "The numbers to move", items: ["*Low adoption* · 2% → 20% AI assistant weekly users, as a share of app weekly users", "*Low return use* · 8% → 20% AI assistant week one retention", "*Low use beyond booking* · 3% → 5% people using it beyond booking, two or more days a week"] },
+        "Targets for the end of 2026, not results.",
       ],
     },
     lea: {
-      eyebrow: "Meet Léa",
-      heading: "One person, three stories.",
+      eyebrow: "The vision",
+      heading: "From a week in Paris to a prototype for the CEO.",
       media: PH("lea-persona.jpg", "Léa and Hugo — persona visual", "4:3"),
       body: [
-        "*Léa, 34.* Mother of Hugo, 2. She books and manages care for her whole family. Organised and proactive, yet healthcare still feels opaque. She wants support that informs her judgement, not replaces it.",
-        { k: "01", title: "From triage, to booking, to reassurance", copy: "Hugo has a fever and Léa doesn't know if it's serious or who to see. Ask Doctolib understands the need, reassures her, and books the right practitioner in the same conversation." },
-        { k: "02", title: "Arrive prepared", copy: "Parents forget what they meant to raise. A short questionnaire and a suggested discussion guide mean the GP has what they need." },
-        { k: "03", title: "Understand what happens next", copy: "Summaries mix observations and jargon. Instead: a summary in human language, and a care plan that nudges each dose at the right time." },
+        "We started with a week in Paris, immersed in Doctolib's business problems and the health landscape. We benchmarked the space, listened to stakeholders, and played back quick vision ideas and mood boards built on what we'd learnt. Three weeks in, that became a prototype of nine journeys and 86 screens for the CEO.",
+        { title: "The vision in three shifts", items: ["*Transactional → Conversational.* Ask Doctolib is the way in, not a feature at the edge.", "*Busy → Calm.* The right thing at the right moment.", "*Reactive → Proactive.* Anticipate what matters before people ask."] },
+        "*Léa, 34.* Mother of Hugo, 2. She manages care for her whole family, and wants support that informs her judgement, not replaces it.",
+        { k: "01", title: "From triage, to booking, to reassurance", copy: "Hugo has a fever. Ask Doctolib reassures Léa and books the right practitioner in the same conversation." },
+        { k: "02", title: "Arrive prepared", copy: "A short questionnaire and a suggested discussion guide, so the GP has what they need." },
+        { k: "03", title: "Understand what happens next", copy: "A summary in human language, and a care plan that nudges each dose at the right time." },
       ],
     },
     test: {
       eyebrow: "Choosing a direction",
       heading: "The vision came first in every group.",
-      media: PH("directions.jpg", "The three directions side by side, Direction 1 marked", "16:9"),
+      media: { img: M + "direction-test.webp", alt: "Direction test screens: profile, booking and Ask Doctolib", ratio: "4:3" },
       figures: [
         { value: "58%", label: "of professionals in France chose it" },
         { value: "49%", label: "of patients in Germany" },
@@ -90,12 +93,12 @@ const doctolib = {
     quality: {
       eyebrow: "The success metric",
       heading: "Counting quality actions, not daily users.",
-      media: PH("quality-action-diagram.jpg", "The quality action, as a diagram", "16:9"),
+      media: PH("quality-action.jpg", "The quality action, as a visual", "16:9"),
       body: [
-        "Eight stakeholder interviews narrowed nine journeys to three. The AI assistant became an enabler, not the behaviour we grow.",
+        "*A quality action:* the share of consultations that end with an assigned care plan action, where the patient completes that action within a clinically appropriate window.",
         { title: "What we nudge", items: ["*A* · Book the next step: a follow-up or referral, booked and attended.", "*B* · Follow through on a prescription: collected, and ideally taken as prescribed.", "*C* · Complete a plan step: a test booked, a reading logged, a milestone hit."] },
-        { title: "What we deliberately don't count", items: ["No action, and admin outputs like sick notes.", "Urgent escalation. That's a safety problem, never engagement."] },
-        "Every action needs a way to record it, even a tick: “I've picked up the prescription.”",
+        { title: "What we deliberately don't count", items: ["*D* · No action.", "*E* · Admin outputs like sick notes.", "*F* · Urgent escalation: a safety problem, never engagement."] },
+        "The AI assistant is an enabler, not the behaviour we grow. Every action needs a way to record it, even a tick: “I've picked up the prescription.”",
       ],
     },
     brand: {
@@ -147,42 +150,41 @@ const doctolib = {
       tiles: [M + "reel/tile-responding.webp", M + "reel/tile-listening.webp", M + "reel/tile-thinking.webp"],
     },
 
-    // 1 · Problem
-    say("Millions of people book on Doctolib, then leave. The brief: turn a booking app into a *health companion* people come back to.", "The brief", "brief"),
-    stats([
-      { value: "2→20%", label: "AI assistant weekly users, as a share of app weekly users" },
-      { value: "8→20%", label: "AI assistant week one retention" },
-      { value: "3→5%", label: "People using it beyond booking, two or more days a week" },
-    ], "Targets for the end of 2026, not results."),
+    // 1 · Problem — the three problems named, figures at body scale
+    say("Millions of people book on Doctolib, then leave. The brief: turn a booking app into a health companion people come back to. The numbers to move were low adoption, low return use, and low use beyond booking.", "The brief", "brief"),
+    {
+      type: "stats",
+      compact: true,
+      items: [
+        { value: "2% → 20%", name: "Low adoption", label: "AI assistant weekly users, as a share of app weekly users" },
+        { value: "8% → 20%", name: "Low return use", label: "AI assistant week one retention" },
+        { value: "3% → 5%", name: "Low use beyond booking", label: "People using it beyond booking, two or more days a week" },
+      ],
+      note: "Targets for the end of 2026, not results.",
+    },
 
-    // 2 · Vision in three weeks, told through Léa
-    say("In three weeks we went from a week in Paris to a vision prototype for the CEO, told through one parent: *Léa*.", "Meet Léa", "lea"),
+    // 2 · The vision: the speed, then the three stories
+    say("We spent a week in Paris inside Doctolib’s business. Three weeks later, the CEO saw a vision prototype of nine journeys and 86 screens, told through one parent: Léa.", "The vision", "lea"),
     stage(SOFT, ["lea-1-triage-booking.mp4", "lea-2-before.mp4", "post-consultation.mp4"], "Vision · Triage to booking · Arrive prepared · Understand what's next"),
 
-    // 3 · The vision wins, then becomes Home
-    say("Tested against two alternatives with patients and doctors in three markets, *the vision won every time*.", "The test", "test"),
+    // 3 · The test
+    say("Tested against two alternatives with patients and professionals in three markets, the vision came first in every group, and went on to become the brand.", "The test", "test"),
+
+    // 4 · The metric that changed the work — joined to its question, definition muted
+    say(
+      "Eight stakeholder interviews narrowed nine journeys to three. Then we asked a harder question: what should a health companion actually make people do?",
+      "The success metric",
+      "quality",
+      "Our answer became the success metric: consultations that end with a care plan action the patient completes in a clinically appropriate window."
+    ),
+
+    // 5 · Home, where the metric shows up first
     lockup(
       pic(8, "16:9", "hero-screens.webp", "Home, appointment and today's activities screens"),
       carousel(4, "8:9", ["home-state-01.webp", "home-state-02.webp", "home-hero-card.webp"]),
-      panel(6, "Home", "Home leads with what matters today. Appointments surface two days before, so the next action is always clear, and one profile switch lets a parent act for a child.", "Home · led by me")
+      panel(6, null, "Home leads with what matters today. Appointments surface two days before, so the next action is always clear, and one profile switch lets a parent act for a child.", "Dynamic Home")
     ),
 
-    // 4 · The success metric, made real
-    {
-      type: "sentence",
-      eyebrow: "Success, measured as a quality action",
-      parts: [
-        "The share of ",
-        { n: 1, text: "consultations" },
-        " that end with ",
-        { n: 2, text: "an assigned next step" },
-        ", where ",
-        { n: 3, text: "the patient completes it" },
-        " ",
-        { n: 4, text: "in a clinically sensible window" },
-        ".",
-      ],
-    },
     lockup(
       {
         span: "col-6",
@@ -200,14 +202,14 @@ const doctolib = {
         caption: "Prepared · Attend (A) · Understand (C) · Pick up the prescription (B)",
       },
       app(6, "home-complete.mp4", LBLUE, "Home · the next action in the hero"),
-      panel(6, "Info cards", "Each card turns a quality action into one tap, and gives us a way to *measure it*. V1 started with appointments and health reminders, then grew to cover care plans.", "Success metric", "quality")
+      panel(6, null, "Each card turns a quality action into one tap, and gives us a way to *measure it*. V1 started with appointments and health reminders, then grew to cover care plans.", "Success metric")
     ),
 
     // 5 · Care plan: brand image beside the care plan screens, then the live activity
     lockup(
       pic(6, "8:9", "brand-01.webp", "Brand: More healthy years in every lifespan, Live Well"),
       carousel(6, "8:9", ["careplan-01.webp", "careplan-02.webp", "careplan-03.webp"]),
-      panel(4, "Care plan", "The care plan turns a consultation into steps Léa can act on: a summary in plain language, a medicine schedule, and nudges at the right time. Live activities ask for one small update, a dose recorded, and each answer goes back to the doctor, so Doctolib *learns what works*.", "Care plan"),
+      panel(4, null, "The care plan turns a consultation into steps Léa can act on: a summary in plain language, a medicine schedule, and nudges at the right time. Live activities ask for one small update, a dose recorded, and each answer goes back to the doctor, so Doctolib *learns what works*.", "Care plan"),
       pic(8, "16:9", "live-activity.webp", "Lock screen live activity: Louis' final dose, record or snooze")
     ),
 
@@ -215,7 +217,7 @@ const doctolib = {
     lockup(
       app(6, "ai-response.mp4", WHITE, "AI assistant · calm answers"),
       app(6, "ai-appointment.mp4", SOFT, "AI assistant · knows your appointments"),
-      panel(6, "AI assistant", "Calm answers with clear escalation: full width, no bubble, bold never marks a claim or a number, and urgent cases escalate plainly instead of keeping people chatting.", "AI assistant")
+      panel(6, null, "Calm answers with clear escalation: full width, no bubble, bold never marks a claim or a number, and urgent cases escalate plainly instead of keeping people chatting.", "AI assistant")
     ),
 
     // 7 · Brand
