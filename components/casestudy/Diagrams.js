@@ -37,21 +37,24 @@ export function QualityDiagram() {
       const n1 = box('[data-note="1"]'), n2 = box('[data-note="2"]'), n3 = box('[data-note="3"]'), n4 = box('[data-note="4"]');
       const m1 = box('[data-mark="1"]'), m2 = box('[data-mark="2"]'), m3 = box('[data-mark="3"]'), m4 = box('[data-mark="4"]');
       const g = R.width * 0.014; // gap between arrow tips and their targets
+      // each arrow is one smooth quarter-bend (quadratic): it leaves its note along one
+      // axis and arrives on the other, so every tip points squarely at its words
       const list = [
-        // 1 · top-left note, a soft curve down onto the first line
-        { s: [n1.l + n1.w * 0.8, n1.b + g], e: [m1.l + m1.w * 0.42, m1.t - g], c1: [n1.l + n1.w * 0.8 + R.width * 0.05, n1.b + (m1.t - n1.b) * 0.45], c2: [m1.l + m1.w * 0.42, m1.t - (m1.t - n1.b) * 0.45] },
-        // 2 · top-right note, round the side into the end of line two
-        { s: [n2.l + n2.w * 0.45, n2.b + g], e: [m2.r + g * 1.6, m2.t + m2.h / 2], c1: [n2.l + n2.w * 0.4, m2.t + m2.h / 2], c2: [m2.r + R.width * 0.12, m2.t + m2.h / 2] },
-        // 3 · bottom-right note, up into the end of line three
-        { s: [n3.l + n3.w * 0.45, n3.t - g], e: [m3.r + g * 1.6, m3.t + m3.h / 2], c1: [n3.l + n3.w * 0.4, m3.t + m3.h / 2], c2: [m3.r + R.width * 0.08, m3.t + m3.h / 2] },
-        // 4 · bottom-left note, a soft curve up onto the last line
-        { s: [n4.l + n4.w * 0.8, n4.t - g], e: [m4.l + m4.w * 0.42, m4.b + g], c1: [n4.l + n4.w * 0.8 + R.width * 0.05, n4.t - (n4.t - m4.b) * 0.45], c2: [m4.l + m4.w * 0.42, m4.b + (n4.t - m4.b) * 0.45] },
-      ];
-      const L = R.width * 0.022;
-      setArrows(list.map(({ s, e, c1, c2 }) => {
-        const a = Math.atan2(e[1] - c2[1], e[0] - c2[0]), W = 0.5;
+        // 1 · leaves the top-left note to the right, bends down onto line one
+        { s: [n1.r + g, n1.t + n1.h * 0.5], e: [m1.l + m1.w * 0.78, m1.t - g] },
+        // 2 · drops from the top-right note, bends left into the end of line two
+        { s: [n2.l + n2.w * 0.55, n2.b + g], e: [m2.r + g * 1.8, m2.t + m2.h / 2] },
+        // 3 · rises from the bottom-right note, bends left into the end of line three
+        { s: [n3.l + n3.w * 0.7, n3.t - g], e: [m3.r + g * 1.8, m3.t + m3.h / 2] },
+        // 4 · leaves the bottom-left note to the right, bends up onto line four
+        { s: [n4.r + g, n4.t + n4.h * 0.5], e: [m4.l + m4.w * 0.78, m4.b + g] },
+      ].map(({ s, e }, i) => ({ s, e, c: i === 0 || i === 3 ? [e[0], s[1]] : [s[0], e[1]] }));
+
+      const L = R.width * 0.02;
+      setArrows(list.map(({ s, e, c }) => {
+        const a = Math.atan2(e[1] - c[1], e[0] - c[0]), W = 0.48;
         return {
-          d: `M${s[0]} ${s[1]}C${c1[0]} ${c1[1]} ${c2[0]} ${c2[1]} ${e[0]} ${e[1]}`,
+          d: `M${s[0]} ${s[1]}Q${c[0]} ${c[1]} ${e[0]} ${e[1]}`,
           h: `M${e[0] - L * Math.cos(a - W)} ${e[1] - L * Math.sin(a - W)}L${e[0]} ${e[1]}L${e[0] - L * Math.cos(a + W)} ${e[1] - L * Math.sin(a + W)}`,
         };
       }));
