@@ -56,16 +56,20 @@ const doctolib = {
     brief: {
       eyebrow: "The brief",
       heading: "Five objectives, three numbers to move.",
-      body: [
-        { title: "What the business needed", items: ["Create value", "Drive AI assistant adoption", "Build a data moat", "Leverage the connection with practitioners", "Elevate the brand"] },
-        { title: "The numbers to move", items: ["*Low adoption* · 2% → 20% AI assistant weekly users, as a share of app weekly users", "*Low return use* · 8% → 20% AI assistant week one retention", "*Low use beyond booking* · 3% → 5% people using it beyond booking, two or more days a week"] },
-        "Targets for the end of 2026, not results.",
+      figures: [
+        { value: "2%", to: "20%", name: "Low adoption", label: "AI assistant weekly users, as a share of app weekly users" },
+        { value: "8%", to: "20%", name: "Low return use", label: "AI assistant week one retention" },
+        { value: "3%", to: "5%", name: "Low use beyond booking", label: "People using it beyond booking, two or more days a week" },
       ],
+      body: [
+        "Targets for the end of 2026, not results.",
+        { title: "What the business needed", items: ["Create value", "Drive AI assistant adoption", "Build a data moat", "Leverage the connection with practitioners", "Elevate the brand"] },
+              ],
     },
     lea: {
       eyebrow: "The vision",
       heading: "From a week in Paris to a prototype for the CEO.",
-      media: PH("lea-persona.jpg", "Léa and Hugo — persona visual", "4:3"),
+      media: { img: M + "pain-point-shifts.webp", alt: "The vision in three shifts: transactional to conversational, busy to calm, reactive to proactive", ratio: "1600:908" },
       body: [
         "We started with a week in Paris, immersed in Doctolib's business problems and the health landscape. We benchmarked the space, listened to stakeholders, and played back quick vision ideas and mood boards built on what we'd learnt. Three weeks in, that became a prototype of nine journeys and 86 screens for the CEO.",
         { title: "The vision in three shifts", items: ["*Transactional → Conversational.* Ask Doctolib is the way in, not a feature at the edge.", "*Busy → Calm.* The right thing at the right moment.", "*Reactive → Proactive.* Anticipate what matters before people ask."] },
@@ -93,12 +97,11 @@ const doctolib = {
     quality: {
       eyebrow: "The success metric",
       heading: "Counting quality actions, not daily users.",
-      media: PH("quality-action.jpg", "The quality action, as a visual", "16:9"),
+      diagram: "quality",
       body: [
-        "*A quality action:* the share of consultations that end with an assigned care plan action, where the patient completes that action within a clinically appropriate window.",
         { title: "What we nudge", items: ["*A* · Book the next step: a follow-up or referral, booked and attended.", "*B* · Follow through on a prescription: collected, and ideally taken as prescribed.", "*C* · Complete a plan step: a test booked, a reading logged, a milestone hit."] },
         { title: "What we deliberately don't count", items: ["*D* · No action.", "*E* · Admin outputs like sick notes.", "*F* · Urgent escalation: a safety problem, never engagement."] },
-        "The AI assistant is an enabler, not the behaviour we grow. Every action needs a way to record it, even a tick: “I've picked up the prescription.”",
+        "The AI assistant is an enabler, not the behaviour we grow.",
       ],
     },
     brand: {
@@ -112,7 +115,7 @@ const doctolib = {
     system: {
       eyebrow: "Design system",
       heading: "One system, with rules the client could sign off.",
-      media: PH("ds-diagram.jpg", "Tokens → B2C / B2B components → contracts → code", "16:9"),
+      diagram: "system",
       figures: [
         { value: "61", label: "components in Figma and code" },
         { value: "208", label: "component tokens" },
@@ -152,16 +155,6 @@ const doctolib = {
 
     // 1 · Problem — the three problems named, figures at body scale
     say("Millions of people book on Doctolib, then leave. The brief: turn a booking app into a health companion people come back to. The numbers to move were low adoption, low return use, and low use beyond booking.", "The brief", "brief"),
-    {
-      type: "stats",
-      compact: true,
-      items: [
-        { value: "2% → 20%", name: "Low adoption", label: "AI assistant weekly users, as a share of app weekly users" },
-        { value: "8% → 20%", name: "Low return use", label: "AI assistant week one retention" },
-        { value: "3% → 5%", name: "Low use beyond booking", label: "People using it beyond booking, two or more days a week" },
-      ],
-      note: "Targets for the end of 2026, not results.",
-    },
 
     // 2 · The vision: the speed, then the three stories
     say("We spent a week in Paris inside Doctolib’s business. Three weeks later, the CEO saw a vision prototype of nine journeys and 86 screens, told through one parent: Léa.", "The vision", "lea"),
@@ -180,9 +173,15 @@ const doctolib = {
 
     // 5 · Home, where the metric shows up first
     lockup(
-      pic(8, "16:9", "hero-screens.webp", "Home, appointment and today's activities screens"),
-      carousel(4, "8:9", ["home-state-01.webp", "home-state-02.webp", "home-hero-card.webp"]),
-      panel(6, null, "Home leads with what matters today. Appointments surface two days before, so the next action is always clear, and one profile switch lets a parent act for a child.", "Dynamic Home")
+      {
+        span: "col-4",
+        kind: "stack",
+        items: [
+          { kind: "carousel", ratio: "8:9", slides: ["home-state-01.webp", "home-state-02.webp", "home-hero-card.webp"].map((f) => ({ media: { img: M + f } })) },
+          { kind: "detail", solo: true, copy: "Home leads with what matters today. Appointments surface two days before, so the next action is always clear, and one profile switch lets a parent act for a child.", label: "Dynamic Home" },
+        ],
+      },
+      pic(8, "1800:1497", "hero-screens-tall.webp", "Home, Hugo's appointment and today's activities screens")
     ),
 
     lockup(

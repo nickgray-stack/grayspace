@@ -11,6 +11,7 @@ import { Targets, Shifts, Persona, JourneyCard, Pull, Bars, Sentence, Lists, Loo
 import InfoCards from "./InfoCards";
 import Showreel from "./Showreel";
 import { vidFor } from "./stageHelpers";
+import { DIAGRAMS } from "./Diagrams";
 
 const PlusIco = () => <Plus className="i" size={24} strokeWidth={1.75} aria-hidden="true" />;
 
@@ -339,6 +340,10 @@ export default function CaseStudyBody({ modules = [], detail, details, accent })
                 <div key={j} style={{ display: "contents" }}>
                   {renderDetail(it)}
                 </div>
+              ) : it.kind === "carousel" ? (
+                <div key={j} className="stack-car">
+                  <Carousel slides={it.slides} ratio={it.ratio} />
+                </div>
               ) : (
                 <div key={j} style={{ display: "contents" }}>
                   {renderMedia(it, true)}
@@ -510,10 +515,16 @@ export default function CaseStudyBody({ modules = [], detail, details, accent })
             {cur.media && (
               <div className="ov-media">{cur.media.ph ? <PhBox c={{ ratio: cur.media.ratio || "16:9", media: cur.media }} /> : <MediaBox c={{ ratio: cur.media.ratio || "16:9", media: cur.media }} />}</div>
             )}
+            {cur.diagram && DIAGRAMS[cur.diagram] && (
+              <div className="ov-media ov-diagram">{(() => { const D = DIAGRAMS[cur.diagram]; return <D />; })()}</div>
+            )}
             {cur.figures && (
-              <dl className="ov-figs">
+              <dl className={"ov-figs" + (cur.figures.some((f) => f.to) ? " has-to" : "")}>
                 {cur.figures.map((f, i) => (
-                  <div key={i}><dd>{f.value}</dd><dt>{f.label}</dt></div>
+                  <div key={i}>
+                    <dd>{f.value}{f.to && <small> → {f.to}</small>}</dd>
+                    <dt>{f.name && <b>{f.name}. </b>}{f.label}</dt>
+                  </div>
                 ))}
               </dl>
             )}

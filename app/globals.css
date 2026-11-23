@@ -774,3 +774,27 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .case .detail.solo p{font-weight:500;}
 .case .stats.compact .stat{justify-content:flex-end;}
 .case .section.statement:has(+ .stats.compact){padding-bottom:clamp(28px,3vw,44px);}
+
+/* vision stage: no heavy device shadow */
+.case .stage .device-bezel{filter:none;}
+/* overlay figures shown as today → target */
+.case .panel .ov-figs.has-to{grid-template-columns:1fr; gap:20px;}
+.case .panel .ov-figs dd small{font-size:.42em; font-weight:500; letter-spacing:-.01em; color:var(--muted); margin-left:.2em; vertical-align:.35em;}
+.case .panel .ov-figs dt b{font-weight:500; color:var(--fg);}
+/* stack column: carousel on top, info card fills the rest (Mouthwash-style lockup) */
+.case .stack .stack-car{flex:none;}
+.case .stack .detail{flex:1;}
+/* overlay diagrams */
+.case .dg-qa{background:var(--white); border-radius:6px; padding:22px 22px 20px;}
+.case .panel .dg-qa{background:#fff;}
+.case .dg-qa-s{margin:0 0 20px; font-size:1.2rem; line-height:1.75; font-weight:500; letter-spacing:-.01em;}
+.case .dg-qa-s mark{color:inherit; padding:.12em .3em; border-radius:3px; -webkit-box-decoration-break:clone; box-decoration-break:clone;}
+.case .dg-qa-s sup{font-size:.58em; font-weight:600; margin-left:.25em; vertical-align:.7em; opacity:.6;}
+.case .dg-qa-n{list-style:none; margin:0; padding:16px 0 0; border-top:1px solid var(--border); display:grid; grid-template-columns:1fr 1fr; gap:14px 18px;}
+.case .dg-qa-n li{display:flex; gap:10px; align-items:flex-start; font-size:.86rem; line-height:1.4; color:var(--muted);}
+.case .dg-qa-k{flex:none; width:20px; height:20px; border-radius:4px; display:grid; place-items:center; font-size:.72rem; font-weight:600; color:var(--fg);}
+@media (max-width:480px){ .case .dg-qa-n{grid-template-columns:1fr;} }
+.case .dg-sys{background:#00264C; border-radius:6px; padding:clamp(14px,3vw,24px);}
+.case .dg-sys svg{display:block; width:100%; height:auto;}
+.case .dg-sys-t{font-family:var(--font); font-size:24px;}
+.case .grid > div:has(> .stack){align-self:stretch;}
