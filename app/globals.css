@@ -785,17 +785,24 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .case .stack .stack-car{flex:none;}
 .case .stack .detail{flex:1;}
 /* overlay diagrams */
-.case .dg-qa{background:#fff; border-radius:6px; padding:22px 20px 20px;}
-.case .dg-qa-f{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; align-items:center;}
-.case .dg-qa-f li{width:var(--w); display:flex; flex-direction:column; align-items:stretch;}
-.case .dg-qa-f li + li{margin-top:6px; position:relative; padding-top:14px;}
-.case .dg-qa-f li + li::before{content:""; position:absolute; left:50%; top:0; height:12px; border-left:1.4px solid var(--fg); transform:translateX(-50%);}
-.case .dg-qa-f li + li::after{content:""; position:absolute; left:50%; top:7px; width:7px; height:7px; border-right:1.4px solid var(--fg); border-bottom:1.4px solid var(--fg); transform:translateX(-50%) rotate(45deg);}
-.case .dg-qa-bar{background:var(--c); border-radius:6px; padding:10px 12px; font-size:1rem; font-weight:500; letter-spacing:-.01em; line-height:1.3; display:flex; gap:10px; align-items:center;}
-.case .dg-qa-k{flex:none; width:20px; height:20px; border-radius:999px; display:grid; place-items:center; font-size:.7rem; font-weight:600; background:rgba(255,255,255,.65); color:var(--fg);}
-.case .panel .dg-qa-note,.case .dg-qa-note{margin:6px 2px 0; font-size:.8rem; line-height:1.4; color:var(--muted); text-align:center;}
-.case .panel .dg-qa-out,.case .dg-qa-out{margin:16px 0 0; padding-top:14px; border-top:1px solid var(--border); text-align:center; font-size:.92rem; font-weight:500;}
-.case .dg-qa-out span{display:inline-grid; place-items:center; width:20px; height:20px; border-radius:999px; background:var(--fg); color:#fff; font-size:.8rem; margin-right:6px;}
+.case .dg-qa{position:relative; container-type:inline-size; padding:2cqw 0 1cqw;}
+.case .dg-qa-in{--qa-arrows:1;}
+.case .dg-qa-row{display:flex; justify-content:space-between; gap:8cqw;}
+.case .panel .dg-qa-note,.case .dg-qa-note{margin:0; width:40cqw; font-size:2.95cqw; line-height:1.42; color:var(--fg);}
+.case .dg-qa-note.r{text-align:left;}
+.case .dg-qa-k{display:inline-grid; place-items:center; width:1.5em; height:1.5em; border-radius:4px; font-size:.85em; font-weight:600; margin-right:.5em; vertical-align:.08em;}
+.case .panel .dg-qa-s,.case .dg-qa-s{margin:13cqw 0; font-size:3.75cqw; line-height:1.95; font-weight:500; letter-spacing:-.01em;}
+.case .dg-qa-line{display:block; white-space:nowrap;}
+.case .dg-qa-s mark{color:inherit; padding:.14em .3em; border-radius:3px;}
+.case .dg-qa-arrows{position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none;}
+.case .dg-qa-arrows path{fill:none; stroke:var(--fg); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
+@container (max-width:380px){
+  .case .dg-qa-in{--qa-arrows:0; display:flex; flex-direction:column;}
+  .case .dg-qa-row{display:contents;}
+  .case .panel .dg-qa-s,.case .dg-qa-s{order:-1; margin:0 0 18px; font-size:4.6cqw; line-height:1.9;}
+  .case .panel .dg-qa-note,.case .dg-qa-note{width:auto; font-size:.82rem; margin-top:10px;}
+  .case .dg-qa-arrows{display:none;}
+}
 .case .dg-sys{background:#00264C; border-radius:6px; padding:clamp(14px,3vw,24px);}
 .case .dg-sys svg{display:block; width:100%; height:auto;}
 .case .dg-sys-t{font-family:var(--font); font-size:24px;}

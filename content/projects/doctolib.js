@@ -169,7 +169,7 @@ const doctolib = {
         span: "col-4",
         kind: "stack",
         items: [
-          { kind: "carousel", ratio: "8:9", slides: ["home-state-01.webp", "home-state-02.webp", "home-hero-card.webp"].map((f) => ({ media: { img: M + f } })) },
+          { kind: "carousel", ratio: "8:9", slides: ["profile-switch.webp", "home-state-01.webp", "home-state-02.webp"].map((f) => ({ media: { img: M + f } })) },
           { kind: "detail", solo: true, copy: "Home leads with what matters today. Appointments surface two days before, so the next action is always clear, and one profile switch lets a parent act for a child.", label: "Dynamic Home" },
         ],
       },

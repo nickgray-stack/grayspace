@@ -1,714 +1,718 @@
 {
-"/media/bookinggo/m-driver.webp": [
-750
-],
-"/media/bookinggo/m-meeting.webp": [
-750
-],
-"/media/bookinggo/s-00.webp": [
-1200,
-2000
-],
-"/media/bookinggo/s-01.webp": [
-1200,
-2000
-],
-"/media/bookinggo/s-02.webp": [
-1200,
-2000
-],
-"/media/bookinggo/s-03.webp": [
-1200,
-2000
-],
-"/media/bookinggo/s-04.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-00.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-01.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-02.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-03.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-04.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-05.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-06.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-07.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-08.webp": [
-1200,
-2000
-],
-"/media/bt-tv/s-09.webp": [
-1200,
-2000
-],
-"/media/cazoo/inspection.webp": [
-1000
-],
-"/media/cazoo/m-results.webp": [
-640
-],
-"/media/cazoo/s-00.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-01.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-02.webp": [
-1200,
-2000,
-2800
-],
-"/media/cazoo/s-03.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-04.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-05.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-06.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-07.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-08.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-09.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-10.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-11.webp": [
-1200,
-2000
-],
-"/media/cazoo/s-12.webp": [
-1200,
-2000
-],
-"/media/channel-4/hero-brand.webp": [
-1200,
-2000,
-4000
-],
-"/media/channel-4/hero-mobile.webp": [
-1200,
-2000,
-3200
-],
-"/media/channel-4/hero-playback.webp": [
-1200,
-2000,
-3200
-],
-"/media/channel-4/hero-tvos.webp": [
-1200,
-2000,
-3200
-],
-"/media/channel-4/hero-web.webp": [
-1200,
-2000,
-3200
-],
-"/media/channel-4/m-brand-hub.webp": [
-1200,
-1920
-],
-"/media/channel-4/m-film.webp": [
-1200,
-1484
-],
-"/media/channel-4/m-home.webp": [
-1200,
-1920
-],
-"/media/channel-4/m-hub.webp": [
-1200,
-1484
-],
-"/media/channel-4/subscribe.webp": [
-1200,
-2000,
-3200
-],
-"/media/channel-4/watch-more.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/advisor-hero.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/advisor-screens.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/alerts-desktop.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/alerts-mobile.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/artist-page.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/autosuggest-watch.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/autosuggest.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/brand-assets.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/browse-all.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/featured-artist.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/hero.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/m-advisor-departments.webp": [
-750
-],
-"/media/christies/m-advisor.webp": [
-750
-],
-"/media/christies/m-follow.webp": [
-750
-],
-"/media/christies/m-lot-switcher.webp": [
-750
-],
-"/media/christies/m-superzoom.webp": [
-750
-],
-"/media/christies/search-gallery.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/search-results.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/watch-find-mobile.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/watch-find.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/watch-hero.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/watch-menu.webp": [
-1200,
-2000,
-3200
-],
-"/media/christies/watch-mobile.webp": [
-1200,
-2000,
-3200
-],
-"/media/covers/bookinggo.webp": [
-1200,
-1920
-],
-"/media/covers/bt-tv.webp": [
-1200,
-1920
-],
-"/media/covers/fiat-500.webp": [
-1200,
-1920
-],
-"/media/covers/hargreaves-lansdown.webp": [
-1200,
-1920
-],
-"/media/covers/honda.webp": [
-1200,
-1920
-],
-"/media/doctolib/brand-01.webp": [
-1200,
-1922
-],
-"/media/doctolib/brand-02.webp": [
-1200,
-2000,
-3200
-],
-"/media/doctolib/brand-cover.webp": [
-1200,
-2000,
-3200
-],
-"/media/doctolib/cards/card-1.webp": [
-1110
-],
-"/media/doctolib/cards/card-2.webp": [
-1110
-],
-"/media/doctolib/cards/card-3.webp": [
-1110
-],
-"/media/doctolib/cards/card-4.webp": [
-1110
-],
-"/media/doctolib/cards/lines.webp": [
-1200,
-2000,
-2880
-],
-"/media/doctolib/careplan-01.webp": [
-1200,
-1920
-],
-"/media/doctolib/careplan-02.webp": [
-1200,
-1920
-],
-"/media/doctolib/careplan-03.webp": [
-1200,
-1920
-],
-"/media/doctolib/ds-components.webp": [
-1200,
-2000,
-3200
-],
-"/media/doctolib/hero-screens.webp": [
-1200,
-2000,
-3200
-],
-"/media/doctolib/home-hero-card.webp": [
-1200,
-1920
-],
-"/media/doctolib/home-state-01.webp": [
-1200,
-1920
-],
-"/media/doctolib/home-state-02.webp": [
-1200,
-1920
-],
-"/media/doctolib/live-activity.webp": [
-1200,
-1908
-],
-"/media/doctolib/profile-switching.webp": [
-1200,
-2000,
-3200
-],
-"/media/fiat-500/s-00.webp": [
-1200,
-2000
-],
-"/media/fiat-500/s-01.webp": [
-1200,
-2000
-],
-"/media/fiat-500/s-02.webp": [
-1200,
-2000
-],
-"/media/fiat-500/s-03.webp": [
-1200,
-2000
-],
-"/media/fiat-500/s-04.webp": [
-1200,
-2000
-],
-"/media/fiat-500/s-05.webp": [
-1200,
-2000
-],
-"/media/frontify/brand-builders.webp": [
-1200,
-2000,
-2561
-],
-"/media/frontify/m-demo.webp": [
-750
-],
-"/media/frontify/s-00.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-01.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-02.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-03.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-04.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-05.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-06.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-07.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-08.webp": [
-1200,
-2000,
-2880
-],
-"/media/frontify/s-09.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-10.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-11.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/s-12.webp": [
-1200,
-2000,
-3200
-],
-"/media/frontify/workshop.webp": [
-1200,
-2000,
-3200
-],
-"/media/hargreaves-lansdown/s-00.webp": [
-1200,
-2000
-],
-"/media/hargreaves-lansdown/s-01.webp": [
-1200,
-2000
-],
-"/media/hargreaves-lansdown/s-02.webp": [
-1200,
-2000
-],
-"/media/hargreaves-lansdown/s-03.webp": [
-1200,
-2000
-],
-"/media/hargreaves-lansdown/s-04.webp": [
-1200,
-2000
-],
-"/media/hargreaves-lansdown/s-05.webp": [
-1200,
-2000
-],
-"/media/hargreaves-lansdown/s-06.webp": [
-1200,
-2000
-],
-"/media/hargreaves-lansdown/s-07.webp": [
-1200,
-2000
-],
-"/media/hargreaves-lansdown/s-08.webp": [
-1200,
-2000
-],
-"/media/hargreaves-lansdown/s-09.webp": [
-1200,
-2000
-],
-"/media/honda/s-00.webp": [
-1200,
-2000
-],
-"/media/honda/s-01.webp": [
-1200,
-2000
-],
-"/media/honda/s-02.webp": [
-1200,
-2000
-],
-"/media/honda/s-03.webp": [
-1200,
-2000
-],
-"/media/honda/s-04.webp": [
-1200,
-2000
-],
-"/media/honda/s-05.webp": [
-1200,
-2000
-],
-"/media/honda/s-06.webp": [
-1200,
-2000
-],
-"/media/just-eat/s-00.webp": [
-1200,
-2000
-],
-"/media/just-eat/s-01.webp": [
-1200,
-2000
-],
-"/media/just-eat/s-02.webp": [
-1200,
-2000
-],
-"/media/just-eat/s-03.webp": [
-1200,
-2000
-],
-"/media/just-eat/s-04.webp": [
-1200,
-2000
-],
-"/media/just-eat/s-05.webp": [
-1200,
-2000
-],
-"/media/just-eat/s-06.webp": [
-1200,
-2000
-],
-"/media/just-eat/s-07.webp": [
-1200,
-2000
-],
-"/media/just-eat/s-08.webp": [
-1200,
-2000
-],
-"/media/lta-rally/s-00.webp": [
-1200,
-2000
-],
-"/media/lta-rally/s-01.webp": [
-1200,
-2000
-],
-"/media/lta-rally/s-02.webp": [
-1200,
-2000
-],
-"/media/lta-rally/s-03.webp": [
-1200,
-2000
-],
-"/media/lta-rally/s-04.webp": [
-1200,
-2000
-],
-"/media/lta-rally/s-05.webp": [
-1200,
-2000
-],
-"/media/lta-rally/s-06.webp": [
-1200,
-2000
-],
-"/media/lta-rally/s-07.webp": [
-1200,
-2000
-],
-"/media/lta-rally/s-08.webp": [
-1200,
-2000
-],
-"/media/phillips/bidding-favourites.webp": [
-1200,
-2000,
-3200
-],
-"/media/phillips/brand-assets.webp": [
-1200,
-2000,
-3200
-],
-"/media/phillips/notifications-live.webp": [
-1200,
-2000,
-3200
-],
-"/media/phillips/notifications-social.webp": [
-1200,
-2000,
-3200
-],
-"/media/phillips/onboarding.webp": [
-1200,
-2000,
-3200
-],
-"/media/phillips/registering.webp": [
-1200,
-2000,
-3200
-],
-"/media/phillips/sale-home.webp": [
-1200,
-2000,
-3200
-],
-"/media/phillips/thumb-v3.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-00.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-01.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-02.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-03.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-04.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-05.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-06.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-07.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-08.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-09.webp": [
-1200,
-2000,
-3200
-],
-"/media/zalando/s-10.webp": [
-1200,
-2000,
-3200
-]
+ "/media/bookinggo/m-driver.webp": [
+  750
+ ],
+ "/media/bookinggo/m-meeting.webp": [
+  750
+ ],
+ "/media/bookinggo/s-00.webp": [
+  1200,
+  2000
+ ],
+ "/media/bookinggo/s-01.webp": [
+  1200,
+  2000
+ ],
+ "/media/bookinggo/s-02.webp": [
+  1200,
+  2000
+ ],
+ "/media/bookinggo/s-03.webp": [
+  1200,
+  2000
+ ],
+ "/media/bookinggo/s-04.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-00.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-01.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-02.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-03.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-04.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-05.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-06.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-07.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-08.webp": [
+  1200,
+  2000
+ ],
+ "/media/bt-tv/s-09.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/inspection.webp": [
+  1000
+ ],
+ "/media/cazoo/m-results.webp": [
+  640
+ ],
+ "/media/cazoo/s-00.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-01.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-02.webp": [
+  1200,
+  2000,
+  2800
+ ],
+ "/media/cazoo/s-03.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-04.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-05.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-06.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-07.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-08.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-09.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-10.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-11.webp": [
+  1200,
+  2000
+ ],
+ "/media/cazoo/s-12.webp": [
+  1200,
+  2000
+ ],
+ "/media/channel-4/hero-brand.webp": [
+  1200,
+  2000,
+  4000
+ ],
+ "/media/channel-4/hero-mobile.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/channel-4/hero-playback.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/channel-4/hero-tvos.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/channel-4/hero-web.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/channel-4/m-brand-hub.webp": [
+  1200,
+  1920
+ ],
+ "/media/channel-4/m-film.webp": [
+  1200,
+  1484
+ ],
+ "/media/channel-4/m-home.webp": [
+  1200,
+  1920
+ ],
+ "/media/channel-4/m-hub.webp": [
+  1200,
+  1484
+ ],
+ "/media/channel-4/subscribe.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/channel-4/watch-more.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/advisor-hero.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/advisor-screens.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/alerts-desktop.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/alerts-mobile.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/artist-page.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/autosuggest-watch.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/autosuggest.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/brand-assets.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/browse-all.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/featured-artist.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/hero.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/m-advisor-departments.webp": [
+  750
+ ],
+ "/media/christies/m-advisor.webp": [
+  750
+ ],
+ "/media/christies/m-follow.webp": [
+  750
+ ],
+ "/media/christies/m-lot-switcher.webp": [
+  750
+ ],
+ "/media/christies/m-superzoom.webp": [
+  750
+ ],
+ "/media/christies/search-gallery.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/search-results.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/watch-find-mobile.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/watch-find.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/watch-hero.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/watch-menu.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/christies/watch-mobile.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/covers/bookinggo.webp": [
+  1200,
+  1920
+ ],
+ "/media/covers/bt-tv.webp": [
+  1200,
+  1920
+ ],
+ "/media/covers/fiat-500.webp": [
+  1200,
+  1920
+ ],
+ "/media/covers/hargreaves-lansdown.webp": [
+  1200,
+  1920
+ ],
+ "/media/covers/honda.webp": [
+  1200,
+  1920
+ ],
+ "/media/doctolib/brand-01.webp": [
+  1200,
+  1922
+ ],
+ "/media/doctolib/brand-02.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/doctolib/brand-cover.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/doctolib/cards/card-1.webp": [
+  1110
+ ],
+ "/media/doctolib/cards/card-2.webp": [
+  1110
+ ],
+ "/media/doctolib/cards/card-3.webp": [
+  1110
+ ],
+ "/media/doctolib/cards/card-4.webp": [
+  1110
+ ],
+ "/media/doctolib/cards/lines.webp": [
+  1200,
+  2000,
+  2880
+ ],
+ "/media/doctolib/careplan-01.webp": [
+  1200,
+  1920
+ ],
+ "/media/doctolib/careplan-02.webp": [
+  1200,
+  1920
+ ],
+ "/media/doctolib/careplan-03.webp": [
+  1200,
+  1920
+ ],
+ "/media/doctolib/ds-components.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/doctolib/hero-screens.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/doctolib/home-hero-card.webp": [
+  1200,
+  1920
+ ],
+ "/media/doctolib/home-state-01.webp": [
+  1200,
+  1920
+ ],
+ "/media/doctolib/home-state-02.webp": [
+  1200,
+  1920
+ ],
+ "/media/doctolib/live-activity.webp": [
+  1200,
+  1908
+ ],
+ "/media/doctolib/profile-switching.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/fiat-500/s-00.webp": [
+  1200,
+  2000
+ ],
+ "/media/fiat-500/s-01.webp": [
+  1200,
+  2000
+ ],
+ "/media/fiat-500/s-02.webp": [
+  1200,
+  2000
+ ],
+ "/media/fiat-500/s-03.webp": [
+  1200,
+  2000
+ ],
+ "/media/fiat-500/s-04.webp": [
+  1200,
+  2000
+ ],
+ "/media/fiat-500/s-05.webp": [
+  1200,
+  2000
+ ],
+ "/media/frontify/brand-builders.webp": [
+  1200,
+  2000,
+  2561
+ ],
+ "/media/frontify/m-demo.webp": [
+  750
+ ],
+ "/media/frontify/s-00.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-01.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-02.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-03.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-04.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-05.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-06.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-07.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-08.webp": [
+  1200,
+  2000,
+  2880
+ ],
+ "/media/frontify/s-09.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-10.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-11.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/s-12.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/frontify/workshop.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/hargreaves-lansdown/s-00.webp": [
+  1200,
+  2000
+ ],
+ "/media/hargreaves-lansdown/s-01.webp": [
+  1200,
+  2000
+ ],
+ "/media/hargreaves-lansdown/s-02.webp": [
+  1200,
+  2000
+ ],
+ "/media/hargreaves-lansdown/s-03.webp": [
+  1200,
+  2000
+ ],
+ "/media/hargreaves-lansdown/s-04.webp": [
+  1200,
+  2000
+ ],
+ "/media/hargreaves-lansdown/s-05.webp": [
+  1200,
+  2000
+ ],
+ "/media/hargreaves-lansdown/s-06.webp": [
+  1200,
+  2000
+ ],
+ "/media/hargreaves-lansdown/s-07.webp": [
+  1200,
+  2000
+ ],
+ "/media/hargreaves-lansdown/s-08.webp": [
+  1200,
+  2000
+ ],
+ "/media/hargreaves-lansdown/s-09.webp": [
+  1200,
+  2000
+ ],
+ "/media/honda/s-00.webp": [
+  1200,
+  2000
+ ],
+ "/media/honda/s-01.webp": [
+  1200,
+  2000
+ ],
+ "/media/honda/s-02.webp": [
+  1200,
+  2000
+ ],
+ "/media/honda/s-03.webp": [
+  1200,
+  2000
+ ],
+ "/media/honda/s-04.webp": [
+  1200,
+  2000
+ ],
+ "/media/honda/s-05.webp": [
+  1200,
+  2000
+ ],
+ "/media/honda/s-06.webp": [
+  1200,
+  2000
+ ],
+ "/media/just-eat/s-00.webp": [
+  1200,
+  2000
+ ],
+ "/media/just-eat/s-01.webp": [
+  1200,
+  2000
+ ],
+ "/media/just-eat/s-02.webp": [
+  1200,
+  2000
+ ],
+ "/media/just-eat/s-03.webp": [
+  1200,
+  2000
+ ],
+ "/media/just-eat/s-04.webp": [
+  1200,
+  2000
+ ],
+ "/media/just-eat/s-05.webp": [
+  1200,
+  2000
+ ],
+ "/media/just-eat/s-06.webp": [
+  1200,
+  2000
+ ],
+ "/media/just-eat/s-07.webp": [
+  1200,
+  2000
+ ],
+ "/media/just-eat/s-08.webp": [
+  1200,
+  2000
+ ],
+ "/media/lta-rally/s-00.webp": [
+  1200,
+  2000
+ ],
+ "/media/lta-rally/s-01.webp": [
+  1200,
+  2000
+ ],
+ "/media/lta-rally/s-02.webp": [
+  1200,
+  2000
+ ],
+ "/media/lta-rally/s-03.webp": [
+  1200,
+  2000
+ ],
+ "/media/lta-rally/s-04.webp": [
+  1200,
+  2000
+ ],
+ "/media/lta-rally/s-05.webp": [
+  1200,
+  2000
+ ],
+ "/media/lta-rally/s-06.webp": [
+  1200,
+  2000
+ ],
+ "/media/lta-rally/s-07.webp": [
+  1200,
+  2000
+ ],
+ "/media/lta-rally/s-08.webp": [
+  1200,
+  2000
+ ],
+ "/media/phillips/bidding-favourites.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/phillips/brand-assets.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/phillips/notifications-live.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/phillips/notifications-social.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/phillips/onboarding.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/phillips/registering.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/phillips/sale-home.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/phillips/thumb-v3.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-00.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-01.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-02.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-03.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-04.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-05.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-06.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-07.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-08.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-09.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/zalando/s-10.webp": [
+  1200,
+  2000,
+  3200
+ ],
+ "/media/doctolib/profile-switch.webp": [
+  1200,
+  1920
+ ]
 }
