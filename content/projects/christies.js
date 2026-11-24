@@ -1,6 +1,8 @@
 import { full, statement, row, tight, media, gap, text, carousel, slide, gapSlide, stack, phone, framed, img } from "./_kit";
 
 const M = "/media/christies/";
+const lockup = (...cols) => ({ type: "row", tight: true, cols });
+const pic = (file, alt, ratio = "free") => ({ span: "col-12", kind: "media", ratio, media: /\.mp4$/.test(file) ? { video: M + file, webm: M + file.replace(/\.mp4$/, ".webm"), poster: M + file.replace(/\.mp4$/, "-poster.webp"), alt } : { img: M + file, alt } });
 const panel = (span, copy, label) => ({ span: "col-" + span, kind: "detail", solo: true, copy, label });
 const say = (text, label, detail, muted) => ({ type: "statement", text, ...(muted ? { muted } : null), ...(label ? { cta: { label, detail } } : null) });
 
@@ -54,45 +56,39 @@ const christies = {
       ],
     },
   },
+  // every visual full width at its own ratio (nothing cropped), stacked 8px apart
   modules: [
-    full(img(M + "search-results.webp", "Christie's search results")),
+    lockup(pic("search-results.webp", "Christie's search results")),
     say("Founded in 1766, Christie's sells art and luxury in 46 countries. As online bidding surged, I led design to transform search and discovery across web and native.", "What we shipped", "shipped", "Search traffic grew by over 30%, almost all new visitors, and click-through from search to sales and stories rose by nearly 30%."),
-    full(img(M + "browse-all.webp", "Christie's Browse All")),
+    lockup(pic("browse-all.webp", "Christie's Browse All")),
     say("Christie's sells rare objects, so most of the time it doesn't have what people are looking for. Over half of searches returned no upcoming results, leaving buyers at dead ends.", "The challenge", "challenge"),
-    tight(
-      media(8, "16:9", M + "search-gallery.webp", null, "Christie's search results in gallery view"),
-      panel(4, "We revamped search, streamlined the UX and refined filters, with results that match what clients ask for. The MVP launched in four months.", "Global search")
-    ),
-    tight(
-      panel(4, "Horizontal filter themes drove more engagement and click-through, so search moved to contextual horizontal menus that reveal content progressively.", "Horizontal filters"),
-      gap(8, "16:9", "Horizontal filters", "Horizontal filters on search results — a still or short MP4 loop, 16:9.")
+    lockup(
+      pic("search-gallery.webp", "Christie's search results with horizontal filters, in gallery view"),
+      panel(6, "We revamped search, streamlined the UX and refined filters, with results that match what clients ask for. The MVP launched in four months.", "Global search"),
+      panel(6, "Horizontal filter themes drove more engagement and click-through, so search moved to contextual horizontal menus that reveal content progressively.", "Horizontal filters")
     ),
     say("Seventy-one percent of searches were for a specific artist, brand or author, so we launched 500 artist and category pages, built to scale."),
-    tight(
-      { span: "col-4", kind: "media", ratio: "451:1024", media: { img: M + "artist-page-full.webp", alt: "A full Christie's artist page: Jean-Michel Basquiat", pos: "top" } },
-      stack(8,
-        { kind: "media", ratio: "16:9", media: img(M + "featured-artist.webp", "Christie's featured artist module") },
-        { kind: "media", ratio: "16:9", media: img(M + "autosuggest.webp", "Christie's search autosuggestions") }
-      )
+    lockup(
+      pic("artist-page-full.webp", "A full Christie's artist page: Jean-Michel Basquiat"),
+      pic("featured-artist.webp", "Christie's featured artist module"),
+      pic("autosuggest.webp", "Christie's search autosuggestions")
     ),
     say("New CRM features let collectors follow artists and save alerts, with suggested searches and lot recommendations from related artists.", "Alerts and follows", "crm"),
-    tight(
-      media(8, "16:9", M + "alerts-motion.mp4", null, "Creating an alert for a search"),
-      phone(4, M + "alert-saved.mp4", "#EFECE6", { baked: true })
-    ),
+    lockup(pic("alerts-motion.mp4", "Creating an alert for a search", "1600:1062")),
+    { type: "stage", bg: "#EFECE6", ratio: "16:9", screenBg: "#ffffff", phones: [M + "alert-saved.mp4"] },
     say("A search and compare experience for the luxury watch department, built on the same search foundations."),
-    tight(
-      media(8, "16:9", M + "watch-hero.webp", null, "Christie's watches"),
-      panel(4, "Watch buyers compare references, sizes and condition, so a dedicated finder lets them filter by what matters and weigh pieces side by side.", "Luxury watches"),
-      media(6, "16:9", M + "watch-find.webp", null, "Christie's Find your watch"),
-      media(6, "16:9", M + "watch-visual-search.mp4", null, "Christie's watch visual search"),
-      media(6, "16:9", M + "autosuggest-watch.webp", null, "Christie's watch autosuggestions"),
-      media(6, "16:9", M + "watch-mobile.webp", null, "Christie's watches on mobile")
+    lockup(
+      pic("watch-hero.webp", "Christie's watches"),
+      pic("watch-find.webp", "Christie's Find your watch"),
+      pic("watch-visual-search.mp4", "Christie's watch visual search", "16:9"),
+      pic("autosuggest-watch.webp", "Christie's watch autosuggestions"),
+      pic("watch-mobile.webp", "Christie's watches on mobile"),
+      panel(6, "Watch buyers compare references, sizes and condition, so a dedicated finder lets them filter by what matters and weigh pieces side by side.", "Luxury watches")
     ),
     say("Art Advisor uses image recognition to help specialists value lots faster and more accurately.", "Art Advisor", "advisor"),
-    tight(
-      media(6, "16:9", M + "advisor-hero.webp", null, "Christie's Art Advisor"),
-      media(6, "16:9", M + "advisor-screens.webp", null, "Art Advisor screens")
+    lockup(
+      pic("advisor-hero.webp", "Christie's Art Advisor"),
+      pic("advisor-screens.webp", "Art Advisor screens")
     ),
   ],
   overview: {
