@@ -69,7 +69,8 @@ const christies = {
       pic("artist-page.webp", "Christie's artist page for Yayoi Kusama on desktop and mobile"), // #5
       panel(6, "We revamped search, streamlined the UX and refined filters, with results that match what clients ask for. The MVP launched in four months.", "Global search"),
       panel(6, "Horizontal filter themes drove more engagement and click-through, so search moved to contextual horizontal menus that reveal content progressively.", "Horizontal filters"),
-      pic("alerts-motion.mp4", "Creating an alert for a search", "1332:884") // #6
+      // #6 — shown smaller inside a desktop frame on a light ground, so the recording stays sharp
+      { span: "col-12", kind: "media", ratio: "1332:884", frame: { bg: "#F5F5F5", ar: "ar-wide", mode: "inset desk" }, media: { video: M + "alerts-motion.mp4", webm: M + "alerts-motion.webm", poster: M + "alerts-motion-poster.webp", alt: "Creating an alert for a search" } }
     ),
     say("Seventy-one percent of searches were for a specific artist, brand or author, so we launched 500 artist and category pages, built to scale."),
     lockup(pic("autosuggest.webp", "Christie's search autosuggestions")), // #7

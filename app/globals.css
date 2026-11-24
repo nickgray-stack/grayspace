@@ -817,3 +817,8 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 /* an info card beside a visual in a lockup fills the row height (text top, label bottom) */
 .case .grid.tight > div:has(> .detail.solo){align-self:stretch;}
 .case .grid.tight > div > .detail.solo{height:100%;}
+
+/* desktop frame: a recording shown smaller on a light ground inside an 11px rounded black bezel */
+.vmframe.ar-wide{aspect-ratio:16/9;}
+.vmframe.desk .vframe-media{box-sizing:content-box; width:min(64%,calc(100% - 64px)); border:clamp(4px,.76vw,11px) solid #000; border-radius:clamp(10px,1.7vw,24px); background:#000;}
+@media (max-width:640px){ .vmframe.desk .vframe-media{width:82%;} }
