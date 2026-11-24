@@ -1508,6 +1508,22 @@
       "out": "doctolib/careplan-03.webp",
       "w": 1920,
       "q": 88
+    },
+    {
+      "root": "docproto",
+      "src": "AIHA-shape/02-AI-care plan-assist.mp4",
+      "out": "doctolib/ai-care-plan-assist.mp4",
+      "w": 0,
+      "video": {
+        "crop": [
+          0,
+          0,
+          780,
+          1688
+        ],
+        "w": 780
+      },
+      "_note": "Kap recording of the Figma prototype (390x844 @2x)"
     }
   ]
 }

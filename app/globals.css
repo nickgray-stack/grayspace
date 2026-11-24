@@ -807,3 +807,13 @@ html.menu-open .logo{background:transparent; -webkit-backdrop-filter:none; backd
 .case .dg-sys svg{display:block; width:100%; height:auto;}
 .case .dg-sys-t{font-family:var(--font); font-size:24px;}
 .case .grid > div:has(> .stack){align-self:stretch;}
+
+/* stage on phones: one device spot, clips play in turn and crossfade */
+@media (max-width:640px){
+  .case .stage.seq{position:relative;}
+  .case .stage.seq .stage-dev{display:flex!important; position:absolute; left:50%; top:7%; height:86%; transform:translateX(-50%); opacity:0; transition:opacity .7s ease;}
+  .case .stage.seq .stage-dev.on{opacity:1;}
+}
+/* an info card beside a visual in a lockup fills the row height (text top, label bottom) */
+.case .grid.tight > div:has(> .detail.solo){align-self:stretch;}
+.case .grid.tight > div > .detail.solo{height:100%;}

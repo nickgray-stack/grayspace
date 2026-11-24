@@ -104,11 +104,11 @@ function MediaBox({ c, fill }) {
 
 // Device mockup column. `device.screen` is a video ({video,poster}) or image
 // ({img}); chrome (status bar, IG-story UI) is composited live, not baked in.
-function DeviceBox({ c }) {
+function DeviceBox({ c, seq }) {
   const d = c.device || {};
   const s = d.screen || {};
   const screen = s.video ? (
-    <VideoMedia src={s.video} webm={s.webm} poster={s.poster} cover />
+    <VideoMedia src={s.video} webm={s.webm} poster={s.poster} cover {...(seq ? { loop: false, active: seq.active, onEnded: seq.onEnded } : null)} />
   ) : (
     <img src={s.img} alt={s.alt || c.label || ""} loading="lazy" />
   );
@@ -171,13 +171,25 @@ const renderFramedInner = (c) => {
 // / mobile bottom-sheet with drag-to-dismiss). All `+` / CTA buttons open the
 // one overlay built from `detail`. Ported from the prototype.
 // Several phones playing side by side on one colour panel (groups recordings into one story beat)
+// Full-width stage of prototype recordings. On phones the devices stack in one spot
+// and play in turn, each fading into the next when its clip ends.
 function Stage({ m }) {
   const ratio = (m.ratio || "16:9").replace(":", "/");
+  const [seq, setSeq] = useState(false);
+  const [cur, setCur] = useState(0);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const on = () => setSeq(mq.matches && m.phones.length > 1);
+    on();
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, [m.phones.length]);
+  const next = () => setCur((c) => (c + 1) % m.phones.length);
   return withCaption(m, (
-    <div className="stage" style={{ background: m.bg, aspectRatio: ratio, "--n": m.phones.length }}>
+    <div className={"stage" + (seq ? " seq" : "")} style={{ background: m.bg, aspectRatio: ratio, "--n": m.phones.length }}>
       {m.phones.map((src, i) => (
-        <div className="stage-dev" key={i}>
-          <DeviceBox c={{ device: { statusBar: false, screen: { ...vidFor(src), fit: "top", shift: "0%", bg: m.screenBg || "#ffffff" } } }} />
+        <div className={"stage-dev" + (seq && i === cur ? " on" : "")} key={i}>
+          <DeviceBox c={{ device: { statusBar: false, screen: { ...vidFor(src), fit: "top", shift: "0%", bg: m.screenBg || "#ffffff" } } }} seq={seq ? { active: i === cur, onEnded: next } : null} />
         </div>
       ))}
     </div>

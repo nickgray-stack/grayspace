@@ -198,10 +198,9 @@ const doctolib = {
           { src: M + "cards/card-3.webp", x: 462, y: 162, w: 342, alt: "Post-consultation summary" },
           { src: M + "cards/card-4.webp", x: 462, y: 551, w: 342, alt: "Prescription pick-up check" },
         ],
-        caption: "Prepared · Attend (A) · Understand (C) · Pick up the prescription (B)",
       },
-      app(6, "home-complete.mp4", LBLUE, "Home · the next action in the hero"),
-      panel(6, null, "Each card turns a quality action into one tap, and gives us a way to *measure it*. V1 started with appointments and health reminders, then grew to cover care plans.", "Success metric")
+      app(6, "home-complete.mp4", LBLUE),
+      panel(6, null, "Each card turns a quality action into one tap: arrive prepared, attend, understand what's next, pick up the prescription. The next one always leads Home, and every tap gives us a way to *measure it*.", "Success metric")
     ),
 
     // 5 · Care plan: brand image beside the care plan screens, then the live activity
@@ -212,11 +211,11 @@ const doctolib = {
       pic(8, "16:9", "live-activity.webp", "Lock screen live activity: Louis' final dose, record or snooze")
     ),
 
-    // 6 · AI assistant
+    // 6 · AI assistant — a stage like the vision, then the card beside care plan assist
+    stage(SOFT, ["ai-response.mp4", "ai-appointment.mp4", "ai-article.mp4"]),
     lockup(
-      app(6, "ai-response.mp4", WHITE, "AI assistant · calm answers"),
-      app(6, "ai-appointment.mp4", SOFT, "AI assistant · knows your appointments"),
-      panel(6, null, "Calm answers with clear escalation: full width, no bubble, bold never marks a claim or a number, and urgent cases escalate plainly instead of keeping people chatting.", "AI assistant")
+      panel(6, null, "Calm answers with clear escalation: full width, no bubble, and urgent cases escalate plainly. It knows your appointments and care plan, and *suggests articles and next steps* from what's happening in your health right now.", "AI assistant"),
+      app(6, "ai-care-plan-assist.mp4", LBLUE)
     ),
 
     // 7 · Brand
