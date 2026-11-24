@@ -1,4 +1,5 @@
 "use client";
+import Launch from "./Launch";
 import { useState } from "react";
 import Link from "next/link";
 import { projects, mediaBg } from "@/content/projects";
@@ -12,6 +13,8 @@ export default function Home() {
   const cur = projects[active];
 
   return (
+    <>
+    <Launch />
     <main className="home" id="main">
       <section className="hero wrap">
         <ol className="wl" style={{ gridTemplateRows: `repeat(${rows}, auto)` }}>
@@ -51,5 +54,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </>
   );
 }
