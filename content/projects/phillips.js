@@ -1,4 +1,3 @@
-import { full, img } from "./_kit";
 
 const P = "/media/phillips/";
 const pic = (span, ratio, file, alt) => ({ span: "col-" + span, kind: "media", ratio, media: { img: P + file, alt } });
@@ -59,26 +58,33 @@ const phillips = {
       ],
     },
   },
+  // every visual full width at its own ratio (nothing cropped), stacked 8px apart
   modules: [
-    full(img(P + "hero.webp", "Phillips redesigned homepage hero")),
+    lockup(pic(12, "free", "hero.webp", "Phillips Jewels Hong Kong poster beside the redesigned homepage on a laptop")),
     say("Phillips is a leading auction house for contemporary art, design, watches and jewellery. We rebuilt its whole client-facing experience: a native iOS app, a responsive web platform, an auction calendar and a live Saleroom, on a new design system and brand.", "The challenge", "challenge"),
     lockup(
-      pic(8, "16:9", "sale-home.webp", "Phillips sale and home pages"),
-      panel(4, "A full redesign of the auction calendar across native and responsive web. Cards and a clearer hierarchy match how clients look for sales, and click-to-register nearly doubled, from *618 to 1,100+* in 90 days.", "Auction calendar")
+      pic(12, "free", "browse.webp", "Phillips browse departments"),
+      pic(12, "free", "sale-home.webp", "Phillips sale and home pages"),
+      pic(12, "free", "sale.webp", "Phillips sale page"),
+      panel(6, "A full redesign of the auction calendar across native and responsive web. Cards and a clearer hierarchy match how clients look for sales, and click-to-register nearly doubled, from *618 to 1,100+* in 90 days.", "Auction calendar")
     ),
-    lockup(pic(6, "16:9", "browse.webp", "Phillips browse departments"), pic(6, "16:9", "sale.webp", "Phillips sale page")),
     say("I led design from 2024 to 2026 across process, product polish and brand, from journey-mapping workshops to the bidding abandonment study.", "My role", "role"),
-    lockup(pic(6, "16:9", "registering.webp", "Phillips registration flow"), pic(6, "16:9", "bidding-favourites.webp", "Phillips bidding and favourites")),
+    lockup(
+      pic(12, "free", "registering.webp", "Phillips registration flow"),
+      pic(12, "free", "bidding-favourites.webp", "Phillips bidding and favourites")
+    ),
     say("Alongside the product, I led a new digital brand with a custom typeface, and built a design system with shared tokens and a component library in the codebase.", "Brand and system", "brand"),
-    full(img(P + "onboarding.webp", "Phillips onboarding, registration and verification flows")),
-    full(img(P + "lot-details.webp", "Phillips lot details")),
+    lockup(
+      pic(12, "free", "onboarding.webp", "Phillips onboarding, registration and verification flows"),
+      pic(12, "free", "lot-details.webp", "Phillips lot details")
+    ),
     say("The first iOS phase launched within six months. The new design tackled what drove bidding abandonment: clearer advance bidding, better notifications and a rebuilt live Saleroom.", "Outcomes", "outcomes"),
     lockup(
-      pic(6, "16:9", "saleroom-desktop.webp", "Phillips live Saleroom on desktop"),
-      pic(6, "16:9", "saleroom-mobile.webp", "Phillips live Saleroom on mobile"),
+      pic(12, "free", "saleroom-desktop.webp", "Phillips live Saleroom on desktop"),
+      pic(12, "free", "saleroom-mobile.webp", "Phillips live Saleroom on mobile"),
+      pic(12, "free", "notifications-live.webp", "Phillips live sale notifications and live activity"),
       panel(6, "The highest-priority workstream after repeated failures during live sales. A rebuilt Saleroom on desktop and mobile, with online live bids up after the redesign.", "Live Saleroom")
     ),
-    lockup(pic(6, "16:9", "notifications-live.webp", "Phillips live sale notifications"), pic(6, "16:9", "notifications-social.webp", "Phillips notifications")),
     {
       type: "row",
       tight: true,
@@ -106,7 +112,7 @@ const phillips = {
         panel(6, "The INTERSECT watch sale ran as native Instagram story takeovers. The story chrome is built live over the footage, so the same clip works at any size.", "INTERSECT campaign"),
       ],
     },
-    full(img(P + "brand-assets.webp", "Phillips brand assets")),
+    lockup(pic(12, "free", "brand-assets.webp", "Phillips brand assets")),
   ],
   overview: {
     heading: "Overview",

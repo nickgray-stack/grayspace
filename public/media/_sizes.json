@@ -714,5 +714,35 @@
  "/media/doctolib/profile-switch.webp": [
   1200,
   1920
+ ],
+ "/media/phillips/hero.webp": [
+  1200,
+  2000,
+  2400
+ ],
+ "/media/phillips/browse.webp": [
+  1200,
+  2000,
+  2400
+ ],
+ "/media/phillips/sale.webp": [
+  1200,
+  2000,
+  2400
+ ],
+ "/media/phillips/lot-details.webp": [
+  1200,
+  2000,
+  2400
+ ],
+ "/media/phillips/saleroom-desktop.webp": [
+  1200,
+  2000,
+  2400
+ ],
+ "/media/phillips/saleroom-mobile.webp": [
+  1200,
+  2000,
+  2400
  ]
 }
