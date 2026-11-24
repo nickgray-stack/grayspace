@@ -1,12 +1,13 @@
 import { full, statement, row, tight, media, gap, text, carousel, slide, gapSlide, stack, phone, framed, img } from "./_kit";
 
 const M = "/media/christies/";
-const GROUND = "#EFECE6"; // warm paper ground for device / inset frames
+const panel = (span, copy, label) => ({ span: "col-" + span, kind: "detail", solo: true, copy, label });
+const say = (text, label, detail, muted) => ({ type: "statement", text, ...(muted ? { muted } : null), ...(label ? { cta: { label, detail } } : null) });
 
 const christies = {
   slug: "christies",
   name: "Christie's",
-  year: "2022",
+  year: "2022–2024",
   discipline: "Search & Discovery",
   role: "Lead Designer",
   services: ["Art Direction", "Interaction Design", "Product Design", "Product Strategy", "UX/UI"],
@@ -17,84 +18,88 @@ const christies = {
   summary: "Search & discovery · 2022",
   published: true,
   lede: { lead: "Christie's,", rest: "transforming how collectors search and discover." },
-  detail: {
-    eyebrow: "Search & discovery",
-    heading: "Connecting people with the objects they'll want to own.",
-    image: { img: M + "search-results.webp" },
-    body: [
-      "Search was the front door for collectors, and it was letting them down: more than half of all searches returned nothing in an upcoming sale. People arrived knowing what they wanted — 71% of queries were for a specific artist, brand or author — and left without a next step.",
-      "We reframed search from a results list into a route to something: suggestions that understand artists and categories, results that separate what's coming up from what has sold, and landing pages that give every artist and category a permanent home. Testing also showed that horizontal filters were found and used far more readily than a side panel, which shaped the results layout.",
-      "The first release shipped in around four months. From there the same thinking extended into alerts and follows, a dedicated watch-finding experience, and Art Advisor — a native tool that lets specialists value an object from a photograph.",
-    ],
+  details: {
+    shipped: {
+      eyebrow: "What we shipped",
+      heading: "Five releases, each against a measured problem.",
+      body: [
+        "Designed, built and shipped by understanding the problem space, to connect customers with relevant items.",
+        { title: "Shipped", items: ["Global search redesign with new autosuggestions", "Browse All and 500 new artist and category pages", "CRM launch to create alerts and follow artists", "A specialist and client-facing native app for estimations and selling", "Search and compare for the luxury watch department"] },
+        "Search engagement and SEO improved, with traffic up by *over 30%*, practically all new visitors, including more traffic to the new artist pages from organic and paid search. Click-through from search to sales and stories rose by *nearly 30%* year on year.",
+      ],
+    },
+    challenge: {
+      eyebrow: "The challenge",
+      heading: "Paving the way for big ideas.",
+      body: [
+        "We needed to reduce bounces and exits, remove navigation paths that led to dead ends, and increase clients' propensity to transact.",
+        "Synthesising research and data, we diagnosed customer and business problems and ran workshops on vision and strategy: reviewing existing experiences, empathy mapping, generating ideas and prioritising them by impact.",
+        "Working with the product owner, stakeholders and engineers in iterative sprints, we started with search: streamlining the UX, refining filters, creating artist, Browse All and category pages, and improving relevance. We tested, iterated and launched the MVP in *four months*.",
+      ],
+    },
+    crm: {
+      eyebrow: "Alerts and follows",
+      heading: "Capturing preferences, bringing collectors back.",
+      body: [
+        "We built more relevant suggestions and new CRM capabilities that let users follow artists and save alerts, capturing preferences and increasing returning users.",
+        "Combined with suggested searches and lot recommendations based on searches and related artists, it gave clients a more targeted experience to inspire them.",
+      ],
+    },
+    advisor: {
+      eyebrow: "Art Advisor",
+      heading: "Faster, more accurate valuations for specialists.",
+      body: [
+        "Specialists lost a lot of time trying to identify matches for requested items.",
+        "They needed an easier way to match items, get relevant cataloguing suggestions, and auto-populate comparable lots as part of wider valuations. Art Advisor uses image recognition to do exactly that.",
+      ],
+    },
   },
   modules: [
-    full(img(M + "hero.webp", "Christie's — search and discovery"), { label: "Search & discovery" }),
-    statement(
-      "Christie's has sold art and luxury since 1766 and now reaches collectors in 46 countries. As bidding moved online, we rebuilt how people find what they're looking for — global search, browse, alerts, watches, and a valuation tool for specialists.",
-      "The opportunity"
-    ),
-    row(
-      media(8, "16:9", M + "autosuggest.webp", "Autosuggest", "Christie's global search with autosuggestions"),
-      text(4, "The challenge", "More than half of searches returned no upcoming lots, and 71% were for a specific artist, brand or author. Search had to stop answering ‘nothing found’ and start offering somewhere to go.", "Global search", true)
-    ),
-    row(
-      media(6, "16:9", M + "search-results.webp", "Search results", "Christie's search results page"),
-      media(6, "16:9", M + "search-gallery.webp", "Gallery view", "Christie's search results in gallery view")
-    ),
-    statement("If most people search for a name, every name deserves a destination. Browse All and 500 new artist and category pages gave collectors a place to land, follow and return to."),
-    full(img(M + "browse-all.webp", "Christie's Browse All page"), { label: "Browse all" }),
-    row(
-      media(6, "16:9", M + "artist-page.webp", "Artist page", "Christie's artist landing page"),
-      media(6, "16:9", M + "featured-artist.webp", "Featured artist", "Christie's featured artist module")
-    ),
-    row(
-      phone(6, M + "m-follow.webp", "#1C1C1C", { baked: true }),
-      framed(6, M + "alerts-mobile.webp", "#1C1C1C", "16:9", "Creating an alert on mobile")
+    full(img(M + "search-results.webp", "Christie's search results")),
+    say("Founded in 1766, Christie's sells art and luxury in 46 countries. As online bidding surged, I led design to transform search and discovery across web and native.", "What we shipped", "shipped", "Search traffic grew by over 30%, almost all new visitors, and click-through from search to sales and stories rose by nearly 30%."),
+    full(img(M + "browse-all.webp", "Christie's Browse All")),
+    say("Christie's sells rare objects, so most of the time it doesn't have what people are looking for. Over half of searches returned no upcoming results, leaving buyers at dead ends.", "The challenge", "challenge"),
+    tight(
+      media(8, "16:9", M + "search-gallery.webp", null, "Christie's search results in gallery view"),
+      panel(4, "We revamped search, streamlined the UX and refined filters, with results that match what clients ask for. The MVP launched in four months.", "Global search")
     ),
     tight(
-      carousel(5, [
-        slide("Lot switcher", "Move between lots in a sale without losing your place.", M + "m-lot-switcher.webp", { contain: true, bg: GROUND }),
-        slide("Superzoom", "Get close enough to see the brushwork.", M + "m-superzoom.webp", { contain: true, bg: GROUND }),
-        gapSlide("Search", "A single entry point for artists, categories, sales and stories.", "Mobile search screen (750×1624 export, like the other two) — the folder has no plain mobile search state."),
-      ]),
-      stack(
-        7,
-        { kind: "media", ratio: "16:9", label: "Alerts", media: img(M + "alerts-desktop.webp", "Creating an alert on desktop") },
-        { kind: "detail", eyebrow: "Alerts & follows", copy: "A search that finds nothing today becomes an alert for tomorrow. Collectors can follow artists and save searches, and hear from Christie's when a matching lot is consigned.", label: "CRM", cta: true }
+      panel(4, "Horizontal filter themes drove more engagement and click-through, so search moved to contextual horizontal menus that reveal content progressively.", "Horizontal filters"),
+      gap(8, "16:9", "Horizontal filters", "Horizontal filters on search results — a still or short MP4 loop, 16:9.")
+    ),
+    say("Seventy-one percent of searches were for a specific artist, brand or author, so we launched 500 artist and category pages, built to scale."),
+    tight(
+      { span: "col-4", kind: "media", ratio: "451:1024", media: { img: M + "artist-page-full.webp", alt: "A full Christie's artist page: Jean-Michel Basquiat", pos: "top" } },
+      stack(8,
+        { kind: "media", ratio: "16:9", media: img(M + "featured-artist.webp", "Christie's featured artist module") },
+        { kind: "media", ratio: "16:9", media: img(M + "autosuggest.webp", "Christie's search autosuggestions") }
       )
     ),
-    statement("Watches behave differently from art: buyers compare references, sizes and condition. A dedicated finder lets them filter by what matters and weigh pieces side by side."),
-    full(img(M + "watch-hero.webp", "Christie's watch search"), { label: "Watches" }),
-    row(
-      media(6, "16:9", M + "watch-find.webp", "Find my watch", "Christie's Find My Watch on desktop"),
-      media(6, "16:9", M + "watch-menu.webp", "Watch menu", "Christie's watch navigation menu")
+    say("New CRM features let collectors follow artists and save alerts, with suggested searches and lot recommendations from related artists.", "Alerts and follows", "crm"),
+    tight(
+      media(8, "16:9", M + "alerts-motion.mp4", null, "Creating an alert for a search"),
+      phone(4, M + "alert-saved.mp4", "#EFECE6", { baked: true })
     ),
-    row(
-      text(4, "Compare", "Search and compare for luxury watches — built on the same search foundations, tuned to the way watch collectors shop.", "Luxury watches"),
-      media(8, "16:9", M + "watch-mobile.webp", "Watches · mobile", "Christie's watch experience on mobile")
+    say("A search and compare experience for the luxury watch department, built on the same search foundations."),
+    tight(
+      media(8, "16:9", M + "watch-hero.webp", null, "Christie's watches"),
+      panel(4, "Watch buyers compare references, sizes and condition, so a dedicated finder lets them filter by what matters and weigh pieces side by side.", "Luxury watches"),
+      media(6, "16:9", M + "watch-find.webp", null, "Christie's Find your watch"),
+      media(6, "16:9", M + "watch-visual-search.mp4", null, "Christie's watch visual search"),
+      media(6, "16:9", M + "autosuggest-watch.webp", null, "Christie's watch autosuggestions"),
+      media(6, "16:9", M + "watch-mobile.webp", null, "Christie's watches on mobile")
     ),
-    row(
-      gap(12, "16:9", "Compare in motion", "Design call-out: comparison is an interaction, and stills undersell it. A short looping screen recording (10–15s, 16:9) of two watches being added and compared would be the most persuasive asset in this section — the VideoMedia module is ready for it.")
-    ),
-    full(img(M + "advisor-hero.webp", "Christie's Art Advisor"), { label: "Art Advisor" }),
-    row(
-      phone(6, M + "m-advisor.webp", "#1C1C1C", { baked: true }),
-      framed(6, M + "advisor-screens.webp", "#1C1C1C", "16:9", "Art Advisor screens")
-    ),
-    row(
-      text(7, "Art Advisor", "A native app for Christie's specialists. Photograph an object and image recognition returns comparable lots and recent prices, turning a valuation that once took research into a conversation they can have in the room.", "Specialist valuation", true)
-    ),
-    full(img(M + "brand-assets.webp", "Christie's brand assets"), { label: "Brand assets" }),
-    statement(
-      "Traffic to search rose 30%, most of it from new visitors, and click-through from search into sales and stories grew by around 30% year on year.",
-      "Full case study"
+    say("Art Advisor uses image recognition to help specialists value lots faster and more accurately.", "Art Advisor", "advisor"),
+    tight(
+      media(6, "16:9", M + "advisor-hero.webp", null, "Christie's Art Advisor"),
+      media(6, "16:9", M + "advisor-screens.webp", null, "Art Advisor screens")
     ),
   ],
   overview: {
     heading: "Overview",
     body: [
-      "Christie's is one of the world's leading auction houses, selling art and luxury to collectors across live and online sales. As the market moved online, a vast specialist catalogue had to become discoverable to a new generation of buyers without losing the expertise that defines the house.",
-      "Over two years as lead designer I worked across global search and autosuggest, Browse All and 500 artist and category pages, alerts and follows, a watch search and compare experience, and Art Advisor, a native valuation tool for specialists — each shipped against a measured problem.",
+      "Christie's is one of the world's leading auction houses. As the market moved online, a vast specialist catalogue had to become discoverable to a new generation of buyers.",
+      "Over two years as lead designer I worked across global search, Browse All and 500 artist and category pages, alerts and follows, watch search and compare, and Art Advisor, a valuation tool for specialists.",
     ],
   },
 };
