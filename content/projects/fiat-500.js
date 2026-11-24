@@ -15,6 +15,7 @@ const fiat = {
   hoverImages: [M + "s-03.webp", M + "s-04.webp", M + "s-05.webp"],
   summary: "Mobile web · 2016",
   published: true,
+  onRequest: true, // listed on Work; page shows "available upon request"
   lede: { lead: "Fiat 500,", rest: "turning desire into test drives on mobile." },
   detail: {
     eyebrow: "Research",

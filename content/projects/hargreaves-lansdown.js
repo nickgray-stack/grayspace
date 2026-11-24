@@ -15,6 +15,7 @@ const hl = {
   hoverImages: [M + "s-07.webp", M + "s-08.webp", M + "s-09.webp"],
   summary: "Investing app · 2016",
   published: true,
+  onRequest: true, // listed on Work; page shows "available upon request"
   lede: { lead: "Hargreaves Lansdown,", rest: "demystifying investing on mobile." },
   detail: {
     eyebrow: "Discovery",

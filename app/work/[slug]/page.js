@@ -3,6 +3,8 @@ import Chrome from "@/components/Chrome";
 import Footer from "@/components/Footer";
 import CaseStudyBody from "@/components/casestudy/CaseStudyBody";
 import JsonLd from "@/components/JsonLd";
+import ContactButton from "@/components/ContactButton";
+import { site } from "@/content/site";
 import { getProject, getPrevNext, allProjects } from "@/content/projects";
 
 export function generateStaticParams() {
@@ -19,7 +21,7 @@ export async function generateMetadata({ params }) {
     title: p.name,
     description,
     alternates: { canonical: url },
-    ...(p.hidden ? { robots: { index: false, follow: false } } : null),
+    ...(p.hidden || p.onRequest ? { robots: { index: false, follow: false } } : null),
     openGraph: {
       title: `${p.name} — Gray Space`,
       description,
@@ -34,6 +36,22 @@ export default async function CaseStudyPage({ params }) {
   const p = getProject(slug);
   if (!p) notFound();
   const { prev, next } = getPrevNext(slug);
+
+  // listed on Work, but the full case study is shared on request
+  if (p.onRequest) {
+    return (
+      <div data-theme="dark" className="about-shell">
+        <Chrome active="work" />
+        <main className="onreq wrap" id="main">
+          <section className="hero">
+            <h1 className="r now">{site.onRequest}<span className="cur" aria-hidden="true">______</span></h1>
+            <ContactButton className="mbtn r now d2">Email<span className="ul2" /></ContactButton>
+          </section>
+        </main>
+        <Footer prev={prev} next={next} />
+      </div>
+    );
+  }
 
   const workLd = {
     "@context": "https://schema.org",

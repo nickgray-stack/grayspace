@@ -27,7 +27,7 @@ import hl from "./projects/hargreaves-lansdown";
 import fiat from "./projects/fiat-500";
 import doctolib from "./projects/doctolib";
 
-const all = [phillips, christies, doctolib, zalando, frontify, channel4, cazoo, ltaRally, justEat, honda, btTv, bookinggo, hl, fiat];
+const all = [doctolib, phillips, christies, zalando, frontify, channel4, cazoo, ltaRally, justEat, honda, btTv, bookinggo, hl, fiat];
 
 // Listed projects (home, roster, prev/next, sitemap). Hidden projects are left
 // out of every list but still build at /work/<slug> (noindex) for private review.

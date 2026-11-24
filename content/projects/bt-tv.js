@@ -15,6 +15,7 @@ const btTv = {
   hoverImages: [M + "s-01.webp", M + "s-06.webp", M + "s-08.webp"],
   summary: "TV & video on demand · 2017",
   published: true,
+  onRequest: true, // listed on Work; page shows "available upon request"
   lede: { lead: "BT TV,", rest: "one service across every screen." },
   detail: {
     eyebrow: "Process",

@@ -15,6 +15,7 @@ const bookinggo = {
   hoverImages: [M + "s-01.webp", M + "s-02.webp", M + "s-03.webp"],
   summary: "Rideways · 2018",
   published: true,
+  onRequest: true, // listed on Work; page shows "available upon request"
   lede: { lead: "BookingGo,", rest: "airport transfers from both sides of the ride." },
   modules: [
     fullMedia("4:3", M + "s-00.webp", "Rideways", "Rideways on mobile"),
