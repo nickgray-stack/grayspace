@@ -234,9 +234,20 @@ const doctolib = {
     ),
     full("brand-02.webp", "Brand applications: app onboarding, Live Well, data visualisation, campaign"),
 
-    // 8 · System
-    full("ds-components.webp", "Components from the Doctolib design system"),
+    // 8 · System — the statement, then the brand lockup mirrored: tall components image
+    // on the left, the system carousel (colour, type, icons) and its card on the right
     say("A new design system aligned to the brand, translated into code the client could migrate to. My part was the rules behind *61 components*.", "How the system worked", "system"),
+    lockup(
+      pic(8, "2720:2810", "ds-components-tall.webp", "Components from the Doctolib design system"),
+      {
+        span: "col-4",
+        kind: "stack",
+        items: [
+          { kind: "carousel", ratio: "8:9", slides: ["system-colour.webp", "system-type.webp", "system-icons.webp"].map((f) => ({ media: { img: M + f } })) },
+          { kind: "detail", solo: true, copy: "Colour, type and iconography from one source of truth for tokens, with rules for every component written and signed off with the client. 61 components in Figma and code, ready for new modes like B2B.", label: "Design system" },
+        ],
+      }
+    ),
 
     // Overview
     {
