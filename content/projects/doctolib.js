@@ -218,9 +218,20 @@ const doctolib = {
       app(6, "ai-care-plan-assist.mp4", LBLUE)
     ),
 
-    // 7 · Brand
-    full("brand-cover.webp", "Doctolib brand: Live Well"),
+    // 7 · Brand — the statement, then a Mouthwash-style lockup: brand data carousel and
+    // card stacked on the left, the tall brand composition filling the right
     say("The visual identity I created for the vision held up when it scaled into a full brand: *simple, honest and flexible*.", "The brand", "brand"),
+    lockup(
+      {
+        span: "col-4",
+        kind: "stack",
+        items: [
+          { kind: "carousel", ratio: "8:9", slides: ["brand-data-01.webp", "brand-data-02.webp", "brand-data-03.webp"].map((f) => ({ media: { img: M + f } })) },
+          { kind: "detail", solo: true, copy: "How might we create clarity through the art of clinical science? A visual language inspired by science that ties every part of Doctolib together: a flexible layout system, and intricate but clear data visualisation, explored across formats in an initial roll-out.", label: "Modular brand" },
+        ],
+      },
+      pic(8, "2176:2160", "brand-03.webp", "Brand applications: Giving you the space to live healthier, Live Well on tablet and phone, a booking confirmation")
+    ),
     full("brand-02.webp", "Brand applications: app onboarding, Live Well, data visualisation, campaign"),
 
     // 8 · System
