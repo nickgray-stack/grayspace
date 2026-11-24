@@ -79,7 +79,8 @@ const christies = {
       pic("autosuggest-watch.webp", "Christie's watch autosuggestions"), // #8
       pic("watch-menu.webp", "Christie's Find your watch menu"), // #9
       pic("watch-find.webp", "Christie's Find your watch grid"), // #10
-      pic("watch-visual-search.mp4", "Christie's watch visual search", "16:9"), // #11
+      // #11 — in a desktop frame on a light ground, like the create-alert recording
+      { span: "col-12", kind: "media", ratio: "16:9", frame: { bg: "#F5F5F5", ar: "ar-wide", mode: "inset desk" }, media: { video: M + "watch-visual-search.mp4", webm: M + "watch-visual-search.webm", poster: M + "watch-visual-search-poster.webp", alt: "Christie's watch visual search" } },
       pic("watch-find-mobile.webp", "Christie's Find your watch on mobile"), // #12
       panel(6, "Search and compare for the luxury watch department, built on the same search foundations: a dedicated finder to filter by what matters and weigh pieces side by side.", "Luxury watches")
     ),
