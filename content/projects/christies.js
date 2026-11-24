@@ -56,40 +56,35 @@ const christies = {
       ],
     },
   },
-  // every visual full width at its own ratio (nothing cropped), stacked 8px apart
+  // images in the same order as the live case study (grayspc.com/christies, #1–14),
+  // every visual full width at its own ratio, stacked 8px apart
   modules: [
-    lockup(pic("search-results.webp", "Christie's search results")),
+    lockup(pic("search-results.webp", "Christie's search results")), // #1
     say("Founded in 1766, Christie's sells art and luxury in 46 countries. As online bidding surged, I led design to transform search and discovery across web and native.", "What we shipped", "shipped", "Search traffic grew by over 30%, almost all new visitors, and click-through from search to sales and stories rose by nearly 30%."),
-    lockup(pic("browse-all.webp", "Christie's Browse All")),
+    lockup(pic("browse-all.webp", "Christie's Browse All")), // #2
     say("Christie's sells rare objects, so most of the time it doesn't have what people are looking for. Over half of searches returned no upcoming results, leaving buyers at dead ends.", "The challenge", "challenge"),
     lockup(
-      pic("search-gallery.webp", "Christie's search results with horizontal filters, in gallery view"),
+      pic("search-gallery.webp", "Christie's search results in gallery view"), // #3
+      pic("artist-page-full.webp", "A full Christie's artist page: Jean-Michel Basquiat"), // #4
+      pic("artist-page.webp", "Christie's artist page for Yayoi Kusama on desktop and mobile"), // #5
       panel(6, "We revamped search, streamlined the UX and refined filters, with results that match what clients ask for. The MVP launched in four months.", "Global search"),
-      panel(6, "Horizontal filter themes drove more engagement and click-through, so search moved to contextual horizontal menus that reveal content progressively.", "Horizontal filters")
+      panel(6, "Horizontal filter themes drove more engagement and click-through, so search moved to contextual horizontal menus that reveal content progressively.", "Horizontal filters"),
+      pic("alerts-motion.mp4", "Creating an alert for a search", "1332:884") // #6
     ),
     say("Seventy-one percent of searches were for a specific artist, brand or author, so we launched 500 artist and category pages, built to scale."),
-    lockup(
-      pic("artist-page-full.webp", "A full Christie's artist page: Jean-Michel Basquiat"),
-      pic("featured-artist.webp", "Christie's featured artist module"),
-      pic("autosuggest.webp", "Christie's search autosuggestions")
-    ),
+    lockup(pic("autosuggest.webp", "Christie's search autosuggestions")), // #7
     say("New CRM features let collectors follow artists and save alerts, with suggested searches and lot recommendations from related artists.", "Alerts and follows", "crm"),
-    lockup(pic("alerts-motion.mp4", "Creating an alert for a search", "1600:1062")),
-    { type: "stage", bg: "#EFECE6", ratio: "16:9", screenBg: "#ffffff", phones: [M + "alert-saved.mp4"] },
-    say("A search and compare experience for the luxury watch department, built on the same search foundations."),
     lockup(
-      pic("watch-hero.webp", "Christie's watches"),
-      pic("watch-find.webp", "Christie's Find your watch"),
-      pic("watch-visual-search.mp4", "Christie's watch visual search", "16:9"),
-      pic("autosuggest-watch.webp", "Christie's watch autosuggestions"),
-      pic("watch-mobile.webp", "Christie's watches on mobile"),
-      panel(6, "Watch buyers compare references, sizes and condition, so a dedicated finder lets them filter by what matters and weigh pieces side by side.", "Luxury watches")
+      pic("autosuggest-watch.webp", "Christie's watch autosuggestions"), // #8
+      pic("watch-menu.webp", "Christie's Find your watch menu"), // #9
+      pic("watch-find.webp", "Christie's Find your watch grid"), // #10
+      pic("watch-visual-search.mp4", "Christie's watch visual search", "16:9"), // #11
+      pic("watch-find-mobile.webp", "Christie's Find your watch on mobile"), // #12
+      panel(6, "Search and compare for the luxury watch department, built on the same search foundations: a dedicated finder to filter by what matters and weigh pieces side by side.", "Luxury watches")
     ),
+    lockup(pic("advisor-hero.webp", "Christie's Art Advisor")), // #13
     say("Art Advisor uses image recognition to help specialists value lots faster and more accurately.", "Art Advisor", "advisor"),
-    lockup(
-      pic("advisor-hero.webp", "Christie's Art Advisor"),
-      pic("advisor-screens.webp", "Art Advisor screens")
-    ),
+    lockup(pic("advisor-screens.webp", "Art Advisor screens")), // #14
   ],
   overview: {
     heading: "Overview",
