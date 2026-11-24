@@ -10,7 +10,7 @@ export default function sitemap() {
     { url: `${base}/contact`, priority: 0.7 },
   ].map((r) => ({ ...r, lastModified: now, changeFrequency: "monthly" }));
 
-  const work = projects.map((p) => ({
+  const work = projects.filter((p) => !p.onRequest).map((p) => ({
     url: `${base}/work/${p.slug}`,
     lastModified: now,
     changeFrequency: "monthly",
