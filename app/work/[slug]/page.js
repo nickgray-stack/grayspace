@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/content/site";
 import { notFound } from "next/navigation";
 import Chrome from "@/components/Chrome";
 import Footer from "@/components/Footer";
@@ -25,8 +26,9 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${p.name} — Gray Space`,
       description,
-      url: `https://grayspc.com${url}`,
+      url: `${SITE_URL}${url}`,
       type: "article",
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Gray Space — Nicholas Gray" }],
     },
   };
 }
@@ -61,7 +63,7 @@ export default async function CaseStudyPage({ params }) {
     creator: { "@type": "Person", name: "Nicholas Gray" },
     about: p.services,
     ...(p.year ? { dateCreated: p.year } : null),
-    url: `https://grayspc.com/work/${p.slug}`,
+    url: `${SITE_URL}/work/${p.slug}`,
   };
 
   return (

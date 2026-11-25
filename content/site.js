@@ -14,3 +14,6 @@ export const site = {
   onRequest: "Detailed case studies are available upon request",
 
 };
+
+// Public address of the site. Change this one line when grayspc.com points at Vercel.
+export const SITE_URL = "https://nickgray.vercel.app";

@@ -1,6 +1,6 @@
 import { projects } from "@/content/projects";
-
-const base = "https://grayspc.com";
+import { SITE_URL } from "@/content/site";
+const base = SITE_URL;
 
 export default function sitemap() {
   const now = new Date();

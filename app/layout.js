@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/content/site";
 import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -18,12 +19,12 @@ export const metadata = {
   title: { default: "Gray Space", template: "%s — Gray Space" },
   description:
     "Gray Space — the design work of Nicholas Gray. Selected UX & product design, London.",
-  metadataBase: new URL("https://grayspc.com"),
+  metadataBase: new URL(SITE_URL),
   alternates: { canonical: "/" },
   openGraph: {
     title: "Gray Space",
     description: "The design work of Nicholas Gray. Selected UX & product design, London.",
-    url: "https://grayspc.com",
+    url: SITE_URL,
     siteName: "Gray Space",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Gray Space — Nicholas Gray" }],
@@ -42,7 +43,7 @@ const personLd = {
   name: "Nicholas Gray",
   alternateName: "Nick Gray",
   jobTitle: "Lead Product Designer",
-  url: "https://grayspc.com",
+  url: SITE_URL,
   worksFor: { "@type": "Organization", name: "Gray Space Studio Ltd" },
   address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
   email: "mailto:hello@grayspc.com",
